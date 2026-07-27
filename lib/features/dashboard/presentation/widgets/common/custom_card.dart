@@ -10,22 +10,27 @@ class CustomCard extends StatelessWidget {
     super.key,
     required this.child,
     this.padding,
-    this.borderRadius = 16,
+    this.borderRadius = 18,
     this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      color: color ?? Colors.white,
-      shape: RoundedRectangleBorder(
+    return Container(
+      padding: padding ?? const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: color ?? Colors.white,
         borderRadius: BorderRadius.circular(borderRadius),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 18,
+            spreadRadius: 1,
+            offset: const Offset(0, 8),
+          ),
+        ],
       ),
-      child: Padding(
-        padding: padding ?? const EdgeInsets.all(20),
-        child: child,
-      ),
+      child: child,
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/app_sidebar.dart';
-import '../widgets/dashboard_content.dart';
+import '../layout/app_sidebar.dart';
+import '../layout/dashboard_content.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -9,13 +9,20 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Row(
-        children: [
-          AppSidebar(),
-          Expanded(
-            child: DashboardContent(),
-          ),
-        ],
+      body: SafeArea(
+        child: Row(
+          children: [
+
+            /// Sidebar
+            AppSidebar(),
+
+            /// Content
+            Expanded(
+              child: DashboardContent(),
+            ),
+
+          ],
+        ),
       ),
     );
   }

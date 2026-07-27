@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'kpi_card.dart';
+import '../cards/kpi_card.dart';
 
 class DashboardKpiSection extends StatelessWidget {
   const DashboardKpiSection({super.key});
