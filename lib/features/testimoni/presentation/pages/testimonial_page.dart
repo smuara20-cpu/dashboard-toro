@@ -7,28 +7,21 @@ import '../widgets/testimonial_card.dart';
 import '../../../../core/utils/google_maps_helper.dart';
 
 class TestimonialPage extends StatefulWidget {
-
   const TestimonialPage({super.key});
 
   @override
-  State<TestimonialPage> createState() =>
-      _TestimonialPageState();
+  State<TestimonialPage> createState() => _TestimonialPageState();
 }
 
-class _TestimonialPageState
-    extends State<TestimonialPage> {
-
+class _TestimonialPageState extends State<TestimonialPage> {
   late TestimonialController controller;
 
   @override
   void initState() {
-
     super.initState();
 
     controller = TestimonialController(
-      GetTestimonials(
-        TestimonialRepositoryImpl(),
-      ),
+      GetTestimonials(TestimonialRepositoryImpl()),
     );
 
     controller.load();
@@ -36,28 +29,18 @@ class _TestimonialPageState
 
   @override
   Widget build(BuildContext context) {
-
     return AnimatedBuilder(
-
       animation: controller,
 
       builder: (context, child) {
-
         return Scaffold(
-
-          appBar: AppBar(
-            title: const Text("Testimoni Jamaah"),
-          ),
+          appBar: AppBar(title: const Text("Testimoni Jamaah")),
 
           body: ListView.builder(
-
             itemCount: controller.testimonials.length,
 
             itemBuilder: (_, index) {
-
-              return TestimonialCard(
-                item: controller.testimonials[index],
-              );
+              return TestimonialCard(item: controller.testimonials[index]);
             },
           ),
 
@@ -69,9 +52,7 @@ class _TestimonialPageState
                 await GoogleMapsHelper.openReview();
               } catch (e) {
                 scaffoldMessenger.showSnackBar(
-                  SnackBar(
-                    content: Text('Gagal membuka Google Maps: $e'),
-                  ),
+                  SnackBar(content: Text('Gagal membuka Google Maps: $e')),
                 );
               }
             },

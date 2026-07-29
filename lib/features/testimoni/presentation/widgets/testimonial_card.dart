@@ -5,47 +5,32 @@ import '../../domain/entities/testimonial_entity.dart';
 class TestimonialCard extends StatelessWidget {
   final TestimonialEntity item;
 
-  const TestimonialCard({
-    super.key,
-    required this.item,
-  });
+  const TestimonialCard({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 8,
-      ),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       elevation: 2,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment:
-          CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Row(
               children: [
-
-                const CircleAvatar(
-                  radius: 26,
-                  child: Icon(Icons.person),
-                ),
+                const CircleAvatar(radius: 26, child: Icon(Icons.person)),
 
                 const SizedBox(width: 16),
 
                 Expanded(
                   child: Column(
-                    crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       Text(
                         item.name,
                         style: const TextStyle(
-                          fontWeight:
-                          FontWeight.bold,
+                          fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
                       ),
@@ -58,8 +43,7 @@ class TestimonialCard extends StatelessWidget {
                         item.packageName,
                         style: const TextStyle(
                           color: Colors.blue,
-                          fontWeight:
-                          FontWeight.bold,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
@@ -73,12 +57,8 @@ class TestimonialCard extends StatelessWidget {
             Row(
               children: List.generate(
                 item.rating.toInt(),
-                    (index) =>
-                const Icon(
-                  Icons.star,
-                  color: Colors.orange,
-                  size: 18,
-                ),
+                (index) =>
+                    const Icon(Icons.star, color: Colors.orange, size: 18),
               ),
             ),
 
@@ -90,14 +70,11 @@ class TestimonialCard extends StatelessWidget {
 
             Row(
               children: [
-
                 const Icon(Icons.photo),
 
                 const SizedBox(width: 8),
 
-                Text(
-                  "${item.photos} Foto",
-                ),
+                Text("${item.photos} Foto"),
               ],
             ),
           ],

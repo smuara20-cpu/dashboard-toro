@@ -2,14 +2,10 @@ import '../../domain/entities/testimonial_entity.dart';
 import '../../domain/repository/testimonial_repository.dart';
 import '../models/testimonial_model.dart';
 
-class TestimonialRepositoryImpl
-    implements TestimonialRepository {
-
+class TestimonialRepositoryImpl implements TestimonialRepository {
   @override
   Future<List<TestimonialEntity>> getTestimonials() async {
-
     return [
-
       const TestimonialModel(
         name: "Ahmad Fauzi",
         city: "Jakarta",

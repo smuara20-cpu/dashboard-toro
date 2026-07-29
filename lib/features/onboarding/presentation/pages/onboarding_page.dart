@@ -9,10 +9,7 @@ class OnboardingPage extends StatelessWidget {
       body: Center(
         child: Text(
           'Dashboard KPI',
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
         ),
       ),
     );

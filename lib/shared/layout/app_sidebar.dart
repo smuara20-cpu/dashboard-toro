@@ -41,10 +41,7 @@ class AppSidebar extends StatelessWidget {
   Widget _menu(IconData icon, String title) {
     return ListTile(
       leading: Icon(icon, color: Colors.white),
-      title: Text(
-        title,
-        style: const TextStyle(color: Colors.white),
-      ),
+      title: Text(title, style: const TextStyle(color: Colors.white)),
       onTap: () {},
     );
   }

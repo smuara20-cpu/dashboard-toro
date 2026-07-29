@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'app/router/app_router.dart';
-import 'app/theme/app_theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'app/app.dart';
+import 'app/dependency/injector.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      routerConfig: appRouter,
-    );
-  }
+  await initializeInjector();
+
+  runApp(const ProviderScope(child: App()));
 }

@@ -8,11 +8,6 @@ class AuthRemoteDataSource {
     // Simulasi login
     await Future.delayed(const Duration(seconds: 1));
 
-    return UserModel(
-      id: "1",
-      name: "Toro",
-      email: email,
-      role: "CEO",
-    );
+    return UserModel(id: "1", name: "Toro", email: email, role: "CEO");
   }
 }

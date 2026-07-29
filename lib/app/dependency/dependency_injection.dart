@@ -1,7 +1,17 @@
-import 'package:get_it/get_it.dart';
+import 'register_controller.dart';
+import 'register_datasource.dart';
+import 'register_repository.dart';
+import 'register_service.dart';
+import 'register_usecase.dart';
 
-final sl = GetIt.instance;
+Future<void> initializeDependency() async {
+  registerService();
 
-Future<void> initDependencies() async {
+  registerDatasource();
 
+  registerRepository();
+
+  registerUsecase();
+
+  registerController();
 }

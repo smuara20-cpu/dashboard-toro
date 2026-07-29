@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../app/router/app_routes.dart';
+import '../../../../app/router/route_paths.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -11,19 +11,15 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-
   @override
   void initState() {
     super.initState();
 
-    Future.delayed(
-      const Duration(seconds: 2),
-          () {
-        if (mounted) {
-          context.go(AppRoutes.onboarding);
-        }
-      },
-    );
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        context.go(RoutePaths.onboarding);
+      }
+    });
   }
 
   @override
@@ -32,10 +28,7 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(
         child: Text(
           "Splash",
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
         ),
       ),
     );

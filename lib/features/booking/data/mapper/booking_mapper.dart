@@ -1,0 +1,4 @@
+
+class BookingMapper {
+  const BookingMapper();
+}

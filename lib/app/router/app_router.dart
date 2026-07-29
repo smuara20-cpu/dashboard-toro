@@ -1,33 +1,44 @@
 import 'package:go_router/go_router.dart';
 
+import 'route_names.dart';
+import 'route_paths.dart';
+
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/dashboard/presentation/pages/dashboard_page.dart';
 import '../../features/onboarding/presentation/pages/onboarding_page.dart';
 import '../../features/splash/presentation/pages/splash_page.dart';
 import '../../features/testimoni/presentation/pages/testimonial_page.dart';
-import 'app_routes.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: AppRoutes.dashboard,
+  initialLocation: RoutePaths.splash,
   routes: [
     GoRoute(
-      path: AppRoutes.splash,
+      name: RouteNames.splash,
+      path: RoutePaths.splash,
       builder: (context, state) => const SplashPage(),
     ),
+
     GoRoute(
-      path: AppRoutes.onboarding,
+      name: RouteNames.onboarding,
+      path: RoutePaths.onboarding,
       builder: (context, state) => const OnboardingPage(),
     ),
+
     GoRoute(
-      path: AppRoutes.login,
+      name: RouteNames.login,
+      path: RoutePaths.login,
       builder: (context, state) => const LoginPage(),
     ),
+
     GoRoute(
-      path: AppRoutes.dashboard,
+      name: RouteNames.dashboard,
+      path: RoutePaths.dashboard,
       builder: (context, state) => const DashboardPage(),
     ),
+
     GoRoute(
-      path: AppRoutes.testimonial,
+      name: RouteNames.testimonial,
+      path: RoutePaths.testimonial,
       builder: (context, state) => const TestimonialPage(),
     ),
   ],

@@ -9,9 +9,7 @@ class SearchBarWidget extends StatelessWidget {
       decoration: InputDecoration(
         hintText: "Cari Jamaah, Paket, Invoice, Booking...",
         prefixIcon: const Icon(Icons.search),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         filled: true,
         fillColor: Colors.white,
       ),

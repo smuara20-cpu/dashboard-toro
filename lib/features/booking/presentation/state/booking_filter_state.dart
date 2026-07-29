@@ -1,0 +1,3 @@
+class BookingFilterState {
+  const BookingFilterState();
+}

@@ -28,21 +28,16 @@ class SectionTitle extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               if (subtitle != null) ...[
                 const SizedBox(height: 4),
                 Text(
                   subtitle!,
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey.shade600,
-                  ),
+                  style: TextStyle(fontSize: 13, color: Colors.grey.shade600),
                 ),
               ],
             ],
           ),
         ),
-
         if (action != null) action!,
       ],
     );
