@@ -4,18 +4,32 @@ part 'customer_model.freezed.dart';
 part 'customer_model.g.dart';
 
 @freezed
-class CustomerModel with _$CustomerModel {
+abstract class CustomerModel with _$CustomerModel {
   const factory CustomerModel({
+    /// ID Customer
     required String id,
+
+    /// Nama Lengkap
     required String fullName,
+
+    /// Nomor Telepon
     required String phoneNumber,
+
+    /// Email
     required String email,
 
+    /// Tanggal Lahir
     DateTime? birthDate,
+
+    /// Kota
     String? city,
+
+    /// Provinsi
     String? province,
   }) = _CustomerModel;
 
-  factory CustomerModel.fromJson(Map<String, dynamic> json) =>
+  factory CustomerModel.fromJson(
+      Map<String, dynamic> json,
+      ) =>
       _$CustomerModelFromJson(json);
 }

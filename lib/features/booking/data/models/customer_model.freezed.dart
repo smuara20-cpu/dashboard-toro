@@ -15,7 +15,14 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CustomerModel {
 
- String get id; String get fullName; String get phoneNumber; String get email; DateTime? get birthDate; String? get city; String? get province;
+/// ID Customer
+ String get id;/// Nama Lengkap
+ String get fullName;/// Nomor Telepon
+ String get phoneNumber;/// Email
+ String get email;/// Tanggal Lahir
+ DateTime? get birthDate;/// Kota
+ String? get city;/// Provinsi
+ String? get province;
 /// Create a copy of CustomerModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -218,12 +225,19 @@ class _CustomerModel implements CustomerModel {
   const _CustomerModel({required this.id, required this.fullName, required this.phoneNumber, required this.email, this.birthDate, this.city, this.province});
   factory _CustomerModel.fromJson(Map<String, dynamic> json) => _$CustomerModelFromJson(json);
 
+/// ID Customer
 @override final  String id;
+/// Nama Lengkap
 @override final  String fullName;
+/// Nomor Telepon
 @override final  String phoneNumber;
+/// Email
 @override final  String email;
+/// Tanggal Lahir
 @override final  DateTime? birthDate;
+/// Kota
 @override final  String? city;
+/// Provinsi
 @override final  String? province;
 
 /// Create a copy of CustomerModel
