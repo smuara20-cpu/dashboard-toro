@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/theme/app_colors.dart';
+import '../../core/theme/colors/app_colors.dart';
 import 'base_button.dart';
 
 class OutlinedButtonWidget extends StatelessWidget {

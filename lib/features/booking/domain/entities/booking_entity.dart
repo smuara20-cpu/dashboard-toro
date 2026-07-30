@@ -1,3 +1,6 @@
+import '../enums/booking_status.dart';
+import '../enums/lead_source.dart';
+
 import 'customer_entity.dart';
 import 'package_entity.dart';
 import 'payment_entity.dart';
