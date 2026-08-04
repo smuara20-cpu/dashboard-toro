@@ -32,6 +32,15 @@ Membangun pengalaman pengguna yang sederhana, konsisten, modern, dan mudah digun
 
 ---
 
+# Mission
+
+- Menyediakan standar desain yang konsisten untuk seluruh produk VENTRA.
+- Mempercepat proses desain dan pengembangan aplikasi.
+- Mengurangi inkonsistensi antar modul.
+- Meningkatkan kualitas pengalaman pengguna.
+- Menjadi Single Source of Truth (SSOT) untuk seluruh keputusan desain.
+
+
 # Scope
 
 Design System ini berlaku untuk:
@@ -104,6 +113,61 @@ Design System digunakan oleh:
 - docs/01_architecture/
 
 ---
+
+---
+
+# Engineering Governance
+
+VENTRA Design System mengikuti seluruh Engineering Governance yang telah ditetapkan pada VENTRA ERP Platform, meliputi:
+
+- Architecture Decision (AD)
+- Definition of Ready (DoR)
+- Definition of Done (DoD)
+- Single Source of Truth (SSOT)
+- Documentation Completeness Index (DCI)
+- Knowledge Maturity Level (KML)
+- Quality Gates
+- Traceability First
+- Knowledge First Architecture
+
+---
+
+# Knowledge Asset
+
+VENTRA Design System merupakan Knowledge Asset resmi yang menjadi dasar seluruh implementasi UI pada VENTRA ERP Platform.
+
+Seluruh perubahan pada Design System wajib melalui:
+
+Review
+
+↓
+
+Architecture Review
+
+↓
+
+Approval
+
+↓
+
+Quality Gate
+
+↓
+
+Implementation
+
+---
+
+# Success Metrics
+
+VENTRA Design System dinyatakan berhasil apabila:
+
+- Seluruh aplikasi menggunakan Design System yang sama.
+- Tidak ada komponen UI di luar standar.
+- Seluruh Design Tokens digunakan secara konsisten.
+- Komponen dapat digunakan kembali (Reusable).
+- Seluruh Knowledge Asset Design System lulus Quality Gate.
+
 
 # Approval
 
