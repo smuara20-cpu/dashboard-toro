@@ -233,6 +233,19 @@ Nilai implementasi teknis didefinisikan pada layer Flutter, tetapi harus mengacu
 
 ---
 
+# Anti Patterns
+
+Implementasi berikut tidak diperbolehkan:
+
+- Menggunakan hardcoded color (misalnya `Color(0xFF2196F3)`).
+- Menggunakan warna di luar Design Tokens.
+- Menggunakan Semantic Color tidak sesuai fungsinya.
+- Menggunakan Brand Color sebagai Status Color.
+- Menggunakan warna yang tidak memenuhi standar kontras (WCAG).
+- Menggunakan terlalu banyak warna pada satu halaman.
+- Menggunakan warna sebagai satu-satunya indikator status tanpa ikon atau teks.
+- Mengubah Color Token tanpa melalui Architecture Review.
+
 # Engineering Governance
 
 Color System mengikuti:
