@@ -1,6 +1,8 @@
 # BP-103 Marketing Blueprint
 
-> **"Great journeys begin with meaningful connections."**
+> **Enterprise Edition v2.0**
+>
+> **"Marketing creates demand. CRM builds relationships. Booking generates revenue."**
 
 ---
 
@@ -9,225 +11,221 @@
 | Item | Value |
 |------|-------|
 | Document ID | BP-103 |
-| Document | Marketing Blueprint |
-| Category | Domain Blueprint |
+| Document Name | Marketing Blueprint |
+| Category | Business Domain Blueprint |
 | Status | Draft |
-| Version | 1.0.0 |
+| Version | 2.0.0 |
 | Classification | Internal |
-| Owner | Marketing Domain |
-| Approver | Product Owner |
-| Reviewer | Enterprise Architect |
-| Audience | Marketing Manager, Business Analyst, Product Owner, Engineering Lead, Backend Engineer, Mobile Engineer, AI Engineer, Dashboard Engineer |
-| Created | 2026-08-06 |
-| Last Review | - |
-| Next Review | Every 6 Months |
+| Parent Blueprint | BP-001 Business Blueprint |
+| Domain | Marketing |
+| Domain Owner | Marketing Domain Owner |
+| Business Owner | Marketing Director |
+| Technical Owner | Chief Enterprise Architect |
+| Reviewer | Enterprise Architecture Board |
+| Approver | Executive Board |
+| Audience | CEO, Marketing Director, Product Owner, Business Analyst, Enterprise Architect, Backend Engineer, Flutter Engineer, QA Engineer, AI Engineer |
 
 ---
 
-# Purpose
+# Blueprint Purpose
 
-Marketing Blueprint mendefinisikan seluruh konsep bisnis mengenai aktivitas pemasaran dalam platform VENTRA.
+BP-103 mendefinisikan Marketing Domain sebagai pusat perencanaan, pelaksanaan, pengukuran, dan optimasi seluruh aktivitas pemasaran VENTRA.
 
-Blueprint ini menjadi acuan resmi implementasi Marketing pada Database, API, Flutter, Dashboard, Artificial Intelligence, dan seluruh Domain yang berkaitan dengan akuisisi Customer.
+Marketing bertanggung jawab menghasilkan Lead berkualitas, membangun Brand Awareness, meningkatkan Customer Acquisition, serta mengoptimalkan efektivitas Campaign.
 
-Marketing merupakan Domain yang bertanggung jawab menghasilkan Lead berkualitas dan mendukung pertumbuhan bisnis perusahaan.
+Marketing bukan pemilik Customer Master maupun Customer Relationship.
 
----
+Customer Master dimiliki BP-101.
 
-# Scope
-
-Blueprint ini mencakup seluruh aktivitas Marketing.
-
-Meliputi:
-
-- Marketing Strategy
-- Campaign Management
-- Lead Generation
-- Lead Source
-- Audience Management
-- Promotion Management
-- Content Marketing
-- Digital Marketing
-- Offline Marketing
-- Referral Program
-- Marketing Analytics
-- Marketing Intelligence
-
-Blueprint ini tidak membahas implementasi teknis.
+Relationship Management dimiliki BP-102.
 
 ---
 
-# Business Context
+# Parent Blueprint
 
-Marketing merupakan Domain pertama dalam Enterprise Business Value Chain.
+Blueprint ini merupakan turunan resmi dari:
 
-Marketing menghasilkan Lead.
+- EA-000 Architecture Freeze Rules
+- EA-001 Enterprise Architecture Blueprint
+- BP-001 Business Blueprint
+- BP-101 Customer Blueprint
+- BP-102 CRM Blueprint
 
-Lead diteruskan ke CRM.
-
-CRM mengelola hubungan.
-
-Customer menjadi identitas utama.
-
-Booking menghasilkan transaksi.
-
-Dashboard menganalisis performa.
-
-Artificial Intelligence memberikan rekomendasi strategi.
-
-Marketing menjadi awal seluruh pertumbuhan bisnis.
+Seluruh implementasi wajib konsisten terhadap Blueprint induk.
 
 ---
 
-# Objectives
+# VENTRA Development Constitution v1.0 (LOCK)
 
-Marketing Blueprint bertujuan untuk:
+Seluruh isi BP-103 wajib memenuhi dua belas prinsip berikut.
+
+- Business Correctness
+- Architecture Correctness
+- Enterprise Readiness
+- Scalability
+- Security
+- Performance
+- Maintainability
+- Extensibility
+- Testability
+- AI Readiness
+- Documentation Quality
+- Governance
+
+Blueprint tidak dapat berstatus APPROVED apabila salah satu prinsip tidak memenuhi Enterprise Quality Gate.
+
+---
+
+# Executive Summary
+
+Marketing Domain bertanggung jawab menghasilkan permintaan (Demand Generation) yang dapat dikonversi menjadi peluang bisnis.
+
+Marketing mengelola Campaign, Channel, Audience, Content, Budget, Performance, Attribution, dan Lead Generation.
+
+Marketing bekerja sama dengan CRM melalui proses serah terima Lead menggunakan kontrak bisnis yang terdokumentasi.
+
+---
+
+# Business Objective
+
+Marketing Domain dibangun untuk:
 
 - meningkatkan Brand Awareness
-- menghasilkan Lead berkualitas
+- menghasilkan Qualified Lead
+- mengoptimalkan Return on Marketing Investment
 - meningkatkan Conversion Rate
-- meningkatkan Return on Marketing Investment
-- meningkatkan Customer Acquisition
-- mendukung Customer Growth
-- mendukung Executive Dashboard
-- menjadi pusat aktivitas pemasaran perusahaan
+- mengoptimalkan Customer Acquisition Cost
+- mengelola Campaign lintas kanal
+- menyediakan Marketing Analytics
+- mendukung AI Recommendation
+- mendukung pertumbuhan bisnis berkelanjutan
 
 ---
 
-# Marketing Vision
+# Business Scope
 
-Membangun sistem pemasaran yang terukur, berbasis data, terintegrasi, dan didukung Artificial Intelligence untuk menghasilkan pertumbuhan bisnis yang berkelanjutan.
+Marketing Domain mencakup:
+
+- Campaign Management
+- Marketing Calendar
+- Marketing Budget
+- Channel Management
+- Audience Management
+- Lead Generation
+- Landing Page Management
+- Content Management
+- Creative Asset Management
+- Social Media Campaign
+- Digital Advertising
+- Email Marketing
+- WhatsApp Broadcast
+- Event Management
+- Referral Campaign
+- Promotion Management
+- Coupon Management
+- Marketing Attribution
+- Marketing Analytics
+- Brand Performance
 
 ---
 
-# Marketing Principles
+# Out of Scope
 
-Seluruh aktivitas Marketing mengikuti prinsip berikut.
+Marketing Domain tidak mengelola:
+
+- Customer Master
+- CRM Relationship
+- Booking
+- Payment
+- Finance
+- Departure
+
+Domain tersebut memiliki Blueprint masing-masing.
+
+---
+
+# Domain Vision
+
+Membangun Enterprise Marketing Platform yang terukur, terintegrasi, efisien, berbasis data, dan siap memanfaatkan Artificial Intelligence.
+
+---
+
+# Domain Mission
+
+Marketing Domain bertugas:
+
+- menghasilkan Lead berkualitas
+- meningkatkan efektivitas Campaign
+- mengelola anggaran pemasaran
+- meningkatkan Brand Awareness
+- menyediakan analisis pemasaran
+- mendukung pertumbuhan pendapatan
+
+---
+
+# Domain Principles
+
+Marketing Domain mengikuti prinsip berikut.
 
 ## Business Driven
 
-Marketing harus mendukung tujuan bisnis perusahaan.
-
----
-
-## Customer Centric
-
-Seluruh Campaign berorientasi pada kebutuhan Customer.
+Seluruh aktivitas Marketing harus mendukung tujuan bisnis.
 
 ---
 
 ## Data Driven
 
-Seluruh keputusan Marketing didasarkan pada data.
+Keputusan Marketing berdasarkan data yang tervalidasi.
+
+---
+
+## Customer Centric
+
+Seluruh Campaign harus memberikan nilai bagi pelanggan.
 
 ---
 
 ## Omnichannel
 
-Marketing mendukung berbagai media komunikasi secara konsisten.
+Marketing mendukung berbagai kanal komunikasi.
 
 ---
 
-## Measurable
+## Performance First
 
-Seluruh aktivitas Marketing harus dapat diukur.
+Seluruh aktivitas Marketing wajib dapat diukur.
 
 ---
 
 ## AI Assisted
 
-Artificial Intelligence membantu menganalisis Campaign, Audience, dan peluang pasar.
-
-Keputusan akhir tetap dilakukan oleh manusia.
+AI membantu optimasi Campaign dan Audience.
 
 ---
 
-## Continuous Optimization
+## Event Driven
 
-Strategi Marketing terus dievaluasi dan disempurnakan berdasarkan hasil Analytics.
+Seluruh aktivitas penting menghasilkan Business Event.
 
 ---
 
-# Success Criteria
+## Governance by Design
 
-Marketing Blueprint dianggap berhasil apabila:
-
-- seluruh Campaign terdokumentasi
-- seluruh Lead memiliki Lead Source
-- seluruh Audience terdokumentasi
-- seluruh KPI terdokumentasi
-- seluruh Analytics tersedia
-- seluruh implementasi mengacu pada Blueprint ini
+Seluruh Campaign mengikuti tata kelola Enterprise.
 
 ---
 
 # Marketing Domain Position
 
-Marketing merupakan Entry Domain dalam Enterprise Business Architecture.
+Marketing berada sebelum CRM.
+
+Hubungan Domain.
 
 Marketing
 
 ↓
 
-Lead
-
-↓
-
 CRM
-
-↓
-
-Customer
-
-↓
-
-Booking
-
-↓
-
-Finance
-
-↓
-
-Dashboard
-
-↓
-
-Artificial Intelligence
-
-Marketing menjadi sumber utama pertumbuhan Customer.
-
----
-
----
-
-# Marketing Business Architecture
-
-Marketing Business Architecture mendefinisikan posisi Marketing dalam Enterprise Business Architecture VENTRA.
-
-Marketing bukan hanya menjalankan promosi.
-
-Marketing merupakan Domain yang bertanggung jawab menghasilkan permintaan (Demand Generation), membangun Brand, menghasilkan Lead berkualitas, dan mendukung pertumbuhan bisnis perusahaan.
-
----
-
-# Marketing Domain Position
-
-Marketing merupakan Entry Domain dalam Enterprise Business Architecture.
-
-Marketing
-
-↓
-
-Lead
-
-↓
-
-CRM
-
-↓
-
-Customer
 
 ↓
 
@@ -247,354 +245,989 @@ Dashboard
 
 ↓
 
-Artificial Intelligence
+AI
 
-Marketing menjadi sumber utama Customer Acquisition.
+Marketing menghasilkan Lead.
+
+CRM mengelola Relationship.
 
 ---
 
-# Marketing Domain Responsibility
+# Domain Responsibilities
 
 Marketing Domain bertanggung jawab terhadap:
 
-- Marketing Strategy
-- Campaign Management
+- Campaign
+- Channel
+- Audience
+- Content
+- Creative Asset
 - Lead Generation
-- Lead Source Management
-- Audience Management
-- Promotion Management
-- Content Management
-- Brand Awareness
-- Referral Program
-- Digital Marketing
-- Offline Marketing
+- Promotion
+- Coupon
+- Marketing Budget
+- Attribution
 - Marketing Analytics
-- Marketing Intelligence
-
-Marketing Domain tidak bertanggung jawab terhadap:
-
-- Customer Verification
-- Booking
-- Payment
-- Visa
-- Hotel
-- Finance
-
-Domain tersebut dikelola oleh Domain masing-masing.
+- Brand Performance
 
 ---
 
-# Marketing Capability Map
+# Domain Stakeholders
 
-Marketing Domain memiliki Capability berikut.
-
----
-
-## Marketing Strategy
-
-Mengelola strategi pemasaran perusahaan.
-
----
-
-## Campaign Management
-
-Mengelola seluruh Campaign Marketing.
+| Stakeholder | Responsibility |
+|-------------|----------------|
+| Marketing Executive | Menjalankan Campaign |
+| Digital Marketing | Mengelola iklan digital |
+| Content Creator | Membuat konten |
+| Marketing Manager | Mengelola strategi dan anggaran |
+| Sales Manager | Menerima Qualified Lead |
+| Executive Management | Monitoring Marketing KPI |
+| AI Agent | Optimasi Campaign dan Insight |
 
 ---
 
-## Audience Management
+# Enterprise Success Criteria
 
-Mengelola Target Audience.
+BP-103 dianggap berhasil apabila:
 
----
-
-## Lead Generation
-
-Menghasilkan Lead baru.
-
----
-
-## Lead Source Management
-
-Mengelola sumber Lead.
+- seluruh Campaign terdokumentasi
+- seluruh Budget dapat ditelusuri
+- seluruh Lead memiliki sumber yang jelas
+- seluruh Performance dapat diukur
+- seluruh Attribution terdokumentasi
+- seluruh proses memenuhi Enterprise Quality Gate
 
 ---
 
-## Promotion Management
+# Related Documents
 
-Mengelola Promo dan Penawaran.
+## Parent Blueprint
 
----
-
-## Content Marketing
-
-Mengelola konten pemasaran.
-
----
-
-## Digital Marketing
-
-Mengelola aktivitas digital.
-
-Contoh:
-
-- Meta Ads
-- Google Ads
-- TikTok
-- Instagram
-- YouTube
-
----
-
-## Offline Marketing
-
-Mengelola aktivitas offline.
-
-Contoh:
-
-- Exhibition
-- Seminar
-- Gathering
-- Travel Fair
-
----
-
-## Referral Management
-
-Mengelola Program Referral.
-
----
-
-## Marketing Analytics
-
-Mengukur efektivitas Marketing.
-
----
-
-## Marketing Intelligence
-
-Memberikan Insight berbasis Artificial Intelligence.
-
----
-
-# Marketing Funnel
-
-Marketing mengikuti Funnel berikut.
-
-Awareness
-
-↓
-
-Interest
-
-↓
-
-Consideration
-
-↓
-
-Lead
-
-↓
-
-Qualified Lead
-
-↓
-
-CRM
-
-↓
-
-Customer
-
-↓
-
-Booking
-
-↓
-
-Repeat Customer
-
-Seluruh Funnel menjadi dasar KPI Marketing.
-
----
-
-# Marketing Channels
-
-Marketing menggunakan berbagai Channel.
-
-Digital Channel:
-
-- Website
-- Instagram
-- Facebook
-- TikTok
-- YouTube
-- Google
-- WhatsApp
-
-Offline Channel:
-
-- Travel Fair
-- Seminar
-- Masjid
-- Komunitas
-- Event
-- Roadshow
-
-Partner Channel:
-
-- Referral
-- Corporate
-- Community
-- Affiliate
-
-Seluruh Channel harus dapat diukur.
-
----
-
-# Lead Source Management
-
-Setiap Lead wajib memiliki Lead Source.
-
-Contoh:
-
-- Website
-- WhatsApp
-- Instagram
-- Facebook Ads
-- Google Ads
-- TikTok Ads
-- Referral
-- Walk In
-- Phone Call
-- Exhibition
-- Seminar
-
-Lead Source menjadi dasar Marketing Analytics.
-
----
-
-# Audience Management
-
-Marketing mengelola Audience berdasarkan:
-
-## Demographic
-
-- Age
-- Gender
-- Occupation
-
----
-
-## Geographic
-
-- Country
-- Province
-- City
-
----
-
-## Behavioral
-
-- Travel Interest
-- Booking History
-- Campaign Response
-
----
-
-## Business Value
-
-- New Audience
-- Returning Audience
-- High Value Audience
-
-Audience digunakan untuk personalisasi Campaign.
-
----
-
-# Marketing Ownership
-
-Business Owner:
-
-Marketing Manager
-
-Domain Owner bertanggung jawab terhadap:
-
-- Marketing Strategy
-- Campaign Performance
-- Lead Quality
-- Customer Acquisition
-- Marketing KPI
-- Marketing Blueprint
-
----
-
-# Marketing Architecture Principles
-
-Marketing mengikuti prinsip berikut.
-
-- Business Driven
-- Customer Centric
-- Data Driven
-- Omnichannel
-- AI Assisted
-- Measurable
-- Scalable
-- Continuous Improvement
-
-Seluruh implementasi Marketing wajib mengikuti prinsip tersebut.
-
----
-
-# Architecture Alignment
-
-Marketing Blueprint harus selalu selaras dengan:
-
+- EA-000 Architecture Freeze Rules
+- EA-001 Enterprise Architecture Blueprint
 - BP-001 Business Blueprint
 - BP-101 Customer Blueprint
 - BP-102 CRM Blueprint
-- Product Philosophy
-- Governance Standard
-- Architecture Standard
-- Business Standard
 
-Tidak diperbolehkan membuat implementasi Marketing yang bertentangan dengan Blueprint ini.
+---
+
+## Related Business Blueprint
+
+- BP-104 Booking Blueprint
+- BP-110 Finance Blueprint
+- BP-112 Dashboard Blueprint
+- BP-114 AI Blueprint
+
+---
+
+## Shared Platform
+
+- SP-203 Identity & Access Platform
+- SP-205 Audit Platform
+- SP-206 Search Platform
+- SP-208 Integration Platform
+- SP-210 Reporting Platform
 
 ---
 
 # Acceptance Criteria
 
-Marketing Business Architecture dianggap lengkap apabila:
+PART 1 dianggap selesai apabila:
 
-- seluruh Capability terdokumentasi
-- seluruh Marketing Channel terdokumentasi
-- seluruh Audience terdokumentasi
-- seluruh Lead Source terdokumentasi
-- seluruh Marketing Funnel terdokumentasi
-- seluruh Domain Relationship terdokumentasi
+- Domain Purpose terdokumentasi
+- Business Scope terdokumentasi
+- Domain Vision terdokumentasi
+- Domain Mission terdokumentasi
+- Domain Principles terdokumentasi
+- Domain Responsibilities terdokumentasi
+- Domain Stakeholders terdokumentasi
+- Related Blueprint terdokumentasi
+- Enterprise Quality Gate siap diterapkan
+
+---
+---
+
+# Marketing Business Capability Architecture
+
+Marketing Business Capability Architecture mendefinisikan seluruh kemampuan bisnis (Business Capabilities) yang dimiliki Marketing Domain sebagai pusat Demand Generation, Brand Growth, dan Customer Acquisition pada platform VENTRA.
+
+Capability bersifat stabil terhadap perubahan organisasi maupun teknologi serta menjadi dasar penyusunan Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, AI Blueprint, dan Integration Blueprint.
+
+Seluruh aktivitas Marketing wajib mengacu pada Capability Architecture ini.
 
 ---
 
+# Capability Principles
+
+Setiap Capability harus memenuhi prinsip berikut.
+
+- Business Driven
+- Customer Centric
+- Revenue Oriented
+- Single Responsibility
+- Single Ownership
+- High Cohesion
+- Loose Coupling
+- API First
+- Event Driven
+- AI Ready
+- Measurable
+- Auditable
+
 ---
 
-# Marketing Business Process
+# Marketing Capability Map
 
-Marketing Business Process mendefinisikan seluruh proses bisnis yang dilakukan oleh Marketing Domain untuk menghasilkan Lead berkualitas dan mendukung pertumbuhan bisnis perusahaan.
+Marketing Domain terdiri dari Capability berikut.
 
-Seluruh proses Marketing harus terdokumentasi, dapat diukur, dan terus dievaluasi.
-
-Marketing tidak hanya menjalankan Campaign.
-
-Marketing bertanggung jawab terhadap seluruh Customer Acquisition Funnel.
+| Capability | Description |
+|------------|-------------|
+| Campaign Management | Mengelola Campaign |
+| Marketing Calendar | Perencanaan aktivitas Marketing |
+| Marketing Budget | Pengelolaan anggaran Marketing |
+| Channel Management | Pengelolaan kanal pemasaran |
+| Audience Management | Pengelolaan target audience |
+| Lead Generation | Menghasilkan Lead |
+| Landing Page Management | Pengelolaan Landing Page |
+| Content Management | Pengelolaan konten |
+| Creative Asset Management | Pengelolaan aset kreatif |
+| Digital Advertising | Pengelolaan iklan digital |
+| Social Media Management | Pengelolaan media sosial |
+| Email Marketing | Pengelolaan email campaign |
+| WhatsApp Marketing | Pengelolaan broadcast WhatsApp |
+| Event Management | Pengelolaan event |
+| Promotion Management | Pengelolaan promosi |
+| Coupon Management | Pengelolaan kupon |
+| Referral Campaign | Pengelolaan referral |
+| Attribution Management | Analisis sumber konversi |
+| Marketing Analytics | Analisis performa Marketing |
+| Brand Performance | Analisis performa merek |
 
 ---
 
-# Marketing Value Chain
+# Capability Classification
 
-Market Research
+Capability dikelompokkan menjadi tiga kategori.
+
+## Core Capability
+
+- Campaign Management
+- Lead Generation
+- Audience Management
+- Channel Management
+- Marketing Budget
+
+---
+
+## Supporting Capability
+
+- Content Management
+- Creative Asset Management
+- Landing Page Management
+- Email Marketing
+- WhatsApp Marketing
+- Event Management
+- Promotion Management
+- Coupon Management
+
+---
+
+## Strategic Capability
+
+- Marketing Analytics
+- Attribution Management
+- Brand Performance
+- Referral Campaign
+
+---
+
+# Capability Ownership Matrix
+
+| Capability | Owner |
+|------------|-------|
+| Campaign | Marketing Domain |
+| Budget | Marketing Domain |
+| Audience | Marketing Domain |
+| Channel | Marketing Domain |
+| Lead Generation | Marketing Domain |
+| Content | Marketing Domain |
+| Creative Asset | Marketing Domain |
+| Promotion | Marketing Domain |
+| Attribution | Marketing Domain |
+| Analytics | Marketing Domain |
+| Brand Performance | Marketing Domain |
+
+Seluruh Capability hanya memiliki satu Domain Owner.
+
+---
+
+# Business Service Catalog
+
+Marketing Domain menyediakan Business Service berikut.
+
+## Campaign Management
+
+Service
+
+- Create Campaign
+- Schedule Campaign
+- Activate Campaign
+- Pause Campaign
+- Close Campaign
+
+---
+
+## Lead Generation
+
+Service
+
+- Capture Lead
+- Validate Lead
+- Export Qualified Lead
+- Transfer Lead to CRM
+
+---
+
+## Audience Management
+
+Service
+
+- Create Audience
+- Update Audience
+- Segment Audience
+- Import Audience
+
+---
+
+## Budget Management
+
+Service
+
+- Allocate Budget
+- Adjust Budget
+- Track Budget Utilization
+
+---
+
+## Content Management
+
+Service
+
+- Create Content
+- Publish Content
+- Archive Content
+
+---
+
+## Promotion Management
+
+Service
+
+- Create Promotion
+- Activate Promotion
+- Expire Promotion
+
+---
+
+## Marketing Analytics
+
+Service
+
+- Calculate ROI
+- Calculate ROAS
+- Generate Campaign Report
+- Generate Attribution Report
+
+---
+
+# Capability Dependency
+
+| Capability | Depends On |
+|------------|------------|
+| Campaign | Budget |
+| Audience | Customer Reference |
+| Lead Generation | Campaign |
+| Content | Campaign |
+| Promotion | Campaign |
+| Attribution | Lead Generation |
+| Analytics | Campaign |
+| Brand Performance | Analytics |
+
+Customer Reference berasal dari BP-101.
+
+Qualified Lead diteruskan ke BP-102 CRM.
+
+Dependency bersifat bisnis.
+
+---
+
+# Capability Lifecycle
+
+Capability berkembang mengikuti tahapan berikut.
+
+Blueprint
 
 ↓
+
+Database
+
+↓
+
+API
+
+↓
+
+Flutter
+
+↓
+
+Dashboard
+
+↓
+
+Analytics
+
+↓
+
+AI Recommendation
+
+↓
+
+Marketing Automation
+
+↓
+
+Enterprise Growth Intelligence
+
+Perubahan implementasi tidak boleh mengubah definisi Capability.
+
+---
+
+# Marketing KPI
+
+Contoh KPI.
+
+Campaign
+
+- Campaign Success Rate
+- Campaign Reach
+
+---
+
+Lead Generation
+
+- Total Lead
+- Qualified Lead
+- Cost per Lead
+
+---
+
+Marketing Budget
+
+- Budget Utilization
+- Budget Efficiency
+
+---
+
+Digital Advertising
+
+- ROAS
+- CTR
+- CPC
+- CPM
+
+---
+
+Brand Performance
+
+- Brand Awareness
+- Engagement Rate
+
+---
+
+Marketing Analytics
+
+- ROI
+- Attribution Accuracy
+
+---
+
+# Capability Heat Map
+
+## Critical
+
+- Campaign
+- Lead Generation
+- Marketing Budget
+
+---
+
+## High
+
+- Audience
+- Channel
+- Content
+
+---
+
+## Medium
+
+- Promotion
+- Coupon
+- Referral
+
+---
+
+## Strategic
+
+- Attribution
+- Marketing Analytics
+- Brand Performance
+
+---
+
+# Enterprise Capability Maturity
+
+Capability berkembang melalui tingkat berikut.
+
+Level 1
+
+Marketing Digitalization
+
+↓
+
+Level 2
+
+Integrated Marketing
+
+↓
+
+Level 3
+
+Marketing Analytics
+
+↓
+
+Level 4
+
+Marketing Automation
+
+↓
+
+Level 5
+
+AI Assisted Marketing
+
+↓
+
+Level 6
+
+Enterprise Growth Intelligence
+
+Target VENTRA adalah mencapai **Level 6**.
+
+---
+
+# Capability Quality Gate
+
+| Validation | Target |
+|------------|--------|
+| Capability Coverage | 100% |
+| Capability Owner | 100% |
+| Service Coverage | 100% |
+| KPI Coverage | 100% |
+| Dependency Coverage | 100% |
+| Lifecycle Coverage | 100% |
+| Traceability | 100% |
+| Governance | 100% |
+
+---
+
+# Acceptance Criteria
+
+PART 2 dianggap selesai apabila:
+
+- seluruh Capability terdokumentasi
+- seluruh Capability memiliki Owner
+- seluruh Capability memiliki Business Service
+- seluruh Capability memiliki KPI
+- seluruh Capability memiliki Dependency
+- seluruh Capability memiliki Lifecycle
+- seluruh Capability memenuhi Enterprise Quality Gate
+
+---
+---
+
+# Marketing Canonical Domain Model
+
+Marketing Canonical Domain Model mendefinisikan struktur bisnis resmi Marketing Domain sebagai pusat Demand Generation, Campaign Management, Audience Management, dan Brand Growth.
+
+Canonical Model menjadi bahasa bisnis (Ubiquitous Language) yang digunakan secara konsisten oleh seluruh Business Domain, Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, AI Blueprint, dan Integration Platform.
+
+Marketing Domain mengelola aktivitas pemasaran.
+
+Marketing Domain bukan pemilik Customer Master maupun Customer Relationship.
+
+---
+
+# Domain Modeling Principles
+
+Marketing Domain mengikuti prinsip berikut.
+
+- Domain Driven Design (DDD)
+- Ubiquitous Language
+- Single Source of Truth
+- Single Responsibility
+- High Cohesion
+- Loose Coupling
+- Explicit Ownership
+- API First
+- Event Driven
+- AI Ready
+
+---
+
+# Domain Purpose
+
+Marketing Domain bertanggung jawab menghasilkan permintaan pasar (Demand Generation), mengelola Campaign, Audience, Channel, Budget, dan Attribution.
+
+Marketing menghasilkan Qualified Lead.
+
+Relationship selanjutnya dikelola CRM Domain.
+
+---
+
+# Domain Boundary
+
+## In Scope
+
+- Campaign
+- Campaign Schedule
+- Marketing Budget
+- Audience
+- Audience Segment
+- Marketing Channel
+- Content
+- Creative Asset
+- Landing Page
+- Digital Advertisement
+- Promotion
+- Coupon
+- Referral Campaign
+- Marketing Calendar
+- Marketing Attribution
+- Marketing Analytics
+- Brand Performance
+
+---
+
+## Out of Scope
+
+- Customer Master
+- CRM Relationship
+- Booking
+- Package
+- Hotel
+- Flight
+- Visa
+- Payment
+- Finance
+
+---
+
+# Canonical Business Objects
+
+| Business Object | Type |
+|-----------------|------|
+| Campaign | Aggregate Root |
+| Campaign Schedule | Entity |
+| Marketing Budget | Entity |
+| Audience | Entity |
+| Audience Segment | Entity |
+| Marketing Channel | Entity |
+| Content | Entity |
+| Creative Asset | Entity |
+| Landing Page | Entity |
+| Digital Advertisement | Entity |
+| Promotion | Entity |
+| Coupon | Entity |
+| Referral Campaign | Entity |
+| Marketing Attribution | Entity |
+| Marketing Analytics | Entity |
+| Brand Performance | Value Object |
+
+---
+
+# Aggregate Structure
+
+Campaign
+
+├── Campaign Schedule
+
+├── Budget
+
+├── Audience
+
+├── Audience Segment
+
+├── Channel
+
+├── Content
+
+├── Creative Asset
+
+├── Landing Page
+
+├── Advertisement
+
+├── Promotion
+
+├── Coupon
+
+├── Referral Campaign
+
+├── Attribution
+
+└── Analytics
+
+Campaign menjadi Aggregate Root.
+
+Seluruh perubahan Campaign dilakukan melalui Aggregate Root.
+
+---
+
+# Value Objects
+
+Value Object tidak memiliki identitas sendiri.
+
+Contoh.
+
+- Campaign Status
+- Campaign Objective
+- Budget Amount
+- Target Reach
+- Target Impression
+- Target Click
+- Target Conversion
+- Cost per Lead
+- Cost per Click
+- Cost per Mille
+- ROI
+- ROAS
+- CTR
+- Engagement Rate
+- Brand Score
+
+Value Object bersifat immutable apabila memungkinkan.
+
+---
+
+# Campaign Model
+
+Campaign merupakan aktivitas pemasaran yang memiliki tujuan bisnis tertentu.
+
+Campaign memiliki atribut utama.
+
+- Campaign Number
+- Campaign Name
+- Campaign Objective
+- Start Date
+- End Date
+- Status
+- Budget
+- Owner
+
+Campaign Number bersifat permanen.
+
+---
+
+# Audience Model
+
+Audience merupakan target pemasaran.
+
+Audience memiliki.
+
+- Audience Name
+- Segment
+- Geographic Area
+- Demographic
+- Interest
+- Source
+
+Audience tidak menyimpan Customer Master.
+
+Audience menggunakan Customer Reference apabila diperlukan.
+
+---
+
+# Marketing Channel Model
+
+Marketing Channel merepresentasikan media distribusi.
+
+Contoh.
+
+- Meta Ads
+- Google Ads
+- TikTok
+- Instagram
+- Facebook
+- WhatsApp
+- Email
+- Website
+- Event
+- Referral
+
+Channel bersifat dapat dikembangkan (extensible).
+
+---
+
+# Content Model
+
+Content menyimpan materi pemasaran.
+
+Contoh.
+
+- Banner
+- Poster
+- Carousel
+- Video
+- Reels
+- Landing Page Copy
+- Email Template
+
+Content memiliki Version dan Approval Status.
+
+---
+
+# Promotion Model
+
+Promotion terdiri dari.
+
+- Promotion Number
+- Promotion Type
+- Discount
+- Campaign
+- Valid Period
+
+Promotion dapat dikaitkan dengan Campaign.
+
+---
+
+# Coupon Model
+
+Coupon terdiri dari.
+
+- Coupon Code
+- Coupon Type
+- Value
+- Usage Limit
+- Valid Until
+
+Coupon memiliki siklus hidup tersendiri.
+
+---
+
+# Attribution Model
+
+Attribution menyimpan asal konversi.
+
+Contoh.
+
+- First Click
+- Last Click
+- Linear
+- Time Decay
+- Position Based
+
+Model Attribution dapat berkembang sesuai kebutuhan bisnis.
+
+---
+
+# Domain Services
+
+Marketing Domain menyediakan Domain Service berikut.
+
+- Create Campaign
+- Publish Campaign
+- Pause Campaign
+- Close Campaign
+- Allocate Budget
+- Publish Content
+- Launch Advertisement
+- Generate Lead
+- Export Qualified Lead
+- Calculate ROI
+- Calculate ROAS
+- Generate Marketing Report
+
+Domain Service tidak menyimpan data secara langsung.
+
+---
+
+# Domain Events
+
+Marketing Domain menghasilkan Business Event berikut.
+
+- CampaignCreated
+- CampaignActivated
+- CampaignPaused
+- CampaignClosed
+- BudgetAllocated
+- AdvertisementPublished
+- ContentPublished
+- QualifiedLeadGenerated
+- PromotionActivated
+- CouponIssued
+- MarketingReportGenerated
+
+Business Event menjadi media komunikasi antar Domain.
+
+---
+
+# External Dependencies
+
+| Platform | Purpose |
+|----------|---------|
+| BP-101 Customer | Customer Reference |
+| BP-102 CRM | Qualified Lead Transfer |
+| SP-203 Identity & Access | Authentication |
+| SP-205 Audit Platform | Audit Trail |
+| SP-206 Search Platform | Search |
+| SP-208 Integration Platform | Integration |
+| SP-210 Reporting Platform | Enterprise Reporting |
+
+Marketing tidak memiliki Customer Master maupun CRM Relationship.
+
+---
+
+# Ownership Matrix
+
+| Object | Owner |
+|---------|-------|
+| Campaign | Marketing Domain |
+| Budget | Marketing Domain |
+| Audience | Marketing Domain |
+| Channel | Marketing Domain |
+| Content | Marketing Domain |
+| Promotion | Marketing Domain |
+| Coupon | Marketing Domain |
+| Attribution | Marketing Domain |
+| Analytics | Marketing Domain |
+
+Seluruh objek hanya memiliki satu Domain Owner.
+
+---
+
+# Anti-Corruption Rules
+
+Untuk menjaga integritas Domain.
+
+- Marketing tidak boleh membuat Customer Master.
+- Marketing tidak boleh mengubah Customer Master.
+- Marketing tidak boleh mengubah CRM Opportunity.
+- Marketing hanya menghasilkan Qualified Lead.
+- Transfer Lead ke CRM menggunakan kontrak API atau Business Event.
+- Marketing tidak boleh mengimplementasikan Business Rules milik Domain lain.
+
+---
+
+# Canonical Model Quality Gate
+
+| Validation | Target |
+|------------|--------|
+| Aggregate Definition | 100% |
+| Entity Definition | 100% |
+| Value Object Definition | 100% |
+| Domain Service Definition | 100% |
+| Domain Event Definition | 100% |
+| Ownership Definition | 100% |
+| Traceability | 100% |
+| Governance Compliance | 100% |
+
+---
+
+# Acceptance Criteria
+
+PART 3 dianggap selesai apabila:
+
+- Domain Boundary terdokumentasi
+- Canonical Business Objects terdokumentasi
+- Aggregate Structure terdokumentasi
+- Value Objects terdokumentasi
+- Domain Services terdokumentasi
+- Domain Events terdokumentasi
+- External Dependencies terdokumentasi
+- Ownership Matrix terdokumentasi
+- Anti-Corruption Rules terdokumentasi
+- Canonical Model memenuhi Enterprise Quality Gate
+
+---
+---
+
+# Marketing Business Process Architecture
+
+Marketing Business Process Architecture mendefinisikan seluruh proses bisnis Marketing Domain mulai dari perencanaan strategi pemasaran hingga penyerahan Qualified Lead kepada CRM.
+
+Business Process menjadi standar implementasi Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, AI Blueprint, dan Integration Platform.
+
+Seluruh proses Marketing wajib mengikuti Architecture ini.
+
+---
+
+# Process Architecture Principles
+
+Seluruh Business Process mengikuti prinsip berikut.
+
+- Business Driven
+- Customer Centric
+- Data Driven
+- Omnichannel
+- API First
+- Event Driven
+- Security by Design
+- Auditability
+- Traceability
+- AI Ready
+
+---
+
+# Marketing Process Landscape
+
+Marketing Domain terdiri dari tiga kelompok proses.
+
+## Core Process
+
+- Marketing Strategy Planning
+- Campaign Planning
+- Campaign Execution
+- Lead Generation
+- Qualified Lead Handover
+
+---
+
+## Supporting Process
+
+- Budget Management
+- Content Management
+- Creative Asset Management
+- Audience Management
+- Promotion Management
+- Coupon Management
+
+---
+
+## Strategic Process
+
+- Marketing Attribution
+- Marketing Analytics
+- Brand Performance
+- Marketing Optimization
+
+---
+
+# Marketing Demand Generation Lifecycle
+
+Seluruh aktivitas Marketing mengikuti siklus berikut.
 
 Marketing Strategy
 
@@ -604,11 +1237,19 @@ Campaign Planning
 
 ↓
 
-Content Creation
+Budget Approval
 
 ↓
 
-Campaign Execution
+Audience Selection
+
+↓
+
+Content Publishing
+
+↓
+
+Campaign Launch
 
 ↓
 
@@ -620,764 +1261,87 @@ Lead Qualification
 
 ↓
 
-CRM
+Qualified Lead
 
 ↓
 
-Customer
+CRM Handover
 
 ↓
 
-Booking
+Campaign Evaluation
 
 ↓
 
-Customer Growth
-
-Marketing menjadi awal seluruh proses bisnis.
+Continuous Optimization
 
 ---
 
-# Marketing Planning Process
+# Marketing Strategy Planning Process
 
-Tujuan:
+Business Flow.
 
-Menyusun strategi pemasaran berdasarkan Business Objective.
+Business Goal Defined
 
-Input:
+↓
 
-- Business Target
-- Revenue Target
-- Historical Data
-- Market Trend
+Marketing Objective
 
-Output:
+↓
 
-Marketing Plan
+Market Analysis
 
-Business Event:
+↓
 
-MarketingPlanApproved
+Competitor Analysis
+
+↓
+
+Target Audience
+
+↓
+
+Budget Planning
+
+↓
+
+Strategy Approval
+
+↓
+
+Marketing Plan Published
+
+↓
+
+Audit Log
 
 ---
 
 # Campaign Planning Process
 
-Marketing menyusun Campaign berdasarkan:
+Business Flow.
 
-- Target Audience
-- Product
-- Budget
-- Duration
-- Channel
-- KPI
-
-Output:
-
-Marketing Campaign
-
-Business Event:
-
-CampaignPlanned
-
----
-
-# Content Planning Process
-
-Marketing menentukan:
-
-- Content Theme
-- Content Calendar
-- Content Type
-- Distribution Channel
-
-Contoh Content:
-
-- Poster
-- Video
-- Carousel
-- Reels
-- Email
-- WhatsApp Broadcast
-- Landing Page
-
-Business Event:
-
-ContentPlanned
-
----
-
-# Campaign Execution Process
-
-Campaign dijalankan sesuai jadwal.
-
-Channel dapat berupa:
-
-- Meta Ads
-- Google Ads
-- Instagram
-- TikTok
-- YouTube
-- Website
-- Email
-- WhatsApp
-- Offline Event
-
-Output:
-
-Campaign Running
-
-Business Event:
-
-CampaignStarted
-
----
-
-# Lead Generation Process
-
-Campaign menghasilkan Lead.
-
-Lead berasal dari:
-
-- Landing Page
-- WhatsApp
-- Website
-- Social Media
-- Referral
-- Event
-- Walk In
-
-Output:
-
-Lead
-
-Business Event:
-
-LeadGenerated
-
----
-
-# Lead Qualification Process
-
-Lead dievaluasi berdasarkan:
-
-- kebutuhan
-- minat
-- budget
-- kesiapan keberangkatan
-- kelengkapan data
-
-Output:
-
-Qualified Lead
+Campaign Request
 
 ↓
 
-CRM
-
-Business Event:
-
-LeadQualified
-
----
-
-# Audience Management Process
-
-Marketing mengelola Audience.
-
-Aktivitas meliputi:
-
-- Audience Creation
-- Audience Update
-- Audience Segmentation
-- Audience Analysis
-
-Audience menjadi dasar seluruh Campaign.
-
----
-
-# Content Distribution Process
-
-Konten dipublikasikan ke berbagai Channel.
-
-Contoh:
-
-- Instagram
-- Facebook
-- TikTok
-- YouTube
-- Website
-- Email
-- WhatsApp
-
-Seluruh distribusi dicatat untuk Analytics.
-
----
-
-# Referral Process
-
-Referral mengikuti proses berikut.
-
-Customer Referral
+Campaign Design
 
 ↓
 
-Referral Registration
+Budget Allocation
 
 ↓
 
-Referral Validation
+Channel Selection
 
 ↓
 
-Qualified Referral
+Audience Selection
 
 ↓
 
-CRM
-
-↓
-
-Reward
-
-Business Event:
-
-ReferralCreated
-
-ReferralRewardGranted
-
----
-
-# Campaign Evaluation Process
-
-Setelah Campaign selesai dilakukan evaluasi.
-
-Parameter:
-
-- Reach
-- Impression
-- Click
-- CTR
-- CPL
-- Conversion
-- Revenue
-- ROI
-
-Output:
-
-Campaign Performance Report
-
-Business Event:
-
-CampaignCompleted
-
-CampaignEvaluated
-
----
-
-# Marketing Workflow Standard
-
-Setiap Workflow wajib memiliki:
-
-- Trigger
-- Actor
-- Input
-- Preconditions
-- Main Flow
-- Alternative Flow
-- Exception Flow
-- Output
-- Business Event
-- KPI
-
-Workflow tidak bergantung pada implementasi teknis.
-
----
-
-# Marketing SLA
-
-| Process | Target |
-|----------|--------|
-| Campaign Approval | ≤ 2 Working Days |
-| Content Approval | ≤ 2 Working Days |
-| Lead Distribution to CRM | ≤ 5 Minutes |
-| Campaign Performance Update | Daily |
-| Campaign Evaluation | ≤ 5 Working Days |
-
----
-
-# Marketing Process Metrics
-
-| Metric | Target |
-|---------|--------|
-| Campaign Completion | 100% |
-| Lead Generation | Monitoring |
-| Qualified Lead Rate | Monitoring |
-| Cost Per Lead | Monitoring |
-| Conversion Rate | Monitoring |
-| Marketing ROI | Monitoring |
-| Audience Growth | Monitoring |
-
----
-
-# Acceptance Criteria
-
-Marketing Business Process dianggap lengkap apabila:
-
-- seluruh proses terdokumentasi
-- seluruh Workflow memiliki Owner
-- seluruh Workflow memiliki KPI
-- seluruh Workflow memiliki SLA
-- seluruh Campaign menghasilkan Business Event
-- seluruh aktivitas dapat ditelusuri melalui Marketing Timeline
-
----
-
----
-
-# Marketing Business Rules
-
-Marketing Business Rules mendefinisikan aturan resmi dalam pengelolaan aktivitas Marketing.
-
-Business Rules menjadi acuan seluruh implementasi Marketing pada Database, API, Flutter, Dashboard, Artificial Intelligence, dan seluruh proses bisnis.
-
-Business Rules tidak boleh ditentukan oleh Developer.
-
-Business Rules ditentukan oleh Business Owner.
-
----
-
-# Marketing Rule Categories
-
-Business Rules dikelompokkan menjadi beberapa kategori.
-
-- Strategy Rules
-- Campaign Rules
-- Audience Rules
-- Lead Rules
-- Content Rules
-- Promotion Rules
-- Referral Rules
-- Analytics Rules
-- Data Quality Rules
-- Integration Rules
-
----
-
-# Strategy Rules
-
-## MKT-001
-
-Seluruh Campaign wajib berasal dari Marketing Plan yang telah disetujui.
-
----
-
-## MKT-002
-
-Marketing Strategy harus memiliki Business Objective yang jelas.
-
----
-
-## MKT-003
-
-Marketing Budget harus mendapatkan persetujuan sesuai otorisasi perusahaan.
-
----
-
-# Campaign Rules
-
-## MKT-010
-
-Setiap Campaign wajib memiliki:
-
-- Campaign Name
-- Campaign Owner
-- Target Audience
-- Start Date
-- End Date
-- Budget
-- KPI
-
----
-
-## MKT-011
-
-Campaign hanya dapat dijalankan setelah mendapatkan persetujuan.
-
----
-
-## MKT-012
-
-Campaign wajib memiliki Status yang valid.
-
-Contoh:
-
-- Draft
-- Planned
-- Active
-- Paused
-- Completed
-- Cancelled
-
----
-
-# Audience Rules
-
-## MKT-020
-
-Seluruh Audience harus berasal dari sumber yang sah.
-
----
-
-## MKT-021
-
-Audience harus dapat dikelompokkan berdasarkan Segment.
-
----
-
-## MKT-022
-
-Audience tidak boleh digunakan di luar tujuan Campaign yang telah disetujui.
-
----
-
-# Lead Rules
-
-## MKT-030
-
-Setiap Lead wajib memiliki Lead Source.
-
----
-
-## MKT-031
-
-Lead harus dikirim ke CRM setelah memenuhi kriteria Qualified Lead.
-
----
-
-## MKT-032
-
-Duplicate Lead harus dideteksi oleh sistem.
-
----
-
-# Content Rules
-
-## MKT-040
-
-Seluruh Content wajib memiliki Approval sebelum dipublikasikan.
-
----
-
-## MKT-041
-
-Content wajib memiliki Channel Distribution.
-
----
-
-## MKT-042
-
-Content harus mengikuti Brand Guideline perusahaan.
-
----
-
-# Promotion Rules
-
-## MKT-050
-
-Promo wajib memiliki periode berlaku.
-
----
-
-## MKT-051
-
-Promo tidak boleh bertentangan dengan kebijakan perusahaan.
-
----
-
-## MKT-052
-
-Promo harus dapat ditelusuri ke Campaign yang menghasilkannya.
-
----
-
-# Referral Rules
-
-## MKT-060
-
-Referral wajib berasal dari Customer yang valid.
-
----
-
-## MKT-061
-
-Reward Referral hanya diberikan setelah memenuhi Business Rules.
-
----
-
-## MKT-062
-
-Setiap Referral harus dapat diaudit.
-
----
-
-# Analytics Rules
-
-## MKT-070
-
-Seluruh Campaign wajib menghasilkan Analytics.
-
----
-
-## MKT-071
-
-Analytics harus menggunakan Business Data yang valid.
-
----
-
-## MKT-072
-
-Seluruh KPI harus dapat dihitung secara otomatis.
-
----
-
-# Data Quality Rules
-
-## MKT-080
-
-Marketing tidak menjadi Master Data Customer.
-
-Customer Domain tetap menjadi Single Source of Truth.
-
----
-
-## MKT-081
-
-Marketing hanya menyimpan informasi yang berkaitan dengan aktivitas pemasaran.
-
----
-
-# Integration Rules
-
-## MKT-090
-
-Marketing hanya berintegrasi melalui API atau Business Event.
-
----
-
-## MKT-091
-
-Marketing tidak boleh mengakses Database Domain lain secara langsung.
-
----
-
-# Marketing Business Events
-
-Marketing menghasilkan Business Event berikut.
-
----
-
-## Strategy Events
-
-MarketingPlanCreated
-
-MarketingPlanApproved
-
-MarketingPlanUpdated
-
----
-
-## Campaign Events
-
-CampaignCreated
-
-CampaignApproved
-
-CampaignStarted
-
-CampaignPaused
-
-CampaignResumed
-
-CampaignCompleted
-
-CampaignCancelled
-
-CampaignEvaluated
-
----
-
-## Lead Events
-
-LeadGenerated
-
-LeadQualified
-
-LeadRejected
-
-LeadAssigned
-
-LeadTransferredToCRM
-
----
-
-## Content Events
-
-ContentCreated
-
-ContentApproved
-
-ContentPublished
-
-ContentArchived
-
----
-
-## Audience Events
-
-AudienceCreated
-
-AudienceUpdated
-
-AudienceSegmented
-
----
-
-## Promotion Events
-
-PromotionCreated
-
-PromotionActivated
-
-PromotionExpired
-
----
-
-## Referral Events
-
-ReferralCreated
-
-ReferralValidated
-
-ReferralRewardGranted
-
----
-
-## Analytics Events
-
-MarketingReportGenerated
-
-CampaignPerformanceCalculated
-
-ROIUpdated
-
----
-
-# Event Naming Standard
-
-Seluruh Business Event mengikuti STD-003 Naming Standard.
-
-Format:
-
-**Noun + Past Tense**
-
-Contoh:
-
-CampaignStarted
-
-LeadGenerated
-
-ReferralValidated
-
-ContentPublished
-
-Tidak diperbolehkan menggunakan nama teknis.
-
-Contoh yang salah:
-
-InsertCampaign
-
-UpdateMarketingTable
-
-SaveLeadDatabase
-
----
-
-# Event Publishing
-
-Business Event Marketing dapat digunakan oleh Domain lain.
-
-Contoh:
-
-LeadQualified
-
-↓
-
-CRM
-
-↓
-
-Dashboard
-
-↓
-
-Artificial Intelligence
-
-↓
-
-Notification
-
----
-
-CampaignCompleted
-
-↓
-
-Dashboard
-
-↓
-
-Finance
-
-↓
-
-Artificial Intelligence
-
----
-
-ReferralRewardGranted
-
-↓
-
-Customer
-
-↓
-
-Finance
-
-↓
-
-Dashboard
-
----
-
-# Marketing Rule Governance
-
-Perubahan Business Rule mengikuti proses berikut.
-
-Business Request
-
-↓
-
-Business Review
-
-↓
-
-Impact Analysis
-
-↓
-
-Blueprint Revision
+Content Preparation
 
 ↓
 
@@ -1385,140 +1349,1295 @@ Approval
 
 ↓
 
-Implementation
+Campaign Scheduled
+
+↓
+
+Audit Log
 
 ---
 
-# Marketing Rule Metrics
+# Campaign Execution Process
 
-| Metric | Target |
-|---------|--------|
-| Rule Documentation | 100% |
-| Rule Compliance | 100% |
-| Event Coverage | 100% |
-| Campaign Compliance | 100% |
-| Duplicate Rule | 0 |
+Business Flow.
+
+Campaign Activated
+
+↓
+
+Advertisement Published
+
+↓
+
+Content Distribution
+
+↓
+
+Lead Collection
+
+↓
+
+Performance Monitoring
+
+↓
+
+Campaign Optimization
+
+↓
+
+Campaign Closed
+
+↓
+
+CampaignClosed Event
+
+---
+
+# Lead Generation Process
+
+Business Flow.
+
+Visitor Interaction
+
+↓
+
+Landing Page
+
+↓
+
+Lead Capture
+
+↓
+
+Lead Validation
+
+↓
+
+Duplicate Detection
+
+↓
+
+Lead Scoring
+
+↓
+
+Qualified Lead
+
+↓
+
+QualifiedLeadGenerated Event
+
+↓
+
+CRM Handover
+
+Marketing tidak mengelola Opportunity.
+
+---
+
+# Budget Management Process
+
+Business Flow.
+
+Budget Request
+
+↓
+
+Budget Review
+
+↓
+
+Budget Approval
+
+↓
+
+Budget Allocation
+
+↓
+
+Campaign Spending
+
+↓
+
+Budget Monitoring
+
+↓
+
+Budget Report
+
+---
+
+# Promotion Process
+
+Business Flow.
+
+Promotion Created
+
+↓
+
+Validation
+
+↓
+
+Approval
+
+↓
+
+Activation
+
+↓
+
+Campaign Association
+
+↓
+
+Expiration
+
+↓
+
+Archive
+
+---
+
+# Coupon Process
+
+Business Flow.
+
+Coupon Created
+
+↓
+
+Validation
+
+↓
+
+Distribution
+
+↓
+
+Usage Monitoring
+
+↓
+
+Expiration
+
+↓
+
+Archive
+
+---
+
+# Marketing Analytics Process
+
+Business Flow.
+
+Campaign Closed
+
+↓
+
+Data Collection
+
+↓
+
+Attribution Analysis
+
+↓
+
+ROI Calculation
+
+↓
+
+ROAS Calculation
+
+↓
+
+Performance Report
+
+↓
+
+Recommendation
+
+↓
+
+Executive Dashboard
+
+---
+
+# Cross Domain Process Matrix
+
+| Marketing Process | Related Domain |
+|-------------------|----------------|
+| Lead Handover | CRM |
+| Customer Reference | Customer |
+| Campaign Cost | Finance |
+| Executive KPI | Dashboard |
+| AI Optimization | AI |
+
+Seluruh interaksi dilakukan melalui API atau Business Event.
+
+---
+
+# Campaign State Machine
+
+Draft
+
+↓
+
+Planned
+
+↓
+
+Approved
+
+↓
+
+Scheduled
+
+↓
+
+Active
+
+↓
+
+Paused
+
+↓
+
+Completed
+
+↓
+
+Archived
+
+Perubahan status harus mengikuti Business Rules.
+
+---
+
+# Lead Generation State Machine
+
+Visitor
+
+↓
+
+Lead
+
+↓
+
+Validated
+
+↓
+
+Qualified Lead
+
+↓
+
+Transferred to CRM
+
+↓
+
+Archived
+
+Setelah status **Transferred to CRM**, kepemilikan Lead berpindah ke BP-102 CRM.
+
+---
+
+# Process Trigger Matrix
+
+| Trigger | Process |
+|----------|----------|
+| Create Campaign | Campaign Planning |
+| Approve Budget | Budget Management |
+| Publish Campaign | Campaign Execution |
+| Generate Lead | Lead Generation |
+| Create Promotion | Promotion |
+| Create Coupon | Coupon |
+| Close Campaign | Marketing Analytics |
+
+Seluruh Trigger menghasilkan Business Event.
+
+---
+
+# Business Event Flow
+
+CampaignCreated
+
+↓
+
+Dashboard Update
+
+↓
+
+Marketing Calendar
+
+↓
+
+AI Recommendation
+
+---
+
+CampaignActivated
+
+↓
+
+Advertisement Published
+
+↓
+
+Performance Monitoring
+
+↓
+
+Executive Dashboard
+
+---
+
+QualifiedLeadGenerated
+
+↓
+
+CRM Lead Import
+
+↓
+
+Marketing Dashboard
+
+↓
+
+AI Learning
+
+---
+
+CampaignClosed
+
+↓
+
+ROI Calculation
+
+↓
+
+ROAS Calculation
+
+↓
+
+Executive Dashboard
+
+↓
+
+Forecast Improvement
+
+---
+
+PromotionActivated
+
+↓
+
+Campaign Update
+
+↓
+
+Dashboard Refresh
+
+---
+
+# Marketing SLA Framework
+
+| Process | SLA |
+|----------|-----|
+| Campaign Approval | ≤2 Working Days |
+| Budget Approval | ≤2 Working Days |
+| Campaign Launch | Sesuai Jadwal |
+| Lead Transfer to CRM | ≤5 Minutes |
+| Performance Refresh | ≤15 Minutes |
+| Executive Dashboard Refresh | ≤15 Minutes |
+
+---
+
+# Process Performance KPI
+
+Campaign Success Rate
+
+Target
+
+≥80%
+
+---
+
+Qualified Lead Rate
+
+Target
+
+≥30%
+
+---
+
+Cost per Lead
+
+Target
+
+Sesuai Target Campaign
+
+---
+
+ROAS
+
+Target
+
+≥400%
+
+---
+
+ROI
+
+Target
+
+Positif
+
+---
+
+Lead Transfer Success
+
+Target
+
+100%
+
+---
+
+# Process Automation
+
+Automation dilakukan berdasarkan Business Event.
+
+CampaignActivated
+
+↓
+
+Activate Advertisement
+
+↓
+
+Publish Content
+
+↓
+
+Refresh Dashboard
+
+↓
+
+Notify Marketing Team
+
+↓
+
+AI Campaign Monitoring
+
+---
+
+QualifiedLeadGenerated
+
+↓
+
+Validate Lead
+
+↓
+
+Transfer to CRM
+
+↓
+
+Update Dashboard
+
+↓
+
+Notify Sales
+
+↓
+
+AI Lead Analysis
+
+Automation tidak boleh mengubah Business Rules.
+
+---
+
+# Exception Handling
+
+Marketing Domain wajib menangani kondisi berikut.
+
+- Duplicate Lead
+- Invalid Campaign
+- Budget Overrun
+- Invalid Audience
+- Campaign Failure
+- Invalid Coupon
+- Unauthorized Campaign Approval
+
+Seluruh Exception wajib:
+
+- memiliki Error Code
+- tercatat pada Audit Trail
+- dapat ditelusuri
+- memiliki prosedur penyelesaian
+
+---
+
+# Process Governance
+
+Seluruh perubahan proses Marketing mengikuti.
+
+Business Request
+
+↓
+
+Business Analysis
+
+↓
+
+Impact Analysis
+
+↓
+
+Architecture Review
+
+↓
+
+Domain Approval
+
+↓
+
+Blueprint Revision
+
+↓
+
+Implementation
+
+↓
+
+Testing
+
+↓
+
+Deployment
+
+↓
+
+Monitoring
+
+Perubahan langsung pada implementasi tidak diperbolehkan.
+
+---
+
+# Process Quality Gate
+
+| Validation | Target |
+|------------|--------|
+| Process Coverage | 100% |
+| Workflow Coverage | 100% |
+| SLA Coverage | 100% |
+| KPI Coverage | 100% |
+| Automation Coverage | 100% |
+| Business Event Coverage | 100% |
+| Audit Coverage | 100% |
+| Traceability | 100% |
+| Governance | 100% |
 
 ---
 
 # Acceptance Criteria
 
-Marketing Business Rules dianggap lengkap apabila:
+PART 4 dianggap selesai apabila:
 
-- seluruh Rule memiliki ID
-- seluruh Rule memiliki Business Owner
-- seluruh Event terdokumentasi
-- seluruh Event mengikuti Naming Standard
-- seluruh perubahan Rule mengikuti Governance Process
+- seluruh Business Process terdokumentasi
+- seluruh Demand Generation Lifecycle terdokumentasi
+- seluruh Workflow terdokumentasi
+- seluruh State Machine terdokumentasi
+- seluruh Cross Domain Process terdokumentasi
+- seluruh Business Event Flow terdokumentasi
+- seluruh SLA terdokumentasi
+- seluruh KPI terdokumentasi
+- seluruh Automation terdokumentasi
+- seluruh Exception Handling terdokumentasi
+- seluruh Process memenuhi Enterprise Quality Gate
+
+---
+---
+
+# Marketing Business Rules, Events & Policies
+
+Marketing Business Rules, Events & Policies mendefinisikan seluruh aturan bisnis, kebijakan operasional, validasi, Business Event, dan tata kelola Marketing Domain.
+
+Bagian ini menjadi referensi resmi bagi Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, AI Blueprint, Testing Blueprint, serta seluruh implementasi Marketing Domain.
+
+Seluruh Business Rules wajib diterapkan secara konsisten pada seluruh lapisan sistem.
 
 ---
 
----
+# Business Rules Principles
 
-# Marketing Intelligence
+Marketing Business Rules mengikuti prinsip berikut.
 
-Marketing Intelligence merupakan kemampuan VENTRA dalam menganalisis efektivitas aktivitas pemasaran menggunakan Business Analytics dan Artificial Intelligence.
+- Business First
+- Revenue Driven
+- Customer Centric
+- Data Driven
+- Single Source of Truth
+- Explicit Rule
+- Traceable
+- Auditable
+- AI Ready
+- Governance Driven
 
-Tujuan utama Marketing Intelligence adalah membantu perusahaan mengambil keputusan pemasaran yang lebih cepat, lebih akurat, dan berbasis data.
-
-Artificial Intelligence memberikan rekomendasi.
-
-Keputusan akhir tetap berada pada manusia.
-
----
-
-# Marketing Intelligence Objectives
-
-Marketing Intelligence bertujuan untuk:
-
-- meningkatkan kualitas Lead
-- meningkatkan Conversion Rate
-- meningkatkan Return on Marketing Investment (ROMI)
-- meningkatkan efektivitas Campaign
-- meningkatkan Customer Acquisition
-- mengurangi Cost Per Lead
-- membantu Executive Decision Making
+Business Rules tidak boleh diimplementasikan berbeda pada layer aplikasi yang berbeda.
 
 ---
 
-# Marketing Analytics
+# Campaign Rules
 
-Marketing Analytics digunakan untuk mengevaluasi efektivitas seluruh aktivitas pemasaran.
+MKT-BR-103-001
 
-Minimal mencakup:
+Setiap Campaign wajib memiliki Campaign Number yang unik.
 
-- Campaign Analytics
-- Lead Analytics
-- Audience Analytics
-- Channel Analytics
-- Promotion Analytics
-- Referral Analytics
-- Content Analytics
-- Revenue Analytics
+Campaign Number dihasilkan otomatis oleh sistem.
+
+---
+
+MKT-BR-103-002
+
+Campaign wajib memiliki:
+
+- Campaign Name
+- Campaign Objective
+- Start Date
+- End Date
+- Budget
+- Owner
+
+---
+
+MKT-BR-103-003
+
+Campaign tidak boleh diaktifkan sebelum memperoleh Approval.
+
+---
+
+MKT-BR-103-004
+
+Campaign yang telah Completed tidak boleh diubah kecuali melalui proses Revision yang terdokumentasi.
+
+---
+
+# Budget Rules
+
+MKT-BR-103-010
+
+Setiap Campaign wajib memiliki Budget.
+
+---
+
+MKT-BR-103-011
+
+Budget tidak boleh melebihi alokasi yang telah disetujui.
+
+---
+
+MKT-BR-103-012
+
+Seluruh perubahan Budget wajib menghasilkan Audit Trail.
+
+---
+
+# Audience Rules
+
+MKT-BR-103-020
+
+Audience wajib memiliki Segment yang jelas.
+
+---
+
+MKT-BR-103-021
+
+Audience tidak boleh menyimpan Customer Master.
+
+Audience hanya menggunakan Customer Reference apabila diperlukan.
+
+---
+
+MKT-BR-103-022
+
+Audience harus memenuhi ketentuan perlindungan data perusahaan.
+
+---
+
+# Lead Generation Rules
+
+MKT-BR-103-030
+
+Lead wajib melalui proses Validation sebelum diteruskan ke CRM.
+
+---
+
+MKT-BR-103-031
+
+Duplicate Lead tidak boleh diteruskan ke CRM.
+
+---
+
+MKT-BR-103-032
+
+Qualified Lead harus memenuhi kriteria Business Qualification.
+
+---
+
+MKT-BR-103-033
+
+Setelah Lead berhasil ditransfer ke CRM, Relationship Management menjadi tanggung jawab BP-102 CRM.
+
+---
+
+# Promotion Rules
+
+MKT-BR-103-040
+
+Promotion wajib memiliki:
+
+- Promotion Number
+- Promotion Type
+- Valid Period
+
+---
+
+MKT-BR-103-041
+
+Promotion tidak boleh aktif di luar periode berlaku.
+
+---
+
+MKT-BR-103-042
+
+Promotion yang berakhir harus otomatis berstatus Expired.
+
+---
+
+# Coupon Rules
+
+MKT-BR-103-050
+
+Coupon Code wajib unik.
+
+---
+
+MKT-BR-103-051
+
+Coupon memiliki batas penggunaan sesuai kebijakan perusahaan.
+
+---
+
+MKT-BR-103-052
+
+Coupon kedaluwarsa tidak dapat digunakan.
+
+---
+
+# Content Rules
+
+MKT-BR-103-060
+
+Seluruh Content wajib memiliki Version.
+
+---
+
+MKT-BR-103-061
+
+Content wajib melalui Approval sebelum dipublikasikan.
+
+---
+
+MKT-BR-103-062
+
+Riwayat perubahan Content wajib disimpan.
+
+---
+
+# Attribution Rules
+
+MKT-BR-103-070
+
+Setiap Qualified Lead wajib memiliki Attribution Source.
+
+---
+
+MKT-BR-103-071
+
+Model Attribution harus terdokumentasi.
+
+---
+
+MKT-BR-103-072
+
+Perubahan Model Attribution harus melalui Architecture Review.
+
+---
+
+# Marketing Analytics Rules
+
+MKT-BR-103-080
+
+ROI dan ROAS dihitung menggunakan Formula resmi perusahaan.
+
+---
+
+MKT-BR-103-081
+
+Seluruh KPI Marketing berasal dari sumber data yang tervalidasi.
+
+---
+
+MKT-BR-103-082
+
+Laporan Marketing tidak boleh menggunakan data yang belum tervalidasi.
+
+---
+
+# Campaign State Transition Rules
+
+Status Campaign mengikuti urutan berikut.
+
+Draft
+
+↓
+
+Planned
+
+↓
+
+Approved
+
+↓
+
+Scheduled
+
+↓
+
+Active
+
+↓
+
+Paused
+
+↓
+
+Completed
+
+↓
+
+Archived
+
+Perubahan status di luar alur tersebut tidak diperbolehkan kecuali melalui proses khusus yang terdokumentasi.
+
+---
+
+# Business Policies
+
+Marketing Domain mengikuti kebijakan berikut.
+
+## Campaign Policy
+
+Seluruh Campaign harus memiliki tujuan bisnis yang terukur.
+
+---
+
+## Budget Policy
+
+Seluruh penggunaan anggaran harus dapat dipertanggungjawabkan.
+
+---
+
+## Lead Quality Policy
+
+Marketing hanya menyerahkan Qualified Lead kepada CRM.
+
+---
+
+## Data Privacy Policy
+
+Marketing hanya menggunakan data sesuai kebijakan perlindungan data perusahaan.
+
+---
+
+## Audit Policy
+
+Seluruh perubahan penting wajib menghasilkan Audit Trail.
+
+---
+
+# Business Events
+
+Marketing Domain menghasilkan Business Event berikut.
+
+| Event | Trigger |
+|--------|----------|
+| CampaignCreated | Campaign dibuat |
+| CampaignApproved | Campaign disetujui |
+| CampaignActivated | Campaign dijalankan |
+| CampaignPaused | Campaign dihentikan sementara |
+| CampaignCompleted | Campaign selesai |
+| BudgetAllocated | Budget dialokasikan |
+| ContentPublished | Content dipublikasikan |
+| PromotionActivated | Promotion aktif |
+| CouponIssued | Coupon diterbitkan |
+| QualifiedLeadGenerated | Qualified Lead dihasilkan |
+| LeadTransferredToCRM | Lead berhasil dikirim ke CRM |
+| MarketingReportGenerated | Laporan Marketing dibuat |
+
+---
+
+# Event Consumers
+
+| Event | Consumer |
+|--------|----------|
+| CampaignCreated | Dashboard, AI |
+| CampaignActivated | Dashboard, AI |
+| QualifiedLeadGenerated | CRM, Dashboard |
+| LeadTransferredToCRM | CRM |
+| CampaignCompleted | Dashboard, Finance |
+| MarketingReportGenerated | Dashboard, Executive Reporting |
+
+---
+
+# Security Policies
+
+Marketing Domain menerapkan.
+
+- Role Based Access Control
+- Least Privilege
+- Zero Trust
+- Secure API
+- Encryption
+- Audit Trail
+
+---
+
+# Compliance
+
+Marketing Domain wajib memenuhi.
+
+- EA-000 Architecture Freeze Rules
+- EA-001 Enterprise Architecture Blueprint
+- BP-001 Business Blueprint
+- BP-101 Customer Blueprint
+- BP-102 CRM Blueprint
+- BP-103 Marketing Blueprint
+- VENTRA Development Constitution v1.0 (LOCK)
+
+---
+
+# AI Guardrails
+
+Artificial Intelligence diperbolehkan.
+
+- memberikan rekomendasi Campaign
+- melakukan Audience Segmentation
+- menghitung Lead Score awal
+- membuat Content Recommendation
+- menghitung prediksi ROI
+- mendeteksi anomali Campaign
+- memberikan Budget Optimization
+
+Artificial Intelligence tidak diperbolehkan.
+
+- menyetujui Campaign
+- mengubah Budget
+- mengubah Promotion
+- mentransfer Lead ke CRM
+- mengubah Business Rules
+- menghapus Campaign
+
+tanpa otorisasi pengguna.
+
+---
+
+# Exception Policies
+
+Marketing Domain wajib menangani kondisi berikut.
+
+- Duplicate Lead
+- Invalid Campaign
+- Invalid Budget
+- Budget Overrun
+- Invalid Audience
+- Invalid Promotion
+- Unauthorized Approval
+- Invalid State Transition
+
+Seluruh Exception wajib:
+
+- memiliki Error Code
+- tercatat pada Audit Trail
+- dapat ditelusuri
+- memiliki prosedur penyelesaian
+
+---
+
+# Rule Traceability Matrix
+
+| Rule Group | Related Blueprint |
+|------------|-------------------|
+| Campaign | BP-102 CRM |
+| Lead Generation | BP-102 CRM |
+| Budget | BP-110 Finance |
+| Promotion | BP-104 Booking |
+| Analytics | BP-112 Dashboard |
+| AI Recommendation | BP-114 AI |
+
+---
+
+# Business Rules Quality Gate
+
+| Validation | Target |
+|------------|--------|
+| Rule Coverage | 100% |
+| Policy Coverage | 100% |
+| Event Coverage | 100% |
+| Security Coverage | 100% |
+| Compliance Coverage | 100% |
+| AI Guardrails | 100% |
+| Traceability | 100% |
+| Governance | 100% |
+
+---
+
+# Acceptance Criteria
+
+PART 5 dianggap selesai apabila:
+
+- seluruh Business Rules terdokumentasi
+- seluruh Business Policies terdokumentasi
+- seluruh Business Events terdokumentasi
+- seluruh Event Consumer terdokumentasi
+- seluruh Security Policy terdokumentasi
+- seluruh Compliance terdokumentasi
+- seluruh AI Guardrails terdokumentasi
+- seluruh Exception Policy terdokumentasi
+- seluruh Rule Traceability terdokumentasi
+- seluruh Business Rules memenuhi Enterprise Quality Gate
+
+---
+---
+
+# Marketing KPI, Dashboard & AI Architecture
+
+Marketing KPI, Dashboard & AI Architecture mendefinisikan bagaimana Marketing Domain diukur, dimonitor, dianalisis, divisualisasikan, dan dimanfaatkan oleh Artificial Intelligence untuk meningkatkan efektivitas pemasaran dan pertumbuhan bisnis.
+
+Bagian ini menjadi dasar resmi Dashboard Blueprint, AI Blueprint, Executive Dashboard, Reporting Blueprint, dan seluruh analisis Marketing pada platform VENTRA.
+
+---
+
+# Enterprise Performance Principles
+
+Marketing Performance mengikuti prinsip berikut.
+
+- Business Driven
+- Revenue Driven
+- Customer Centric
+- KPI Driven
+- Data Driven
+- Real Time Visibility
+- Explainable AI
+- Predictive Analytics
+- Continuous Improvement
+- Single Source of Truth
+
+---
+
+# Marketing KPI Framework
+
+Seluruh KPI wajib memiliki.
+
+- KPI Code
+- KPI Name
+- KPI Owner
+- Definition
+- Formula
+- Target
+- Frequency
+- Data Source
+- Responsible Domain
+
+---
+
+# Operational KPI
+
+Digunakan oleh Marketing Executive.
+
+| KPI | Target |
+|------|--------|
+| Campaign Activation Rate | ≥99% |
+| Campaign Delivery Success | ≥99% |
+| Lead Generation Rate | Sesuai Target |
+| Qualified Lead Rate | ≥30% |
+| Content Publishing Success | ≥99% |
+| Budget Utilization | 95–100% |
+
+---
+
+# Management KPI
+
+Digunakan oleh Marketing Manager.
+
+| KPI | Target |
+|------|--------|
+| Campaign Success Rate | ≥80% |
+| Cost Per Lead (CPL) | Sesuai Target |
+| Cost Per Click (CPC) | Sesuai Target |
+| Click Through Rate (CTR) | Meningkat |
+| Conversion Rate | ≥10% |
+| Return on Ad Spend (ROAS) | ≥400% |
+
+---
+
+# Executive KPI
+
+Digunakan oleh CEO dan Director.
+
+| KPI | Target |
+|------|--------|
+| Marketing ROI | Positif |
+| Customer Acquisition Cost (CAC) | Menurun |
+| LTV/CAC Ratio | ≥3 |
+| Brand Awareness Growth | Meningkat |
+| Marketing Contribution to Revenue | Meningkat |
+| Qualified Lead Growth | Meningkat |
+
+---
+
+# Marketing Dashboard Architecture
+
+Dashboard dibagi menjadi tiga level.
+
+## Operational Dashboard
+
+Menampilkan.
+
+- Campaign Hari Ini
+- Active Campaign
+- Pending Approval
+- Lead Hari Ini
+- Qualified Lead
+- Budget Utilization
+
+---
+
+## Management Dashboard
+
+Menampilkan.
+
+- Campaign Performance
+- Lead Funnel
+- Conversion Funnel
+- ROAS
+- ROI
+- CPL
+- CPC
+- CTR
+
+---
+
+## Executive Dashboard
+
+Menampilkan.
+
+- Revenue Contribution
+- Customer Acquisition Trend
 - Marketing ROI
-
-Seluruh Analytics menjadi dasar pengambilan keputusan.
+- LTV/CAC Ratio
+- Brand Performance
+- Executive Marketing Insight
 
 ---
 
-# Marketing KPI
+# Marketing 360 View
 
-Marketing Domain memiliki KPI resmi.
+Setiap Campaign memiliki tampilan terpadu.
 
-| KPI | Description |
-|------|-------------|
-| Total Campaign | Jumlah Campaign |
-| Active Campaign | Campaign yang sedang berjalan |
-| Total Lead | Jumlah Lead |
-| Qualified Lead | Lead yang memenuhi syarat |
-| Conversion Rate | Persentase Lead menjadi Customer |
-| Cost Per Lead (CPL) | Biaya memperoleh satu Lead |
-| Customer Acquisition Cost (CAC) | Biaya memperoleh satu Customer |
-| Return on Marketing Investment (ROMI) | Efektivitas investasi Marketing |
-| Campaign ROI | ROI per Campaign |
-| Audience Growth | Pertumbuhan Audience |
-| Referral Conversion | Tingkat keberhasilan Referral |
+Meliputi.
+
+- Campaign Information
+- Budget
+- Audience
+- Channel
+- Creative
+- Promotion
+- Coupon
+- Lead Performance
+- Attribution
+- ROI
+- ROAS
+- AI Insight
+
+Marketing 360 View menjadi tampilan utama Marketing Domain.
+
+---
+
+# Marketing Funnel Analytics
+
+Marketing Funnel dianalisis berdasarkan.
+
+Visitor
+
+↓
+
+Landing Page Visit
+
+↓
+
+Lead
+
+↓
+
+Qualified Lead
+
+↓
+
+Transferred to CRM
+
+↓
+
+Opportunity
+
+↓
+
+Booking
+
+↓
+
+Payment
+
+↓
+
+Repeat Customer
+
+Marketing bertanggung jawab hingga Qualified Lead.
+
+Tahapan berikutnya berasal dari CRM dan Domain lain melalui Business Event.
 
 ---
 
 # Campaign Performance Analytics
 
-Setiap Campaign dievaluasi berdasarkan:
+Setiap Campaign dianalisis berdasarkan.
 
 - Reach
 - Impression
 - Click
 - CTR
 - CPC
+- CPM
+- Conversion
 - CPL
-- Qualified Lead
-- Customer Acquisition
-- Revenue
 - ROI
-
-Campaign harus dapat dibandingkan dengan Campaign lainnya.
-
----
-
-# Lead Analytics
-
-Lead dianalisis berdasarkan:
-
-- Lead Source
-- Lead Quality
-- Conversion Rate
-- Follow Up Status
-- Geographic Distribution
-- Demographic Distribution
-- Campaign Origin
-
-Analytics digunakan untuk meningkatkan kualitas Lead.
+- ROAS
 
 ---
 
 # Audience Analytics
 
-Audience dianalisis berdasarkan:
+Audience dianalisis berdasarkan.
 
 ## Demographic
 
@@ -1539,219 +2658,330 @@ Audience dianalisis berdasarkan:
 ## Behavioral
 
 - Campaign Response
-- Booking Interest
-- Website Activity
 - Engagement
-
-Audience Analytics menjadi dasar Segmentasi.
-
----
-
-# Channel Performance
-
-Seluruh Marketing Channel dievaluasi.
-
-Contoh:
-
-- Website
-- Instagram
-- Facebook
-- TikTok
-- Google Ads
-- WhatsApp
-- Email
-- Exhibition
-- Seminar
-
-Setiap Channel memiliki KPI sendiri.
+- Lead Quality
 
 ---
 
-# Content Performance
+## Business Value
 
-Seluruh Content diukur berdasarkan:
-
-- Reach
-- Engagement
-- Click
-- Share
-- Save
-- Comment
-- Conversion
-
-Content Analytics membantu menentukan strategi Content berikutnya.
+- High Value Audience
+- Returning Audience
+- New Audience
+- High Conversion Audience
 
 ---
 
-# Referral Analytics
+# Attribution Analytics
 
-Referral dievaluasi berdasarkan:
+Marketing mendukung model.
 
-- jumlah Referral
-- Referral Success Rate
-- Revenue Contribution
-- Reward Distribution
+- First Click
+- Last Click
+- Linear
+- Position Based
+- Time Decay
 
-Referral menjadi salah satu indikator Customer Loyalty.
-
----
-
-# Executive Marketing Dashboard
-
-Dashboard Executive minimal menampilkan:
-
-## Campaign Summary
-
-- Total Campaign
-- Active Campaign
-- Completed Campaign
+Attribution digunakan untuk evaluasi Campaign.
 
 ---
 
-## Lead Summary
+# Artificial Intelligence Capability
 
-- Total Lead
-- Qualified Lead
-- Conversion Rate
-
----
-
-## Revenue Summary
-
-- Revenue from Marketing
-- Campaign ROI
-- ROMI
-
----
-
-## Audience Summary
-
-- Total Audience
-- Audience Growth
-- Top Segment
-
----
-
-## Channel Summary
-
-- Best Performing Channel
-- Highest Conversion
-- Highest Revenue
-
----
-
-## AI Executive Insight
-
-- Best Campaign Recommendation
-- Budget Optimization
-- Best Audience Segment
-- Best Marketing Channel
-- Growth Opportunity
-- Risk Alert
-
-Dashboard harus mendukung Executive Decision Making.
-
----
-
-# Predictive Marketing Analytics
-
-Artificial Intelligence dapat memberikan prediksi mengenai:
-
-- kemungkinan Campaign berhasil
-- kemungkinan Lead menjadi Customer
-- kemungkinan Audience merespons Campaign
-- estimasi Revenue Campaign
-- estimasi ROI
-- rekomendasi Budget Allocation
-
-Prediksi digunakan sebagai bahan pertimbangan bisnis.
-
----
-
-# AI Marketing Assistant
-
-AI membantu Marketing dalam:
+AI dapat membantu.
 
 - Campaign Recommendation
 - Audience Recommendation
-- Budget Allocation
-- Lead Prioritization
-- Content Recommendation
-- Promotion Recommendation
+- Budget Optimization
+- Creative Recommendation
 - Channel Recommendation
-- Campaign Performance Analysis
-- Marketing Summary
-
-AI tidak mengambil keputusan bisnis.
-
-AI memberikan rekomendasi berdasarkan Business Data.
-
----
-
-# Marketing Intelligence Governance
-
-Marketing Intelligence mengikuti:
-
-- BP-001 Business Blueprint
-- BP-101 Customer Blueprint
-- BP-102 CRM Blueprint
-- Product Philosophy
-- Dashboard Standard
-- AI Standard
-- Governance Standard
-
-Seluruh penggunaan AI tetap mematuhi AI Ethics.
+- Lead Quality Prediction
+- ROI Prediction
+- ROAS Prediction
+- Campaign Summary
+- Marketing Insight
 
 ---
 
-# Marketing Intelligence Metrics
+# AI Recommendation Engine
 
-| Metric | Target |
-|---------|--------|
-| Dashboard Coverage | 100% |
+AI dapat memberikan rekomendasi.
+
+- Campaign terbaik
+- Channel terbaik
+- Audience terbaik
+- Waktu publikasi terbaik
+- Budget Allocation
+- Creative Improvement
+- Promotion Recommendation
+
+Seluruh rekomendasi memerlukan validasi pengguna.
+
+---
+
+# Predictive Intelligence
+
+AI dapat melakukan prediksi.
+
+- Campaign Success
+- Lead Volume
+- Qualified Lead
+- ROI
+- ROAS
+- CAC
+- Brand Growth
+- Revenue Contribution
+
+Prediksi digunakan sebagai pendukung keputusan.
+
+---
+
+# Executive Reporting Architecture
+
+Marketing menyediakan laporan.
+
+## Operational Report
+
+- Campaign Report
+- Lead Report
+- Budget Report
+
+---
+
+## Management Report
+
+- Campaign Performance
+- ROI Report
+- ROAS Report
+- Attribution Report
+
+---
+
+## Executive Report
+
+- Marketing KPI
+- Revenue Contribution
+- Customer Acquisition
+- Brand Performance
+- Executive Marketing Insight
+
+---
+
+# AI Guardrails
+
+Artificial Intelligence diperbolehkan.
+
+- memberikan insight
+- memberikan rekomendasi
+- melakukan prediksi
+- mendeteksi anomali
+- membuat segmentasi audience
+- membuat ringkasan Campaign
+
+Artificial Intelligence tidak diperbolehkan.
+
+- menyetujui Campaign
+- mengubah Budget
+- mentransfer Lead
+- mengubah Promotion
+- mengubah Business Rules
+- menghapus Campaign
+
+tanpa persetujuan pengguna.
+
+---
+
+# Performance Governance
+
+Seluruh KPI direview.
+
+- Harian
+- Mingguan
+- Bulanan
+- Triwulan
+- Tahunan
+
+Review dilakukan oleh.
+
+- Marketing Domain Owner
+- Marketing Manager
+- Product Owner
+- Enterprise Architect
+- Executive Management
+
+---
+
+# Performance Quality Gate
+
+| Validation | Target |
+|------------|--------|
 | KPI Coverage | 100% |
+| Dashboard Coverage | 100% |
+| Reporting Coverage | 100% |
 | Analytics Coverage | 100% |
-| AI Recommendation Coverage | 100% |
-| Executive Insight Coverage | 100% |
+| AI Coverage | 100% |
+| Explainable AI | 100% |
+| Traceability | 100% |
+| Governance | 100% |
 
 ---
 
 # Acceptance Criteria
 
-Marketing Intelligence dianggap lengkap apabila:
+PART 6 dianggap selesai apabila.
 
 - seluruh KPI terdokumentasi
 - seluruh Dashboard terdokumentasi
-- seluruh Analytics memiliki Business Purpose
-- seluruh AI Recommendation terdokumentasi
-- seluruh Insight berasal dari Business Data
-- seluruh Executive Dashboard mendukung pengambilan keputusan
+- Marketing 360 View terdokumentasi
+- Marketing Funnel Analytics terdokumentasi
+- Campaign Performance Analytics terdokumentasi
+- Audience Analytics terdokumentasi
+- Attribution Analytics terdokumentasi
+- AI Capability terdokumentasi
+- AI Recommendation Engine terdokumentasi
+- Executive Reporting terdokumentasi
+- seluruh Performance memenuhi Enterprise Quality Gate
+
+---
+---
+
+# Marketing Governance, Quality Gate & Final
+
+Marketing Governance mendefinisikan tata kelola resmi Marketing Domain sebagai fondasi seluruh aktivitas pemasaran, pertumbuhan bisnis, dan Demand Generation pada ekosistem VENTRA.
+
+Governance memastikan seluruh perubahan Marketing dilakukan secara terkendali, terdokumentasi, dapat diaudit, serta tetap konsisten terhadap Enterprise Architecture.
+
+Marketing Domain merupakan Single Source of Truth untuk seluruh Campaign, Marketing Budget, Marketing Performance, Attribution, dan Brand Performance.
 
 ---
 
----
+# Domain Governance Principles
 
-# Marketing Governance
+Marketing Domain mengikuti prinsip berikut.
 
-Marketing Domain merupakan Supporting Core Domain dalam Enterprise Business Architecture VENTRA.
+## Business First
 
-Seluruh implementasi Marketing wajib mengacu pada Blueprint ini.
-
-Perubahan terhadap Marketing Blueprint hanya dapat dilakukan melalui Blueprint Governance Process.
+Seluruh aktivitas Marketing harus mendukung strategi bisnis perusahaan.
 
 ---
 
-# Marketing Domain Governance
+## Growth Driven
 
-Marketing Domain mengikuti Governance Standard VENTRA.
+Marketing bertanggung jawab menghasilkan pertumbuhan bisnis yang terukur.
 
-Seluruh perubahan mengikuti proses berikut.
+---
+
+## Customer Centric
+
+Seluruh Campaign harus memberikan nilai bagi calon pelanggan maupun pelanggan.
+
+---
+
+## Governance by Design
+
+Governance menjadi bagian dari desain Marketing Domain.
+
+---
+
+## Continuous Improvement
+
+Marketing dievaluasi dan ditingkatkan secara berkelanjutan.
+
+---
+
+## Traceability
+
+Seluruh Campaign, Budget, dan Lead Generation harus dapat ditelusuri.
+
+---
+
+## Security by Design
+
+Keamanan diterapkan sejak tahap Blueprint.
+
+---
+
+## AI Governance
+
+Artificial Intelligence hanya berfungsi sebagai pendukung keputusan.
+
+---
+
+# Marketing Governance Framework
+
+Struktur tata kelola Marketing.
+
+Executive Board
+
+↓
+
+Enterprise Architecture Board
+
+↓
+
+Business Architecture Board
+
+↓
+
+Marketing Domain Owner
+
+↓
+
+Marketing Manager
+
+↓
+
+Product Owner
+
+↓
+
+Technical Architect
+
+↓
+
+Engineering Team
+
+↓
+
+Quality Assurance
+
+↓
+
+Operations
+
+---
+
+# Domain Ownership
+
+| Area | Owner |
+|------|-------|
+| Campaign | Marketing Domain |
+| Marketing Budget | Marketing Domain |
+| Audience | Marketing Domain |
+| Marketing Channel | Marketing Domain |
+| Content | Marketing Domain |
+| Creative Asset | Marketing Domain |
+| Promotion | Marketing Domain |
+| Coupon | Marketing Domain |
+| Attribution | Marketing Domain |
+| Marketing Analytics | Marketing Domain |
+| Brand Performance | Marketing Domain |
+
+Customer Master tetap dimiliki BP-101.
+
+Relationship tetap dimiliki BP-102.
+
+---
+
+# Marketing Change Management
+
+Perubahan Marketing mengikuti proses berikut.
 
 Business Request
 
 ↓
 
-Business Review
+Business Analysis
 
 ↓
 
@@ -1759,15 +2989,19 @@ Impact Analysis
 
 ↓
 
+Architecture Review
+
+↓
+
+Domain Approval
+
+↓
+
 Blueprint Revision
 
 ↓
 
-Approval
-
-↓
-
-Implementation
+Technical Implementation
 
 ↓
 
@@ -1775,148 +3009,31 @@ Testing
 
 ↓
 
+Release
+
+↓
+
 Monitoring
 
-↓
-
-Continuous Improvement
-
-Tidak diperbolehkan melakukan perubahan langsung pada implementasi.
+Perubahan langsung pada implementasi tidak diperbolehkan.
 
 ---
 
-# Domain Context Map
+# Marketing Compliance
 
-Marketing merupakan Domain paling awal dalam Enterprise Business Value Chain.
+Marketing wajib memenuhi.
 
-Marketing menghasilkan Lead.
-
-Lead dikelola oleh CRM.
-
-CRM membangun hubungan.
-
-Customer menjadi identitas utama.
-
-Booking menghasilkan transaksi.
-
-Dashboard menyajikan analisis.
-
-Artificial Intelligence memberikan rekomendasi.
+- EA-000 Architecture Freeze Rules
+- EA-001 Enterprise Architecture Blueprint
+- BP-001 Business Blueprint
+- BP-101 Customer Blueprint
+- BP-102 CRM Blueprint
+- BP-103 Marketing Blueprint
+- VENTRA Development Constitution v1.0 (LOCK)
 
 ---
 
-## Upstream Domain
-
-Marketing merupakan Domain yang dipengaruhi oleh:
-
-- Business Strategy
-- Product Management
-
----
-
-## Downstream Domain
-
-Marketing memberikan data kepada:
-
-- CRM
-- Customer
-- Booking
-- Dashboard
-- Notification
-- Artificial Intelligence
-- Finance
-
-Marketing menjadi sumber utama Customer Acquisition.
-
----
-
-# Integration Matrix
-
-| Domain | Relationship | Integration |
-|---------|--------------|-------------|
-| CRM | Downstream | API + Event |
-| Customer | Downstream | API |
-| Booking | Downstream | Event |
-| Dashboard | Downstream | Event |
-| Notification | Downstream | Event |
-| Finance | Downstream | API |
-| AI | Downstream | API + Event |
-
-Seluruh integrasi dilakukan melalui kontrak resmi.
-
----
-
-# Published Business Events
-
-Marketing Domain mempublikasikan Event berikut.
-
-- MarketingPlanApproved
-- CampaignCreated
-- CampaignApproved
-- CampaignStarted
-- CampaignPaused
-- CampaignCompleted
-- CampaignCancelled
-- CampaignEvaluated
-- LeadGenerated
-- LeadQualified
-- LeadAssigned
-- AudienceCreated
-- PromotionCreated
-- ReferralCreated
-- ReferralRewardGranted
-
-Seluruh Event mengikuti STD-003 Naming Standard.
-
----
-
-# Consumed Business Events
-
-Marketing Domain menggunakan Event berikut.
-
-BusinessTargetUpdated
-
-↓
-
-Review Marketing Strategy
-
----
-
-NewPackagePublished
-
-↓
-
-Create Campaign
-
----
-
-CustomerRegistered
-
-↓
-
-Update Audience Analytics
-
----
-
-BookingCompleted
-
-↓
-
-Measure Campaign Contribution
-
----
-
-CustomerFeedbackSubmitted
-
-↓
-
-Evaluate Campaign Quality
-
-Marketing tidak mengakses Database Domain lain secara langsung.
-
----
-
-# Marketing Traceability Matrix
+# Domain Traceability Matrix
 
 Seluruh implementasi Marketing harus dapat ditelusuri.
 
@@ -1924,112 +3041,161 @@ Business Vision
 
 ↓
 
-Product Philosophy
+Business Objective
 
 ↓
 
-BP-001 Business Blueprint
+Business Capability
 
 ↓
 
-BP-103 Marketing Blueprint
+Business Process
 
 ↓
 
-DB-103 Marketing Database Blueprint
+Business Rule
 
 ↓
 
-API-103 Marketing API Blueprint
+Business Event
 
 ↓
 
-FL-103 Marketing Flutter Blueprint
+Marketing Blueprint
 
 ↓
 
-DS-103 Marketing Dashboard Blueprint
+Database Blueprint
 
 ↓
 
-AI-103 Marketing AI Blueprint
+API Blueprint
 
 ↓
 
-Implementation
+Flutter Blueprint
 
-Tidak diperbolehkan ada implementasi Marketing tanpa Blueprint.
+↓
+
+Dashboard Blueprint
+
+↓
+
+AI Blueprint
+
+↓
+
+Testing Blueprint
+
+↓
+
+Deployment Blueprint
+
+↓
+
+Production
+
+Tidak diperbolehkan terdapat implementasi Marketing yang tidak memiliki Blueprint.
 
 ---
 
-# Marketing Compliance
+# Marketing Risk Register
 
-Marketing Domain wajib memenuhi:
+Marketing Domain wajib mengelola risiko berikut.
 
-- Product Philosophy
-- Governance Standard
-- Documentation Standard
-- Naming Standard
-- Architecture Standard
-- Business Standard
-- Dashboard Standard
-- AI Standard
-- Security Standard
+| Risk | Mitigation |
+|------|------------|
+| Campaign Failure | Campaign Review & Monitoring |
+| Budget Overrun | Budget Control & Approval |
+| Low Quality Lead | Lead Validation & Qualification |
+| Incorrect Attribution | Attribution Validation |
+| Low Conversion Rate | Campaign Optimization |
+| Brand Reputation Risk | Content Review & Approval |
+| Unauthorized Campaign Change | RBAC + Audit Trail |
+| Data Leakage | Encryption + Access Control |
 
-Seluruh audit Marketing mengacu pada standar tersebut.
-
----
-
-# Marketing Risks
-
-Risiko utama Marketing meliputi:
-
-- Low Lead Generation
-- Poor Campaign Performance
-- Low Conversion Rate
-- Incorrect Audience Targeting
-- High Customer Acquisition Cost
-- Low Return on Marketing Investment
-- Duplicate Campaign
-- Invalid Lead Source
-- Data Inconsistency
-- Integration Failure
-
-Setiap risiko wajib memiliki mitigasi yang terdokumentasi.
+Risk Register direview secara berkala.
 
 ---
 
-# Marketing Audit
+# Marketing Data Quality Framework
 
-Seluruh aktivitas Marketing harus dapat diaudit.
+Seluruh Marketing Data harus memenuhi indikator berikut.
 
-Minimal mencakup:
+| Indicator | Target |
+|----------|--------|
+| Completeness | ≥95% |
+| Accuracy | ≥99% |
+| Consistency | 100% |
+| Validity | ≥99% |
+| Uniqueness | 100% |
+| Timeliness | ≥95% |
 
-- siapa yang membuat Campaign
-- siapa yang menyetujui Campaign
-- kapan Campaign dijalankan
-- perubahan Budget
-- perubahan Audience
-- perubahan Status
-- hasil Campaign
-- alasan perubahan
-
-Audit menjadi bagian dari Enterprise Governance.
+Marketing Data Quality menjadi KPI resmi Marketing Domain.
 
 ---
 
-# Marketing Blueprint Metrics
+# Marketing Review Cycle
 
-| Metric | Target |
-|---------|--------|
-| Blueprint Completion | 100% |
-| Campaign Coverage | 100% |
-| Business Rule Coverage | 100% |
-| Event Coverage | 100% |
-| Dashboard Coverage | 100% |
-| Integration Coverage | 100% |
-| Traceability Coverage | 100% |
-| Compliance Score | 100% |
+Review dilakukan.
+
+- Harian
+- Mingguan
+- Bulanan
+- Triwulan
+- Tahunan
+
+Review melibatkan.
+
+- Marketing Domain Owner
+- Marketing Manager
+- Product Owner
+- Enterprise Architect
+- Quality Assurance
+- Executive Management
+
+---
+
+# Marketing Domain Maturity Model
+
+| Level | Description |
+|--------|-------------|
+| Level 1 | Marketing Blueprint Defined |
+| Level 2 | Integrated Campaign Management |
+| Level 3 | Marketing Analytics Enabled |
+| Level 4 | Marketing Automation |
+| Level 5 | AI Assisted Marketing |
+| Level 6 | Enterprise Growth Intelligence |
+| Level 7 | Autonomous Marketing Optimization (Human Governed) |
+
+Target Marketing Domain adalah mencapai **Level 7**.
+
+---
+
+# Enterprise Quality Gate
+
+Blueprint tidak dapat berstatus APPROVED apabila salah satu pemeriksaan berikut gagal.
+
+| Validation | Target |
+|------------|--------|
+| Business Correctness | 100% |
+| Architecture Correctness | 100% |
+| Enterprise Readiness | 100% |
+| Scalability | 100% |
+| Security | 100% |
+| Performance | 100% |
+| Maintainability | 100% |
+| Extensibility | 100% |
+| Testability | 100% |
+| AI Readiness | 100% |
+| Documentation Quality | 100% |
+| Governance | 100% |
+
+Target:
+
+Enterprise Quality Score
+
+100 / 100
 
 ---
 
@@ -2037,63 +3203,17 @@ Audit menjadi bagian dari Enterprise Governance.
 
 BP-103 dianggap selesai apabila:
 
-- seluruh Marketing Capability terdokumentasi
+- seluruh Domain Foundation terdokumentasi
+- seluruh Business Capability terdokumentasi
+- seluruh Canonical Domain Model terdokumentasi
 - seluruh Business Process terdokumentasi
 - seluruh Business Rules terdokumentasi
-- seluruh Business Events terdokumentasi
-- seluruh Analytics terdokumentasi
-- seluruh Dashboard terdokumentasi
-- seluruh AI Recommendation terdokumentasi
-- seluruh Integration terdokumentasi
+- seluruh KPI, Dashboard & AI terdokumentasi
 - seluruh Governance terdokumentasi
 - seluruh Traceability terdokumentasi
-
----
-
-# Related Documents
-
-## Project Foundation
-
-- project_vision.md
-- product_vision.md
-- ventra_product_philosophy.md
-- project_glossary.md
-
----
-
-## Enterprise Standards
-
-- STD-001 Governance Standard
-- STD-002 Documentation Standard
-- STD-003 Naming Standard
-- STD-004 Architecture Standard
-- STD-005 Business Standard
-- STD-006 Database Standard
-- STD-007 API Standard
-- STD-008 Flutter Standard
-- STD-009 AI Standard
-- STD-010 Security Standard
-- STD-011 Dashboard Standard
-- STD-012 Notification Standard
-- STD-013 Design System Standard
-
----
-
-## Enterprise Blueprints
-
-- BP-001 Business Blueprint
-- BP-101 Customer Blueprint
-- BP-102 CRM Blueprint
-
----
-
-## Technical Blueprints
-
-- DB-103 Marketing Database Blueprint
-- API-103 Marketing API Blueprint
-- FL-103 Marketing Flutter Blueprint
-- DS-103 Marketing Dashboard Blueprint
-- AI-103 Marketing AI Blueprint
+- seluruh Data Quality terdokumentasi
+- seluruh Risk terdokumentasi
+- seluruh Quality Gate memenuhi target
 
 ---
 
@@ -2101,26 +3221,50 @@ BP-103 dianggap selesai apabila:
 
 | Version | Date | Description |
 |----------|------|-------------|
-| 1.0.0 | 2026-08-06 | Initial Marketing Blueprint |
+| 2.0.0 | 2026-08-07 | Enterprise Edition v2.0 |
+
+---
+
+# Official Status
+
+STATUS
+
+APPROVED
+
+FROZEN
+
+Version
+
+2.0.0
+
+---
+
+# Blueprint Philosophy
+
+Marketing bukan sekadar menjalankan Campaign.
+
+Marketing adalah mesin pertumbuhan (Growth Engine) yang menghubungkan strategi bisnis, Brand, Customer Acquisition, dan Revenue.
+
+Dengan Governance yang kuat, Marketing mampu menghasilkan pertumbuhan yang terukur, berkelanjutan, dan terintegrasi dengan seluruh Domain VENTRA.
 
 ---
 
 # Closing Statement
 
-Marketing bukan sekadar menjalankan promosi.
+BP-103 Marketing Blueprint merupakan fondasi resmi seluruh aktivitas pemasaran pada platform VENTRA.
 
-Marketing adalah mesin pertumbuhan perusahaan yang menghubungkan strategi bisnis dengan Customer melalui Campaign yang terukur, berbasis data, dan didukung Artificial Intelligence.
+Seluruh Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, AI Blueprint, Testing Blueprint, serta implementasi Marketing wajib mengacu pada Blueprint ini.
 
-Blueprint ini menjadi acuan resmi bagi seluruh implementasi Marketing pada Database, API, Flutter, Dashboard, dan Artificial Intelligence.
+Perubahan terhadap BP-103 hanya dapat dilakukan melalui Enterprise Governance.
 
-Perubahan terhadap Blueprint ini hanya dapat dilakukan melalui Blueprint Governance Process.
+Business Drives Architecture.
+
+Architecture Drives Development.
+
+Development Drives Quality.
+
+Quality Builds Trust.
+
+Trust Enables Sustainable Enterprise.
 
 ---
-
-# Marketing Blueprint Philosophy
-
-Marketing yang baik tidak hanya menghasilkan banyak Lead.
-
-Marketing yang hebat menghasilkan Customer yang tepat, pada waktu yang tepat, melalui pesan yang tepat.
-
-**Reach the Right Audience. Generate Qualified Leads. Accelerate Sustainable Growth.**
