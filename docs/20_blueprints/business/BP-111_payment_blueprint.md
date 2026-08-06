@@ -1,7 +1,6 @@
+# BP-107 Payment Blueprint
 
-# BP-111 Ticket Blueprint
-
-> **"Reliable transportation is the backbone of every successful journey."**
+> **"Every payment must be accurate, traceable, secure, and auditable."**
 
 ---
 
@@ -9,16 +8,16 @@
 
 | Item | Value |
 |------|-------|
-| Document ID | BP-111 |
-| Document | Ticket Blueprint |
+| Document ID | BP-107 |
+| Document | Payment Blueprint |
 | Category | Domain Blueprint |
 | Status | Draft |
 | Version | 1.0.0 |
 | Classification | Internal |
-| Owner | Ticket Domain |
+| Owner | Payment Domain |
 | Approver | Product Owner |
 | Reviewer | Enterprise Architect |
-| Audience | Ticket Manager, Operation Manager, Product Owner, Business Analyst, Engineering Lead, Backend Engineer, Mobile Engineer, AI Engineer, Dashboard Engineer |
+| Audience | Business Analyst, Finance Manager, Product Owner, Engineering Lead, Backend Engineer, Mobile Engineer, AI Engineer, Dashboard Engineer |
 | Created | 2026-08-06 |
 | Last Review | - |
 | Next Review | Every 6 Months |
@@ -27,37 +26,30 @@
 
 # Purpose
 
-Ticket Blueprint mendefinisikan seluruh proses bisnis pengelolaan tiket perjalanan dalam platform VENTRA.
+Payment Blueprint mendefinisikan seluruh proses bisnis pengelolaan pembayaran dalam platform VENTRA.
 
-Blueprint ini menjadi acuan resmi implementasi Domain Ticket pada Database, API, Flutter, Dashboard, Artificial Intelligence, serta seluruh Domain yang berhubungan dengan transportasi perjalanan.
+Blueprint ini menjadi acuan resmi implementasi Domain Payment pada Database, API, Flutter, Dashboard, Artificial Intelligence, dan seluruh Domain yang berkaitan dengan transaksi keuangan.
 
-Ticket merupakan Domain yang mengelola jadwal, maskapai, rute, kelas penerbangan, inventori kursi, reservasi tiket, penerbitan tiket, perubahan tiket, pembatalan, refund, hingga boarding.
+Payment merupakan Domain yang memastikan seluruh transaksi keuangan berlangsung secara akurat, aman, terdokumentasi, dan dapat diaudit.
 
 ---
 
 # Scope
 
-Blueprint ini mencakup seluruh aktivitas Ticket.
+Blueprint ini mencakup seluruh aktivitas Payment.
 
 Meliputi:
 
-- Airline Master
-- Flight Master
-- Route Management
-- Flight Schedule
-- Flight Class
-- Fare Management
-- Seat Inventory
-- Seat Allocation
-- Ticket Reservation
-- Ticket Issuance
-- Ticket Reissue
-- Ticket Refund
-- Ticket Void
-- Boarding
-- Ticket Performance
-- Ticket Analytics
-- Ticket Intelligence
+- Payment Request
+- Payment Collection
+- Installment Management
+- Payment Verification
+- Payment Confirmation
+- Refund
+- Settlement
+- Reconciliation
+- Payment Analytics
+- Payment Intelligence
 
 Blueprint ini tidak membahas implementasi teknis.
 
@@ -65,95 +57,99 @@ Blueprint ini tidak membahas implementasi teknis.
 
 # Business Context
 
-Ticket merupakan Enterprise Transportation Management Domain.
+Payment merupakan Financial Transaction Domain.
 
-Booking menghasilkan kebutuhan perjalanan.
+Booking menghasilkan kewajiban pembayaran.
 
-Departure menentukan jadwal keberangkatan.
+Customer melakukan pembayaran.
 
-Hotel menyesuaikan akomodasi.
+Finance melakukan rekonsiliasi.
 
-Finance mencatat biaya tiket.
+Dashboard menampilkan performa pembayaran.
 
-Dashboard menyajikan performa operasional tiket.
+Artificial Intelligence membantu mendeteksi risiko keterlambatan pembayaran dan memberikan rekomendasi.
 
-Artificial Intelligence membantu memilih penerbangan terbaik.
-
-Ticket menjadi Single Source of Truth seluruh data transportasi perjalanan.
+Payment menjadi Single Source of Truth seluruh transaksi pembayaran.
 
 ---
 
 # Objectives
 
-Ticket Blueprint bertujuan untuk:
+Payment Blueprint bertujuan untuk:
 
-- mengelola data transportasi
-- mengelola jadwal perjalanan
-- mengelola inventori kursi
-- mengelola reservasi tiket
-- mengelola perubahan tiket
-- meningkatkan ketepatan operasional
+- mengelola seluruh transaksi pembayaran
+- meningkatkan ketepatan pencatatan pembayaran
+- mendukung pembayaran bertahap (installment)
+- mempercepat proses verifikasi
+- mendukung refund
+- mendukung rekonsiliasi keuangan
 - mendukung Executive Dashboard
 
 ---
 
-# Ticket Vision
+# Payment Vision
 
-Membangun sistem pengelolaan transportasi yang terintegrasi, akurat, real-time, dan mampu mendukung operasional perjalanan pada skala Enterprise.
-
----
-
-# Ticket Principles
-
-Seluruh aktivitas Ticket mengikuti prinsip berikut.
-
-## Schedule Accuracy
-
-Jadwal perjalanan harus selalu akurat.
+Membangun sistem pembayaran yang aman, transparan, fleksibel, terintegrasi, dan siap mendukung operasional keuangan skala Enterprise.
 
 ---
 
-## Seat Integrity
+# Payment Principles
 
-Inventori kursi harus selalu konsisten.
+Seluruh aktivitas Payment mengikuti prinsip berikut.
+
+## Accuracy First
+
+Seluruh transaksi harus akurat.
 
 ---
 
-## Operational Reliability
+## Security First
 
-Seluruh proses Ticket harus dapat diandalkan.
+Seluruh transaksi harus aman.
 
 ---
 
 ## Traceability
 
-Seluruh aktivitas Ticket harus dapat ditelusuri.
+Seluruh transaksi harus dapat ditelusuri.
+
+---
+
+## Auditability
+
+Seluruh transaksi harus dapat diaudit.
+
+---
+
+## Financial Integrity
+
+Setiap transaksi harus menjaga integritas data keuangan.
 
 ---
 
 ## Integration First
 
-Ticket terintegrasi dengan seluruh Domain operasional.
+Payment menjadi pusat sinkronisasi antara Booking, Customer, Finance, Invoice, Dashboard, dan AI.
 
 ---
 
 ## AI Assisted
 
-Artificial Intelligence membantu memilih penerbangan terbaik berdasarkan data.
+Artificial Intelligence membantu mendeteksi risiko pembayaran dan memberikan rekomendasi.
 
 ---
 
 ## Business Rule Driven
 
-Seluruh aktivitas mengikuti Business Rules yang telah disetujui.
+Seluruh transaksi mengikuti Business Rules yang telah disetujui.
 
 ---
 
 # Success Criteria
 
-Ticket Blueprint dianggap berhasil apabila:
+Payment Blueprint dianggap berhasil apabila:
 
-- seluruh struktur Ticket terdokumentasi
+- seluruh struktur Payment terdokumentasi
 - seluruh Business Process terdokumentasi
 - seluruh Business Rules terdokumentasi
 - seluruh Lifecycle terdokumentasi
@@ -162,43 +158,11 @@ Ticket Blueprint dianggap berhasil apabila:
 
 ---
 
-# Ticket Domain Position
+# Payment Domain Position
 
-Ticket
+Payment merupakan Financial Transaction Domain dalam Enterprise Business Architecture.
 
-├── Airline Master
-
-├── Flight Master
-
-├── Route
-
-├── Flight Schedule
-
-├── Flight Class
-
-├── Fare
-
-├── Seat Inventory
-
-├── Seat Allocation
-
-├── Reservation
-
-├── Issuance
-
-├── Reissue
-
-├── Refund
-
-├── Void
-
-├── Boarding
-
-├── Performance
-
-├── Analytics
-
-└── Intelligence
+Customer
 
 ↓
 
@@ -206,7 +170,27 @@ Booking
 
 ↓
 
-Departure
+Invoice
+
+↓
+
+Payment
+
+├── Payment Request
+
+├── Installment
+
+├── Verification
+
+├── Confirmation
+
+├── Refund
+
+├── Settlement
+
+├── Reconciliation
+
+└── Audit Trail
 
 ↓
 
@@ -220,15 +204,15 @@ Dashboard
 
 Artificial Intelligence
 
-Ticket menjadi pusat pengelolaan seluruh transportasi perjalanan.
+Payment menjadi pusat seluruh transaksi keuangan.
 
 ---
 
-# Ticket Philosophy
+# Payment Philosophy
 
-Ticket bukan sekadar dokumen perjalanan.
+Payment bukan sekadar menerima uang.
 
-Ticket merupakan komponen utama yang memastikan setiap Customer dapat melakukan perjalanan secara tepat waktu, aman, dan sesuai rencana operasional perusahaan.
+Payment merupakan proses memastikan seluruh transaksi berlangsung secara benar, transparan, aman, dan dapat dipertanggungjawabkan sesuai standar Enterprise.
 
 ---
 
@@ -242,13 +226,13 @@ Ticket merupakan komponen utama yang memastikan setiap Customer dapat melakukan 
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Ticket adalah mencapai **Level 5**.
+Target Domain Payment adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-Ticket Foundation dianggap lengkap apabila:
+Payment Foundation dianggap lengkap apabila:
 
 - Purpose terdokumentasi
 - Scope terdokumentasi
@@ -261,61 +245,24 @@ Ticket Foundation dianggap lengkap apabila:
 - Domain Maturity terdokumentasi
 
 ---
----
-
-# Ticket Business Architecture
-
-Ticket Business Architecture mendefinisikan posisi Ticket dalam Enterprise Business Architecture VENTRA.
-
-Ticket merupakan Enterprise Transportation Management Domain yang mengelola seluruh sumber daya transportasi mulai dari data maskapai, jadwal penerbangan, inventori kursi, reservasi, penerbitan tiket, hingga analisis performa transportasi.
-
-Seluruh informasi transportasi berpusat pada Ticket Domain.
 
 ---
 
-# Ticket Domain Position
+# Payment Business Architecture
 
-Ticket berada di pusat Enterprise Transportation Management.
+Payment Business Architecture mendefinisikan posisi Payment dalam Enterprise Business Architecture VENTRA.
 
-Vendor
+Payment merupakan Financial Transaction Domain yang mengelola seluruh transaksi pembayaran Customer mulai dari tagihan, pembayaran, verifikasi, hingga rekonsiliasi.
 
-↓
+Seluruh transaksi keuangan operasional berpusat pada Payment.
 
-Ticket
+---
 
-├── Airline Master
+# Payment Domain Position
 
-├── Flight Master
+Payment berada di pusat Financial Transaction Management.
 
-├── Route
-
-├── Flight Schedule
-
-├── Flight Class
-
-├── Fare Management
-
-├── Seat Inventory
-
-├── Seat Allocation
-
-├── Reservation
-
-├── Ticket Issuance
-
-├── Reissue
-
-├── Refund
-
-├── Void
-
-├── Boarding
-
-├── Performance
-
-├── Analytics
-
-└── Intelligence
+Customer
 
 ↓
 
@@ -323,7 +270,31 @@ Booking
 
 ↓
 
-Departure
+Invoice
+
+↓
+
+Payment
+
+├── Payment Request
+
+├── Payment Method
+
+├── Installment
+
+├── Verification
+
+├── Confirmation
+
+├── Refund
+
+├── Settlement
+
+├── Reconciliation
+
+├── Audit Trail
+
+└── Financial Analytics
 
 ↓
 
@@ -337,205 +308,160 @@ Dashboard
 
 Artificial Intelligence
 
-Ticket menjadi pusat pengelolaan seluruh transportasi perjalanan.
+Payment menjadi pusat seluruh transaksi pembayaran.
 
 ---
 
-# Ticket Domain Responsibility
+# Payment Domain Responsibility
 
-Ticket Domain bertanggung jawab terhadap:
+Payment Domain bertanggung jawab terhadap:
 
-- Airline Master Management
-- Flight Master Management
-- Route Management
-- Flight Schedule Management
-- Fare Management
-- Flight Class Management
-- Seat Inventory Management
-- Seat Allocation Management
-- Ticket Reservation Management
-- Ticket Issuance Management
-- Ticket Reissue Management
-- Ticket Refund Management
-- Boarding Management
-- Ticket Performance Management
-- Ticket Analytics
-- Ticket Intelligence
+- Payment Request
+- Payment Collection
+- Installment Management
+- Payment Verification
+- Payment Confirmation
+- Refund Management
+- Settlement
+- Reconciliation
+- Payment Analytics
+- Payment Intelligence
 
-Ticket Domain tidak bertanggung jawab terhadap:
+Payment Domain tidak bertanggung jawab terhadap:
 
+- Booking Creation
 - Customer Management
-- Booking Management
-- Financial Accounting
-- Hotel Management
+- Package Management
+- Accounting Journal
 - Marketing Campaign
 
 Domain tersebut dikelola oleh Domain masing-masing.
 
 ---
 
-# Ticket Capability Map
+# Payment Capability Map
 
-Ticket Domain memiliki Capability berikut.
-
----
-
-## Airline Master Management
-
-Mengelola data Maskapai.
+Payment Domain memiliki Capability berikut.
 
 ---
 
-## Flight Master Management
+## Payment Request
 
-Mengelola data penerbangan.
+Menghasilkan permintaan pembayaran berdasarkan Invoice.
 
 ---
 
-## Route Management
+## Payment Collection
 
-Mengelola rute penerbangan.
+Menerima pembayaran Customer.
+
+---
+
+## Payment Method Management
+
+Mengelola metode pembayaran.
 
 Contoh:
 
-- Jakarta → Jeddah
-- Jeddah → Madinah
-- Madinah → Jakarta
+- Bank Transfer
+- Virtual Account
+- QRIS
+- Credit Card
+- Debit Card
+- Cash
+- E-Wallet
 
 ---
 
-## Flight Schedule Management
+## Installment Management
 
-Mengelola jadwal penerbangan.
+Mengelola pembayaran bertahap.
 
 Meliputi:
 
-- Departure Time
-- Arrival Time
-- Transit
-- Gate
-- Terminal
+- Down Payment
+- Installment
+- Final Payment
 
 ---
 
-## Flight Class Management
+## Payment Verification
 
-Mengelola kelas penerbangan.
-
-Contoh:
-
-- Economy
-- Premium Economy
-- Business
-- First Class
+Melakukan verifikasi pembayaran.
 
 ---
 
-## Fare Management
+## Payment Confirmation
 
-Mengelola harga tiket.
-
-Meliputi:
-
-- Published Fare
-- Contract Fare
-- Group Fare
-- Seasonal Fare
-- Promotional Fare
+Mengonfirmasi pembayaran yang valid.
 
 ---
 
-## Seat Inventory Management
+## Refund Management
 
-Mengelola inventori kursi.
-
----
-
-## Seat Allocation Management
-
-Mengelola alokasi kursi berdasarkan Departure.
+Mengelola pengembalian dana sesuai Business Policy.
 
 ---
 
-## Ticket Reservation Management
+## Settlement
 
-Mengelola reservasi tiket.
-
----
-
-## Ticket Issuance Management
-
-Mengelola penerbitan tiket.
+Melakukan settlement transaksi.
 
 ---
 
-## Ticket Reissue Management
+## Reconciliation
 
-Mengelola perubahan tiket.
-
----
-
-## Ticket Refund Management
-
-Mengelola refund tiket.
+Melakukan pencocokan transaksi dengan mutasi bank atau payment gateway.
 
 ---
 
-## Boarding Management
+## Payment Analytics
 
-Mengelola proses boarding.
-
----
-
-## Ticket Performance Management
-
-Mengukur performa operasional Ticket.
+Menganalisis performa pembayaran.
 
 ---
 
-## Ticket Analytics
+## Payment Intelligence
 
-Menganalisis performa transportasi.
-
----
-
-## Ticket Intelligence
-
-Artificial Intelligence memberikan rekomendasi penerbangan terbaik.
+Artificial Intelligence memberikan insight terhadap performa pembayaran.
 
 Keputusan bisnis tetap dilakukan oleh manusia.
 
 ---
 
-# Ticket Lifecycle
+# Payment Lifecycle
 
-Ticket mengikuti siklus berikut.
+Payment mengikuti siklus berikut.
 
-Scheduled
-
-↓
-
-Available
+Requested
 
 ↓
 
-Reserved
+Pending
 
 ↓
 
-Issued
+Partially Paid
 
 ↓
 
-Boarding
+Paid
 
 ↓
 
-Departed
+Verified
 
 ↓
 
 Completed
+
+↓
+
+Settled
+
+↓
+
+Reconciled
 
 ↓
 
@@ -545,82 +471,80 @@ Status alternatif:
 
 Cancelled
 
-Refunded
-
-Voided
-
-Reissued
-
 Expired
 
-Seluruh perubahan Status harus tercatat pada Ticket Timeline.
+Refunded
+
+Chargeback
+
+Seluruh perubahan Status harus tercatat pada Payment Timeline.
 
 ---
 
-# Ticket Relationships
+# Payment Relationships
 
-Ticket memiliki hubungan dengan Domain berikut.
+Payment memiliki hubungan dengan Domain berikut.
 
 | Domain | Relationship |
 |----------|--------------|
-| Vendor | Airline Provider |
-| Booking | Ticket Reservation |
-| Departure | Passenger Manifest |
-| Finance | Ticket Cost |
-| Dashboard | Ticket Analytics |
-| AI | Flight Recommendation |
+| Customer | One Customer → Many Payment |
+| Booking | One Booking → Many Payment |
+| Invoice | One Invoice → Many Payment |
+| Finance | Payment Settlement |
+| Dashboard | Payment Analytics |
+| AI | Recommendation |
+| Notification | Payment Reminder & Confirmation |
 
 ---
 
-# Ticket Ownership
+# Payment Ownership
 
 Business Owner:
 
-Ticket Manager
+Finance Manager
 
 Domain Owner bertanggung jawab terhadap:
 
-- Ticket Management
-- Flight Management
-- Reservation Management
-- Boarding Management
-- Ticket Analytics
-- Ticket Blueprint
+- Payment Collection
+- Verification
+- Settlement
+- Reconciliation
+- Payment Analytics
+- Payment Blueprint
 
 ---
 
-# Ticket Architecture Principles
+# Payment Architecture Principles
 
-Ticket mengikuti prinsip berikut.
+Payment mengikuti prinsip berikut.
 
-- Schedule Accuracy
-- Seat Integrity
-- Operational Reliability
+- Accuracy First
+- Security First
+- Financial Integrity
 - Traceable
-- Integration First
+- Auditable
+- Event Driven
 - AI Assisted
 - Business Rule Driven
 
-Seluruh implementasi Ticket wajib mengikuti prinsip tersebut.
+Seluruh implementasi Payment wajib mengikuti prinsip tersebut.
 
 ---
 
 # Architecture Alignment
 
-Ticket Blueprint harus selalu selaras dengan:
+Payment Blueprint harus selalu selaras dengan:
 
 - BP-001 Business Blueprint
+- BP-101 Customer Blueprint
 - BP-104 Booking Blueprint
 - BP-106 Departure Blueprint
-- BP-108 Finance Blueprint
-- BP-109 Vendor Blueprint
-- BP-110 Hotel Blueprint
 - Product Philosophy
 - Governance Standard
 - Architecture Standard
 - Business Standard
 
-Tidak diperbolehkan membuat implementasi Ticket yang bertentangan dengan Blueprint ini.
+Tidak diperbolehkan membuat implementasi Payment yang bertentangan dengan Blueprint ini.
 
 ---
 
@@ -634,272 +558,256 @@ Tidak diperbolehkan membuat implementasi Ticket yang bertentangan dengan Bluepri
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Ticket adalah mencapai **Level 5**.
+Target Domain Payment adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-Ticket Business Architecture dianggap lengkap apabila:
+Payment Business Architecture dianggap lengkap apabila:
 
 - seluruh Capability terdokumentasi
 - seluruh Lifecycle terdokumentasi
 - seluruh Relationship terdokumentasi
 - seluruh Domain Responsibility terdokumentasi
-- seluruh Transportation Lifecycle terdokumentasi
+- seluruh Financial Lifecycle terdokumentasi
 - seluruh Architecture Alignment terdokumentasi
 
 ---
+
 ---
 
-# Ticket Business Process
+# Payment Business Process
 
-Ticket Business Process mendefinisikan seluruh proses bisnis pengelolaan transportasi mulai dari penjadwalan penerbangan, pengelolaan inventori kursi, reservasi tiket, penerbitan tiket, perubahan tiket, refund, boarding, hingga evaluasi performa transportasi.
+Payment Business Process mendefinisikan seluruh proses bisnis pengelolaan pembayaran mulai dari pembuatan tagihan, permintaan pembayaran, penerimaan pembayaran, verifikasi, settlement, rekonsiliasi, hingga pengarsipan transaksi.
 
 Seluruh proses harus terdokumentasi, dapat ditelusuri, dan mengikuti Business Rules yang telah disetujui.
 
 ---
 
-# Ticket Value Chain
+# Payment Value Chain
 
-Flight Schedule
-
-↓
-
-Seat Inventory
+Booking Confirmed
 
 ↓
 
-Seat Allocation
+Invoice Generated
 
 ↓
 
-Reservation
+Payment Request
 
 ↓
 
-Ticket Issuance
+Payment Collection
 
 ↓
 
-Boarding
+Payment Verification
 
 ↓
 
-Departure
+Payment Confirmation
 
 ↓
 
-Arrival
+Settlement
 
 ↓
 
-Performance Evaluation
+Reconciliation
+
+↓
+
+Financial Reporting
 
 ↓
 
 Archive
 
-Ticket menjadi fondasi utama seluruh operasional transportasi.
+Payment menjadi pusat seluruh transaksi keuangan operasional.
 
 ---
 
-# Flight Schedule Process
+# Invoice Generation Process
 
-Sistem mengelola jadwal penerbangan.
+Invoice dibuat berdasarkan Booking yang memenuhi syarat.
 
-Data minimal meliputi:
+Invoice mencakup:
 
-- Airline
-- Flight Number
-- Route
-- Departure Time
-- Arrival Time
-- Terminal
-- Gate
+- Invoice Number
+- Customer
+- Booking
+- Due Date
+- Amount
+- Payment Schedule
 
 Output:
 
-Available Flight Schedule
+Invoice
 
 Business Event:
 
-FlightScheduled
+InvoiceGenerated
 
 ---
 
-# Seat Inventory Process
+# Payment Request Process
 
-Sistem mengelola inventori kursi.
+Sistem mengirimkan permintaan pembayaran kepada Customer.
+
+Melalui:
+
+- Email
+- WhatsApp
+- Mobile Application
+- Customer Portal
+
+Output:
+
+Payment Request
+
+Business Event:
+
+PaymentRequested
+
+---
+
+# Payment Collection Process
+
+Customer melakukan pembayaran menggunakan metode yang tersedia.
 
 Meliputi:
 
-- Total Seat
-- Available Seat
-- Reserved Seat
-- Issued Seat
-- Blocked Seat
+- Bank Transfer
+- Virtual Account
+- QRIS
+- Credit Card
+- Debit Card
+- Cash
+- E-Wallet
 
 Output:
 
-Updated Seat Inventory
+Payment Received
 
 Business Event:
 
-SeatInventoryUpdated
+PaymentReceived
 
 ---
 
-# Seat Allocation Process
+# Payment Verification Process
 
-Seat dialokasikan berdasarkan Departure.
-
-Meliputi:
-
-- Departure
-- Seat Block
-- Seat Quota
-- Remaining Seat
-
-Output:
-
-Seat Allocation
-
-Business Event:
-
-SeatAllocated
-
----
-
-# Ticket Reservation Process
-
-Reservasi dilakukan berdasarkan Booking yang telah dikonfirmasi.
+Sistem memverifikasi pembayaran.
 
 Validasi meliputi:
 
-- Flight Availability
-- Seat Availability
-- Fare Validity
-- Departure Schedule
+- Nominal
+- Payment Reference
+- Payment Method
+- Payment Date
+- Duplicate Transaction
+- Fraud Detection
 
 Output:
 
-Reserved Ticket
+Verified Payment
 
 Business Event:
 
-TicketReserved
+PaymentVerified
 
 ---
 
-# Ticket Issuance Process
+# Payment Confirmation Process
 
-Ticket diterbitkan setelah seluruh persyaratan terpenuhi.
+Pembayaran dinyatakan sah.
 
-Validasi meliputi:
+Status berubah menjadi:
 
-- Payment Status
-- Passenger Data
-- Reservation Status
-- Fare Confirmation
-
-Output:
-
-Issued Ticket
+Paid
 
 Business Event:
 
-TicketIssued
+PaymentConfirmed
 
 ---
 
-# Ticket Reissue Process
+# Installment Process
 
-Perubahan tiket dilakukan sesuai kebijakan Maskapai.
+Apabila pembayaran bertahap diperbolehkan.
 
-Validasi meliputi:
+Tahapan:
 
-- Reissue Policy
-- Fare Difference
-- Seat Availability
-- Schedule Availability
+- Down Payment
+- Installment
+- Final Payment
 
-Output:
-
-Reissued Ticket
+Setiap pembayaran dicatat sebagai transaksi tersendiri.
 
 Business Event:
 
-TicketReissued
+InstallmentPaid
 
 ---
 
-# Ticket Refund Process
+# Refund Process
 
-Refund dilakukan sesuai kebijakan Maskapai.
+Refund dilakukan sesuai Business Policy.
 
 Validasi meliputi:
 
-- Refund Policy
+- Refund Eligibility
+- Approval
 - Refund Amount
-- Refund Approval
+- Refund Method
 
 Output:
 
-Refunded Ticket
+Refund Completed
 
 Business Event:
 
-TicketRefunded
+PaymentRefunded
 
 ---
 
-# Boarding Process
+# Settlement Process
 
-Customer melakukan Boarding.
+Settlement dilakukan terhadap transaksi yang telah berhasil.
 
-Validasi meliputi:
+Settlement memastikan dana telah diterima sesuai Payment Method.
 
-- Ticket Status
-- Passenger Identity
-- Boarding Time
+Business Event:
+
+PaymentSettled
+
+---
+
+# Reconciliation Process
+
+Finance melakukan pencocokan transaksi.
+
+Meliputi:
+
+- Bank Statement
+- Payment Gateway
+- Internal Ledger
 
 Output:
 
-Boarded Passenger
+Reconciled Payment
 
 Business Event:
 
-PassengerBoarded
+PaymentReconciled
 
 ---
 
-# Ticket Evaluation Process
+# Payment Archive Process
 
-Evaluasi operasional Ticket dilakukan secara berkala.
-
-Parameter minimal:
-
-- Schedule Accuracy
-- Seat Utilization
-- On-Time Performance
-- Cancellation Rate
-- Refund Rate
-- Customer Satisfaction
-
-Output:
-
-Ticket Performance Score
-
-Business Event:
-
-TicketEvaluated
-
----
-
-# Ticket Archive Process
-
-Ticket yang telah selesai dipindahkan menjadi arsip.
+Transaksi dipindahkan menjadi arsip.
 
 Status:
 
@@ -907,11 +815,11 @@ Archived
 
 Business Event:
 
-TicketArchived
+PaymentArchived
 
 ---
 
-# Ticket Workflow Standard
+# Payment Workflow Standard
 
 Seluruh Workflow wajib memiliki:
 
@@ -930,155 +838,125 @@ Workflow tidak bergantung pada implementasi teknis.
 
 ---
 
-# Ticket SLA
+# Payment SLA
 
 | Process | Target |
 |---------|--------|
-| Flight Schedule Update | ≤ 10 Minutes |
-| Seat Inventory Update | Real-Time |
-| Ticket Reservation | ≤ 3 Minutes |
-| Ticket Issuance | ≤ 5 Minutes |
-| Ticket Reissue | ≤ 30 Minutes |
-| Ticket Refund | ≤ 5 Working Days |
-| Boarding Validation | ≤ 30 Seconds |
+| Invoice Generation | ≤ 5 Minutes |
+| Payment Request | ≤ 5 Minutes |
+| Payment Verification | ≤ 15 Minutes |
+| Payment Confirmation | ≤ 10 Minutes |
+| Settlement | ≤ 1 Working Day |
+| Reconciliation | ≤ 1 Working Day |
+| Refund | ≤ 5 Working Days |
 
 ---
 
-# Ticket Process Metrics
+# Payment Process Metrics
 
 | Metric | Target |
 |---------|--------|
-| Reservation Accuracy | 100% |
-| Seat Allocation Accuracy | 100% |
-| Ticket Issuance Accuracy | 100% |
-| Boarding Success Rate | ≥99% |
-| On-Time Flight Rate | ≥95% |
+| Payment Success Rate | ≥ 99% |
+| Verification Accuracy | 100% |
+| Settlement Accuracy | 100% |
+| Reconciliation Accuracy | 100% |
 | Refund Accuracy | 100% |
+| Duplicate Payment | 0 |
 
 ---
 
-# Ticket Checklist
+# Payment Checklist
 
-Ticket dinyatakan siap digunakan apabila seluruh checklist berikut telah terpenuhi.
+Payment dinyatakan selesai apabila seluruh checklist berikut telah terpenuhi.
 
 | Checklist | Status |
 |------------|--------|
-| Flight Scheduled | ✔ |
-| Seat Inventory Available | ✔ |
-| Seat Allocation Completed | ✔ |
-| Reservation Confirmed | ✔ |
-| Ticket Issued | ✔ |
-| Boarding Enabled | ✔ |
+| Invoice Generated | ✔ |
+| Payment Requested | ✔ |
+| Payment Received | ✔ |
+| Payment Verified | ✔ |
+| Payment Confirmed | ✔ |
+| Settlement Completed | ✔ |
+| Reconciliation Completed | ✔ |
 | Audit Trail Recorded | ✔ |
 
-Checklist menjadi syarat perubahan Status menjadi **Issued**.
+Checklist menjadi syarat perubahan Status menjadi **Completed**.
 
 ---
 
-# Ticket Traceability
+# Double Traceability
 
-Seluruh aktivitas Ticket wajib dapat ditelusuri.
+Seluruh transaksi Payment wajib dapat ditelusuri melalui dua perspektif.
 
-Vendor
+## Business Traceability
 
-↓
-
-Flight
+Customer
 
 ↓
 
-Schedule
+Booking
 
 ↓
 
-Reservation
+Invoice
 
 ↓
 
-Ticket
-
-↓
-
-Boarding
+Payment
 
 ↓
 
 Departure
 
+---
+
+## Financial Traceability
+
+Payment
+
 ↓
 
-Finance
+Payment Method
+
+↓
+
+Settlement
+
+↓
+
+Reconciliation
 
 ↓
 
 Audit Trail
 
-Tidak diperbolehkan terdapat aktivitas Ticket tanpa jejak yang lengkap.
-
----
-
-# Ticket Operation Cycle
-
-Operasional Ticket mengikuti siklus berikut.
-
-Flight Planning
-
 ↓
 
-Schedule
+Financial Report
 
-↓
-
-Reservation
-
-↓
-
-Issuance
-
-↓
-
-Boarding
-
-↓
-
-Departure
-
-↓
-
-Arrival
-
-↓
-
-Performance Evaluation
-
-↓
-
-Archive
-
-Seluruh aktivitas operasional harus terdokumentasi.
+Double Traceability menjadi standar wajib pada seluruh transaksi keuangan VENTRA.
 
 ---
 
 # Acceptance Criteria
 
-Ticket Business Process dianggap lengkap apabila:
+Payment Business Process dianggap lengkap apabila:
 
 - seluruh proses terdokumentasi
 - seluruh Workflow memiliki Owner
 - seluruh Workflow memiliki KPI
 - seluruh Workflow memiliki SLA
 - seluruh Business Event terdokumentasi
-- seluruh aktivitas tercatat pada Ticket Timeline
-- seluruh Ticket memenuhi Ticket Traceability
-- seluruh proses operasional terdokumentasi
+- seluruh aktivitas tercatat pada Payment Timeline
+- seluruh transaksi memenuhi Double Traceability
 
 ---
 
 ---
 
-# Ticket Business Rules
+# Payment Business Rules
 
-Ticket Business Rules mendefinisikan aturan resmi yang mengatur seluruh aktivitas Ticket.
+Payment Business Rules mendefinisikan aturan resmi yang mengatur seluruh aktivitas pembayaran.
 
 Business Rules menjadi acuan implementasi pada:
 
@@ -1087,7 +965,6 @@ Business Rules menjadi acuan implementasi pada:
 - Flutter
 - Dashboard
 - Artificial Intelligence
-- Operation
 - Quality Assurance
 
 Business Rules ditentukan oleh Business Owner.
@@ -1096,348 +973,282 @@ Developer tidak diperbolehkan membuat Business Rules sendiri.
 
 ---
 
-# Ticket Rule Categories
+# Payment Rule Categories
 
 Business Rules dikelompokkan menjadi beberapa kategori.
 
-- Airline Rules
-- Flight Rules
-- Schedule Rules
-- Fare Rules
-- Seat Inventory Rules
-- Reservation Rules
-- Ticket Issuance Rules
-- Reissue & Refund Rules
-- Boarding Rules
-- Performance Rules
+- Invoice Rules
+- Payment Rules
+- Installment Rules
+- Verification Rules
+- Refund Rules
+- Settlement Rules
+- Reconciliation Rules
 - Integration Rules
 - Data Quality Rules
 
 ---
 
-# Airline Rules
+# Invoice Rules
 
-## TIC-001
+## PAY-001
 
-Setiap Airline wajib memiliki Airline Code yang unik.
-
----
-
-## TIC-002
-
-Airline wajib berstatus Active sebelum digunakan.
+Setiap Invoice wajib memiliki nomor yang unik.
 
 ---
 
-## TIC-003
+## PAY-002
 
-Airline wajib memiliki informasi kontak dan lisensi yang valid.
-
----
-
-## TIC-004
-
-Airline wajib memiliki Vendor yang aktif.
+Invoice harus terkait dengan satu Booking.
 
 ---
 
-# Flight Rules
+## PAY-003
 
-## TIC-020
-
-Setiap Flight wajib memiliki Flight Number yang unik pada tanggal operasional yang sama.
+Invoice wajib memiliki Due Date.
 
 ---
 
-## TIC-021
+## PAY-004
 
-Flight wajib memiliki Route yang valid.
-
----
-
-## TIC-022
-
-Flight wajib memiliki Departure Time dan Arrival Time.
+Invoice tidak dapat diubah setelah berstatus Paid, kecuali sesuai Business Policy.
 
 ---
 
-## TIC-023
+# Payment Rules
 
-Flight tidak boleh digunakan apabila berstatus Cancelled.
+## PAY-020
 
----
-
-# Schedule Rules
-
-## TIC-040
-
-Perubahan jadwal wajib tercatat pada Audit Trail.
+Setiap Payment wajib terkait dengan satu Invoice.
 
 ---
 
-## TIC-041
+## PAY-021
 
-Perubahan jadwal harus memperbarui seluruh Departure terkait.
-
----
-
-## TIC-042
-
-Delay dan Cancellation wajib menghasilkan Business Event.
+Nominal pembayaran tidak boleh bernilai negatif.
 
 ---
 
-# Fare Rules
+## PAY-022
 
-## TIC-060
-
-Fare wajib memiliki periode berlaku.
+Payment Reference harus unik.
 
 ---
 
-## TIC-061
+## PAY-023
 
-Fare wajib memiliki Currency.
-
----
-
-## TIC-062
-
-Perubahan Fare harus memiliki riwayat.
+Setiap transaksi wajib memiliki Payment Method.
 
 ---
 
-## TIC-063
+## PAY-024
 
-Fare Contract lebih diprioritaskan dibanding Published Fare apabila tersedia.
-
----
-
-# Seat Inventory Rules
-
-## TIC-080
-
-Seat Inventory tidak boleh bernilai negatif.
+Duplicate Payment tidak diperbolehkan.
 
 ---
 
-## TIC-081
+## PAY-025
 
-Seat Allocation tidak boleh melebihi kapasitas pesawat.
-
----
-
-## TIC-082
-
-Blocked Seat tidak dapat dipesan.
+Payment yang telah dikonfirmasi tidak dapat dihapus.
 
 ---
 
-## TIC-083
+# Installment Rules
 
-Overbooking hanya diperbolehkan berdasarkan Approval dan kebijakan Maskapai.
+## PAY-040
 
----
-
-# Reservation Rules
-
-## TIC-100
-
-Reservasi hanya dapat dilakukan pada Flight yang tersedia.
+Installment hanya diperbolehkan sesuai Business Policy.
 
 ---
 
-## TIC-101
+## PAY-041
 
-Reservasi wajib terkait dengan Booking yang valid.
-
----
-
-## TIC-102
-
-Reservasi wajib memiliki Passenger Manifest.
+Setiap pembayaran cicilan dicatat sebagai transaksi tersendiri.
 
 ---
 
-## TIC-103
+## PAY-042
 
-Reservasi wajib memiliki Status.
-
----
-
-# Ticket Issuance Rules
-
-## TIC-120
-
-Ticket hanya dapat diterbitkan apabila Payment telah dikonfirmasi.
+Total seluruh Installment tidak boleh melebihi nilai Invoice.
 
 ---
 
-## TIC-121
+## PAY-043
 
-Ticket wajib memiliki Ticket Number.
-
----
-
-## TIC-122
-
-Ticket Number tidak boleh berubah setelah diterbitkan.
+Final Payment menutup kewajiban pembayaran Invoice.
 
 ---
 
-## TIC-123
+# Verification Rules
 
-Setiap penerbitan Ticket wajib memiliki Audit Trail.
+## PAY-060
 
----
-
-# Reissue & Refund Rules
-
-## TIC-140
-
-Reissue mengikuti kebijakan Maskapai.
+Seluruh Payment wajib diverifikasi.
 
 ---
 
-## TIC-141
+## PAY-061
 
-Refund mengikuti Refund Policy.
+Verifikasi dilakukan berdasarkan:
 
----
-
-## TIC-142
-
-Void hanya diperbolehkan sebelum Ticket digunakan.
-
----
-
-## TIC-143
-
-Seluruh proses Reissue, Refund, dan Void wajib terdokumentasi.
+- Nominal
+- Payment Reference
+- Payment Date
+- Payment Method
 
 ---
 
-# Boarding Rules
+## PAY-062
 
-## TIC-160
-
-Boarding hanya dapat dilakukan untuk Ticket berstatus Issued.
+Payment dengan indikasi fraud harus ditinjau secara manual.
 
 ---
 
-## TIC-161
+# Refund Rules
 
-Identitas Passenger wajib sesuai dengan Ticket.
+## PAY-080
 
----
-
-## TIC-162
-
-Boarding yang telah selesai tidak dapat dibatalkan tanpa Approval.
+Refund hanya dapat dilakukan terhadap Payment yang telah dikonfirmasi.
 
 ---
 
-# Performance Rules
+## PAY-081
 
-## TIC-180
-
-Ticket wajib dievaluasi secara berkala.
+Refund wajib memperoleh Approval.
 
 ---
 
-## TIC-181
+## PAY-082
 
-Evaluasi menggunakan Ticket Scorecard.
-
----
-
-## TIC-182
-
-Maskapai dengan performa rendah wajib dievaluasi.
+Refund wajib memiliki alasan yang terdokumentasi.
 
 ---
 
-## TIC-183
+## PAY-083
 
-Seluruh Flight Delay harus dianalisis.
+Nominal Refund tidak boleh melebihi nominal Payment.
+
+---
+
+# Settlement Rules
+
+## PAY-100
+
+Settlement hanya dilakukan terhadap Payment yang telah diverifikasi.
+
+---
+
+## PAY-101
+
+Settlement wajib tercatat pada Audit Trail.
+
+---
+
+# Reconciliation Rules
+
+## PAY-120
+
+Seluruh Settlement wajib direkonsiliasi.
+
+---
+
+## PAY-121
+
+Selisih transaksi wajib diinvestigasi.
+
+---
+
+## PAY-122
+
+Reconciliation harus menghasilkan status yang jelas.
 
 ---
 
 # Integration Rules
 
-## TIC-200
+## PAY-140
 
-Ticket hanya berkomunikasi melalui API atau Business Event.
-
----
-
-## TIC-201
-
-Ticket tidak boleh mengakses Database Domain lain secara langsung.
+Payment hanya berkomunikasi melalui API atau Business Event.
 
 ---
 
-## TIC-202
+## PAY-141
 
-Departure hanya menggunakan Ticket berstatus Issued.
+Payment tidak boleh mengakses Database Domain lain secara langsung.
 
 ---
 
-## TIC-203
+## PAY-142
 
-Finance hanya memproses biaya Ticket yang telah tervalidasi.
+Invoice mengikuti Domain Invoice.
+
+---
+
+## PAY-143
+
+Booking Status mengikuti Domain Booking.
 
 ---
 
 # Data Quality Rules
 
-## TIC-220
+## PAY-160
 
-Ticket menjadi Single Source of Truth seluruh data Ticket.
+Payment menjadi Single Source of Truth untuk transaksi pembayaran.
 
 ---
 
-## TIC-221
+## PAY-161
+
+Invoice tetap dimiliki Domain Invoice.
+
+---
+
+## PAY-162
+
+Booking tetap dimiliki Domain Booking.
+
+---
+
+## PAY-163
 
 Seluruh perubahan wajib memiliki Audit Trail.
 
 ---
 
-## TIC-222
+# Payment Status Lifecycle
 
-Ticket Master Record wajib selalu diperbarui.
+Payment mengikuti Status berikut.
 
----
-
-# Ticket Status Lifecycle
-
-Ticket mengikuti Status berikut.
-
-Scheduled
+Requested
 
 ↓
 
-Available
+Pending
 
 ↓
 
-Reserved
+Partially Paid
 
 ↓
 
-Issued
+Paid
 
 ↓
 
-Boarding
-
-↓
-
-Departed
+Verified
 
 ↓
 
 Completed
+
+↓
+
+Settled
+
+↓
+
+Reconciled
 
 ↓
 
@@ -1447,89 +1258,73 @@ Status alternatif:
 
 Cancelled
 
+Expired
+
 Refunded
 
-Voided
-
-Reissued
-
-Expired
+Chargeback
 
 Status tidak boleh dilompati tanpa Business Rule yang sah.
 
 ---
 
-# Ticket Business Events
+# Payment Business Events
 
-Ticket menghasilkan Business Event berikut.
-
----
-
-## Flight Events
-
-FlightScheduled
-
-FlightDelayed
-
-FlightCancelled
-
-FlightDeparted
-
-FlightArrived
+Payment menghasilkan Business Event berikut.
 
 ---
 
-## Reservation Events
+## Invoice Events
 
-TicketReserved
+InvoiceGenerated
 
-ReservationConfirmed
+InvoiceUpdated
 
-ReservationCancelled
-
----
-
-## Ticket Events
-
-TicketIssued
-
-TicketReissued
-
-TicketRefunded
-
-TicketVoided
-
-TicketArchived
+InvoiceExpired
 
 ---
 
-## Seat Events
+## Payment Events
 
-SeatInventoryUpdated
+PaymentRequested
 
-SeatAllocated
+PaymentReceived
 
-SeatReleased
+PaymentVerified
 
----
+PaymentConfirmed
 
-## Passenger Events
+InstallmentPaid
 
-PassengerBoarded
-
-PassengerCheckedIn
-
-PassengerNoShow
+PaymentCompleted
 
 ---
 
-## Performance Events
+## Refund Events
 
-TicketEvaluated
+RefundRequested
 
-FlightPerformanceUpdated
+RefundApproved
 
-AirlinePerformanceUpdated
+PaymentRefunded
+
+---
+
+## Settlement Events
+
+PaymentSettled
+
+PaymentReconciled
+
+---
+
+## Financial Events
+
+PaymentArchived
+
+PaymentFailed
+
+ChargebackReceived
 
 ---
 
@@ -1543,11 +1338,13 @@ Format:
 
 Contoh:
 
-TicketIssued
+PaymentConfirmed
 
-PassengerBoarded
+PaymentSettled
 
-FlightDeparted
+RefundApproved
+
+InvoiceGenerated
 
 Business Event harus merepresentasikan kejadian bisnis.
 
@@ -1555,23 +1352,27 @@ Bukan implementasi teknis.
 
 Contoh yang benar:
 
-TicketRefunded
+PaymentVerified
 
 Contoh yang salah:
 
-InsertTicketDatabase
+InsertPaymentDatabase
 
-UpdateFlightTable
+UpdatePaymentTable
 
-SaveTicketAPI
+SavePaymentAPI
 
 ---
 
 # Event Publishing
 
-Ticket Domain mempublikasikan Event berikut.
+Payment Domain mempublikasikan Event kepada Domain lain.
 
-TicketIssued
+PaymentConfirmed
+
+↓
+
+Booking
 
 ↓
 
@@ -1591,15 +1392,11 @@ Artificial Intelligence
 
 ---
 
-FlightDelayed
+PaymentRefunded
 
 ↓
 
-Booking
-
-↓
-
-Departure
+Finance
 
 ↓
 
@@ -1607,19 +1404,15 @@ Dashboard
 
 ↓
 
-Notification
-
-↓
-
 Artificial Intelligence
 
 ---
 
-PassengerBoarded
+PaymentReconciled
 
 ↓
 
-Departure
+Finance
 
 ↓
 
@@ -1627,55 +1420,39 @@ Dashboard
 
 ↓
 
-Analytics
+Executive Report
 
 ---
 
-TicketEvaluated
+# Financial Control Points
+
+Setiap transaksi wajib melalui Control Point berikut.
+
+Invoice Generated
 
 ↓
 
-Executive Dashboard
+Payment Requested
 
 ↓
 
-Artificial Intelligence
-
----
-
-# Ticket Control Points
-
-Setiap Ticket wajib melalui Control Point berikut.
-
-Flight Schedule
+Payment Verified
 
 ↓
 
-Seat Inventory
+Payment Confirmed
 
 ↓
 
-Reservation
+Settlement Completed
 
 ↓
 
-Ticket Issuance
+Reconciliation Completed
 
 ↓
 
-Boarding
-
-↓
-
-Departure
-
-↓
-
-Arrival
-
-↓
-
-Evaluation
+Financial Reporting
 
 ↓
 
@@ -1685,7 +1462,7 @@ Seluruh Control Point wajib terdokumentasi.
 
 ---
 
-# Ticket Rule Governance
+# Payment Rule Governance
 
 Perubahan Business Rule mengikuti proses berikut.
 
@@ -1713,16 +1490,15 @@ Implementation
 
 ---
 
-# Ticket Rule Metrics
+# Payment Rule Metrics
 
 | Metric | Target |
 |---------|--------|
 | Rule Documentation | 100% |
 | Rule Compliance | 100% |
 | Event Coverage | 100% |
-| Reservation Accuracy | 100% |
-| Ticket Accuracy | 100% |
-| Boarding Accuracy | 100% |
+| Financial Accuracy | 100% |
+| Duplicate Transaction | 0 |
 
 ---
 
@@ -1740,25 +1516,25 @@ Implementation
 
 # Acceptance Criteria
 
-Ticket Business Rules dianggap lengkap apabila:
+Payment Business Rules dianggap lengkap apabila:
 
 - seluruh Rule memiliki ID
 - seluruh Rule memiliki Business Owner
 - seluruh Status terdokumentasi
 - seluruh Business Event terdokumentasi
 - seluruh Event mengikuti Naming Standard
-- seluruh Ticket Control Point terdokumentasi
+- seluruh Financial Control Point terdokumentasi
 - seluruh perubahan Rule mengikuti Governance Process
 
 ---
 
 ---
 
-# Ticket Intelligence
+# Payment Intelligence
 
-Ticket Intelligence merupakan kemampuan VENTRA dalam menganalisis seluruh aktivitas transportasi menggunakan Business Analytics dan Artificial Intelligence.
+Payment Intelligence merupakan kemampuan VENTRA dalam menganalisis seluruh aktivitas pembayaran menggunakan Business Analytics dan Artificial Intelligence.
 
-Ticket Intelligence membantu perusahaan meningkatkan ketepatan operasional, mengoptimalkan utilisasi kursi, mengevaluasi performa maskapai, mengendalikan biaya perjalanan, serta mendukung pengambilan keputusan strategis.
+Payment Intelligence membantu perusahaan memahami kondisi keuangan secara real-time, mengidentifikasi risiko transaksi, meningkatkan cash flow, dan mendukung pengambilan keputusan strategis.
 
 Artificial Intelligence memberikan rekomendasi.
 
@@ -1766,177 +1542,209 @@ Keputusan akhir tetap berada pada manusia.
 
 ---
 
-# Ticket Intelligence Objectives
+# Payment Intelligence Objectives
 
-Ticket Intelligence bertujuan untuk:
+Payment Intelligence bertujuan untuk:
 
-- meningkatkan ketepatan operasional
-- meningkatkan utilisasi kursi
-- meningkatkan ketepatan jadwal
-- meningkatkan kualitas maskapai
-- mengurangi risiko keterlambatan
-- mengoptimalkan biaya transportasi
-- mendukung Executive Decision Making
+- meningkatkan cash flow
+- meningkatkan payment success rate
+- mempercepat payment collection
+- mengurangi overdue payment
+- mengurangi fraud
+- meningkatkan akurasi rekonsiliasi
+- membantu Executive Decision Making
 
 ---
 
-# Ticket Analytics
+# Payment Analytics
 
-Ticket Analytics digunakan untuk mengevaluasi seluruh aktivitas Ticket.
+Payment Analytics digunakan untuk mengevaluasi seluruh aktivitas pembayaran.
 
 Minimal mencakup:
 
-- Flight Analytics
-- Reservation Analytics
-- Seat Utilization Analytics
-- Airline Performance Analytics
-- Schedule Analytics
-- Fare Analytics
-- Ticket Cost Analytics
-- Boarding Analytics
-- Passenger Analytics
-- Transportation Quality Analytics
+- Payment Analytics
+- Collection Analytics
+- Installment Analytics
+- Refund Analytics
+- Settlement Analytics
+- Reconciliation Analytics
+- Cash Flow Analytics
+- Payment Method Analytics
+- Fraud Analytics
+- Customer Payment Analytics
 
 Seluruh Analytics menjadi dasar pengambilan keputusan.
 
 ---
 
-# Ticket KPI
+# Payment KPI
 
-Ticket Domain memiliki KPI resmi.
+Payment Domain memiliki KPI resmi.
 
 | KPI | Description |
 |------|-------------|
-| Total Flight | Jumlah penerbangan |
-| Active Flight | Penerbangan aktif |
-| Seat Utilization | Tingkat utilisasi kursi |
-| Reservation Success Rate | Tingkat keberhasilan reservasi |
-| Ticket Issuance Rate | Tingkat penerbitan tiket |
-| On-Time Performance | Ketepatan waktu penerbangan |
-| Flight Delay Rate | Tingkat keterlambatan |
-| Cancellation Rate | Tingkat pembatalan |
-| Customer Satisfaction | Kepuasan Customer |
-| Transportation Cost | Total biaya transportasi |
+| Total Payment | Total transaksi pembayaran |
+| Payment Success Rate | Persentase pembayaran berhasil |
+| Payment Collection Rate | Tingkat keberhasilan penagihan |
+| Overdue Payment | Jumlah pembayaran terlambat |
+| Outstanding Balance | Total tagihan belum lunas |
+| Refund Rate | Persentase refund |
+| Settlement Accuracy | Akurasi settlement |
+| Reconciliation Accuracy | Akurasi rekonsiliasi |
+| Average Payment Time | Rata-rata waktu pembayaran |
+| Cash Flow | Arus kas masuk |
 
 ---
 
-# Flight Analytics
+# Cash Flow Analytics
 
-Penerbangan dianalisis berdasarkan:
+Cash Flow dianalisis berdasarkan:
 
-- Flight Volume
-- Flight Trend
-- Flight by Airline
-- Flight by Route
-- Peak Season Flight
-- Flight Completion Rate
+- Daily Cash In
+- Weekly Cash In
+- Monthly Cash In
+- Outstanding Invoice
+- Forecast Cash Flow
+- Collection Trend
 
-Analytics membantu optimalisasi kapasitas transportasi.
-
----
-
-# Reservation Analytics
-
-Reservasi dianalisis berdasarkan:
-
-- Reservation Volume
-- Reservation Trend
-- Reservation Lead Time
-- Reservation Success Rate
-- Reservation Cancellation Rate
+Cash Flow Analytics membantu menjaga kesehatan keuangan perusahaan.
 
 ---
 
-# Seat Utilization Analytics
+# Collection Analytics
 
-Utilisasi kursi dianalisis berdasarkan:
+Collection dianalisis berdasarkan:
 
-- Available Seat
-- Reserved Seat
-- Issued Seat
-- Empty Seat
-- Seat Occupancy Rate
+- Total Collection
+- Outstanding Collection
+- Overdue Collection
+- Collection Efficiency
+- Collection Trend
 
-Analytics membantu optimalisasi kapasitas pesawat.
-
----
-
-# Airline Performance Analytics
-
-Performa Maskapai dianalisis berdasarkan:
-
-- On-Time Performance
-- Delay Rate
-- Cancellation Rate
-- Service Quality
-- Customer Rating
-- Incident Frequency
-
-Analytics membantu mengevaluasi kualitas Maskapai.
+Analytics membantu meningkatkan efektivitas penagihan.
 
 ---
 
-# Schedule Analytics
+# Installment Analytics
 
-Jadwal dianalisis berdasarkan:
+Pembayaran bertahap dianalisis berdasarkan:
 
-- Schedule Accuracy
-- Schedule Change
-- Delay Trend
-- Peak Hour
-- Airport Performance
+- Active Installment
+- Installment Completion Rate
+- Average Installment Duration
+- Late Installment
+- Default Risk
 
----
-
-# Transportation Quality Analytics
-
-Kualitas transportasi dianalisis berdasarkan:
-
-- Airline Score
-- Customer Rating
-- Complaint Rate
-- Service Consistency
-- Safety Performance
+Analytics digunakan untuk mengevaluasi pola pembayaran Customer.
 
 ---
 
-# Executive Ticket Dashboard
+# Refund Analytics
+
+Refund dianalisis berdasarkan:
+
+- Refund Count
+- Refund Amount
+- Refund Ratio
+- Refund Processing Time
+- Refund Reason
+
+Analytics membantu mengevaluasi kualitas layanan.
+
+---
+
+# Settlement Analytics
+
+Settlement dianalisis berdasarkan:
+
+- Settlement Success Rate
+- Settlement Time
+- Failed Settlement
+- Pending Settlement
+
+---
+
+# Reconciliation Analytics
+
+Reconciliation dianalisis berdasarkan:
+
+- Matched Transaction
+- Unmatched Transaction
+- Reconciliation Duration
+- Financial Accuracy
+
+---
+
+# Payment Method Analytics
+
+Metode pembayaran dianalisis berdasarkan:
+
+- Transaction Volume
+- Revenue Contribution
+- Success Rate
+- Failure Rate
+- Processing Time
+
+Contoh:
+
+- Bank Transfer
+- Virtual Account
+- QRIS
+- Credit Card
+- Debit Card
+- E-Wallet
+
+---
+
+# Fraud Analytics
+
+Fraud Analytics menganalisis:
+
+- Duplicate Payment
+- Suspicious Transaction
+- Chargeback
+- Abnormal Payment Pattern
+- High Risk Transaction
+
+Artificial Intelligence membantu mendeteksi pola fraud.
+
+---
+
+# Executive Payment Dashboard
 
 Dashboard Executive minimal menampilkan:
 
-## Transportation Summary
-
-- Total Flight
-- Active Flight
-- Seat Utilization
-- Reservation Trend
-
----
-
-## Operational Summary
-
-- On-Time Performance
-- Flight Delay
-- Cancellation Rate
-- Boarding Success Rate
-
----
-
-## Quality Summary
-
-- Airline Performance
-- Customer Satisfaction
-- Transportation Quality Score
-- Complaint Trend
-
----
-
 ## Financial Summary
 
-- Transportation Cost
-- Cost Trend
-- Cost per Passenger
-- Budget Utilization
+- Total Payment
+- Total Revenue
+- Outstanding Balance
+- Cash Flow
+
+---
+
+## Collection Summary
+
+- Collection Rate
+- Overdue Payment
+- Collection Trend
+
+---
+
+## Risk Summary
+
+- Fraud Alert
+- Chargeback
+- Failed Payment
+- High Risk Transaction
+
+---
+
+## Performance Summary
+
+- Settlement Accuracy
+- Reconciliation Accuracy
+- Payment Success Rate
 
 ---
 
@@ -1944,84 +1752,82 @@ Dashboard Executive minimal menampilkan:
 
 Artificial Intelligence memberikan rekomendasi seperti:
 
-- Maskapai terbaik untuk Departure tertentu
-- Prediksi keterlambatan penerbangan
-- Prediksi utilisasi kursi
-- Rekomendasi perubahan jadwal
-- Peluang efisiensi biaya
-- Prioritas evaluasi Maskapai
+- Customer yang berpotensi terlambat membayar
+- Invoice yang perlu diprioritaskan
+- Prediksi Cash Flow
+- Risiko Fraud
+- Tren pembayaran
+- Strategi Collection
 
 Dashboard harus mendukung Executive Decision Making.
 
 ---
 
-# Predictive Ticket Analytics
+# Predictive Payment Analytics
 
 Artificial Intelligence dapat memprediksi:
 
-- keterlambatan penerbangan
-- kebutuhan kapasitas kursi
-- risiko pembatalan
-- kebutuhan perubahan jadwal
-- peluang penghematan biaya
-- performa Maskapai
+- keterlambatan pembayaran
+- cash flow masa depan
+- risiko gagal bayar
+- kemungkinan refund
+- kemungkinan chargeback
+- efektivitas collection
 
 Prediksi digunakan sebagai bahan pertimbangan bisnis.
 
 ---
 
-# AI Ticket Assistant
+# AI Payment Assistant
 
-AI membantu Ticket Manager dalam:
+AI membantu Finance Team dalam:
 
-- Flight Recommendation
-- Airline Recommendation
-- Schedule Optimization
-- Seat Allocation Recommendation
-- Cost Analysis
-- Executive Summary
-- Transportation Monitoring
+- Payment Review
+- Collection Recommendation
+- Fraud Detection
+- Cash Flow Forecast
+- Collection Priority
+- Financial Summary
+- Executive Briefing
 
-AI tidak melakukan perubahan data secara otomatis.
+AI tidak melakukan perubahan transaksi secara otomatis.
 
 Seluruh rekomendasi AI memerlukan persetujuan pengguna sesuai Governance Standard.
 
 ---
 
-# Ticket Health Score
+# Financial Health Score
 
-Ticket Domain memiliki Ticket Health Score.
+Payment Domain memiliki Financial Health Score.
 
 Skor dihitung berdasarkan:
 
-- On-Time Performance
-- Seat Utilization
-- Reservation Success Rate
-- Airline Performance
-- Customer Satisfaction
-- Delay Rate
-- AI Confidence Score
+- Payment Success Rate
+- Collection Rate
+- Cash Flow
+- Outstanding Balance
+- Settlement Accuracy
+- Reconciliation Accuracy
+- Fraud Risk
 
 | Score | Status |
-|--------|--------|
+|---------|--------|
 | 95–100 | Excellent |
 | 85–94 | Healthy |
 | 70–84 | Warning |
 | <70 | Critical |
 
-Ticket Health Score menjadi indikator utama pada Executive Dashboard.
+Financial Health Score menjadi indikator utama pada Executive Dashboard.
 
 ---
 
-# Ticket Intelligence Governance
+# Payment Intelligence Governance
 
-Ticket Intelligence mengikuti:
+Payment Intelligence mengikuti:
 
 - BP-001 Business Blueprint
 - BP-104 Booking Blueprint
 - BP-106 Departure Blueprint
-- BP-109 Vendor Blueprint
-- BP-110 Hotel Blueprint
 - Dashboard Standard
 - AI Standard
 - Governance Standard
@@ -2030,7 +1836,7 @@ Seluruh penggunaan AI tetap mematuhi AI Ethics.
 
 ---
 
-# Ticket Intelligence Metrics
+# Payment Intelligence Metrics
 
 | Metric | Target |
 |---------|--------|
@@ -2040,7 +1846,7 @@ Seluruh penggunaan AI tetap mematuhi AI Ethics.
 | AI Recommendation Coverage | 100% |
 | Executive Insight Coverage | 100% |
 | Predictive Analytics Coverage | 100% |
-| Ticket Health Score | ≥95 |
+| Financial Health Score | ≥95 |
 
 ---
 
@@ -2054,13 +1860,13 @@ Seluruh penggunaan AI tetap mematuhi AI Ethics.
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Ticket adalah mencapai **Level 5**.
+Target Domain Payment adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-Ticket Intelligence dianggap lengkap apabila:
+Payment Intelligence dianggap lengkap apabila:
 
 - seluruh KPI terdokumentasi
 - seluruh Dashboard terdokumentasi
@@ -2068,24 +1874,25 @@ Ticket Intelligence dianggap lengkap apabila:
 - seluruh AI Recommendation terdokumentasi
 - seluruh Insight berasal dari Business Data
 - seluruh Dashboard mendukung Executive Decision Making
-- Ticket Health Score terdokumentasi
-
----
----
-
-# Ticket Governance
-
-Ticket Domain merupakan Enterprise Transportation Management Domain dalam Business Architecture VENTRA.
-
-Seluruh implementasi Ticket wajib mengacu pada Blueprint ini.
-
-Perubahan terhadap Ticket Blueprint hanya dapat dilakukan melalui Blueprint Governance Process.
+- Financial Health Score terdokumentasi
 
 ---
 
-# Ticket Domain Governance
+---
 
-Ticket Domain mengikuti Governance Standard VENTRA.
+# Payment Governance
+
+Payment Domain merupakan Financial Transaction Domain dalam Enterprise Business Architecture VENTRA.
+
+Seluruh implementasi Payment wajib mengacu pada Blueprint ini.
+
+Perubahan terhadap Payment Blueprint hanya dapat dilakukan melalui Blueprint Governance Process.
+
+---
+
+# Payment Domain Governance
+
+Payment Domain mengikuti Governance Standard VENTRA.
 
 Seluruh perubahan mengikuti proses berikut.
 
@@ -2129,47 +1936,9 @@ Tidak diperbolehkan melakukan perubahan langsung pada implementasi tanpa melalui
 
 # Domain Context Map
 
-Ticket berada di pusat Enterprise Transportation Management.
+Payment berada di pusat Financial Transaction Management.
 
-Vendor
-
-↓
-
-Ticket
-
-├── Airline Master
-
-├── Flight Master
-
-├── Route
-
-├── Flight Schedule
-
-├── Fare
-
-├── Flight Class
-
-├── Seat Inventory
-
-├── Seat Allocation
-
-├── Reservation
-
-├── Ticket Issuance
-
-├── Reissue
-
-├── Refund
-
-├── Void
-
-├── Boarding
-
-├── Performance
-
-├── Analytics
-
-└── Intelligence
+Customer
 
 ↓
 
@@ -2177,7 +1946,29 @@ Booking
 
 ↓
 
-Departure
+Invoice
+
+↓
+
+Payment
+
+├── Payment Request
+
+├── Installment
+
+├── Verification
+
+├── Settlement
+
+├── Reconciliation
+
+├── Refund
+
+├── Chargeback
+
+├── Financial Control
+
+└── Audit Trail
 
 ↓
 
@@ -2191,36 +1982,34 @@ Dashboard
 
 Artificial Intelligence
 
-Ticket menjadi pusat seluruh pengelolaan transportasi.
+Payment menjadi pusat seluruh transaksi pembayaran.
 
 ---
 
 # Upstream Domain
 
-Ticket menerima informasi dari:
+Payment menerima informasi dari:
 
-- Vendor
-- Airline
-- GDS Provider
-- Consolidator
-- Airport Information
-- Schedule Provider
+- Customer
+- Booking
+- Invoice
+- Payment Gateway
+- Bank
 
 ---
 
 # Downstream Domain
 
-Ticket memberikan informasi kepada:
+Payment memberikan informasi kepada:
 
-- Booking
-- Departure
 - Finance
 - Dashboard
 - Notification
+- CRM
 - Artificial Intelligence
 - Reporting
 
-Ticket menjadi sumber resmi seluruh informasi transportasi.
+Payment menjadi sumber utama status transaksi pembayaran.
 
 ---
 
@@ -2228,16 +2017,17 @@ Ticket menjadi sumber resmi seluruh informasi transportasi.
 
 | Domain | Relationship | Integration |
 |---------|--------------|-------------|
-| Vendor | Upstream | API |
-| Airline | Upstream | API |
-| GDS Provider | Upstream | API |
-| Booking | Downstream | API + Event |
-| Departure | Downstream | API + Event |
-| Finance | Downstream | API |
+| Customer | Upstream | API |
+| Booking | Upstream | API + Event |
+| Invoice | Upstream | API |
+| Payment Gateway | Upstream | API |
+| Bank | Upstream | API |
+| Finance | Downstream | API + Event |
 | Dashboard | Downstream | Event |
 | Notification | Downstream | Event |
-| AI | Downstream | API + Event |
+| CRM | Downstream | Event |
 | Reporting | Downstream | API |
+| Artificial Intelligence | Downstream | API + Event |
 
 Seluruh integrasi dilakukan menggunakan kontrak resmi.
 
@@ -2245,20 +2035,19 @@ Seluruh integrasi dilakukan menggunakan kontrak resmi.
 
 # Published Business Events
 
-Ticket mempublikasikan Event berikut.
+Payment mempublikasikan Event berikut.
 
-- FlightScheduled
-- FlightDelayed
-- FlightCancelled
-- TicketReserved
-- TicketIssued
-- TicketReissued
-- TicketRefunded
-- PassengerBoarded
-- FlightDeparted
-- FlightArrived
-- TicketEvaluated
-- TicketArchived
+- InvoiceGenerated
+- PaymentRequested
+- PaymentReceived
+- PaymentVerified
+- PaymentConfirmed
+- InstallmentPaid
+- PaymentCompleted
+- PaymentSettled
+- PaymentReconciled
+- PaymentRefunded
+- PaymentArchived
 
 Seluruh Event mengikuti STD-003 Naming Standard.
 
@@ -2266,51 +2055,51 @@ Seluruh Event mengikuti STD-003 Naming Standard.
 
 # Consumed Business Events
 
-Ticket menggunakan Event berikut.
+Payment menggunakan Event berikut.
 
 BookingConfirmed
 
 ↓
 
-Create Reservation
+Generate Invoice
 
 ---
 
-PaymentConfirmed
+InvoiceApproved
 
 ↓
 
-Issue Ticket
+Create Payment Request
 
 ---
 
-DepartureCreated
+PaymentGatewayCallbackReceived
 
 ↓
 
-Allocate Seat
+Verify Payment
 
 ---
 
-DepartureCompleted
+RefundApproved
 
 ↓
 
-Archive Ticket
+Process Refund
 
 ---
 
-VendorSuspended
+ChargebackReceived
 
 ↓
 
-Suspend Airline Usage
+Update Payment Status
 
 ---
 
-# Ticket Traceability Matrix
+# Payment Traceability Matrix
 
-Seluruh implementasi Ticket harus dapat ditelusuri.
+Seluruh implementasi Payment harus dapat ditelusuri.
 
 Business Vision
 
@@ -2324,39 +2113,39 @@ BP-001 Business Blueprint
 
 ↓
 
-BP-111 Ticket Blueprint
+BP-107 Payment Blueprint
 
 ↓
 
-DB-111 Ticket Database Blueprint
+DB-107 Payment Database Blueprint
 
 ↓
 
-API-111 Ticket API Blueprint
+API-107 Payment API Blueprint
 
 ↓
 
-FL-111 Ticket Flutter Blueprint
+FL-107 Payment Flutter Blueprint
 
 ↓
 
-DS-111 Ticket Dashboard Blueprint
+DS-107 Payment Dashboard Blueprint
 
 ↓
 
-AI-111 Ticket AI Blueprint
+AI-107 Payment AI Blueprint
 
 ↓
 
 Implementation
 
-Tidak diperbolehkan terdapat implementasi Ticket tanpa Blueprint.
+Tidak diperbolehkan terdapat implementasi Payment tanpa Blueprint.
 
 ---
 
-# Ticket Compliance
+# Payment Compliance
 
-Ticket Domain wajib mematuhi:
+Payment Domain wajib mematuhi:
 
 - Product Philosophy
 - Governance Standard
@@ -2375,39 +2164,37 @@ Seluruh audit mengacu pada standar tersebut.
 
 ---
 
-# Ticket Risks
+# Payment Risks
 
-Risiko utama Domain Ticket meliputi:
+Risiko utama Domain Payment meliputi:
 
-- Flight Delay
-- Flight Cancellation
-- Overbooking
-- Seat Allocation Conflict
-- Schedule Change
-- Ticket Issuance Failure
-- Boarding Failure
-- GDS Integration Failure
+- Duplicate Payment
+- Failed Payment
+- Fraud Transaction
+- Chargeback
+- Settlement Failure
+- Reconciliation Difference
+- Refund Error
+- Payment Gateway Failure
+- Bank Integration Failure
 - Data Inconsistency
-- Customer Disruption
 
 Setiap risiko wajib memiliki strategi mitigasi yang terdokumentasi.
 
 ---
 
-# Ticket Audit
+# Payment Audit
 
-Seluruh aktivitas Ticket harus dapat diaudit.
+Seluruh aktivitas Payment harus dapat diaudit.
 
 Minimal mencakup:
 
-- siapa membuat Flight Schedule
-- siapa mengubah Fare
-- siapa melakukan Reservation
-- siapa menerbitkan Ticket
-- siapa melakukan Reissue
-- siapa melakukan Refund
-- siapa melakukan Void
-- siapa melakukan perubahan Status
+- siapa membuat Invoice
+- siapa memverifikasi Payment
+- siapa menyetujui Refund
+- perubahan Status
+- perubahan Settlement
+- perubahan Reconciliation
 - alasan perubahan
 - waktu perubahan
 
@@ -2415,21 +2202,19 @@ Audit menjadi bagian dari Enterprise Governance.
 
 ---
 
-# Enterprise Transportation Reliability Index (ETRI)
+# Financial Confidence Index
 
-Ticket memiliki Enterprise Transportation Reliability Index.
+Payment memiliki Financial Confidence Index (FCI).
 
-ETRI dihitung berdasarkan:
+FCI dihitung berdasarkan:
 
-- On-Time Performance
-- Flight Completion Rate
-- Delay Frequency
-- Cancellation Rate
-- Seat Utilization
-- Customer Satisfaction
-- Safety Performance
-- Cost Efficiency
-- AI Reliability Score
+- Data Completeness
+- Transaction Accuracy
+- Audit Compliance
+- Internal Control Compliance
+- Reconciliation Quality
+- Fraud Risk Level
+- AI Confidence Score
 
 Rentang nilai:
 
@@ -2440,11 +2225,11 @@ Rentang nilai:
 | 70–84 | Warning |
 | <70 | Critical |
 
-Enterprise Transportation Reliability Index menjadi indikator utama kualitas transportasi pada Executive Dashboard.
+Financial Confidence Index menjadi indikator utama kualitas transaksi keuangan pada Executive Dashboard.
 
 ---
 
-# Ticket Blueprint Metrics
+# Payment Blueprint Metrics
 
 | Metric | Target |
 |---------|--------|
@@ -2456,8 +2241,8 @@ Enterprise Transportation Reliability Index menjadi indikator utama kualitas tra
 | AI Coverage | 100% |
 | Traceability Coverage | 100% |
 | Compliance Score | 100% |
-| Ticket Health Score | ≥95 |
-| Enterprise Transportation Reliability Index | ≥95 |
+| Financial Health Score | ≥95 |
+| Financial Confidence Index | ≥95 |
 
 ---
 
@@ -2471,26 +2256,26 @@ Enterprise Transportation Reliability Index menjadi indikator utama kualitas tra
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Ticket adalah mencapai **Level 5**.
+Target Domain Payment adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-BP-111 dianggap selesai apabila:
+BP-107 dianggap selesai apabila:
 
 - seluruh Capability terdokumentasi
 - seluruh Business Process terdokumentasi
 - seluruh Business Rules terdokumentasi
-- seluruh Ticket Status terdokumentasi
+- seluruh Payment Status terdokumentasi
 - seluruh Business Event terdokumentasi
 - seluruh Dashboard terdokumentasi
 - seluruh AI Recommendation terdokumentasi
 - seluruh Integration terdokumentasi
 - seluruh Governance terdokumentasi
 - seluruh Traceability terdokumentasi
-- Ticket Health Score terdokumentasi
-- Enterprise Transportation Reliability Index terdokumentasi
+- Financial Health Score terdokumentasi
+- Financial Confidence Index terdokumentasi
 
 ---
 
@@ -2532,20 +2317,16 @@ BP-111 dianggap selesai apabila:
 - BP-104 Booking Blueprint
 - BP-105 Package Blueprint
 - BP-106 Departure Blueprint
-- BP-107 Payment Blueprint
-- BP-108 Finance Blueprint
-- BP-109 Vendor Blueprint
-- BP-110 Hotel Blueprint
 
 ---
 
 ## Technical Blueprints
 
-- DB-111 Ticket Database Blueprint
-- API-111 Ticket API Blueprint
-- FL-111 Ticket Flutter Blueprint
-- DS-111 Ticket Dashboard Blueprint
-- AI-111 Ticket AI Blueprint
+- DB-107 Payment Database Blueprint
+- API-107 Payment API Blueprint
+- FL-107 Payment Flutter Blueprint
+- DS-107 Payment Dashboard Blueprint
+- AI-107 Payment AI Blueprint
 
 ---
 
@@ -2553,24 +2334,24 @@ BP-111 dianggap selesai apabila:
 
 | Version | Date | Description |
 |----------|------|-------------|
-| 1.0.0 | 2026-08-06 | Initial Ticket Blueprint |
+| 1.0.0 | 2026-08-06 | Initial Payment Blueprint |
 
 ---
 
 # Closing Statement
 
-Ticket merupakan fondasi utama pengelolaan transportasi perjalanan dalam VENTRA.
+Payment merupakan fondasi seluruh transaksi keuangan dalam VENTRA.
 
-Keberhasilan operasional perjalanan bergantung pada pengelolaan jadwal, inventori kursi, reservasi, penerbitan tiket, dan koordinasi transportasi yang akurat, terintegrasi, dan terdokumentasi.
+Keakuratan, keamanan, transparansi, dan keterlacakan setiap transaksi menjadi syarat utama dalam menjaga kepercayaan Customer dan keberlangsungan bisnis.
 
 Perubahan terhadap Blueprint ini hanya dapat dilakukan melalui Blueprint Governance Process.
 
 ---
 
-# Ticket Blueprint Philosophy
+# Payment Blueprint Philosophy
 
-Transportasi yang baik bukan hanya mengantarkan Customer ke tujuan.
+Payment yang baik bukan hanya mencatat pembayaran.
 
-Transportasi yang hebat memberikan kepastian jadwal, keamanan perjalanan, efisiensi operasional, dan pengalaman perjalanan yang nyaman melalui integrasi seluruh proses bisnis.
+Payment yang hebat memastikan setiap transaksi tervalidasi, terdokumentasi, terintegrasi, dapat diaudit, dan memberikan informasi yang akurat untuk mendukung keputusan bisnis.
 
-**One Ticket. One Transportation. One Enterprise Standard.**
+**One Payment. One Financial Truth. One Enterprise Standard.**

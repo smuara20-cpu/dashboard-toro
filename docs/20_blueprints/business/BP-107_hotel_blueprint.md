@@ -1,6 +1,6 @@
-# BP-107 Payment Blueprint
+# BP-110 Hotel Blueprint
 
-> **"Every payment must be accurate, traceable, secure, and auditable."**
+> **"Exceptional journeys begin with exceptional accommodation management."**
 
 ---
 
@@ -8,16 +8,16 @@
 
 | Item | Value |
 |------|-------|
-| Document ID | BP-107 |
-| Document | Payment Blueprint |
+| Document ID | BP-110 |
+| Document | Hotel Blueprint |
 | Category | Domain Blueprint |
 | Status | Draft |
 | Version | 1.0.0 |
 | Classification | Internal |
-| Owner | Payment Domain |
+| Owner | Hotel Domain |
 | Approver | Product Owner |
 | Reviewer | Enterprise Architect |
-| Audience | Business Analyst, Finance Manager, Product Owner, Engineering Lead, Backend Engineer, Mobile Engineer, AI Engineer, Dashboard Engineer |
+| Audience | Hotel Manager, Operation Manager, Product Owner, Business Analyst, Engineering Lead, Backend Engineer, Mobile Engineer, AI Engineer, Dashboard Engineer |
 | Created | 2026-08-06 |
 | Last Review | - |
 | Next Review | Every 6 Months |
@@ -26,30 +26,33 @@
 
 # Purpose
 
-Payment Blueprint mendefinisikan seluruh proses bisnis pengelolaan pembayaran dalam platform VENTRA.
+Hotel Blueprint mendefinisikan seluruh proses bisnis pengelolaan Hotel dalam platform VENTRA.
 
-Blueprint ini menjadi acuan resmi implementasi Domain Payment pada Database, API, Flutter, Dashboard, Artificial Intelligence, dan seluruh Domain yang berkaitan dengan transaksi keuangan.
+Blueprint ini menjadi acuan resmi implementasi Domain Hotel pada Database, API, Flutter, Dashboard, Artificial Intelligence, dan seluruh Domain yang berkaitan dengan pengelolaan akomodasi.
 
-Payment merupakan Domain yang memastikan seluruh transaksi keuangan berlangsung secara akurat, aman, terdokumentasi, dan dapat diaudit.
+Hotel merupakan Domain yang mengelola data hotel, kontrak, tipe kamar, tarif, allotment, reservasi, check-in, check-out, dan performa hotel.
 
 ---
 
 # Scope
 
-Blueprint ini mencakup seluruh aktivitas Payment.
+Blueprint ini mencakup seluruh aktivitas Hotel.
 
 Meliputi:
 
-- Payment Request
-- Payment Collection
-- Installment Management
-- Payment Verification
-- Payment Confirmation
-- Refund
-- Settlement
-- Reconciliation
-- Payment Analytics
-- Payment Intelligence
+- Hotel Master
+- Hotel Category
+- Hotel Contract
+- Room Type
+- Room Rate
+- Room Inventory
+- Room Allotment
+- Hotel Reservation
+- Check-in
+- Check-out
+- Hotel Performance
+- Hotel Analytics
+- Hotel Intelligence
 
 Blueprint ini tidak membahas implementasi teknis.
 
@@ -57,99 +60,95 @@ Blueprint ini tidak membahas implementasi teknis.
 
 # Business Context
 
-Payment merupakan Financial Transaction Domain.
+Hotel merupakan Travel Resource Management Domain.
 
-Booking menghasilkan kewajiban pembayaran.
+Booking menggunakan Hotel.
 
-Customer melakukan pembayaran.
+Departure mengelola Rooming List.
 
-Finance melakukan rekonsiliasi.
+Vendor mengelola kerja sama Hotel.
 
-Dashboard menampilkan performa pembayaran.
+Finance mencatat biaya Hotel.
 
-Artificial Intelligence membantu mendeteksi risiko keterlambatan pembayaran dan memberikan rekomendasi.
+Dashboard menyajikan performa Hotel.
 
-Payment menjadi Single Source of Truth seluruh transaksi pembayaran.
+Artificial Intelligence membantu memilih Hotel terbaik.
+
+Hotel menjadi Single Source of Truth seluruh data akomodasi.
 
 ---
 
 # Objectives
 
-Payment Blueprint bertujuan untuk:
+Hotel Blueprint bertujuan untuk:
 
-- mengelola seluruh transaksi pembayaran
-- meningkatkan ketepatan pencatatan pembayaran
-- mendukung pembayaran bertahap (installment)
-- mempercepat proses verifikasi
-- mendukung refund
-- mendukung rekonsiliasi keuangan
+- mengelola data Hotel
+- mengelola kontrak Hotel
+- mengelola tarif kamar
+- mengelola allotment kamar
+- mengelola reservasi
+- meningkatkan kualitas akomodasi
 - mendukung Executive Dashboard
 
 ---
 
-# Payment Vision
+# Hotel Vision
 
-Membangun sistem pembayaran yang aman, transparan, fleksibel, terintegrasi, dan siap mendukung operasional keuangan skala Enterprise.
-
----
-
-# Payment Principles
-
-Seluruh aktivitas Payment mengikuti prinsip berikut.
-
-## Accuracy First
-
-Seluruh transaksi harus akurat.
+Membangun sistem pengelolaan Hotel yang terintegrasi, efisien, transparan, dan mampu mendukung operasional perjalanan pada skala Enterprise.
 
 ---
 
-## Security First
+# Hotel Principles
 
-Seluruh transaksi harus aman.
+Seluruh aktivitas Hotel mengikuti prinsip berikut.
+
+## Customer Comfort First
+
+Seluruh keputusan mempertimbangkan kenyamanan Jamaah dan Customer.
+
+---
+
+## Availability Accuracy
+
+Ketersediaan kamar harus selalu akurat.
+
+---
+
+## Contract Compliance
+
+Seluruh reservasi mengikuti kontrak yang berlaku.
+
+---
+
+## Operational Excellence
+
+Operasional Hotel harus efisien dan terdokumentasi.
 
 ---
 
 ## Traceability
 
-Seluruh transaksi harus dapat ditelusuri.
-
----
-
-## Auditability
-
-Seluruh transaksi harus dapat diaudit.
-
----
-
-## Financial Integrity
-
-Setiap transaksi harus menjaga integritas data keuangan.
-
----
-
-## Integration First
-
-Payment menjadi pusat sinkronisasi antara Booking, Customer, Finance, Invoice, Dashboard, dan AI.
+Seluruh aktivitas Hotel harus dapat ditelusuri.
 
 ---
 
 ## AI Assisted
 
-Artificial Intelligence membantu mendeteksi risiko pembayaran dan memberikan rekomendasi.
+Artificial Intelligence membantu memilih Hotel terbaik berdasarkan data.
 
 ---
 
 ## Business Rule Driven
 
-Seluruh transaksi mengikuti Business Rules yang telah disetujui.
+Seluruh aktivitas mengikuti Business Rules yang telah disetujui.
 
 ---
 
 # Success Criteria
 
-Payment Blueprint dianggap berhasil apabila:
+Hotel Blueprint dianggap berhasil apabila:
 
-- seluruh struktur Payment terdokumentasi
+- seluruh struktur Hotel terdokumentasi
 - seluruh Business Process terdokumentasi
 - seluruh Business Rules terdokumentasi
 - seluruh Lifecycle terdokumentasi
@@ -158,11 +157,35 @@ Payment Blueprint dianggap berhasil apabila:
 
 ---
 
-# Payment Domain Position
+# Hotel Domain Position
 
-Payment merupakan Financial Transaction Domain dalam Enterprise Business Architecture.
+Hotel
 
-Customer
+├── Hotel Master
+
+├── Category
+
+├── Contract
+
+├── Room Type
+
+├── Room Rate
+
+├── Room Inventory
+
+├── Room Allotment
+
+├── Reservation
+
+├── Check-in
+
+├── Check-out
+
+├── Performance
+
+├── Analytics
+
+└── Intelligence
 
 ↓
 
@@ -170,27 +193,7 @@ Booking
 
 ↓
 
-Invoice
-
-↓
-
-Payment
-
-├── Payment Request
-
-├── Installment
-
-├── Verification
-
-├── Confirmation
-
-├── Refund
-
-├── Settlement
-
-├── Reconciliation
-
-└── Audit Trail
+Departure
 
 ↓
 
@@ -204,15 +207,15 @@ Dashboard
 
 Artificial Intelligence
 
-Payment menjadi pusat seluruh transaksi keuangan.
+Hotel menjadi pusat pengelolaan seluruh akomodasi.
 
 ---
 
-# Payment Philosophy
+# Hotel Philosophy
 
-Payment bukan sekadar menerima uang.
+Hotel bukan sekadar tempat menginap.
 
-Payment merupakan proses memastikan seluruh transaksi berlangsung secara benar, transparan, aman, dan dapat dipertanggungjawabkan sesuai standar Enterprise.
+Hotel merupakan bagian penting dari pengalaman perjalanan Customer dan menjadi salah satu faktor utama keberhasilan operasional serta kepuasan Jamaah.
 
 ---
 
@@ -226,13 +229,13 @@ Payment merupakan proses memastikan seluruh transaksi berlangsung secara benar, 
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Payment adalah mencapai **Level 5**.
+Target Domain Hotel adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-Payment Foundation dianggap lengkap apabila:
+Hotel Foundation dianggap lengkap apabila:
 
 - Purpose terdokumentasi
 - Scope terdokumentasi
@@ -248,21 +251,53 @@ Payment Foundation dianggap lengkap apabila:
 
 ---
 
-# Payment Business Architecture
+# Hotel Business Architecture
 
-Payment Business Architecture mendefinisikan posisi Payment dalam Enterprise Business Architecture VENTRA.
+Hotel Business Architecture mendefinisikan posisi Hotel dalam Enterprise Business Architecture VENTRA.
 
-Payment merupakan Financial Transaction Domain yang mengelola seluruh transaksi pembayaran Customer mulai dari tagihan, pembayaran, verifikasi, hingga rekonsiliasi.
+Hotel merupakan Travel Resource Management Domain yang mengelola seluruh sumber daya akomodasi mulai dari data hotel, kontrak, inventori kamar, reservasi, rooming list, hingga analisis performa.
 
-Seluruh transaksi keuangan operasional berpusat pada Payment.
+Seluruh informasi akomodasi berpusat pada Hotel Domain.
 
 ---
 
-# Payment Domain Position
+# Hotel Domain Position
 
-Payment berada di pusat Financial Transaction Management.
+Hotel berada di pusat Enterprise Accommodation Management.
 
-Customer
+Vendor
+
+↓
+
+Hotel
+
+├── Hotel Master
+
+├── Hotel Category
+
+├── Hotel Contract
+
+├── Seasonal Rate
+
+├── Room Type
+
+├── Room Inventory
+
+├── Room Allotment
+
+├── Reservation
+
+├── Rooming List
+
+├── Check-in
+
+├── Check-out
+
+├── Performance
+
+├── Analytics
+
+└── Intelligence
 
 ↓
 
@@ -270,31 +305,7 @@ Booking
 
 ↓
 
-Invoice
-
-↓
-
-Payment
-
-├── Payment Request
-
-├── Payment Method
-
-├── Installment
-
-├── Verification
-
-├── Confirmation
-
-├── Refund
-
-├── Settlement
-
-├── Reconciliation
-
-├── Audit Trail
-
-└── Financial Analytics
+Departure
 
 ↓
 
@@ -308,160 +319,190 @@ Dashboard
 
 Artificial Intelligence
 
-Payment menjadi pusat seluruh transaksi pembayaran.
+Hotel menjadi pusat pengelolaan seluruh akomodasi.
 
 ---
 
-# Payment Domain Responsibility
+# Hotel Domain Responsibility
 
-Payment Domain bertanggung jawab terhadap:
+Hotel Domain bertanggung jawab terhadap:
 
-- Payment Request
-- Payment Collection
-- Installment Management
-- Payment Verification
-- Payment Confirmation
-- Refund Management
-- Settlement
-- Reconciliation
-- Payment Analytics
-- Payment Intelligence
+- Hotel Master Management
+- Hotel Category Management
+- Hotel Contract Management
+- Seasonal Rate Management
+- Room Type Management
+- Room Inventory Management
+- Room Allotment Management
+- Reservation Management
+- Rooming List Management
+- Check-in Management
+- Check-out Management
+- Hotel Performance Management
+- Hotel Analytics
+- Hotel Intelligence
 
-Payment Domain tidak bertanggung jawab terhadap:
+Hotel Domain tidak bertanggung jawab terhadap:
 
-- Booking Creation
 - Customer Management
-- Package Management
-- Accounting Journal
+- Booking Management
+- Payment Processing
+- Financial Accounting
 - Marketing Campaign
 
 Domain tersebut dikelola oleh Domain masing-masing.
 
 ---
 
-# Payment Capability Map
+# Hotel Capability Map
 
-Payment Domain memiliki Capability berikut.
-
----
-
-## Payment Request
-
-Menghasilkan permintaan pembayaran berdasarkan Invoice.
+Hotel Domain memiliki Capability berikut.
 
 ---
 
-## Payment Collection
+## Hotel Master Management
 
-Menerima pembayaran Customer.
+Mengelola data utama Hotel.
 
 ---
 
-## Payment Method Management
+## Hotel Category Management
 
-Mengelola metode pembayaran.
+Mengelola klasifikasi Hotel.
 
 Contoh:
 
-- Bank Transfer
-- Virtual Account
-- QRIS
-- Credit Card
-- Debit Card
-- Cash
-- E-Wallet
+- Budget
+- Standard
+- Premium
+- Luxury
+- Resort
+- Apartment
+- Villa
 
 ---
 
-## Installment Management
+## Hotel Contract Management
 
-Mengelola pembayaran bertahap.
+Mengelola kontrak kerja sama Hotel.
 
 Meliputi:
 
-- Down Payment
-- Installment
-- Final Payment
+- Contract Period
+- Contract Value
+- Room Quota
+- Payment Terms
+- Cancellation Policy
+- Renewal
+- Termination
 
 ---
 
-## Payment Verification
+## Seasonal Rate Management
 
-Melakukan verifikasi pembayaran.
-
----
-
-## Payment Confirmation
-
-Mengonfirmasi pembayaran yang valid.
+Mengelola tarif berdasarkan musim, periode, dan event tertentu.
 
 ---
 
-## Refund Management
+## Room Type Management
 
-Mengelola pengembalian dana sesuai Business Policy.
+Mengelola tipe kamar.
 
----
+Contoh:
 
-## Settlement
-
-Melakukan settlement transaksi.
-
----
-
-## Reconciliation
-
-Melakukan pencocokan transaksi dengan mutasi bank atau payment gateway.
+- Single
+- Twin
+- Double
+- Triple
+- Quad
+- Suite
+- Family Room
 
 ---
 
-## Payment Analytics
+## Room Inventory Management
 
-Menganalisis performa pembayaran.
+Mengelola jumlah kamar yang tersedia.
 
 ---
 
-## Payment Intelligence
+## Room Allotment Management
 
-Artificial Intelligence memberikan insight terhadap performa pembayaran.
+Mengelola alokasi kamar berdasarkan kontrak dan keberangkatan.
+
+---
+
+## Reservation Management
+
+Mengelola reservasi Hotel.
+
+---
+
+## Rooming List Management
+
+Mengelola penempatan Customer/Jamaah ke dalam kamar.
+
+---
+
+## Check-in / Check-out Management
+
+Mengelola proses Check-in dan Check-out.
+
+---
+
+## Hotel Performance Management
+
+Mengukur performa Hotel.
+
+---
+
+## Hotel Analytics
+
+Menganalisis kualitas layanan Hotel.
+
+---
+
+## Hotel Intelligence
+
+Artificial Intelligence memberikan rekomendasi Hotel terbaik.
 
 Keputusan bisnis tetap dilakukan oleh manusia.
 
 ---
 
-# Payment Lifecycle
+# Hotel Lifecycle
 
-Payment mengikuti siklus berikut.
+Hotel mengikuti siklus berikut.
 
-Requested
-
-↓
-
-Pending
+Registered
 
 ↓
 
-Partially Paid
+Contracted
 
 ↓
 
-Paid
+Available
 
 ↓
 
-Verified
+Reserved
 
 ↓
 
-Completed
+Occupied
 
 ↓
 
-Settled
+Checked-out
 
 ↓
 
-Reconciled
+Evaluated
+
+↓
+
+Renewed
 
 ↓
 
@@ -469,82 +510,80 @@ Archived
 
 Status alternatif:
 
-Cancelled
+Inactive
+
+Suspended
 
 Expired
 
-Refunded
-
-Chargeback
-
-Seluruh perubahan Status harus tercatat pada Payment Timeline.
+Seluruh perubahan Status harus tercatat pada Hotel Timeline.
 
 ---
 
-# Payment Relationships
+# Hotel Relationships
 
-Payment memiliki hubungan dengan Domain berikut.
+Hotel memiliki hubungan dengan Domain berikut.
 
 | Domain | Relationship |
 |----------|--------------|
-| Customer | One Customer → Many Payment |
-| Booking | One Booking → Many Payment |
-| Invoice | One Invoice → Many Payment |
-| Finance | Payment Settlement |
-| Dashboard | Payment Analytics |
-| AI | Recommendation |
-| Notification | Payment Reminder & Confirmation |
+| Vendor | Hotel Provider |
+| Booking | Accommodation Reservation |
+| Departure | Room Allocation |
+| Payment | Hotel Payment |
+| Finance | Accommodation Cost |
+| Dashboard | Hotel Analytics |
+| AI | Hotel Recommendation |
 
 ---
 
-# Payment Ownership
+# Hotel Ownership
 
 Business Owner:
 
-Finance Manager
+Hotel Manager
 
 Domain Owner bertanggung jawab terhadap:
 
-- Payment Collection
-- Verification
-- Settlement
-- Reconciliation
-- Payment Analytics
-- Payment Blueprint
+- Hotel Management
+- Contract Management
+- Inventory Management
+- Reservation Management
+- Performance Management
+- Hotel Blueprint
 
 ---
 
-# Payment Architecture Principles
+# Hotel Architecture Principles
 
-Payment mengikuti prinsip berikut.
+Hotel mengikuti prinsip berikut.
 
-- Accuracy First
-- Security First
-- Financial Integrity
+- Customer Comfort First
+- Availability Accuracy
+- Contract Compliance
+- Operational Excellence
 - Traceable
-- Auditable
-- Event Driven
 - AI Assisted
 - Business Rule Driven
 
-Seluruh implementasi Payment wajib mengikuti prinsip tersebut.
+Seluruh implementasi Hotel wajib mengikuti prinsip tersebut.
 
 ---
 
 # Architecture Alignment
 
-Payment Blueprint harus selalu selaras dengan:
+Hotel Blueprint harus selalu selaras dengan:
 
 - BP-001 Business Blueprint
-- BP-101 Customer Blueprint
 - BP-104 Booking Blueprint
 - BP-106 Departure Blueprint
+- BP-108 Finance Blueprint
+- BP-109 Vendor Blueprint
 - Product Philosophy
 - Governance Standard
 - Architecture Standard
 - Business Standard
 
-Tidak diperbolehkan membuat implementasi Payment yang bertentangan dengan Blueprint ini.
+Tidak diperbolehkan membuat implementasi Hotel yang bertentangan dengan Blueprint ini.
 
 ---
 
@@ -558,256 +597,265 @@ Tidak diperbolehkan membuat implementasi Payment yang bertentangan dengan Bluepr
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Payment adalah mencapai **Level 5**.
+Target Domain Hotel adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-Payment Business Architecture dianggap lengkap apabila:
+Hotel Business Architecture dianggap lengkap apabila:
 
 - seluruh Capability terdokumentasi
 - seluruh Lifecycle terdokumentasi
 - seluruh Relationship terdokumentasi
 - seluruh Domain Responsibility terdokumentasi
-- seluruh Financial Lifecycle terdokumentasi
+- seluruh Accommodation Lifecycle terdokumentasi
 - seluruh Architecture Alignment terdokumentasi
 
 ---
 
 ---
 
-# Payment Business Process
+# Hotel Business Process
 
-Payment Business Process mendefinisikan seluruh proses bisnis pengelolaan pembayaran mulai dari pembuatan tagihan, permintaan pembayaran, penerimaan pembayaran, verifikasi, settlement, rekonsiliasi, hingga pengarsipan transaksi.
+Hotel Business Process mendefinisikan seluruh proses bisnis pengelolaan Hotel mulai dari registrasi Hotel, pengelolaan kontrak, inventori kamar, reservasi, rooming list, check-in, check-out, hingga evaluasi performa Hotel.
 
 Seluruh proses harus terdokumentasi, dapat ditelusuri, dan mengikuti Business Rules yang telah disetujui.
 
 ---
 
-# Payment Value Chain
+# Hotel Value Chain
 
-Booking Confirmed
-
-↓
-
-Invoice Generated
+Hotel Registration
 
 ↓
 
-Payment Request
+Contract Management
 
 ↓
 
-Payment Collection
+Room Inventory
 
 ↓
 
-Payment Verification
+Room Allotment
 
 ↓
 
-Payment Confirmation
+Reservation
 
 ↓
 
-Settlement
+Rooming List
 
 ↓
 
-Reconciliation
+Check-in
 
 ↓
 
-Financial Reporting
+Check-out
+
+↓
+
+Performance Evaluation
 
 ↓
 
 Archive
 
-Payment menjadi pusat seluruh transaksi keuangan operasional.
+Hotel menjadi fondasi utama pengelolaan akomodasi pada setiap keberangkatan.
 
 ---
 
-# Invoice Generation Process
+# Hotel Registration Process
 
-Invoice dibuat berdasarkan Booking yang memenuhi syarat.
+Hotel didaftarkan ke dalam sistem.
 
-Invoice mencakup:
+Data minimal meliputi:
 
-- Invoice Number
-- Customer
-- Booking
-- Due Date
-- Amount
-- Payment Schedule
+- Hotel Code
+- Hotel Name
+- Hotel Category
+- Country
+- City
+- Address
+- Contact Information
+- Facilities
 
 Output:
 
-Invoice
+Registered Hotel
 
 Business Event:
 
-InvoiceGenerated
+HotelRegistered
 
 ---
 
-# Payment Request Process
+# Hotel Contract Process
 
-Sistem mengirimkan permintaan pembayaran kepada Customer.
-
-Melalui:
-
-- Email
-- WhatsApp
-- Mobile Application
-- Customer Portal
-
-Output:
-
-Payment Request
-
-Business Event:
-
-PaymentRequested
-
----
-
-# Payment Collection Process
-
-Customer melakukan pembayaran menggunakan metode yang tersedia.
+Kontrak kerja sama Hotel dibuat.
 
 Meliputi:
 
-- Bank Transfer
-- Virtual Account
-- QRIS
-- Credit Card
-- Debit Card
-- Cash
-- E-Wallet
+- Contract Number
+- Effective Date
+- Expiration Date
+- Payment Terms
+- Cancellation Policy
+- Room Quota
+- Seasonal Rate
 
 Output:
 
-Payment Received
+Hotel Contract
 
 Business Event:
 
-PaymentReceived
+HotelContractCreated
 
 ---
 
-# Payment Verification Process
+# Room Inventory Process
 
-Sistem memverifikasi pembayaran.
-
-Validasi meliputi:
-
-- Nominal
-- Payment Reference
-- Payment Method
-- Payment Date
-- Duplicate Transaction
-- Fraud Detection
-
-Output:
-
-Verified Payment
-
-Business Event:
-
-PaymentVerified
-
----
-
-# Payment Confirmation Process
-
-Pembayaran dinyatakan sah.
-
-Status berubah menjadi:
-
-Paid
-
-Business Event:
-
-PaymentConfirmed
-
----
-
-# Installment Process
-
-Apabila pembayaran bertahap diperbolehkan.
-
-Tahapan:
-
-- Down Payment
-- Installment
-- Final Payment
-
-Setiap pembayaran dicatat sebagai transaksi tersendiri.
-
-Business Event:
-
-InstallmentPaid
-
----
-
-# Refund Process
-
-Refund dilakukan sesuai Business Policy.
-
-Validasi meliputi:
-
-- Refund Eligibility
-- Approval
-- Refund Amount
-- Refund Method
-
-Output:
-
-Refund Completed
-
-Business Event:
-
-PaymentRefunded
-
----
-
-# Settlement Process
-
-Settlement dilakukan terhadap transaksi yang telah berhasil.
-
-Settlement memastikan dana telah diterima sesuai Payment Method.
-
-Business Event:
-
-PaymentSettled
-
----
-
-# Reconciliation Process
-
-Finance melakukan pencocokan transaksi.
+Sistem mengelola inventori kamar.
 
 Meliputi:
 
-- Bank Statement
-- Payment Gateway
-- Internal Ledger
+- Total Room
+- Available Room
+- Reserved Room
+- Occupied Room
+- Maintenance Room
 
 Output:
 
-Reconciled Payment
+Updated Room Inventory
 
 Business Event:
 
-PaymentReconciled
+RoomInventoryUpdated
 
 ---
 
-# Payment Archive Process
+# Room Allotment Process
 
-Transaksi dipindahkan menjadi arsip.
+Room dialokasikan untuk Departure tertentu.
+
+Meliputi:
+
+- Departure
+- Room Block
+- Room Quota
+- Remaining Allocation
+
+Output:
+
+Room Allotment
+
+Business Event:
+
+RoomAllotted
+
+---
+
+# Reservation Process
+
+Reservasi Hotel dilakukan berdasarkan Booking yang telah dikonfirmasi.
+
+Validasi meliputi:
+
+- Room Availability
+- Contract Validity
+- Room Rate
+- Allocation Availability
+
+Output:
+
+Hotel Reservation
+
+Business Event:
+
+HotelReserved
+
+---
+
+# Rooming List Process
+
+Customer ditempatkan ke dalam kamar.
+
+Validasi meliputi:
+
+- Gender Policy
+- Family Policy
+- Room Capacity
+- Special Request
+
+Output:
+
+Rooming List
+
+Business Event:
+
+RoomAssigned
+
+---
+
+# Check-in Process
+
+Hotel melakukan proses Check-in.
+
+Output:
+
+Checked-in Guest
+
+Business Event:
+
+GuestCheckedIn
+
+---
+
+# Check-out Process
+
+Hotel melakukan proses Check-out.
+
+Output:
+
+Checked-out Guest
+
+Business Event:
+
+GuestCheckedOut
+
+---
+
+# Hotel Evaluation Process
+
+Evaluasi Hotel dilakukan secara berkala.
+
+Parameter minimal:
+
+- Room Quality
+- Service Quality
+- Cleanliness
+- Food Quality
+- Location
+- Customer Satisfaction
+
+Output:
+
+Hotel Performance Score
+
+Business Event:
+
+HotelEvaluated
+
+---
+
+# Hotel Archive Process
+
+Hotel yang sudah tidak digunakan dipindahkan menjadi arsip.
 
 Status:
 
@@ -815,11 +863,11 @@ Archived
 
 Business Event:
 
-PaymentArchived
+HotelArchived
 
 ---
 
-# Payment Workflow Standard
+# Hotel Workflow Standard
 
 Seluruh Workflow wajib memiliki:
 
@@ -838,125 +886,149 @@ Workflow tidak bergantung pada implementasi teknis.
 
 ---
 
-# Payment SLA
+# Hotel SLA
 
 | Process | Target |
 |---------|--------|
-| Invoice Generation | ≤ 5 Minutes |
-| Payment Request | ≤ 5 Minutes |
-| Payment Verification | ≤ 15 Minutes |
-| Payment Confirmation | ≤ 10 Minutes |
-| Settlement | ≤ 1 Working Day |
-| Reconciliation | ≤ 1 Working Day |
-| Refund | ≤ 5 Working Days |
+| Hotel Registration | ≤ 2 Working Days |
+| Contract Approval | ≤ 5 Working Days |
+| Room Inventory Update | Real-Time |
+| Reservation | ≤ 5 Minutes |
+| Room Allocation | ≤ 10 Minutes |
+| Check-in | ≤ 10 Minutes |
+| Check-out | ≤ 10 Minutes |
+| Hotel Evaluation | Monthly |
 
 ---
 
-# Payment Process Metrics
+# Hotel Process Metrics
 
 | Metric | Target |
 |---------|--------|
-| Payment Success Rate | ≥ 99% |
-| Verification Accuracy | 100% |
-| Settlement Accuracy | 100% |
-| Reconciliation Accuracy | 100% |
-| Refund Accuracy | 100% |
-| Duplicate Payment | 0 |
+| Reservation Accuracy | 100% |
+| Room Allocation Accuracy | 100% |
+| Inventory Accuracy | 100% |
+| Check-in Success Rate | ≥99% |
+| Check-out Success Rate | ≥99% |
+| Hotel Availability | ≥99% |
 
 ---
 
-# Payment Checklist
+# Hotel Checklist
 
-Payment dinyatakan selesai apabila seluruh checklist berikut telah terpenuhi.
+Hotel dinyatakan siap digunakan apabila seluruh checklist berikut telah terpenuhi.
 
 | Checklist | Status |
 |------------|--------|
-| Invoice Generated | ✔ |
-| Payment Requested | ✔ |
-| Payment Received | ✔ |
-| Payment Verified | ✔ |
-| Payment Confirmed | ✔ |
-| Settlement Completed | ✔ |
-| Reconciliation Completed | ✔ |
+| Hotel Registered | ✔ |
+| Contract Active | ✔ |
+| Room Inventory Available | ✔ |
+| Seasonal Rate Configured | ✔ |
+| Reservation Enabled | ✔ |
+| Rooming Policy Defined | ✔ |
+| Risk Assessment Completed | ✔ |
 | Audit Trail Recorded | ✔ |
 
-Checklist menjadi syarat perubahan Status menjadi **Completed**.
+Checklist menjadi syarat perubahan Status menjadi **Available**.
 
 ---
 
-# Double Traceability
+# Hotel Traceability
 
-Seluruh transaksi Payment wajib dapat ditelusuri melalui dua perspektif.
+Seluruh aktivitas Hotel wajib dapat ditelusuri.
 
-## Business Traceability
-
-Customer
+Vendor
 
 ↓
 
-Booking
+Hotel
 
 ↓
 
-Invoice
+Contract
 
 ↓
 
-Payment
+Reservation
+
+↓
+
+Rooming List
 
 ↓
 
 Departure
 
----
-
-## Financial Traceability
-
-Payment
-
 ↓
 
-Payment Method
-
-↓
-
-Settlement
-
-↓
-
-Reconciliation
+Finance
 
 ↓
 
 Audit Trail
 
+Tidak diperbolehkan terdapat aktivitas Hotel tanpa jejak yang lengkap.
+
+---
+
+# Hotel Operation Cycle
+
+Operasional Hotel mengikuti siklus berikut.
+
+Inventory Update
+
 ↓
 
-Financial Report
+Reservation
 
-Double Traceability menjadi standar wajib pada seluruh transaksi keuangan VENTRA.
+↓
+
+Room Allocation
+
+↓
+
+Guest Check-in
+
+↓
+
+Guest Stay
+
+↓
+
+Guest Check-out
+
+↓
+
+Performance Evaluation
+
+↓
+
+Archive
+
+Seluruh aktivitas operasional harus terdokumentasi.
 
 ---
 
 # Acceptance Criteria
 
-Payment Business Process dianggap lengkap apabila:
+Hotel Business Process dianggap lengkap apabila:
 
 - seluruh proses terdokumentasi
 - seluruh Workflow memiliki Owner
 - seluruh Workflow memiliki KPI
 - seluruh Workflow memiliki SLA
 - seluruh Business Event terdokumentasi
-- seluruh aktivitas tercatat pada Payment Timeline
-- seluruh transaksi memenuhi Double Traceability
+- seluruh aktivitas tercatat pada Hotel Timeline
+- seluruh Hotel memenuhi Hotel Traceability
+- seluruh proses operasional terdokumentasi
 
 ---
 
 ---
 
-# Payment Business Rules
+# Hotel Business Rules
 
-Payment Business Rules mendefinisikan aturan resmi yang mengatur seluruh aktivitas pembayaran.
+Hotel Business Rules mendefinisikan aturan resmi yang mengatur seluruh aktivitas Hotel.
 
 Business Rules menjadi acuan implementasi pada:
 
@@ -965,6 +1037,7 @@ Business Rules menjadi acuan implementasi pada:
 - Flutter
 - Dashboard
 - Artificial Intelligence
+- Operation
 - Quality Assurance
 
 Business Rules ditentukan oleh Business Owner.
@@ -973,282 +1046,322 @@ Developer tidak diperbolehkan membuat Business Rules sendiri.
 
 ---
 
-# Payment Rule Categories
+# Hotel Rule Categories
 
 Business Rules dikelompokkan menjadi beberapa kategori.
 
-- Invoice Rules
-- Payment Rules
-- Installment Rules
-- Verification Rules
-- Refund Rules
-- Settlement Rules
-- Reconciliation Rules
+- Hotel Master Rules
+- Contract Rules
+- Room Inventory Rules
+- Reservation Rules
+- Room Assignment Rules
+- Check-in Rules
+- Check-out Rules
+- Performance Rules
 - Integration Rules
 - Data Quality Rules
 
 ---
 
-# Invoice Rules
+# Hotel Master Rules
 
-## PAY-001
+## HOT-001
 
-Setiap Invoice wajib memiliki nomor yang unik.
-
----
-
-## PAY-002
-
-Invoice harus terkait dengan satu Booking.
+Setiap Hotel wajib memiliki Hotel Code yang unik.
 
 ---
 
-## PAY-003
+## HOT-002
 
-Invoice wajib memiliki Due Date.
-
----
-
-## PAY-004
-
-Invoice tidak dapat diubah setelah berstatus Paid, kecuali sesuai Business Policy.
+Hotel wajib memiliki Vendor yang aktif.
 
 ---
 
-# Payment Rules
+## HOT-003
 
-## PAY-020
-
-Setiap Payment wajib terkait dengan satu Invoice.
+Hotel wajib memiliki kategori Hotel.
 
 ---
 
-## PAY-021
+## HOT-004
 
-Nominal pembayaran tidak boleh bernilai negatif.
-
----
-
-## PAY-022
-
-Payment Reference harus unik.
+Hotel wajib memiliki lokasi yang lengkap.
 
 ---
 
-## PAY-023
+## HOT-005
 
-Setiap transaksi wajib memiliki Payment Method.
-
----
-
-## PAY-024
-
-Duplicate Payment tidak diperbolehkan.
+Hotel wajib memiliki Status.
 
 ---
 
-## PAY-025
+# Contract Rules
 
-Payment yang telah dikonfirmasi tidak dapat dihapus.
+## HOT-020
 
----
-
-# Installment Rules
-
-## PAY-040
-
-Installment hanya diperbolehkan sesuai Business Policy.
+Setiap Hotel wajib memiliki Contract sebelum digunakan.
 
 ---
 
-## PAY-041
+## HOT-021
 
-Setiap pembayaran cicilan dicatat sebagai transaksi tersendiri.
-
----
-
-## PAY-042
-
-Total seluruh Installment tidak boleh melebihi nilai Invoice.
+Contract wajib memiliki Effective Date.
 
 ---
 
-## PAY-043
+## HOT-022
 
-Final Payment menutup kewajiban pembayaran Invoice.
-
----
-
-# Verification Rules
-
-## PAY-060
-
-Seluruh Payment wajib diverifikasi.
+Contract wajib memiliki Expiration Date.
 
 ---
 
-## PAY-061
+## HOT-023
 
-Verifikasi dilakukan berdasarkan:
-
-- Nominal
-- Payment Reference
-- Payment Date
-- Payment Method
+Contract wajib mendefinisikan Room Quota.
 
 ---
 
-## PAY-062
+## HOT-024
 
-Payment dengan indikasi fraud harus ditinjau secara manual.
-
----
-
-# Refund Rules
-
-## PAY-080
-
-Refund hanya dapat dilakukan terhadap Payment yang telah dikonfirmasi.
+Contract wajib memiliki Cancellation Policy.
 
 ---
 
-## PAY-081
+## HOT-025
 
-Refund wajib memperoleh Approval.
-
----
-
-## PAY-082
-
-Refund wajib memiliki alasan yang terdokumentasi.
+Contract yang telah berakhir tidak dapat digunakan untuk reservasi baru.
 
 ---
 
-## PAY-083
+# Room Inventory Rules
 
-Nominal Refund tidak boleh melebihi nominal Payment.
+## HOT-040
 
----
-
-# Settlement Rules
-
-## PAY-100
-
-Settlement hanya dilakukan terhadap Payment yang telah diverifikasi.
+Seluruh perubahan Inventory harus tercatat.
 
 ---
 
-## PAY-101
+## HOT-041
 
-Settlement wajib tercatat pada Audit Trail.
-
----
-
-# Reconciliation Rules
-
-## PAY-120
-
-Seluruh Settlement wajib direkonsiliasi.
+Jumlah kamar Available tidak boleh melebihi Inventory.
 
 ---
 
-## PAY-121
+## HOT-042
 
-Selisih transaksi wajib diinvestigasi.
+Room Allotment tidak boleh melebihi kuota kontrak.
 
 ---
 
-## PAY-122
+## HOT-043
 
-Reconciliation harus menghasilkan status yang jelas.
+Maintenance Room tidak dapat dipesan.
+
+---
+
+## HOT-044
+
+Overbooking tidak diperbolehkan kecuali memperoleh Approval.
+
+---
+
+# Reservation Rules
+
+## HOT-060
+
+Reservasi hanya dapat dilakukan apabila kamar tersedia.
+
+---
+
+## HOT-061
+
+Reservasi wajib terkait dengan Booking yang valid.
+
+---
+
+## HOT-062
+
+Reservasi wajib menggunakan Room Rate yang berlaku.
+
+---
+
+## HOT-063
+
+Reservasi wajib memiliki Status.
+
+---
+
+# Room Assignment Rules
+
+## HOT-080
+
+Penempatan kamar mengikuti Enterprise Room Assignment Policy.
+
+---
+
+## HOT-081
+
+Kapasitas kamar tidak boleh dilampaui.
+
+---
+
+## HOT-082
+
+Kebijakan pemisahan gender wajib dipatuhi.
+
+---
+
+## HOT-083
+
+Permintaan khusus Customer harus dipertimbangkan sesuai ketersediaan.
+
+---
+
+# Check-in Rules
+
+## HOT-100
+
+Check-in hanya dapat dilakukan untuk reservasi yang valid.
+
+---
+
+## HOT-101
+
+Seluruh Check-in wajib tercatat.
+
+---
+
+## HOT-102
+
+Check-in lebih awal mengikuti kebijakan Hotel.
+
+---
+
+# Check-out Rules
+
+## HOT-120
+
+Seluruh Check-out wajib tercatat.
+
+---
+
+## HOT-121
+
+Check-out terlambat mengikuti kebijakan Hotel.
+
+---
+
+## HOT-122
+
+Status kamar diperbarui setelah Check-out selesai.
+
+---
+
+# Performance Rules
+
+## HOT-140
+
+Hotel wajib dievaluasi secara berkala.
+
+---
+
+## HOT-141
+
+Evaluasi menggunakan Hotel Scorecard.
+
+---
+
+## HOT-142
+
+Hotel dengan performa rendah wajib memiliki Improvement Plan.
+
+---
+
+## HOT-143
+
+Hotel yang tidak memenuhi standar dapat dinonaktifkan.
 
 ---
 
 # Integration Rules
 
-## PAY-140
+## HOT-160
 
-Payment hanya berkomunikasi melalui API atau Business Event.
-
----
-
-## PAY-141
-
-Payment tidak boleh mengakses Database Domain lain secara langsung.
+Hotel hanya berkomunikasi melalui API atau Business Event.
 
 ---
 
-## PAY-142
+## HOT-161
 
-Invoice mengikuti Domain Invoice.
+Hotel tidak boleh mengakses Database Domain lain secara langsung.
 
 ---
 
-## PAY-143
+## HOT-162
 
-Booking Status mengikuti Domain Booking.
+Booking hanya menggunakan Hotel berstatus Available.
+
+---
+
+## HOT-163
+
+Departure menggunakan Rooming List resmi dari Domain Hotel.
 
 ---
 
 # Data Quality Rules
 
-## PAY-160
+## HOT-180
 
-Payment menjadi Single Source of Truth untuk transaksi pembayaran.
-
----
-
-## PAY-161
-
-Invoice tetap dimiliki Domain Invoice.
+Hotel menjadi Single Source of Truth seluruh data Hotel.
 
 ---
 
-## PAY-162
-
-Booking tetap dimiliki Domain Booking.
-
----
-
-## PAY-163
+## HOT-181
 
 Seluruh perubahan wajib memiliki Audit Trail.
 
 ---
 
-# Payment Status Lifecycle
+## HOT-182
 
-Payment mengikuti Status berikut.
+Hotel Master Record wajib selalu diperbarui.
 
-Requested
+---
 
-↓
+# Hotel Status Lifecycle
 
-Pending
+Hotel mengikuti Status berikut.
 
-↓
-
-Partially Paid
+Registered
 
 ↓
 
-Paid
+Contracted
 
 ↓
 
-Verified
+Available
 
 ↓
 
-Completed
+Reserved
 
 ↓
 
-Settled
+Occupied
 
 ↓
 
-Reconciled
+Checked-out
+
+↓
+
+Evaluated
+
+↓
+
+Renewed
 
 ↓
 
@@ -1256,75 +1369,83 @@ Archived
 
 Status alternatif:
 
-Cancelled
+Inactive
+
+Suspended
 
 Expired
 
-Refunded
-
-Chargeback
+Maintenance
 
 Status tidak boleh dilompati tanpa Business Rule yang sah.
 
 ---
 
-# Payment Business Events
+# Hotel Business Events
 
-Payment menghasilkan Business Event berikut.
-
----
-
-## Invoice Events
-
-InvoiceGenerated
-
-InvoiceUpdated
-
-InvoiceExpired
+Hotel menghasilkan Business Event berikut.
 
 ---
 
-## Payment Events
+## Hotel Events
 
-PaymentRequested
+HotelRegistered
 
-PaymentReceived
+HotelActivated
 
-PaymentVerified
+HotelSuspended
 
-PaymentConfirmed
-
-InstallmentPaid
-
-PaymentCompleted
+HotelArchived
 
 ---
 
-## Refund Events
+## Contract Events
 
-RefundRequested
+HotelContractCreated
 
-RefundApproved
+HotelContractRenewed
 
-PaymentRefunded
-
----
-
-## Settlement Events
-
-PaymentSettled
-
-PaymentReconciled
+HotelContractExpired
 
 ---
 
-## Financial Events
+## Reservation Events
 
-PaymentArchived
+HotelReserved
 
-PaymentFailed
+ReservationCancelled
 
-ChargebackReceived
+ReservationConfirmed
+
+---
+
+## Room Events
+
+RoomInventoryUpdated
+
+RoomAllotted
+
+RoomAssigned
+
+RoomReleased
+
+---
+
+## Guest Events
+
+GuestCheckedIn
+
+GuestCheckedOut
+
+---
+
+## Performance Events
+
+HotelEvaluated
+
+HotelPerformanceImproved
+
+HotelAvailabilityUpdated
 
 ---
 
@@ -1338,13 +1459,13 @@ Format:
 
 Contoh:
 
-PaymentConfirmed
+HotelReserved
 
-PaymentSettled
+RoomAssigned
 
-RefundApproved
+GuestCheckedIn
 
-InvoiceGenerated
+HotelEvaluated
 
 Business Event harus merepresentasikan kejadian bisnis.
 
@@ -1352,23 +1473,23 @@ Bukan implementasi teknis.
 
 Contoh yang benar:
 
-PaymentVerified
+RoomReleased
 
 Contoh yang salah:
 
-InsertPaymentDatabase
+InsertHotelDatabase
 
-UpdatePaymentTable
+UpdateRoomTable
 
-SavePaymentAPI
+SaveReservationAPI
 
 ---
 
 # Event Publishing
 
-Payment Domain mempublikasikan Event kepada Domain lain.
+Hotel Domain mempublikasikan Event berikut.
 
-PaymentConfirmed
+HotelReserved
 
 ↓
 
@@ -1380,10 +1501,6 @@ Departure
 
 ↓
 
-Finance
-
-↓
-
 Dashboard
 
 ↓
@@ -1392,7 +1509,23 @@ Artificial Intelligence
 
 ---
 
-PaymentRefunded
+RoomAssigned
+
+↓
+
+Departure
+
+↓
+
+Dashboard
+
+↓
+
+AI Room Optimizer
+
+---
+
+GuestCheckedOut
 
 ↓
 
@@ -1401,6 +1534,18 @@ Finance
 ↓
 
 Dashboard
+
+↓
+
+Analytics
+
+---
+
+HotelEvaluated
+
+↓
+
+Executive Dashboard
 
 ↓
 
@@ -1408,51 +1553,39 @@ Artificial Intelligence
 
 ---
 
-PaymentReconciled
+# Hotel Control Points
+
+Setiap Hotel wajib melalui Control Point berikut.
+
+Hotel Registration
 
 ↓
 
-Finance
+Contract
 
 ↓
 
-Dashboard
+Inventory
 
 ↓
 
-Executive Report
-
----
-
-# Financial Control Points
-
-Setiap transaksi wajib melalui Control Point berikut.
-
-Invoice Generated
+Reservation
 
 ↓
 
-Payment Requested
+Room Assignment
 
 ↓
 
-Payment Verified
+Check-in
 
 ↓
 
-Payment Confirmed
+Check-out
 
 ↓
 
-Settlement Completed
-
-↓
-
-Reconciliation Completed
-
-↓
-
-Financial Reporting
+Evaluation
 
 ↓
 
@@ -1462,7 +1595,7 @@ Seluruh Control Point wajib terdokumentasi.
 
 ---
 
-# Payment Rule Governance
+# Hotel Rule Governance
 
 Perubahan Business Rule mengikuti proses berikut.
 
@@ -1490,15 +1623,16 @@ Implementation
 
 ---
 
-# Payment Rule Metrics
+# Hotel Rule Metrics
 
 | Metric | Target |
 |---------|--------|
 | Rule Documentation | 100% |
 | Rule Compliance | 100% |
 | Event Coverage | 100% |
-| Financial Accuracy | 100% |
-| Duplicate Transaction | 0 |
+| Reservation Accuracy | 100% |
+| Room Assignment Accuracy | 100% |
+| Inventory Accuracy | 100% |
 
 ---
 
@@ -1516,25 +1650,24 @@ Implementation
 
 # Acceptance Criteria
 
-Payment Business Rules dianggap lengkap apabila:
+Hotel Business Rules dianggap lengkap apabila:
 
 - seluruh Rule memiliki ID
 - seluruh Rule memiliki Business Owner
 - seluruh Status terdokumentasi
 - seluruh Business Event terdokumentasi
 - seluruh Event mengikuti Naming Standard
-- seluruh Financial Control Point terdokumentasi
+- seluruh Hotel Control Point terdokumentasi
 - seluruh perubahan Rule mengikuti Governance Process
 
 ---
-
 ---
 
-# Payment Intelligence
+# Hotel Intelligence
 
-Payment Intelligence merupakan kemampuan VENTRA dalam menganalisis seluruh aktivitas pembayaran menggunakan Business Analytics dan Artificial Intelligence.
+Hotel Intelligence merupakan kemampuan VENTRA dalam menganalisis seluruh aktivitas Hotel menggunakan Business Analytics dan Artificial Intelligence.
 
-Payment Intelligence membantu perusahaan memahami kondisi keuangan secara real-time, mengidentifikasi risiko transaksi, meningkatkan cash flow, dan mendukung pengambilan keputusan strategis.
+Hotel Intelligence membantu perusahaan meningkatkan kualitas akomodasi, mengoptimalkan utilisasi kamar, mengevaluasi performa Hotel, mengendalikan biaya, dan mendukung pengambilan keputusan strategis.
 
 Artificial Intelligence memberikan rekomendasi.
 
@@ -1542,209 +1675,180 @@ Keputusan akhir tetap berada pada manusia.
 
 ---
 
-# Payment Intelligence Objectives
+# Hotel Intelligence Objectives
 
-Payment Intelligence bertujuan untuk:
+Hotel Intelligence bertujuan untuk:
 
-- meningkatkan cash flow
-- meningkatkan payment success rate
-- mempercepat payment collection
-- mengurangi overdue payment
-- mengurangi fraud
-- meningkatkan akurasi rekonsiliasi
-- membantu Executive Decision Making
+- meningkatkan kualitas akomodasi
+- meningkatkan utilisasi kamar
+- meningkatkan kepuasan Customer
+- meningkatkan efisiensi operasional
+- mengurangi risiko overbooking
+- meningkatkan kualitas Vendor Hotel
+- mendukung Executive Decision Making
 
 ---
 
-# Payment Analytics
+# Hotel Analytics
 
-Payment Analytics digunakan untuk mengevaluasi seluruh aktivitas pembayaran.
+Hotel Analytics digunakan untuk mengevaluasi seluruh aktivitas Hotel.
 
 Minimal mencakup:
 
-- Payment Analytics
-- Collection Analytics
-- Installment Analytics
-- Refund Analytics
-- Settlement Analytics
-- Reconciliation Analytics
-- Cash Flow Analytics
-- Payment Method Analytics
-- Fraud Analytics
-- Customer Payment Analytics
+- Reservation Analytics
+- Occupancy Analytics
+- Room Inventory Analytics
+- Room Assignment Analytics
+- Contract Analytics
+- Hotel Performance Analytics
+- Hotel Cost Analytics
+- Customer Satisfaction Analytics
+- Accommodation Quality Analytics
+- Incident Analytics
 
 Seluruh Analytics menjadi dasar pengambilan keputusan.
 
 ---
 
-# Payment KPI
+# Hotel KPI
 
-Payment Domain memiliki KPI resmi.
+Hotel Domain memiliki KPI resmi.
 
 | KPI | Description |
 |------|-------------|
-| Total Payment | Total transaksi pembayaran |
-| Payment Success Rate | Persentase pembayaran berhasil |
-| Payment Collection Rate | Tingkat keberhasilan penagihan |
-| Overdue Payment | Jumlah pembayaran terlambat |
-| Outstanding Balance | Total tagihan belum lunas |
-| Refund Rate | Persentase refund |
-| Settlement Accuracy | Akurasi settlement |
-| Reconciliation Accuracy | Akurasi rekonsiliasi |
-| Average Payment Time | Rata-rata waktu pembayaran |
-| Cash Flow | Arus kas masuk |
+| Total Hotel | Jumlah Hotel |
+| Active Hotel | Hotel aktif |
+| Occupancy Rate | Tingkat okupansi |
+| Reservation Success Rate | Tingkat keberhasilan reservasi |
+| Room Utilization | Tingkat utilisasi kamar |
+| Hotel Performance Score | Nilai performa Hotel |
+| Customer Satisfaction | Kepuasan Customer |
+| Incident Rate | Jumlah insiden |
+| Hotel Availability | Tingkat ketersediaan |
+| Cost per Stay | Biaya rata-rata akomodasi |
 
 ---
 
-# Cash Flow Analytics
+# Reservation Analytics
 
-Cash Flow dianalisis berdasarkan:
+Reservasi dianalisis berdasarkan:
 
-- Daily Cash In
-- Weekly Cash In
-- Monthly Cash In
-- Outstanding Invoice
-- Forecast Cash Flow
-- Collection Trend
-
-Cash Flow Analytics membantu menjaga kesehatan keuangan perusahaan.
+- Reservation Volume
+- Reservation Trend
+- Cancellation Rate
+- Reservation Lead Time
+- Reservation Success Rate
 
 ---
 
-# Collection Analytics
+# Occupancy Analytics
 
-Collection dianalisis berdasarkan:
+Okupansi dianalisis berdasarkan:
 
-- Total Collection
-- Outstanding Collection
-- Overdue Collection
-- Collection Efficiency
-- Collection Trend
+- Daily Occupancy
+- Monthly Occupancy
+- Annual Occupancy
+- Occupancy by Hotel
+- Occupancy by Destination
+- Peak Season Occupancy
 
-Analytics membantu meningkatkan efektivitas penagihan.
-
----
-
-# Installment Analytics
-
-Pembayaran bertahap dianalisis berdasarkan:
-
-- Active Installment
-- Installment Completion Rate
-- Average Installment Duration
-- Late Installment
-- Default Risk
-
-Analytics digunakan untuk mengevaluasi pola pembayaran Customer.
+Analytics membantu optimalisasi kapasitas Hotel.
 
 ---
 
-# Refund Analytics
+# Room Inventory Analytics
 
-Refund dianalisis berdasarkan:
+Inventori kamar dianalisis berdasarkan:
 
-- Refund Count
-- Refund Amount
-- Refund Ratio
-- Refund Processing Time
-- Refund Reason
+- Available Room
+- Reserved Room
+- Occupied Room
+- Maintenance Room
+- Released Room
 
-Analytics membantu mengevaluasi kualitas layanan.
-
----
-
-# Settlement Analytics
-
-Settlement dianalisis berdasarkan:
-
-- Settlement Success Rate
-- Settlement Time
-- Failed Settlement
-- Pending Settlement
+Analytics memastikan akurasi inventori.
 
 ---
 
-# Reconciliation Analytics
+# Room Assignment Analytics
 
-Reconciliation dianalisis berdasarkan:
+Penempatan kamar dianalisis berdasarkan:
 
-- Matched Transaction
-- Unmatched Transaction
-- Reconciliation Duration
-- Financial Accuracy
+- Assignment Accuracy
+- Room Upgrade
+- Room Change
+- Family Allocation
+- Elderly Allocation
+- VIP Allocation
 
----
-
-# Payment Method Analytics
-
-Metode pembayaran dianalisis berdasarkan:
-
-- Transaction Volume
-- Revenue Contribution
-- Success Rate
-- Failure Rate
-- Processing Time
-
-Contoh:
-
-- Bank Transfer
-- Virtual Account
-- QRIS
-- Credit Card
-- Debit Card
-- E-Wallet
+Analytics membantu meningkatkan kenyamanan Customer.
 
 ---
 
-# Fraud Analytics
+# Hotel Performance Analytics
 
-Fraud Analytics menganalisis:
+Performa Hotel dianalisis berdasarkan:
 
-- Duplicate Payment
-- Suspicious Transaction
-- Chargeback
-- Abnormal Payment Pattern
-- High Risk Transaction
+- Room Quality
+- Cleanliness
+- Food Quality
+- Staff Hospitality
+- Response Time
+- Incident Resolution
 
-Artificial Intelligence membantu mendeteksi pola fraud.
+Analytics membantu mengevaluasi kualitas Hotel.
 
 ---
 
-# Executive Payment Dashboard
+# Accommodation Quality Analytics
+
+Kualitas akomodasi dianalisis berdasarkan:
+
+- EAQS Score
+- Customer Rating
+- Complaint Rate
+- Service Consistency
+- Facility Completeness
+
+---
+
+# Executive Hotel Dashboard
 
 Dashboard Executive minimal menampilkan:
 
+## Accommodation Summary
+
+- Total Hotel
+- Active Hotel
+- Occupancy Rate
+- Reservation Trend
+
+---
+
+## Quality Summary
+
+- Hotel Performance Score
+- EAQS Score
+- Customer Satisfaction
+- Complaint Trend
+
+---
+
+## Operational Summary
+
+- Room Utilization
+- Inventory Availability
+- Overbooking Alert
+- Reservation Success Rate
+
+---
+
 ## Financial Summary
 
-- Total Payment
-- Total Revenue
-- Outstanding Balance
-- Cash Flow
-
----
-
-## Collection Summary
-
-- Collection Rate
-- Overdue Payment
-- Collection Trend
-
----
-
-## Risk Summary
-
-- Fraud Alert
-- Chargeback
-- Failed Payment
-- High Risk Transaction
-
----
-
-## Performance Summary
-
-- Settlement Accuracy
-- Reconciliation Accuracy
-- Payment Success Rate
+- Hotel Cost
+- Cost Trend
+- Cost per Stay
+- Budget Utilization
 
 ---
 
@@ -1752,82 +1856,83 @@ Dashboard Executive minimal menampilkan:
 
 Artificial Intelligence memberikan rekomendasi seperti:
 
-- Customer yang berpotensi terlambat membayar
-- Invoice yang perlu diprioritaskan
-- Prediksi Cash Flow
-- Risiko Fraud
-- Tren pembayaran
-- Strategi Collection
+- Hotel terbaik untuk Departure tertentu
+- Hotel yang perlu dievaluasi
+- Prediksi okupansi
+- Prediksi overbooking
+- Peluang efisiensi biaya
+- Rekomendasi kontrak Hotel
 
 Dashboard harus mendukung Executive Decision Making.
 
 ---
 
-# Predictive Payment Analytics
+# Predictive Hotel Analytics
 
 Artificial Intelligence dapat memprediksi:
 
-- keterlambatan pembayaran
-- cash flow masa depan
-- risiko gagal bayar
-- kemungkinan refund
-- kemungkinan chargeback
-- efektivitas collection
+- okupansi Hotel
+- kebutuhan kamar
+- risiko overbooking
+- penurunan kualitas Hotel
+- kebutuhan penambahan allotment
+- potensi penghematan biaya
 
 Prediksi digunakan sebagai bahan pertimbangan bisnis.
 
 ---
 
-# AI Payment Assistant
+# AI Hotel Assistant
 
-AI membantu Finance Team dalam:
+AI membantu Hotel Manager dalam:
 
-- Payment Review
-- Collection Recommendation
-- Fraud Detection
-- Cash Flow Forecast
-- Collection Priority
-- Financial Summary
-- Executive Briefing
+- Hotel Recommendation
+- Room Allocation Recommendation
+- Contract Evaluation
+- Occupancy Forecast
+- Cost Analysis
+- Executive Summary
+- Quality Monitoring
 
-AI tidak melakukan perubahan transaksi secara otomatis.
+AI tidak melakukan perubahan data secara otomatis.
 
 Seluruh rekomendasi AI memerlukan persetujuan pengguna sesuai Governance Standard.
 
 ---
 
-# Financial Health Score
+# Hotel Health Score
 
-Payment Domain memiliki Financial Health Score.
+Hotel Domain memiliki Hotel Health Score.
 
 Skor dihitung berdasarkan:
 
-- Payment Success Rate
-- Collection Rate
-- Cash Flow
-- Outstanding Balance
-- Settlement Accuracy
-- Reconciliation Accuracy
-- Fraud Risk
+- Occupancy Rate
+- Reservation Success Rate
+- Hotel Performance
+- EAQS Score
+- Customer Satisfaction
+- Incident Rate
+- AI Confidence Score
 
 | Score | Status |
-|---------|--------|
+|--------|--------|
 | 95–100 | Excellent |
 | 85–94 | Healthy |
 | 70–84 | Warning |
 | <70 | Critical |
 
-Financial Health Score menjadi indikator utama pada Executive Dashboard.
+Hotel Health Score menjadi indikator utama pada Executive Dashboard.
 
 ---
 
-# Payment Intelligence Governance
+# Hotel Intelligence Governance
 
-Payment Intelligence mengikuti:
+Hotel Intelligence mengikuti:
 
 - BP-001 Business Blueprint
 - BP-104 Booking Blueprint
 - BP-106 Departure Blueprint
+- BP-109 Vendor Blueprint
 - Dashboard Standard
 - AI Standard
 - Governance Standard
@@ -1836,7 +1941,7 @@ Seluruh penggunaan AI tetap mematuhi AI Ethics.
 
 ---
 
-# Payment Intelligence Metrics
+# Hotel Intelligence Metrics
 
 | Metric | Target |
 |---------|--------|
@@ -1846,7 +1951,7 @@ Seluruh penggunaan AI tetap mematuhi AI Ethics.
 | AI Recommendation Coverage | 100% |
 | Executive Insight Coverage | 100% |
 | Predictive Analytics Coverage | 100% |
-| Financial Health Score | ≥95 |
+| Hotel Health Score | ≥95 |
 
 ---
 
@@ -1860,13 +1965,13 @@ Seluruh penggunaan AI tetap mematuhi AI Ethics.
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Payment adalah mencapai **Level 5**.
+Target Domain Hotel adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-Payment Intelligence dianggap lengkap apabila:
+Hotel Intelligence dianggap lengkap apabila:
 
 - seluruh KPI terdokumentasi
 - seluruh Dashboard terdokumentasi
@@ -1874,25 +1979,24 @@ Payment Intelligence dianggap lengkap apabila:
 - seluruh AI Recommendation terdokumentasi
 - seluruh Insight berasal dari Business Data
 - seluruh Dashboard mendukung Executive Decision Making
-- Financial Health Score terdokumentasi
+- Hotel Health Score terdokumentasi
+
+---
+---
+
+# Hotel Governance
+
+Hotel Domain merupakan Enterprise Accommodation Management Domain dalam Business Architecture VENTRA.
+
+Seluruh implementasi Hotel wajib mengacu pada Blueprint ini.
+
+Perubahan terhadap Hotel Blueprint hanya dapat dilakukan melalui Blueprint Governance Process.
 
 ---
 
----
+# Hotel Domain Governance
 
-# Payment Governance
-
-Payment Domain merupakan Financial Transaction Domain dalam Enterprise Business Architecture VENTRA.
-
-Seluruh implementasi Payment wajib mengacu pada Blueprint ini.
-
-Perubahan terhadap Payment Blueprint hanya dapat dilakukan melalui Blueprint Governance Process.
-
----
-
-# Payment Domain Governance
-
-Payment Domain mengikuti Governance Standard VENTRA.
+Hotel Domain mengikuti Governance Standard VENTRA.
 
 Seluruh perubahan mengikuti proses berikut.
 
@@ -1936,9 +2040,39 @@ Tidak diperbolehkan melakukan perubahan langsung pada implementasi tanpa melalui
 
 # Domain Context Map
 
-Payment berada di pusat Financial Transaction Management.
+Hotel berada di pusat Enterprise Accommodation Management.
 
-Customer
+Vendor
+
+↓
+
+Hotel
+
+├── Hotel Master
+
+├── Contract
+
+├── Seasonal Rate
+
+├── Room Type
+
+├── Room Inventory
+
+├── Room Allotment
+
+├── Reservation
+
+├── Rooming List
+
+├── Check-in
+
+├── Check-out
+
+├── Performance
+
+├── Analytics
+
+└── Intelligence
 
 ↓
 
@@ -1946,29 +2080,7 @@ Booking
 
 ↓
 
-Invoice
-
-↓
-
-Payment
-
-├── Payment Request
-
-├── Installment
-
-├── Verification
-
-├── Settlement
-
-├── Reconciliation
-
-├── Refund
-
-├── Chargeback
-
-├── Financial Control
-
-└── Audit Trail
+Departure
 
 ↓
 
@@ -1982,34 +2094,34 @@ Dashboard
 
 Artificial Intelligence
 
-Payment menjadi pusat seluruh transaksi pembayaran.
+Hotel menjadi pusat seluruh pengelolaan akomodasi.
 
 ---
 
 # Upstream Domain
 
-Payment menerima informasi dari:
+Hotel menerima informasi dari:
 
-- Customer
-- Booking
-- Invoice
-- Payment Gateway
-- Bank
+- Vendor
+- Procurement
+- Contract Management
+- Destination Management
 
 ---
 
 # Downstream Domain
 
-Payment memberikan informasi kepada:
+Hotel memberikan informasi kepada:
 
+- Booking
+- Departure
+- Payment
 - Finance
 - Dashboard
-- Notification
-- CRM
 - Artificial Intelligence
 - Reporting
 
-Payment menjadi sumber utama status transaksi pembayaran.
+Hotel menjadi sumber resmi seluruh informasi akomodasi.
 
 ---
 
@@ -2017,17 +2129,15 @@ Payment menjadi sumber utama status transaksi pembayaran.
 
 | Domain | Relationship | Integration |
 |---------|--------------|-------------|
-| Customer | Upstream | API |
-| Booking | Upstream | API + Event |
-| Invoice | Upstream | API |
-| Payment Gateway | Upstream | API |
-| Bank | Upstream | API |
-| Finance | Downstream | API + Event |
+| Vendor | Upstream | API |
+| Procurement | Upstream | API |
+| Booking | Downstream | API + Event |
+| Departure | Downstream | API + Event |
+| Payment | Downstream | API |
+| Finance | Downstream | API |
 | Dashboard | Downstream | Event |
-| Notification | Downstream | Event |
-| CRM | Downstream | Event |
+| AI | Downstream | API + Event |
 | Reporting | Downstream | API |
-| Artificial Intelligence | Downstream | API + Event |
 
 Seluruh integrasi dilakukan menggunakan kontrak resmi.
 
@@ -2035,19 +2145,19 @@ Seluruh integrasi dilakukan menggunakan kontrak resmi.
 
 # Published Business Events
 
-Payment mempublikasikan Event berikut.
+Hotel mempublikasikan Event berikut.
 
-- InvoiceGenerated
-- PaymentRequested
-- PaymentReceived
-- PaymentVerified
-- PaymentConfirmed
-- InstallmentPaid
-- PaymentCompleted
-- PaymentSettled
-- PaymentReconciled
-- PaymentRefunded
-- PaymentArchived
+- HotelRegistered
+- HotelActivated
+- HotelContractCreated
+- RoomInventoryUpdated
+- RoomAllotted
+- HotelReserved
+- RoomAssigned
+- GuestCheckedIn
+- GuestCheckedOut
+- HotelEvaluated
+- HotelArchived
 
 Seluruh Event mengikuti STD-003 Naming Standard.
 
@@ -2055,51 +2165,51 @@ Seluruh Event mengikuti STD-003 Naming Standard.
 
 # Consumed Business Events
 
-Payment menggunakan Event berikut.
+Hotel menggunakan Event berikut.
+
+VendorApproved
+
+↓
+
+Enable Hotel Contract
+
+---
 
 BookingConfirmed
 
 ↓
 
-Generate Invoice
+Create Reservation
 
 ---
 
-InvoiceApproved
+DepartureCreated
 
 ↓
 
-Create Payment Request
+Allocate Room
 
 ---
 
-PaymentGatewayCallbackReceived
+DepartureCompleted
 
 ↓
 
-Verify Payment
+Release Room
 
 ---
 
-RefundApproved
+VendorSuspended
 
 ↓
 
-Process Refund
+Suspend Hotel
 
 ---
 
-ChargebackReceived
+# Hotel Traceability Matrix
 
-↓
-
-Update Payment Status
-
----
-
-# Payment Traceability Matrix
-
-Seluruh implementasi Payment harus dapat ditelusuri.
+Seluruh implementasi Hotel harus dapat ditelusuri.
 
 Business Vision
 
@@ -2113,39 +2223,39 @@ BP-001 Business Blueprint
 
 ↓
 
-BP-107 Payment Blueprint
+BP-110 Hotel Blueprint
 
 ↓
 
-DB-107 Payment Database Blueprint
+DB-110 Hotel Database Blueprint
 
 ↓
 
-API-107 Payment API Blueprint
+API-110 Hotel API Blueprint
 
 ↓
 
-FL-107 Payment Flutter Blueprint
+FL-110 Hotel Flutter Blueprint
 
 ↓
 
-DS-107 Payment Dashboard Blueprint
+DS-110 Hotel Dashboard Blueprint
 
 ↓
 
-AI-107 Payment AI Blueprint
+AI-110 Hotel AI Blueprint
 
 ↓
 
 Implementation
 
-Tidak diperbolehkan terdapat implementasi Payment tanpa Blueprint.
+Tidak diperbolehkan terdapat implementasi Hotel tanpa Blueprint.
 
 ---
 
-# Payment Compliance
+# Hotel Compliance
 
-Payment Domain wajib mematuhi:
+Hotel Domain wajib mematuhi:
 
 - Product Philosophy
 - Governance Standard
@@ -2164,37 +2274,38 @@ Seluruh audit mengacu pada standar tersebut.
 
 ---
 
-# Payment Risks
+# Hotel Risks
 
-Risiko utama Domain Payment meliputi:
+Risiko utama Domain Hotel meliputi:
 
-- Duplicate Payment
-- Failed Payment
-- Fraud Transaction
-- Chargeback
-- Settlement Failure
-- Reconciliation Difference
-- Refund Error
-- Payment Gateway Failure
-- Bank Integration Failure
+- Overbooking
+- Room Allocation Conflict
+- Contract Expiration
+- Hotel Unavailability
+- Service Quality Decline
+- Room Inventory Inaccuracy
+- Reservation Failure
+- Integration Failure
 - Data Inconsistency
+- Customer Complaint
 
 Setiap risiko wajib memiliki strategi mitigasi yang terdokumentasi.
 
 ---
 
-# Payment Audit
+# Hotel Audit
 
-Seluruh aktivitas Payment harus dapat diaudit.
+Seluruh aktivitas Hotel harus dapat diaudit.
 
 Minimal mencakup:
 
-- siapa membuat Invoice
-- siapa memverifikasi Payment
-- siapa menyetujui Refund
+- siapa mendaftarkan Hotel
+- siapa membuat Contract
+- siapa melakukan Reservation
+- siapa mengubah Room Inventory
+- siapa melakukan Room Assignment
+- siapa menyetujui perubahan Contract
 - perubahan Status
-- perubahan Settlement
-- perubahan Reconciliation
 - alasan perubahan
 - waktu perubahan
 
@@ -2202,18 +2313,19 @@ Audit menjadi bagian dari Enterprise Governance.
 
 ---
 
-# Financial Confidence Index
+# Enterprise Accommodation Quality Index (EAQI)
 
-Payment memiliki Financial Confidence Index (FCI).
+Hotel memiliki Enterprise Accommodation Quality Index (EAQI).
 
-FCI dihitung berdasarkan:
+EAQI dihitung berdasarkan:
 
-- Data Completeness
-- Transaction Accuracy
-- Audit Compliance
-- Internal Control Compliance
-- Reconciliation Quality
-- Fraud Risk Level
+- Room Quality
+- Cleanliness
+- Service Consistency
+- Occupancy Stability
+- Incident Frequency
+- Customer Satisfaction
+- EAQS Score
 - AI Confidence Score
 
 Rentang nilai:
@@ -2225,11 +2337,11 @@ Rentang nilai:
 | 70–84 | Warning |
 | <70 | Critical |
 
-Financial Confidence Index menjadi indikator utama kualitas transaksi keuangan pada Executive Dashboard.
+Enterprise Accommodation Quality Index menjadi indikator utama kualitas Hotel pada Executive Dashboard.
 
 ---
 
-# Payment Blueprint Metrics
+# Hotel Blueprint Metrics
 
 | Metric | Target |
 |---------|--------|
@@ -2241,8 +2353,8 @@ Financial Confidence Index menjadi indikator utama kualitas transaksi keuangan p
 | AI Coverage | 100% |
 | Traceability Coverage | 100% |
 | Compliance Score | 100% |
-| Financial Health Score | ≥95 |
-| Financial Confidence Index | ≥95 |
+| Hotel Health Score | ≥95 |
+| Enterprise Accommodation Quality Index | ≥95 |
 
 ---
 
@@ -2256,26 +2368,26 @@ Financial Confidence Index menjadi indikator utama kualitas transaksi keuangan p
 | Level 4 | Dashboard & Analytics Available |
 | Level 5 | AI Assisted & Fully Optimized |
 
-Target Domain Payment adalah mencapai **Level 5**.
+Target Domain Hotel adalah mencapai **Level 5**.
 
 ---
 
 # Acceptance Criteria
 
-BP-107 dianggap selesai apabila:
+BP-110 dianggap selesai apabila:
 
 - seluruh Capability terdokumentasi
 - seluruh Business Process terdokumentasi
 - seluruh Business Rules terdokumentasi
-- seluruh Payment Status terdokumentasi
+- seluruh Hotel Status terdokumentasi
 - seluruh Business Event terdokumentasi
 - seluruh Dashboard terdokumentasi
 - seluruh AI Recommendation terdokumentasi
 - seluruh Integration terdokumentasi
 - seluruh Governance terdokumentasi
 - seluruh Traceability terdokumentasi
-- Financial Health Score terdokumentasi
-- Financial Confidence Index terdokumentasi
+- Hotel Health Score terdokumentasi
+- Enterprise Accommodation Quality Index terdokumentasi
 
 ---
 
@@ -2317,16 +2429,19 @@ BP-107 dianggap selesai apabila:
 - BP-104 Booking Blueprint
 - BP-105 Package Blueprint
 - BP-106 Departure Blueprint
+- BP-107 Payment Blueprint
+- BP-108 Finance Blueprint
+- BP-109 Vendor Blueprint
 
 ---
 
 ## Technical Blueprints
 
-- DB-107 Payment Database Blueprint
-- API-107 Payment API Blueprint
-- FL-107 Payment Flutter Blueprint
-- DS-107 Payment Dashboard Blueprint
-- AI-107 Payment AI Blueprint
+- DB-110 Hotel Database Blueprint
+- API-110 Hotel API Blueprint
+- FL-110 Hotel Flutter Blueprint
+- DS-110 Hotel Dashboard Blueprint
+- AI-110 Hotel AI Blueprint
 
 ---
 
@@ -2334,24 +2449,24 @@ BP-107 dianggap selesai apabila:
 
 | Version | Date | Description |
 |----------|------|-------------|
-| 1.0.0 | 2026-08-06 | Initial Payment Blueprint |
+| 1.0.0 | 2026-08-06 | Initial Hotel Blueprint |
 
 ---
 
 # Closing Statement
 
-Payment merupakan fondasi seluruh transaksi keuangan dalam VENTRA.
+Hotel merupakan fondasi utama pengelolaan akomodasi dalam VENTRA.
 
-Keakuratan, keamanan, transparansi, dan keterlacakan setiap transaksi menjadi syarat utama dalam menjaga kepercayaan Customer dan keberlangsungan bisnis.
+Keberhasilan operasional perjalanan sangat dipengaruhi oleh kualitas pengelolaan Hotel, mulai dari kontrak, inventori, reservasi, hingga pengalaman menginap Customer.
 
 Perubahan terhadap Blueprint ini hanya dapat dilakukan melalui Blueprint Governance Process.
 
 ---
 
-# Payment Blueprint Philosophy
+# Hotel Blueprint Philosophy
 
-Payment yang baik bukan hanya mencatat pembayaran.
+Hotel yang baik bukan hanya menyediakan kamar.
 
-Payment yang hebat memastikan setiap transaksi tervalidasi, terdokumentasi, terintegrasi, dapat diaudit, dan memberikan informasi yang akurat untuk mendukung keputusan bisnis.
+Hotel yang hebat menghadirkan pengalaman menginap yang nyaman, terencana, terukur, dan terintegrasi dengan seluruh proses perjalanan.
 
-**One Payment. One Financial Truth. One Enterprise Standard.**
+**One Hotel. One Accommodation. One Enterprise Standard.**
