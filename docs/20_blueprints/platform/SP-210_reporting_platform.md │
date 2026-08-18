@@ -1,0 +1,507 @@
+# SP-210 — Reporting Platform
+
+## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+**Document ID:** SP-210
+**Document Name:** `SP-210_reporting_platform.md`
+**Platform Domain:** Reporting Platform
+**Edition:** Enterprise Edition v2.0
+**Version:** 2.0.0
+**Status:** FINAL / APPROVED & LOCKED
+**Part:** 1 of 7
+**Constitution Alignment:** 12/12 ALIGNED
+**Baseline Status:** DEFERRED TO PART 7
+**Final Acceptance:** DEFERRED TO PART 7
+**Final Governance:** DEFERRED TO PART 7
+
+---
+
+# PART 1 — REPORTING PLATFORM FOUNDATION & ENTERPRISE CONTRACT
+
+## 1. Document Purpose
+
+`SP-210_reporting_platform.md` mendefinisikan foundation, enterprise contract, architectural boundary, responsibility model, functional scope, non-functional requirements, data principles, security principles, extensibility requirements, serta governance prerequisites untuk **Reporting Platform** pada ekosistem VENTRA.
+
+Reporting Platform merupakan platform enterprise yang bertanggung jawab menyediakan kemampuan pelaporan yang:
+
+- konsisten;
+- terukur;
+- auditable;
+- secure;
+- scalable;
+- reusable;
+- tenant-aware;
+- role-aware;
+- permission-aware;
+- traceable;
+- extensible;
+- AI-ready;
+- dan suitable untuk kebutuhan operasional, manajerial, executive, finance, CRM, booking, marketing, jamaah, vendor, supplier, serta domain enterprise lainnya.
+
+Reporting Platform **BUKAN** sekadar kumpulan halaman laporan.
+
+Reporting Platform harus diperlakukan sebagai **enterprise reporting capability** yang memiliki contract, lifecycle, governance, data lineage, access control, query boundary, rendering strategy, export capability, auditability, observability, dan extensibility yang terdefinisi secara eksplisit.
+
+---
+
+# 2. Document Scope
+
+Dokumen ini mencakup foundation dan contract untuk:
+
+1. Reporting Platform identity.
+2. Reporting Platform responsibility.
+3. Reporting Platform architectural boundary.
+4. Reporting lifecycle.
+5. Report definition.
+6. Report execution.
+7. Report query contract.
+8. Report parameter contract.
+9. Report filtering.
+10. Report sorting.
+11. Report grouping.
+12. Report aggregation.
+13. Report pagination.
+14. Report visualization.
+15. Report export.
+16. Report scheduling.
+17. Report access control.
+18. Report tenant isolation.
+19. Report auditability.
+20. Report observability.
+21. Report data freshness.
+22. Report consistency.
+23. Report versioning.
+24. Report ownership.
+25. Report lifecycle.
+26. Report extensibility.
+27. Report integration boundary.
+28. AI readiness.
+29. Testing requirements.
+30. Documentation requirements.
+31. Governance prerequisites.
+
+Dokumen ini tidak mengesahkan keseluruhan platform sebagai Final Acceptance.
+
+**Final Acceptance keseluruhan hanya dapat ditetapkan pada PART 7.**
+
+---
+
+# 3. Reporting Platform Definition
+
+Reporting Platform adalah platform enterprise yang menyediakan mekanisme terstandarisasi untuk mengubah data terkontrol menjadi informasi yang dapat digunakan oleh:
+
+- operational users;
+- administrators;
+- finance teams;
+- marketing teams;
+- sales teams;
+- CRM teams;
+- booking teams;
+- customer service teams;
+- management;
+- executives;
+- auditors;
+- system administrators;
+- authorized external users;
+- AI agents;
+- dan authorized enterprise consumers lainnya.
+
+Reporting Platform harus mampu menangani berbagai bentuk output, termasuk namun tidak terbatas pada:
+
+- operational reports;
+- analytical reports;
+- management reports;
+- executive reports;
+- financial reports;
+- customer reports;
+- jamaah reports;
+- booking reports;
+- package reports;
+- payment reports;
+- vendor reports;
+- supplier reports;
+- marketing reports;
+- performance reports;
+- audit reports;
+- compliance reports;
+- system reports;
+- scheduled reports;
+- dashboard datasets;
+- machine-readable datasets;
+- AI-consumable reporting datasets.
+
+---
+
+# 4. Core Principle
+
+Reporting Platform harus mengikuti prinsip:
+
+> **One Reporting Contract, Multiple Reporting Consumers.**
+
+Satu definisi laporan harus dapat digunakan oleh berbagai consumer tanpa menduplikasi business logic.
+
+Consumer dapat berupa:
+
+- web dashboard;
+- mobile application;
+- desktop application;
+- API consumer;
+- export engine;
+- scheduled delivery;
+- notification service;
+- AI agent;
+- analytics service;
+- audit service;
+- enterprise integration.
+
+Business logic laporan **tidak boleh** diduplikasi pada setiap consumer.
+
+---
+
+# 5. Architectural Position
+
+Reporting Platform berada pada lapisan platform capability dan berfungsi sebagai abstraction layer antara domain data dan reporting consumer.
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                    REPORTING CONSUMERS                        │
+├──────────────────────────────────────────────────────────────┤
+│ Web │ Mobile │ Desktop │ API │ Export │ Scheduler │ AI       │
+└──────────────────────────────┬───────────────────────────────┘
+                               │
+                               ▼
+┌──────────────────────────────────────────────────────────────┐
+│                  REPORTING PLATFORM                           │
+├──────────────────────────────────────────────────────────────┤
+│ Report Registry                                                │
+│ Report Definition                                              │
+│ Query Contract                                                 │
+│ Parameter Contract                                             │
+│ Filter / Sort / Group / Aggregate                              │
+│ Execution Engine                                                │
+│ Authorization                                                  │
+│ Tenant Isolation                                               │
+│ Data Freshness                                                 │
+│ Rendering / Presentation Contract                              │
+│ Export Contract                                                 │
+│ Scheduling                                                      │
+│ Audit / Lineage                                                 │
+│ Observability                                                   │
+│ Versioning                                                      │
+└──────────────────────────────┬───────────────────────────────┘
+                               │
+                               ▼
+┌──────────────────────────────────────────────────────────────┐
+│                         DOMAIN DATA                            │
+├──────────────────────────────────────────────────────────────┤
+│ CRM │ Customer │ Booking │ Finance │ Payment │ Marketing       │
+│ Package │ Jamaah │ Vendor │ Supplier │ Ticket │ Hotel │ Visa │
+│ Document │ Notification │ Other Enterprise Domains             │
+└──────────────────────────────────────────────────────────────┘
+
+# SP-210 — Reporting Platform
+
+## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+**Document ID:** SP-210
+**Document Name:** `SP-210_reporting_platform.md`
+**Platform Domain:** Reporting Platform
+**Edition:** Enterprise Edition v2.0
+**Version:** 2.0.0
+**Status:** FINAL / APPROVED & LOCKED
+**Part:** 2 of 7
+**Constitution Alignment:** 12/12 ALIGNED
+**Final Acceptance:** DEFERRED TO PART 7
+**Final Governance:** DEFERRED TO PART 7
+**Enterprise Baseline:** DEFERRED TO PART 7
+
+---
+
+# PART 2 — REPORTING DOMAIN MODEL, DATA CONTRACT & EXECUTION ARCHITECTURE
+
+## 56. PART 2 Purpose
+
+PART 2 mendefinisikan domain model, canonical reporting contract, data contract, metric contract, execution model, source abstraction, report composition, query safety, result semantics, serta architectural rules yang diperlukan agar Reporting Platform dapat beroperasi sebagai enterprise reporting capability.
+
+PART 2 melanjutkan foundation yang telah ditetapkan pada PART 1.
+
+PART 2 tidak mengubah:
+
+- architectural boundary;
+- security boundary;
+- tenant isolation principle;
+- governance principle;
+- versioning principle;
+- AI-readiness principle;
+- 12/12 VENTRA Development Constitution alignment.
+
+PART 2 berfungsi memperdalam contract yang diperlukan untuk implementasi enterprise.
+
+---
+
+# 57. Reporting Domain Model
+
+Reporting Platform menggunakan model konseptual berikut:
+
+```text
+Report
+ ├── Report Definition
+ ├── Report Version
+ ├── Data Source
+ ├── Metric Definition
+ ├── Dimension Definition
+ ├── Parameter Definition
+ ├── Filter Definition
+ ├── Sort Definition
+ ├── Group Definition
+ ├── Authorization Policy
+ ├── Presentation Definition
+ ├── Export Definition
+ ├── Schedule Definition
+ └── Execution Policy
+
+ # SP-210 — Reporting Platform
+
+ ## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+ **Document ID:** SP-210
+ **Document Name:** `SP-210_reporting_platform.md`
+ **Platform Domain:** Reporting Platform
+ **Edition:** Enterprise Edition v2.0
+ **Version:** 2.0.0
+ **Status:** FINAL / APPROVED & LOCKED
+ **Part:** 3 of 7
+ **Constitution Alignment:** 12/12 ALIGNED
+ **Final Acceptance:** DEFERRED TO PART 7
+ **Final Governance:** DEFERRED TO PART 7
+ **Enterprise Baseline:** DEFERRED TO PART 7
+
+ ---
+
+ # PART 3 — APPLICATION ARCHITECTURE, SERVICE CONTRACT, QUERY ENGINE & EXECUTION PLATFORM
+
+ ## 166. PART 3 Purpose
+
+ PART 3 mendefinisikan application architecture dan execution architecture untuk Reporting Platform.
+
+ PART 3 menerjemahkan domain model dan contract pada PART 1 dan PART 2 menjadi architectural execution model yang dapat digunakan oleh:
+
+ - Flutter application;
+ - web dashboard;
+ - backend services;
+ - API consumers;
+ - scheduled reporting;
+ - export services;
+ - AI agents;
+ - analytics consumers;
+ - enterprise administration.
+
+ PART 3 tidak mengubah business semantics yang telah ditetapkan pada PART 1 dan PART 2.
+
+ ---
+
+ # 167. Architectural Principle
+
+ Reporting Platform harus mengikuti separation of concerns:
+
+ ```text
+ Presentation
+     ↓
+ Application
+     ↓
+ Domain
+     ↓
+ Infrastructure
+     ↓
+ Data Sources
+
+ # SP-210 — Reporting Platform
+
+ ## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+ **Document ID:** SP-210
+ **Document Name:** `SP-210_reporting_platform.md`
+ **Platform Domain:** Reporting Platform
+ **Edition:** Enterprise Edition v2.0
+ **Version:** 2.0.0
+ **Status:** FINAL / APPROVED & LOCKED
+ **Part:** 4 of 7
+ **Constitution Alignment:** 12/12 ALIGNED
+ **Final Acceptance:** DEFERRED TO PART 7
+ **Final Governance:** DEFERRED TO PART 7
+ **Enterprise Baseline:** DEFERRED TO PART 7
+
+ ---
+
+ # PART 4 — API CONTRACT, DATA CONTRACT, REPORT UX, EXPORT, SCHEDULING, NOTIFICATION & INTEGRATION
+
+ ## 323. PART 4 Purpose
+
+ PART 4 mendefinisikan contract operasional Reporting Platform pada level:
+
+ - API;
+ - request/response;
+ - pagination;
+ - filtering;
+ - sorting;
+ - grouping;
+ - report parameters;
+ - report execution;
+ - result delivery;
+ - export;
+ - scheduling;
+ - notification;
+ - dashboard integration;
+ - mobile integration;
+ - AI integration;
+ - external integration;
+ - backward compatibility;
+ - error contract.
+
+ PART 4 tidak mengubah semantic definition yang telah ditetapkan pada PART 1–3.
+
+ ---
+
+ # 324. API Architecture Principle
+
+ Seluruh public reporting capability harus melalui API contract yang versioned.
+
+ ```text
+ Consumer
+    ↓
+ API Gateway
+    ↓
+ Authentication
+    ↓
+ Authorization
+    ↓
+ Reporting API
+    ↓
+ Application Service
+    ↓
+ Domain
+    ↓
+ Query / Execution Engine
+
+ # SP-210 — Reporting Platform
+
+ ## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+ **Document ID:** SP-210
+ **Document Name:** `SP-210_reporting_platform.md`
+ **Platform Domain:** Reporting Platform
+ **Edition:** Enterprise Edition v2.0
+ **Version:** 2.0.0
+ **Status:** FINAL / APPROVED & LOCKED
+ **Part:** 5 of 7
+ **Constitution Alignment:** 12/12 ALIGNED
+ **Final Acceptance:** DEFERRED TO PART 7
+ **Final Governance:** DEFERRED TO PART 7
+ **Enterprise Baseline:** DEFERRED TO PART 7
+
+ ---
+
+ # PART 5 — OPERABILITY, OBSERVABILITY, PERFORMANCE, RESILIENCE, TESTING, DISASTER RECOVERY & ENTERPRISE OPERATIONS
+
+ ## 507. PART 5 Purpose
+
+ PART 5 mendefinisikan operational contract dan engineering requirements Reporting Platform untuk memastikan platform:
+
+ - observable;
+ - measurable;
+ - performant;
+ - resilient;
+ - recoverable;
+ - testable;
+ - maintainable;
+ - secure dalam operasi;
+ - siap untuk production;
+ - siap untuk scale;
+ - siap untuk incident response;
+ - siap untuk continuous delivery.
+
+ PART 5 tidak memberikan Final Acceptance keseluruhan.
+
+ Final Acceptance, Final Governance, dan Enterprise Baseline tetap:
+
+ ```text
+ DEFERRED TO PART 7
+
+ # SP-210 — Reporting Platform
+
+ ## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+ **Document ID:** SP-210
+ **Document Name:** `SP-210_reporting_platform.md`
+ **Platform Domain:** Reporting Platform
+ **Edition:** Enterprise Edition v2.0
+ **Version:** 2.0.0
+ **Status:** FINAL / APPROVED & LOCKED
+ **Part:** 6 of 7
+ **Constitution Alignment:** 12/12 ALIGNED
+ **Final Acceptance:** DEFERRED TO PART 7
+ **Final Governance:** DEFERRED TO PART 7
+ **Enterprise Baseline:** DEFERRED TO PART 7
+
+ ---
+
+ # PART 6 — ENTERPRISE INTEGRATION, AI READINESS, EXTENSIBILITY, MIGRATION, DOCUMENTATION, GOVERNANCE PREPARATION & LONG-TERM EVOLUTION
+
+ ## 708. PART 6 Purpose
+
+ PART 6 mendefinisikan contract lanjutan Reporting Platform untuk memastikan platform dapat:
+
+ - berkembang tanpa architectural regression;
+ - terintegrasi dengan enterprise platform;
+ - mendukung AI secara aman dan terkontrol;
+ - mendukung extensibility;
+ - mempertahankan backward compatibility;
+ - melakukan migration secara deterministic;
+ - menjaga documentation integrity;
+ - mendukung multi-tenant evolution;
+ - mendukung future platform capabilities;
+ - mempertahankan observability dan governance;
+ - menjadi enterprise-ready untuk lifecycle jangka panjang.
+
+ PART 6 tidak memberikan Final Acceptance keseluruhan.
+
+ Ketentuan berikut tetap:
+
+ ```text
+ FINAL ACCEPTANCE
+ DEFERRED TO PART 7
+
+ FINAL GOVERNANCE
+ DEFERRED TO PART 7
+
+ ENTERPRISE BASELINE
+ DEFERRED TO PART 7
+
+ # SP-210 — Reporting Platform
+
+ ## Enterprise Edition v2.0 — FINAL / APPROVED & LOCKED
+
+ **Document ID:** SP-210
+ **Document Name:** `SP-210_reporting_platform.md`
+ **Platform Domain:** Reporting Platform
+ **Edition:** Enterprise Edition v2.0
+ **Version:** 2.0.0
+ **Part:** 7 of 7
+ **Status:** FINAL / APPROVED & LOCKED
+ **Constitution Alignment:** 12/12 ALIGNED
+
+ ---
+
+ # PART 7 — FINAL ACCEPTANCE, ENTERPRISE BASELINE, FINAL GOVERNANCE, CROSS-PART VALIDATION & LOCK DECLARATION
+
+ ## 942. PART 7 Purpose
+
+ PART 7 merupakan final consolidation layer dari:
+
+ ```text
+ PART 1
+ PART 2
+ PART 3
+ PART 4
+ PART 5
+ PART 6
