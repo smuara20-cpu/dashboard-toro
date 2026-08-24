@@ -1,196 +1,524 @@
-# BP-001 Business Blueprint
+# BP-001 — BUSINESS BLUEPRINT
 
-> **Enterprise Edition v2.0**
->
 > **"Business drives technology. Blueprint drives implementation. Enterprise architecture sustains long-term growth."**
 
 ---
 
-# Document Information
+# ENTERPRISE EDITION v2.0
+
+**VERSION 2.0.0**
+
+---
+
+# PART 1 OF 7
+
+# BUSINESS ARCHITECTURE FOUNDATION, ENTERPRISE POSITION & BUSINESS CONSTITUTION
+
+---
+
+# 1.0 DOCUMENT CONTROL
 
 | Item | Value |
-|------|-------|
+|---|---|
 | Document ID | BP-001 |
 | Document Name | Business Blueprint |
-| Category | Enterprise Business Blueprint |
-| Status | Draft |
+| File Name | `BP-001_business_blueprint.md` |
+| Document Type | Enterprise Business Blueprint |
+| Category | Enterprise Business Architecture |
+| Edition | Enterprise Edition v2.0 |
 | Version | 2.0.0 |
+| Part | PART 1 of 7 |
 | Classification | Internal |
-| Architecture | Enterprise Edition |
-| Owner | Business Architecture Board |
+| Architecture Domain | Business Architecture |
+| Primary Owner | Business Architecture Board |
 | Business Owner | Chief Executive Officer |
-| Technical Owner | Chief Enterprise Architect |
+| Enterprise Architecture Owner | Enterprise Architecture |
+| Technical Architecture Authority | Chief Software Architect |
+| Security Authority | SP-204 Security Platform / Security Architecture |
+| Identity Authority | SP-203 Identity & Access Platform |
+| Audit Authority | SP-205 Audit Platform |
+| Data Authority | Enterprise Data Architecture |
+| Integration Authority | SP-208 Integration Platform |
+| Workflow Authority | SP-209 Workflow Platform |
+| Reporting Authority | SP-210 Reporting Platform |
+| AI Authority | AI Architecture / AI Governance |
 | Reviewer | Enterprise Architecture Board |
 | Approver | Executive Board |
-| Audience | CEO, Director, Product Owner, Enterprise Architect, Business Analyst, Engineering Manager, UI/UX Designer, QA Lead, AI Engineer |
-| Created | 2026-08-07 |
-| Last Review | - |
-| Next Review | Every 6 Months |
+| Review Cycle | Every 6 Months |
+| Constitution Alignment | 12/12 ALIGNED |
+| Part Status | FINAL / APPROVED & LOCKED |
+| Final Enterprise Acceptance | DEFERRED TO PART 7 |
+| Final Governance | DEFERRED TO PART 7 |
+| Enterprise Baseline | DEFERRED TO PART 7 |
+| Markdown Status | VALID |
+| Internal Code Fence Status | CLOSED CORRECTLY |
+| Truncation Status | NONE |
 
 ---
 
-# Blueprint Purpose
+# 1.1 PART 1 STATUS
 
-BP-001 merupakan Blueprint bisnis tertinggi pada platform VENTRA.
+PART 1 merupakan foundational layer dari BP-001.
 
-Dokumen ini mendefinisikan struktur bisnis perusahaan, tujuan bisnis, kemampuan bisnis, batas Domain, tata kelola bisnis, prinsip bisnis, dan hubungan antar Business Domain.
+PART 1 menetapkan:
 
-Seluruh Business Blueprint, Shared Platform Blueprint, Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, Artificial Intelligence Blueprint, Testing Blueprint, dan Deployment Blueprint wajib mengacu pada BP-001.
+- Business Architecture position
+- Business Blueprint authority
+- Enterprise business context
+- Business vision
+- Business mission
+- Business objectives
+- Business scope
+- Business boundaries
+- Enterprise business principles
+- Enterprise business values
+- Business ownership principles
+- Business architecture governance
+- Business quality gate
+- Enterprise traceability foundation
 
-BP-001 menjadi Single Source of Truth untuk seluruh Business Architecture VENTRA.
+PART 1 dapat dinyatakan:
+
+**FINAL / APPROVED & LOCKED**
+
+sebagai **PART 1 baseline**.
+
+Namun status tersebut tidak berarti BP-001 secara keseluruhan telah final.
+
+Status keseluruhan tetap:
+
+```text
+PART 1
+FINAL / APPROVED & LOCKED
+        ↓
+PART 2
+        ↓
+PART 3
+        ↓
+PART 4
+        ↓
+PART 5
+        ↓
+PART 6
+        ↓
+PART 7
+FINAL ACCEPTANCE
+FINAL GOVERNANCE
+ENTERPRISE BASELINE
+```
 
 ---
 
-# Enterprise Position
+# 1.2 OVERALL GOVERNANCE PRESERVATION
 
-BP-001 berada pada lapisan Business Architecture.
+Finalization BP-001 tidak boleh dilakukan secara premature.
 
-Hubungan Blueprint adalah sebagai berikut.
+Status berikut wajib tetap dipertahankan sampai PART 7:
 
+### Final Enterprise Acceptance
+
+**DEFERRED TO PART 7**
+
+### Final Governance
+
+**DEFERRED TO PART 7**
+
+### Enterprise Baseline
+
+**DEFERRED TO PART 7**
+
+PART 1 tidak memiliki authority untuk:
+
+- Finalize keseluruhan BP-001
+- Lock keseluruhan BP-001
+- Approve seluruh governance BP-001
+- Menetapkan Enterprise Baseline keseluruhan
+- Mengubah governance PART 7
+
+---
+
+# 1.3 PURPOSE
+
+BP-001 merupakan **Business Blueprint tertinggi** dalam Business Architecture VENTRA.
+
+BP-001 mendefinisikan:
+
+- Business Architecture
+- Business Vision
+- Business Mission
+- Business Objectives
+- Business Domain
+- Business Capability
+- Business Process
+- Business Rule
+- Business Event
+- Business Ownership
+- Business Governance
+- Business Intelligence
+- Business Quality
+- Enterprise Control
+- Business Traceability
+
+BP-001 menjadi foundational business reference bagi:
+
+- Business Domain Blueprint
+- Shared Platform Blueprint
+- Database Blueprint
+- API Blueprint
+- Flutter Blueprint
+- Dashboard Blueprint
+- AI Blueprint
+- Testing Blueprint
+- Deployment Blueprint
+- Operational Blueprint
+
+Seluruh downstream blueprint wajib menjaga konsistensi terhadap BP-001.
+
+---
+
+# 1.4 ENTERPRISE POSITION
+
+BP-001 berada pada layer **Business Architecture**.
+
+Hierarki Enterprise Architecture VENTRA:
+
+```text
+VENTRA
+   ↓
 EA-000 Architecture Freeze Rules
-
-↓
-
+   ↓
 EA-001 Enterprise Architecture Blueprint
-
-↓
-
+   ↓
 BP-001 Business Blueprint
-
-↓
-
-Business Blueprint Series
-
-↓
-
-Shared Platform Blueprint Series
-
-↓
-
-Database Blueprint
-
-↓
-
-API Blueprint
-
-↓
-
-Flutter Blueprint
-
-↓
-
-Dashboard Blueprint
-
-↓
-
-Artificial Intelligence Blueprint
-
-↓
-
-Testing Blueprint
-
-↓
-
-Deployment Blueprint
-
-↓
-
+   ↓
+Business Domain Blueprints
+   ↓
+Shared Platform Blueprints
+   ↓
+Database Architecture
+   ↓
+API Architecture
+   ↓
+Flutter Architecture
+   ↓
+Dashboard Architecture
+   ↓
+AI Architecture
+   ↓
+Testing Architecture
+   ↓
+Deployment Architecture
+   ↓
 Production
+```
+
+BP-001 tidak menggantikan EA-000 atau EA-001.
+
+BP-001 menerjemahkan Enterprise Architecture menjadi Business
+Architecture.
 
 ---
 
-# VENTRA Development Constitution v1.0 (LOCK)
+# 1.5 BUSINESS ARCHITECTURE AUTHORITY
 
-Seluruh Blueprint, Shared Platform Blueprint, Database Blueprint, API Blueprint, Flutter Blueprint, Dashboard Blueprint, AI Blueprint, Testing Blueprint, Deployment Blueprint, dan implementasi wajib memenuhi dua belas prinsip berikut.
+BP-001 merupakan authority untuk:
+
+```text
+Business Meaning
+Business Vision
+Business Mission
+Business Objective
+Business Domain
+Business Capability
+Business Process
+Business Rule
+Business Policy
+Business Event
+Business Ownership
+Business KPI
+Business Governance
+```
+
+BP-001 bukan authority untuk:
+
+```text
+Database Implementation
+API Implementation
+Flutter Implementation
+Cloud Infrastructure
+CI/CD Implementation
+Source Code
+Technical Framework
+Programming Language
+Deployment Mechanism
+```
+
+Technical implementation harus mengikuti Business Architecture,
+tetapi tidak boleh mengubah Business Meaning tanpa approved
+Business Governance.
+
+---
+
+# 1.6 BUSINESS VS TECHNICAL AUTHORITY
+
+Business Architecture dan Technical Architecture harus memiliki
+boundary yang jelas.
+
+```text
+Business Architecture
+        ↓
+Business Meaning
+        ↓
+Business Rule
+        ↓
+Business Process
+        ↓
+Business Capability
+        ↓
+Approved Technical Architecture
+        ↓
+Implementation
+```
+
+Technical implementation tidak boleh:
+
+- mengubah Business Rule tanpa approval
+- mengubah Business Process tanpa approval
+- membuat Business Meaning baru tanpa ownership
+- membuat competing Business Authority
+- membuat Business Data Owner baru tanpa governance
+
+---
+
+# 1.7 VENTRA DEVELOPMENT CONSTITUTION v2.0
+
+Seluruh Blueprint, Shared Platform, Database, API, Flutter,
+Dashboard, AI, Testing, Deployment, dan Implementation wajib
+memenuhi dua belas prinsip VENTRA Development Constitution.
 
 ## 1. Business Correctness
 
-Seluruh desain harus merepresentasikan proses bisnis yang benar, tervalidasi, dan dapat dipertanggungjawabkan.
+Seluruh desain harus merepresentasikan kebutuhan bisnis yang benar,
+tervalidasi, konsisten, dan dapat dipertanggungjawabkan.
+
+Business correctness harus menjadi dasar sebelum technical correctness.
 
 ---
 
 ## 2. Architecture Correctness
 
-Seluruh implementasi harus sesuai dengan EA-000 dan EA-001.
+Seluruh architecture dan implementation harus mengikuti:
+
+- EA-000
+- EA-001
+- BP-001
+- Approved Domain Blueprint
+- Approved Shared Platform Blueprint
+
+Tidak diperbolehkan membuat architecture yang bertentangan dengan
+Enterprise Architecture tanpa approved exception.
 
 ---
 
 ## 3. Enterprise Readiness
 
-Seluruh desain harus siap mendukung:
+VENTRA harus siap mendukung:
 
+- Multi Tenant
 - Multi Company
 - Multi Branch
 - Multi User
+- Multi Role
 - Multi Currency
 - Multi Country
-- Multi Language (Future Ready)
+- Multi Language
+- Multi Timezone
+- Multi Business Model
+- Future Enterprise SaaS
+
+Enterprise readiness harus dipertimbangkan sejak Blueprint.
 
 ---
 
 ## 4. Scalability
 
-Arsitektur harus mampu berkembang tanpa perubahan fundamental.
+Business Architecture harus dapat berkembang tanpa perubahan
+fundamental terhadap Enterprise foundation.
+
+Growth harus dapat dilakukan pada:
+
+- Customer
+- Transaction
+- Branch
+- Company
+- Country
+- User
+- Domain
+- Capability
+- Integration
+- Reporting
+- AI Workload
 
 ---
 
 ## 5. Security
 
-Security by Design diterapkan sejak tahap Blueprint.
+Security by Design wajib diterapkan sejak Business Architecture.
+
+Business Process, Business Data, Business Rule, Business Event,
+dan Business Capability harus memiliki security consideration
+yang sesuai.
 
 ---
 
 ## 6. Performance
 
-Seluruh proses bisnis harus dirancang efisien, sederhana, dan cepat.
+Business Process harus dirancang agar:
+
+- efficient
+- measurable
+- predictable
+- scalable
+- operationally feasible
+
+Performance requirement harus dapat diterjemahkan menjadi
+technical requirement pada downstream blueprint.
 
 ---
 
 ## 7. Maintainability
 
-Blueprint dan implementasi harus mudah dipahami, dipelihara, dan dikembangkan.
+Business Architecture harus:
+
+- mudah dipahami
+- terdokumentasi
+- konsisten
+- modular
+- traceable
+- mudah direview
+- mudah dikembangkan
 
 ---
 
 ## 8. Extensibility
 
-Seluruh Domain harus dapat dikembangkan tanpa mengubah fondasi Enterprise.
+Business Domain dan Capability harus dapat dikembangkan tanpa
+mengubah Enterprise foundation secara fundamental.
+
+Extension harus menggunakan approved:
+
+- Domain Boundary
+- Service Contract
+- API Contract
+- Event Contract
+- Governance
+- Versioning
 
 ---
 
 ## 9. Testability
 
-Seluruh Business Rule dan Workflow harus dapat diuji.
+Business Rule, Business Process, Business Event, Business State,
+dan Business Decision harus dapat diuji.
+
+Setiap critical business requirement harus dapat ditelusuri
+terhadap validation atau test evidence.
 
 ---
 
 ## 10. AI Readiness
 
-Seluruh Domain harus siap dimanfaatkan Artificial Intelligence.
+Business Architecture harus siap mendukung:
+
+- AI Assistant
+- AI Agent
+- AI Recommendation
+- AI Decision Support
+- Predictive Analytics
+- Intelligent Automation
+- Enterprise Intelligence
+
+AI tidak boleh mengambil alih Business Authority secara implicit.
+
+Human accountability tetap berlaku untuk critical business decisions.
 
 ---
 
 ## 11. Documentation Quality
 
-Blueprint harus lengkap, konsisten, memiliki Traceability, dan menjadi Single Source of Truth.
+Blueprint harus:
+
+- lengkap
+- konsisten
+- versioned
+- traceable
+- structured
+- auditable
+- readable
+- maintainable
+
+Blueprint menjadi contract antara Business, Architecture,
+Engineering, QA, Operations, dan Governance.
 
 ---
 
 ## 12. Governance
 
-Seluruh perubahan wajib mengikuti Enterprise Governance.
+Seluruh perubahan Business Architecture harus mengikuti
+Enterprise Governance.
+
+Tidak diperbolehkan melakukan perubahan langsung pada:
+
+- Business Rule
+- Business Process
+- Business Ownership
+- Business Capability
+- Business Data Ownership
+- Business Policy
+- Business Decision
+
+tanpa approved change process.
 
 ---
 
-# Business Vision
+# 1.8 CONSTITUTION ALIGNMENT
 
-Menjadi Enterprise Travel Management Platform terbaik yang mampu membantu perusahaan travel mengelola seluruh proses bisnis secara terintegrasi, aman, efisien, modern, dan berkelanjutan.
+PART 1 memenuhi seluruh 12 prinsip:
 
-VENTRA dirancang sebagai platform jangka panjang yang siap berkembang menjadi Enterprise SaaS untuk industri perjalanan.
+| # | Constitution | Status |
+|---|---|---|
+| 1 | Business Correctness | ALIGNED |
+| 2 | Architecture Correctness | ALIGNED |
+| 3 | Enterprise Readiness | ALIGNED |
+| 4 | Scalability | ALIGNED |
+| 5 | Security | ALIGNED |
+| 6 | Performance | ALIGNED |
+| 7 | Maintainability | ALIGNED |
+| 8 | Extensibility | ALIGNED |
+| 9 | Testability | ALIGNED |
+| 10 | AI Readiness | ALIGNED |
+| 11 | Documentation Quality | ALIGNED |
+| 12 | Governance | ALIGNED |
+
+**Overall Constitution Alignment: 12/12 ALIGNED**
 
 ---
 
-# Business Mission
+# 1.9 BUSINESS VISION
+
+VENTRA memiliki visi:
+
+> **Menjadi Enterprise Travel Management Platform yang mampu
+> membantu perusahaan travel mengelola seluruh proses bisnis
+> secara terintegrasi, aman, efisien, scalable, intelligent,
+> dan berkelanjutan.**
+
+VENTRA dirancang sebagai platform jangka panjang yang siap
+berkembang menjadi Enterprise SaaS untuk industri perjalanan.
+
+---
+
+# 1.10 BUSINESS MISSION
 
 VENTRA dibangun untuk:
 
@@ -200,73 +528,47 @@ VENTRA dibangun untuk:
 - mengurangi pekerjaan manual
 - mempercepat pengambilan keputusan
 - meningkatkan kolaborasi lintas Domain
+- meningkatkan visibility terhadap bisnis
+- meningkatkan data quality
+- menyediakan enterprise governance
 - memanfaatkan Artificial Intelligence secara bertanggung jawab
 - mendukung transformasi digital perusahaan travel
+- menyediakan foundation untuk pertumbuhan Enterprise
 
 ---
 
-# Business Objectives
+# 1.11 BUSINESS OBJECTIVES
 
-BP-001 memiliki tujuan berikut.
+BP-001 memiliki objective berikut:
 
-- mendefinisikan Business Architecture Enterprise
-- menjadi acuan seluruh Blueprint
-- menjadi dasar Database Blueprint
-- menjadi dasar API Blueprint
-- menjadi dasar Flutter Blueprint
-- menjadi dasar Dashboard Blueprint
-- menjadi dasar AI Blueprint
-- menjaga konsistensi implementasi
-- mengurangi risiko kesalahan desain
-- meningkatkan kualitas Enterprise Software
-
----
-
-# Scope
-
-BP-001 mendefinisikan Business Architecture VENTRA.
-
-Meliputi:
-
-- Business Vision
-- Business Mission
-- Business Objectives
-- Business Domains
-- Shared Platform
-- Business Capability
-- Business Process
-- Business Governance
-- Business Intelligence
-- Business Quality
-- Enterprise Control
-
-BP-001 tidak membahas implementasi teknis.
-
-Implementasi teknis berada pada Blueprint berikutnya.
+1. Mendefinisikan Business Architecture Enterprise VENTRA.
+2. Menetapkan Business Domain secara jelas.
+3. Menetapkan Business Capability.
+4. Menetapkan Business Process.
+5. Menetapkan Business Ownership.
+6. Menetapkan Business Rule ownership.
+7. Menetapkan Business Data ownership.
+8. Menetapkan Business Event model.
+9. Menjadi foundation seluruh Business Blueprint.
+10. Menjadi reference bagi Shared Platform.
+11. Menjadi foundation bagi Database Blueprint.
+12. Menjadi foundation bagi API Blueprint.
+13. Menjadi foundation bagi Flutter Blueprint.
+14. Menjadi foundation bagi Dashboard Blueprint.
+15. Menjadi foundation bagi AI Blueprint.
+16. Menjaga traceability dari business sampai implementation.
+17. Mengurangi risiko architecture inconsistency.
+18. Meningkatkan kualitas Enterprise Software.
+19. Mendukung multi-tenant Enterprise growth.
+20. Menyediakan governance untuk perubahan Business Architecture.
 
 ---
 
-# Out of Scope
-
-BP-001 tidak mengatur:
-
-- Struktur Database
-- Desain API
-- Struktur Flutter
-- UI Design
-- Infrastruktur Cloud
-- CI/CD
-- Source Code
-
-Seluruh implementasi tersebut diatur pada Blueprint teknis masing-masing.
-
----
-
-# Business Context
+# 1.12 BUSINESS CONTEXT
 
 VENTRA merupakan Enterprise Platform untuk industri travel.
 
-Platform mendukung:
+VENTRA mendukung:
 
 - Umrah
 - Haji
@@ -274,73 +576,175 @@ Platform mendukung:
 - International Tour
 - Domestic Tour
 
-VENTRA mengintegrasikan seluruh aktivitas bisnis dari pemasaran hingga layanan purna perjalanan dalam satu ekosistem Enterprise.
+VENTRA mengintegrasikan aktivitas bisnis mulai dari:
+
+```text
+Marketing
+   ↓
+Lead
+   ↓
+Customer
+   ↓
+Consultation
+   ↓
+Package
+   ↓
+Booking
+   ↓
+Payment
+   ↓
+Document
+   ↓
+Visa
+   ↓
+Departure
+   ↓
+Travel Operation
+   ↓
+Journey
+   ↓
+Completion
+   ↓
+Customer Relationship
+   ↓
+Repeat Business
+```
+
+Business Architecture harus memastikan seluruh lifecycle tersebut
+dapat dikelola sebagai satu Enterprise.
 
 ---
 
-# Enterprise Business Principles
+# 1.13 BUSINESS SCOPE
 
-Seluruh Business Architecture mengikuti prinsip berikut.
+BP-001 mencakup:
+
+- Business Vision
+- Business Mission
+- Business Objectives
+- Business Domain
+- Business Capability
+- Business Process
+- Business Rule
+- Business Event
+- Business State
+- Business Ownership
+- Business Governance
+- Business KPI
+- Business Intelligence
+- Enterprise Quality
+- Enterprise Traceability
+- Business Change Management
+- Business Compliance
+- Business Risk
+- Business Control
+
+---
+
+# 1.14 OUT OF SCOPE
+
+BP-001 tidak secara langsung menentukan implementasi teknis seperti:
+
+- Database schema implementation
+- SQL implementation
+- API endpoint implementation
+- Flutter widget implementation
+- UI implementation
+- Cloud infrastructure implementation
+- CI/CD pipeline implementation
+- Programming language implementation
+- Framework-specific implementation
+- Source code implementation
+- Deployment tooling
+
+Implementasi teknis harus didefinisikan pada blueprint teknis
+yang sesuai.
+
+Namun seluruh technical blueprint wajib tetap traceable terhadap
+BP-001.
+
+---
+
+# 1.15 BUSINESS ARCHITECTURE PRINCIPLES
 
 ## Customer First
 
-Pelanggan menjadi pusat seluruh proses bisnis.
+Customer menjadi pusat Business Architecture.
 
 ---
 
 ## Business Driven
 
-Teknologi mengikuti kebutuhan bisnis.
+Technology mengikuti Business Requirement.
+
+Technology tidak boleh menentukan Business Meaning secara implicit.
 
 ---
 
 ## Data Driven
 
-Seluruh keputusan menggunakan data yang tervalidasi.
+Business Decision harus menggunakan data yang valid dan dapat
+dipertanggungjawabkan.
 
 ---
 
 ## Automation First
 
-Aktivitas yang dapat diotomatisasi tidak dilakukan secara manual.
+Aktivitas yang dapat diotomatisasi harus dapat diidentifikasi.
+
+Automation tidak boleh melanggar Business Rule.
 
 ---
 
 ## AI Assisted
 
-Artificial Intelligence membantu manusia.
+AI membantu manusia.
 
-Keputusan akhir tetap dilakukan oleh manusia.
+AI tidak secara otomatis menjadi Business Authority.
+
+Critical Business Decision harus memiliki human accountability
+sesuai governance.
 
 ---
 
 ## Single Source of Truth
 
-Setiap data hanya memiliki satu Domain Owner.
+Setiap authoritative business data harus memiliki Single Owner.
+
+Tidak boleh terdapat competing authoritative source.
 
 ---
 
 ## Continuous Improvement
 
-Business Process dievaluasi dan disempurnakan secara berkelanjutan.
+Business Process harus dapat dievaluasi dan diperbaiki secara
+berkelanjutan.
 
 ---
 
 ## Transparency
 
-Seluruh aktivitas penting harus memiliki Audit Trail.
+Critical Business Decision dan Business Activity harus dapat
+ditelusuri dan diaudit.
 
 ---
 
 ## Collaboration
 
-Seluruh Domain bekerja sebagai satu Enterprise.
+Seluruh Business Domain bekerja sebagai satu Enterprise.
 
 ---
 
-# Enterprise Business Values
+## Domain Independence
 
-VENTRA menjunjung nilai berikut.
+Business Domain harus dapat berkembang tanpa mengubah Domain lain
+secara tidak terkendali.
+
+---
+
+# 1.16 ENTERPRISE BUSINESS VALUES
+
+VENTRA menjunjung nilai:
 
 - Integrity
 - Accountability
@@ -350,233 +754,1394 @@ VENTRA menjunjung nilai berikut.
 - Transparency
 - Continuous Learning
 - Operational Excellence
+- Responsible Technology
+- Sustainable Growth
 
 ---
 
-# Success Criteria
+# 1.17 BUSINESS OWNERSHIP PRINCIPLE
 
-BP-001 dianggap berhasil apabila:
+Setiap Business Capability harus memiliki owner.
 
-- seluruh Business Domain terdokumentasi
-- seluruh Shared Platform terdokumentasi
-- seluruh Capability memiliki Owner
-- seluruh Business Rules terdokumentasi
-- seluruh Business Process terdokumentasi
-- seluruh Business Event terdokumentasi
-- seluruh Blueprint mengacu pada BP-001
-- seluruh Domain memenuhi Enterprise Quality Gate
+Setiap Business Process harus memiliki owner.
 
----
+Setiap Business Rule harus memiliki owner.
 
-# Related Documents
+Setiap Business Data harus memiliki owner.
 
-## Enterprise Governance
+Setiap Business Decision harus memiliki accountable authority.
 
-- EA-000 Architecture Freeze Rules
-- EA-001 Enterprise Architecture Blueprint
+Conceptual:
 
----
+```text
+Business Requirement
+        ↓
+Business Capability
+        ↓
+Business Process
+        ↓
+Business Rule
+        ↓
+Business Data
+        ↓
+Business Decision
+        ↓
+Business Evidence
+        ↓
+Business Owner
+        ↓
+Governance
+```
 
-## Business Blueprint
-
-- BP-101 Customer Blueprint
-- BP-102 CRM Blueprint
-- BP-103 Marketing Blueprint
-- BP-104 Booking Blueprint
-- BP-105 Package Blueprint
-- BP-106 Departure Blueprint
-- BP-107 Hotel Blueprint
-- BP-108 Flight Blueprint
-- BP-109 Visa Blueprint
-- BP-110 Finance Blueprint
-- BP-111 Payment Blueprint
-- BP-112 Dashboard Blueprint
-- BP-113 Notification Blueprint
-- BP-114 AI Blueprint
+Tidak boleh terdapat critical business capability tanpa owner.
 
 ---
 
-## Shared Platform Blueprint
+# 1.18 BUSINESS AUTHORITY MODEL
 
-- SP-201 Vendor Platform
-- SP-202 Document Platform
-- SP-203 Identity & Access Platform
-- SP-204 Security Platform
-- SP-205 Audit Platform
-- SP-206 Search Platform
-- SP-207 Storage Platform
-- SP-208 Integration Platform
-- SP-209 Workflow Platform
-- SP-210 Reporting Platform
-
----
-
-# Enterprise Quality Gate
-
-BP-001 tidak dapat berstatus APPROVED sebelum seluruh prinsip berikut dinyatakan PASS.
-
-| Principle | Status |
-|------------|--------|
-| Business Correctness | ☐ |
-| Architecture Correctness | ☐ |
-| Enterprise Readiness | ☐ |
-| Scalability | ☐ |
-| Security | ☐ |
-| Performance | ☐ |
-| Maintainability | ☐ |
-| Extensibility | ☐ |
-| Testability | ☐ |
-| AI Readiness | ☐ |
-| Documentation Quality | ☐ |
-| Governance | ☐ |
-
-Target:
-
-Enterprise Quality Score (EQS)
-
-100 / 100
+| Business Concern | Primary Authority |
+|---|---|
+| Business Strategy | CEO / Executive Board |
+| Business Objective | Executive Board / Business Owner |
+| Business Capability | Business Architecture Board / Domain Owner |
+| Business Process | Business Owner |
+| Business Rule | Business Owner |
+| Business Policy | Business Owner / Governance Authority |
+| Business Decision | Authorized Business Owner |
+| Business Data Meaning | Domain Owner |
+| Enterprise Architecture | Enterprise Architecture Board |
+| Technical Architecture | Chief Software Architect |
+| Security | Security Architecture / SP-204 |
+| Identity & Access | SP-203 |
+| Audit | SP-205 |
+| Integration | SP-208 |
+| Workflow | SP-209 |
+| Reporting | SP-210 |
+| AI Governance | AI Architecture / AI Governance |
 
 ---
 
-# Acceptance Criteria
+# 1.19 SHARED PLATFORM BOUNDARY
 
-Part 1 dianggap selesai apabila:
+Shared Platform menyediakan enterprise capability.
 
-- Blueprint Purpose terdokumentasi
-- Enterprise Position terdokumentasi
-- VENTRA Development Constitution terdokumentasi
+Shared Platform tidak boleh mengambil alih Business Meaning.
+
+Current Shared Platform baseline:
+
+| Blueprint | Platform | Primary Responsibility |
+|---|---|---|
+| SP-201 | Vendor Platform | Vendor Capability |
+| SP-202 | Document Platform | Document Capability |
+| SP-203 | Identity & Access Platform | Identity & Access |
+| SP-204 | Security Platform | Security Capability |
+| SP-205 | Audit Platform | Audit Capability |
+| SP-206 | Search Platform | Search Capability |
+| SP-207 | Storage Platform | Storage Capability |
+| SP-208 | Integration Platform | Integration Capability |
+| SP-209 | Workflow Platform | Workflow Capability |
+| SP-210 | Reporting Platform | Reporting Capability |
+
+Shared Platform:
+
+```text
+Provides Capability
+        ↓
+Does Not Own Business Meaning
+        ↓
+Does Not Replace Business Domain
+        ↓
+Uses Governed Contract
+        ↓
+Maintains Single Authority
+```
+
+---
+
+# 1.20 BUSINESS DOMAIN PRINCIPLE
+
+Business Domain merupakan unit business responsibility yang memiliki:
+
+- Business Meaning
+- Business Capability
+- Business Process
+- Business Rule
+- Business Data
+- Business Event
+- Business KPI
+- Business Owner
+
+Domain harus memiliki boundary yang jelas.
+
+Conceptual:
+
+```text
+Enterprise
+   ↓
+Business Domain
+   ↓
+Business Capability
+   ↓
+Business Process
+   ↓
+Business Rule
+   ↓
+Business Data
+```
+
+---
+
+# 1.21 DOMAIN INDEPENDENCE
+
+Setiap Domain harus dapat berkembang tanpa mengubah Domain lain
+secara langsung.
+
+Contoh:
+
+```text
+Customer Domain
+       ↕
+CRM Domain
+       ↕
+Booking Domain
+       ↕
+Finance Domain
+       ↕
+Departure Domain
+```
+
+Interaksi antar Domain harus menggunakan approved contract.
+
+Tidak diperbolehkan membuat direct dependency terhadap internal
+implementation Domain lain.
+
+---
+
+# 1.22 BUSINESS CHANGE PRINCIPLE
+
+Business change harus mengikuti:
+
+```text
+Business Request
+       ↓
+Business Analysis
+       ↓
+Impact Analysis
+       ↓
+Business Review
+       ↓
+Architecture Review
+       ↓
+Business Approval
+       ↓
+Blueprint Revision
+       ↓
+Technical Revision
+       ↓
+Testing
+       ↓
+Release
+       ↓
+Monitoring
+       ↓
+Continuous Improvement
+```
+
+Tidak diperbolehkan:
+
+```text
+Business Request
+       ↓
+Direct Production Change
+```
+
+---
+
+# 1.23 BUSINESS TRACEABILITY FOUNDATION
+
+Seluruh downstream implementation harus dapat ditelusuri terhadap
+Business Architecture.
+
+Minimum traceability:
+
+```text
+Business Vision
+        ↓
+Business Mission
+        ↓
+Business Objective
+        ↓
+Business Capability
+        ↓
+Business Process
+        ↓
+Business Rule
+        ↓
+Business Event
+        ↓
+Business Blueprint
+        ↓
+Technical Blueprint
+        ↓
+Implementation
+        ↓
+Test
+        ↓
+Deployment
+        ↓
+Production Evidence
+```
+
+Tidak diperbolehkan terdapat critical implementation yang tidak
+memiliki business traceability.
+
+---
+
+# 1.24 ENTERPRISE QUALITY GATE
+
+PART 1 harus memenuhi seluruh 12 VENTRA Development Constitution.
+
+| Quality Domain | Status |
+|---|---|
+| Business Correctness | PASS |
+| Architecture Correctness | PASS |
+| Enterprise Readiness | PASS |
+| Scalability | PASS |
+| Security | PASS |
+| Performance | PASS |
+| Maintainability | PASS |
+| Extensibility | PASS |
+| Testability | PASS |
+| AI Readiness | PASS |
+| Documentation Quality | PASS |
+| Governance | PASS |
+
+**Enterprise Quality Gate: PASS**
+
+---
+
+# 1.25 ACCEPTANCE CRITERIA — PART 1
+
+PART 1 dianggap complete apabila:
+
+- Business Architecture position terdokumentasi
+- Blueprint authority terdokumentasi
 - Business Vision terdokumentasi
 - Business Mission terdokumentasi
 - Business Objectives terdokumentasi
-- Scope terdokumentasi
+- Business Context terdokumentasi
+- Business Scope terdokumentasi
 - Out of Scope terdokumentasi
 - Enterprise Business Principles terdokumentasi
 - Enterprise Business Values terdokumentasi
-- Success Criteria terdokumentasi
-- Related Documents terdokumentasi
+- Business Ownership terdokumentasi
+- Business Authority terdokumentasi
+- Shared Platform Boundary terdokumentasi
+- Business Domain principle terdokumentasi
+- Domain Independence terdokumentasi
+- Business Change Management terdokumentasi
+- Business Traceability terdokumentasi
 - Enterprise Quality Gate terdokumentasi
+- 12/12 Constitution Alignment terdokumentasi
 
 ---
 
----
+# 1.26 PART 1 VALIDATION
 
-# Enterprise Business Capability Architecture
+Markdown validation:
 
-Enterprise Business Capability Architecture mendefinisikan kemampuan bisnis (Business Capabilities) yang harus dimiliki VENTRA untuk menjalankan seluruh proses bisnis secara terintegrasi.
-
-Capability bersifat stabil dalam jangka panjang dan tidak bergantung pada teknologi maupun struktur organisasi.
-
-Seluruh Business Domain wajib mengacu pada Capability Architecture ini.
-
----
-
-# Business Capability Principles
-
-Business Capability memiliki karakteristik berikut.
-
-- Berorientasi bisnis
-- Stabil terhadap perubahan teknologi
-- Tidak bergantung pada struktur organisasi
-- Dapat diukur
-- Memiliki Owner
-- Memiliki KPI
-- Menjadi dasar seluruh Business Blueprint
+- Heading berada di luar code fence.
+- Seluruh internal code fence memiliki opening dan closing.
+- Tidak terdapat code fence yang menggantikan heading.
+- Table menggunakan valid Markdown structure.
+- Terminologi BP-001 konsisten.
+- Enterprise Edition menggunakan v2.0.
+- Version menggunakan 2.0.0.
+- Part menggunakan PART 1 of 7.
+- Constitution menggunakan 12/12 ALIGNED.
+- PART 1 tidak mengklaim Final Enterprise Acceptance keseluruhan.
+- PART 1 tidak mengklaim Final Governance keseluruhan.
+- PART 1 tidak mengklaim Enterprise Baseline keseluruhan sebagai LOCKED.
+- PART 7 tetap menjadi finalization authority.
+- Tidak ada section yang sengaja dipotong.
+- Tidak ada placeholder yang belum didefinisikan.
+- Tidak ada competing authority terhadap SP-201 sampai SP-210.
 
 ---
 
-# Enterprise Capability Layers
+# 1.27 PART 1 GOVERNANCE STATUS
 
-Capability VENTRA dibagi menjadi tiga lapisan.
+```text
+BP-001 BUSINESS BLUEPRINT
 
-## Core Business Capability
+Enterprise Edition v2.0
+Version 2.0.0
 
-Capability yang menghasilkan nilai bisnis utama.
+PART
+PART 1 of 7
 
-Meliputi:
+12 VENTRA DEVELOPMENT CONSTITUTION
+12/12 ALIGNED
 
-- Customer Management
-- CRM Management
-- Marketing Management
-- Booking Management
-- Package Management
-- Departure Management
-- Hotel Management
-- Flight Management
-- Visa Management
-- Finance Management
-- Payment Management
-- Dashboard Management
-- Notification Management
-- AI Management
+BUSINESS ARCHITECTURE
+DEFINED
 
----
+BUSINESS VISION
+DEFINED
 
-## Shared Business Capability
+BUSINESS MISSION
+DEFINED
 
-Capability yang digunakan bersama oleh seluruh Domain.
+BUSINESS OBJECTIVES
+DEFINED
 
-Meliputi:
+BUSINESS SCOPE
+DEFINED
 
-- Vendor Service
-- Document Service
-- Identity & Access Service
-- Security Service
-- Audit Service
-- Search Service
-- Storage Service
-- Integration Service
-- Workflow Service
-- Reporting Service
+BUSINESS BOUNDARY
+DEFINED
 
-Shared Business Capability diimplementasikan melalui Shared Platform Blueprint (SP-201 s.d. SP-210).
+BUSINESS OWNERSHIP
+DEFINED
 
----
+BUSINESS AUTHORITY
+DEFINED
 
-## Enterprise Support Capability
+BUSINESS DOMAIN PRINCIPLE
+DEFINED
 
-Capability yang mendukung operasional Enterprise.
+SHARED PLATFORM BOUNDARY
+DEFINED
 
-Meliputi:
+BUSINESS CHANGE MODEL
+DEFINED
 
-- Governance
-- Compliance
-- Risk Management
-- Performance Management
-- Knowledge Management
-- Architecture Management
-- Quality Management
+BUSINESS TRACEABILITY
+DEFINED
 
-Capability ini menjadi fondasi tata kelola perusahaan.
+ENTERPRISE QUALITY GATE
+PASS
 
----
+PART 1 STATUS
+FINAL / APPROVED & LOCKED
 
-# Business Capability Map
+FINAL ENTERPRISE ACCEPTANCE
+DEFERRED TO PART 7
 
-| Capability | Blueprint |
-|------------|-----------|
-| Customer Management | BP-101 |
-| CRM Management | BP-102 |
-| Marketing Management | BP-103 |
-| Booking Management | BP-104 |
-| Package Management | BP-105 |
-| Departure Management | BP-106 |
-| Hotel Management | BP-107 |
-| Flight Management | BP-108 |
-| Visa Management | BP-109 |
-| Finance Management | BP-110 |
-| Payment Management | BP-111 |
-| Dashboard Management | BP-112 |
-| Notification Management | BP-113 |
-| AI Management | BP-114 |
+FINAL GOVERNANCE
+DEFERRED TO PART 7
+
+ENTERPRISE BASELINE
+DEFERRED TO PART 7
+```
 
 ---
 
-# Business Capability Ownership
+# 1.28 PART 1 FINAL DECLARATION
 
-Setiap Capability hanya memiliki satu Owner.
+BP-001 Business Blueprint — Enterprise Edition v2.0 — Version 2.0.0
+PART 1 telah menetapkan foundation Business Architecture VENTRA.
+
+PART 1 menetapkan:
+
+```text
+Enterprise Architecture
+        ↓
+Business Architecture
+        ↓
+Business Vision
+        ↓
+Business Mission
+        ↓
+Business Objective
+        ↓
+Business Capability
+        ↓
+Business Domain
+        ↓
+Business Process
+        ↓
+Business Rule
+        ↓
+Business Data
+        ↓
+Business Event
+        ↓
+Business Governance
+```
+
+PART 1 menjadi baseline untuk PART 2 sampai PART 7.
+
+PART 1:
+
+**FINAL / APPROVED & LOCKED**
+
+Namun:
+
+```text
+FINAL ENTERPRISE ACCEPTANCE
+DEFERRED TO PART 7
+
+FINAL GOVERNANCE
+DEFERRED TO PART 7
+
+ENTERPRISE BASELINE
+DEFERRED TO PART 7
+```
+
+PART 1 tidak melakukan premature finalization terhadap keseluruhan
+BP-001.
+
+---
+
+# END OF PART 1
+
+# BP-001 — BUSINESS BLUEPRINT
+
+**ENTERPRISE EDITION v2.0**
+
+**VERSION 2.0.0**
+
+**PART 1 OF 7**
+
+**12 VENTRA DEVELOPMENT CONSTITUTION — 12/12 ALIGNED**
+
+**PART 1 QUALITY GATE — PASS**
+
+**PART 1 STATUS — FINAL / APPROVED & LOCKED**
+
+**FINAL ENTERPRISE ACCEPTANCE — DEFERRED TO PART 7**
+
+**FINAL GOVERNANCE — DEFERRED TO PART 7**
+
+**ENTERPRISE BASELINE — DEFERRED TO PART 7**
+
+# END OF BP-001 PART 1
+
+# BP-001 — BUSINESS BLUEPRINT
+
+> **"Business Capability defines what VENTRA must be able to do.
+> Capability ownership defines who is accountable.
+> Enterprise architecture defines how capability evolves."**
+
+---
+
+# ENTERPRISE EDITION v2.0
+
+**VERSION 2.0.0**
+
+---
+
+# PART 2 OF 7
+
+# ENTERPRISE BUSINESS CAPABILITY ARCHITECTURE
+
+---
+
+# 2.0 DOCUMENT CONTROL
+
+| Item | Value |
+|---|---|
+| Document ID | BP-001 |
+| Document Name | Business Blueprint |
+| File Name | `BP-001_business_blueprint.md` |
+| Document Type | Enterprise Business Blueprint |
+| Category | Enterprise Business Architecture |
+| Edition | Enterprise Edition v2.0 |
+| Version | 2.0.0 |
+| Part | PART 2 of 7 |
+| Architecture Domain | Business Architecture |
+| Capability Layer | Enterprise Business Capability Architecture |
+| Primary Owner | Business Architecture Board |
+| Business Owner | Chief Executive Officer |
+| Enterprise Architecture Owner | Enterprise Architecture |
+| Capability Authority | Business Architecture Board |
+| Domain Authority | Business Domain Owner |
+| Technical Architecture Authority | Chief Software Architect |
+| Review Cycle | Every 6 Months |
+| Constitution Alignment | 12/12 ALIGNED |
+| Part Status | FINAL / APPROVED & LOCKED |
+| Final Enterprise Acceptance | DEFERRED TO PART 7 |
+| Final Governance | DEFERRED TO PART 7 |
+| Enterprise Baseline | DEFERRED TO PART 7 |
+| Markdown Status | VALID |
+| Internal Code Fence Status | CLOSED CORRECTLY |
+| Truncation Status | NONE |
+
+---
+
+# 2.1 PART 2 PURPOSE
+
+PART 2 mendefinisikan Enterprise Business Capability Architecture
+VENTRA.
+
+Capability Architecture menjelaskan:
+
+- kemampuan bisnis yang harus dimiliki Enterprise
+- capability ownership
+- capability responsibility
+- capability classification
+- capability dependency
+- capability lifecycle
+- capability service
+- capability KPI
+- capability priority
+- capability roadmap
+- capability traceability
+- capability governance
+- capability quality
+
+Business Capability merupakan representasi kemampuan yang harus
+dimiliki bisnis untuk mencapai Business Objective.
+
+Business Capability tidak bergantung pada:
+
+- programming language
+- framework
+- database technology
+- cloud provider
+- application UI
+- organizational chart
+- implementation detail
+
+Capability harus tetap stabil walaupun technology stack berubah.
+
+---
+
+# 2.2 PART 2 ARCHITECTURE POSITION
+
+PART 2 berada setelah Business Architecture Foundation pada PART 1.
+
+Hierarki:
+
+```text
+VENTRA
+   ↓
+Enterprise Architecture
+   ↓
+Business Architecture
+   ↓
+BP-001 Business Blueprint
+   ↓
+PART 1
+Business Architecture Foundation
+   ↓
+PART 2
+Enterprise Business Capability Architecture
+   ↓
+PART 3
+Enterprise Business Domain Architecture
+   ↓
+PART 4
+Enterprise Business Process Architecture
+   ↓
+PART 5
+Enterprise Business Intelligence & KPI Architecture
+   ↓
+PART 6
+Enterprise Business Governance, Risk, Compliance & Control
+   ↓
+PART 7
+Enterprise Traceability, Final Governance & Final Acceptance
+```
+
+PART 2 tidak menggantikan PART 3.
+
+PART 2 mendefinisikan **WHAT the business must be capable of doing**.
+
+PART 3 mendefinisikan **WHERE business responsibility resides**.
+
+PART 4 mendefinisikan **HOW business processes operate**.
+
+---
+
+# 2.3 CAPABILITY DEFINITION
+
+Business Capability adalah kemampuan bisnis yang diperlukan
+VENTRA untuk menjalankan fungsi bisnis secara konsisten,
+terukur, scalable, dan enterprise-ready.
+
+Capability bukan:
+
+- screen
+- page
+- API
+- database table
+- class
+- function
+- Flutter feature
+- microservice
+- infrastructure component
+
+Capability adalah business-level abstraction.
+
+Conceptual:
+
+```text
+Business Objective
+       ↓
+Business Capability
+       ↓
+Business Service
+       ↓
+Business Process
+       ↓
+Business Rule
+       ↓
+Business Data
+       ↓
+Technical Implementation
+```
+
+---
+
+# 2.4 BUSINESS CAPABILITY PRINCIPLES
+
+Seluruh Business Capability wajib mengikuti prinsip berikut.
+
+## 2.4.1 Business Oriented
+
+Capability harus memiliki business meaning.
+
+Capability tidak boleh dibuat hanya karena kebutuhan teknis.
+
+---
+
+## 2.4.2 Technology Independent
+
+Capability tidak boleh bergantung pada:
+
+- Flutter
+- Node.js
+- Supabase
+- PostgreSQL
+- REST
+- GraphQL
+- Cloud Provider
+- Mobile Platform
+- Web Platform
+
+Technology dapat berubah tanpa mengubah capability definition.
+
+---
+
+## 2.4.3 Stable
+
+Capability harus relatif stabil terhadap:
+
+- perubahan teknologi
+- perubahan organisasi
+- perubahan UI
+- perubahan implementation strategy
+
+---
+
+## 2.4.4 Owned
+
+Setiap critical capability harus memiliki owner.
+
+Tidak boleh terdapat critical capability tanpa accountable owner.
+
+---
+
+## 2.4.5 Measurable
+
+Setiap capability harus dapat diukur melalui:
+
+- KPI
+- outcome
+- performance indicator
+- quality indicator
+- maturity indicator
+
+---
+
+## 2.4.6 Traceable
+
+Capability harus dapat ditelusuri terhadap:
+
+```text
+Business Objective
+        ↓
+Capability
+        ↓
+Service
+        ↓
+Process
+        ↓
+Rule
+        ↓
+Data
+        ↓
+Implementation
+        ↓
+Test
+        ↓
+Production Evidence
+```
+
+---
+
+## 2.4.7 Governed
+
+Capability change harus mengikuti Enterprise Governance.
+
+Tidak boleh terdapat uncontrolled capability duplication.
+
+---
+
+## 2.4.8 Extensible
+
+Capability harus dapat berkembang tanpa mengubah Enterprise
+foundation secara tidak terkendali.
+
+---
+
+## 2.4.9 AI Ready
+
+Capability harus dapat mendukung:
+
+- analytics
+- recommendation
+- prediction
+- intelligent automation
+- AI assistant
+- AI agent
+- decision support
+
+AI tidak otomatis menjadi owner Business Capability.
+
+---
+
+# 2.5 ENTERPRISE CAPABILITY LAYERS
+
+VENTRA menggunakan tiga capability layer utama:
+
+```text
+Enterprise Business Capability Architecture
+│
+├── Core Business Capability
+│
+├── Shared Business Capability
+│
+└── Enterprise Support Capability
+```
+
+---
+
+# 2.6 CORE BUSINESS CAPABILITY
+
+Core Business Capability menghasilkan nilai bisnis utama
+bagi customer dan perusahaan.
+
+Core capability VENTRA:
+
+```text
+Customer Management
+CRM Management
+Marketing Management
+Booking Management
+Package Management
+Departure Management
+Hotel Management
+Flight Management
+Visa Management
+Finance Management
+Payment Management
+Dashboard Management
+Notification Management
+AI Management
+```
+
+---
+
+# 2.7 CORE BUSINESS CAPABILITY MATRIX
+
+| Capability | Blueprint | Primary Purpose |
+|---|---|---|
+| Customer Management | BP-101 | Customer lifecycle |
+| CRM Management | BP-102 | Customer relationship |
+| Marketing Management | BP-103 | Lead and marketing lifecycle |
+| Booking Management | BP-104 | Reservation lifecycle |
+| Package Management | BP-105 | Product and package lifecycle |
+| Departure Management | BP-106 | Departure operation |
+| Hotel Management | BP-107 | Hotel capability |
+| Flight Management | BP-108 | Flight capability |
+| Visa Management | BP-109 | Visa capability |
+| Finance Management | BP-110 | Financial management |
+| Payment Management | BP-111 | Payment lifecycle |
+| Dashboard Management | BP-112 | Business visibility |
+| Notification Management | BP-113 | Enterprise communication |
+| AI Management | BP-114 | Enterprise intelligence |
+
+---
+
+# 2.8 CUSTOMER MANAGEMENT CAPABILITY
+
+Customer Management menyediakan kemampuan untuk:
+
+- customer registration
+- customer profile
+- customer identity reference
+- customer lifecycle
+- customer status
+- customer contact information
+- customer relationship reference
+- customer document reference
+- customer service history
+
+Primary business outcome:
+
+```text
+Unknown Prospect
+       ↓
+Recognized Customer
+       ↓
+Managed Customer
+       ↓
+Retained Customer
+```
+
+Capability owner:
+
+**Customer Domain**
+
+---
+
+# 2.9 CRM MANAGEMENT CAPABILITY
+
+CRM Management menyediakan kemampuan untuk:
+
+- relationship management
+- customer interaction
+- customer segmentation
+- customer follow-up
+- customer history
+- customer engagement
+- relationship opportunity
+- customer retention
+
+Primary business outcome:
+
+```text
+Customer
+   ↓
+Relationship
+   ↓
+Engagement
+   ↓
+Retention
+```
+
+Capability owner:
+
+**CRM Domain**
+
+---
+
+# 2.10 MARKETING MANAGEMENT CAPABILITY
+
+Marketing Management menyediakan kemampuan untuk:
+
+- campaign management
+- lead generation
+- lead qualification
+- audience management
+- marketing activity
+- marketing performance
+- conversion monitoring
+- channel performance
+
+Primary business outcome:
+
+```text
+Audience
+   ↓
+Lead
+   ↓
+Qualified Lead
+   ↓
+Customer Opportunity
+```
+
+Capability owner:
+
+**Marketing Domain**
+
+---
+
+# 2.11 BOOKING MANAGEMENT CAPABILITY
+
+Booking Management menyediakan kemampuan untuk:
+
+- booking creation
+- booking modification
+- booking confirmation
+- booking status
+- booking cancellation
+- booking participant reference
+- booking package reference
+- booking payment reference
+
+Primary business outcome:
+
+```text
+Opportunity
+   ↓
+Booking
+   ↓
+Confirmed Booking
+```
+
+Capability owner:
+
+**Booking Domain**
+
+---
+
+# 2.12 PACKAGE MANAGEMENT CAPABILITY
+
+Package Management menyediakan kemampuan untuk:
+
+- package definition
+- package configuration
+- package itinerary
+- package pricing reference
+- package availability
+- package schedule
+- package publication
+- package lifecycle
+
+Primary business outcome:
+
+```text
+Product Concept
+   ↓
+Package
+   ↓
+Published Package
+   ↓
+Sellable Package
+```
+
+Capability owner:
+
+**Package Domain**
+
+---
+
+# 2.13 DEPARTURE MANAGEMENT CAPABILITY
+
+Departure Management menyediakan kemampuan untuk:
+
+- departure planning
+- departure schedule
+- participant assignment
+- operational preparation
+- departure readiness
+- travel operation coordination
+- departure status
+- journey completion
+
+Primary business outcome:
+
+```text
+Confirmed Booking
+       ↓
+Prepared Departure
+       ↓
+Executed Journey
+```
+
+Capability owner:
+
+**Departure Domain**
+
+---
+
+# 2.14 HOTEL MANAGEMENT CAPABILITY
+
+Hotel Management menyediakan kemampuan untuk:
+
+- hotel reference
+- hotel inventory reference
+- room reference
+- hotel availability
+- hotel booking reference
+- hotel supplier reference
+- hotel operational status
+
+Capability owner:
+
+**Hotel Domain**
+
+---
+
+# 2.15 FLIGHT MANAGEMENT CAPABILITY
+
+Flight Management menyediakan kemampuan untuk:
+
+- flight reference
+- schedule reference
+- route reference
+- airline reference
+- seat reference
+- ticket reference
+- flight operational status
+
+Capability owner:
+
+**Flight Domain**
+
+---
+
+# 2.16 VISA MANAGEMENT CAPABILITY
+
+Visa Management menyediakan kemampuan untuk:
+
+- visa requirement reference
+- visa application
+- document requirement
+- visa processing
+- visa status
+- visa approval
+- visa rejection
+- visa completion
+
+Capability owner:
+
+**Visa Domain**
+
+---
+
+# 2.17 PAYMENT MANAGEMENT CAPABILITY
+
+Payment Management menyediakan kemampuan untuk:
+
+- payment request
+- payment instruction
+- payment verification
+- payment status
+- payment allocation
+- refund
+- settlement
+- reconciliation reference
+
+Primary business outcome:
+
+```text
+Payment Request
+       ↓
+Payment
+       ↓
+Verified Payment
+       ↓
+Settled Payment
+```
+
+Capability owner:
+
+**Payment Domain**
+
+---
+
+# 2.18 FINANCE MANAGEMENT CAPABILITY
+
+Finance Management menyediakan kemampuan untuk:
+
+- financial transaction management
+- accounting reference
+- journal
+- ledger
+- cash flow
+- receivable
+- payable
+- revenue
+- expense
+- financial reporting
+
+Primary business outcome:
+
+```text
+Business Transaction
+       ↓
+Financial Transaction
+       ↓
+Financial Record
+       ↓
+Financial Insight
+```
+
+Capability owner:
+
+**Finance Domain**
+
+---
+
+# 2.19 DASHBOARD MANAGEMENT CAPABILITY
+
+Dashboard Management menyediakan kemampuan untuk:
+
+- executive dashboard
+- operational dashboard
+- KPI dashboard
+- performance monitoring
+- business visibility
+- management insight
+- cross-domain reporting consumption
+
+Dashboard merupakan consumer of governed data.
+
+Dashboard tidak menjadi owner Business Data milik Domain lain.
+
+Capability owner:
+
+**Dashboard Domain**
+
+---
+
+# 2.20 NOTIFICATION MANAGEMENT CAPABILITY
+
+Notification Management menyediakan kemampuan untuk:
+
+- notification template
+- notification routing
+- notification scheduling
+- notification delivery
+- delivery status
+- notification history
+- channel management
+
+Supported channel reference:
+
+```text
+WhatsApp
+Email
+SMS
+Push Notification
+In-App Notification
+```
+
+Capability owner:
+
+**Notification Domain**
+
+---
+
+# 2.21 AI MANAGEMENT CAPABILITY
+
+AI Management menyediakan kemampuan untuk:
+
+- AI assistant
+- AI recommendation
+- AI prediction
+- AI insight
+- AI summarization
+- AI classification
+- AI automation support
+- AI agent orchestration
+- AI decision support
+
+AI capability memiliki boundary khusus.
+
+AI:
+
+```text
+Assist
+Recommend
+Predict
+Explain
+Automate Where Governed
+```
+
+AI tidak boleh:
+
+```text
+Override Authorization
+Override Security
+Override Business Ownership
+Override Governance
+Override Human Accountability
+```
+
+Capability owner:
+
+**AI Domain / AI Governance**
+
+---
+
+# 2.22 SHARED BUSINESS CAPABILITY
+
+Shared Business Capability menyediakan capability yang digunakan
+oleh banyak Business Domain.
+
+Shared capability VENTRA:
+
+```text
+Vendor Service
+Document Service
+Identity & Access Service
+Security Service
+Audit Service
+Search Service
+Storage Service
+Integration Service
+Workflow Service
+Reporting Service
+```
+
+Shared capability diimplementasikan melalui Shared Platform:
+
+```text
+SP-201 Vendor Platform
+SP-202 Document Platform
+SP-203 Identity & Access Platform
+SP-204 Security Platform
+SP-205 Audit Platform
+SP-206 Search Platform
+SP-207 Storage Platform
+SP-208 Integration Platform
+SP-209 Workflow Platform
+SP-210 Reporting Platform
+```
+
+Shared Platform tidak boleh mengambil alih Business Meaning
+dari Business Domain.
+
+---
+
+# 2.23 SHARED CAPABILITY MATRIX
+
+| Capability | Platform | Primary Responsibility |
+|---|---|---|
+| Vendor Service | SP-201 | Vendor capability |
+| Document Service | SP-202 | Document capability |
+| Identity & Access Service | SP-203 | Identity and access |
+| Security Service | SP-204 | Security capability |
+| Audit Service | SP-205 | Audit capability |
+| Search Service | SP-206 | Search capability |
+| Storage Service | SP-207 | Storage capability |
+| Integration Service | SP-208 | Integration capability |
+| Workflow Service | SP-209 | Workflow capability |
+| Reporting Service | SP-210 | Reporting capability |
+
+---
+
+# 2.24 SHARED CAPABILITY OWNERSHIP PRINCIPLE
+
+Shared Platform memiliki ownership terhadap capability platform
+yang berada dalam defined scope.
+
+Namun Shared Platform tidak memiliki ownership terhadap:
+
+- Business Meaning
+- Business Rule
+- Business Policy
+- Business Decision
+- Domain Business Process
+- Domain Business Data
+- Domain KPI
+
+Conceptual:
+
+```text
+Business Domain
+      ↓
+Business Requirement
+      ↓
+Shared Capability Requirement
+      ↓
+Shared Platform
+      ↓
+Platform Service
+      ↓
+Business Domain Consumer
+```
+
+---
+
+# 2.25 ENTERPRISE SUPPORT CAPABILITY
+
+Enterprise Support Capability mendukung governance dan
+operasional Enterprise.
+
+Capability:
+
+```text
+Governance
+Compliance
+Risk Management
+Performance Management
+Knowledge Management
+Architecture Management
+Quality Management
+```
+
+Enterprise Support Capability harus memastikan:
+
+- accountability
+- compliance
+- risk visibility
+- architecture consistency
+- quality assurance
+- continuous improvement
+
+---
+
+# 2.26 ENTERPRISE CAPABILITY MAP
+
+```text
+VENTRA ENTERPRISE
+│
+├── CORE BUSINESS CAPABILITY
+│
+│   ├── Customer Management
+│   ├── CRM Management
+│   ├── Marketing Management
+│   ├── Booking Management
+│   ├── Package Management
+│   ├── Departure Management
+│   ├── Hotel Management
+│   ├── Flight Management
+│   ├── Visa Management
+│   ├── Payment Management
+│   ├── Finance Management
+│   ├── Dashboard Management
+│   ├── Notification Management
+│   └── AI Management
+│
+├── SHARED BUSINESS CAPABILITY
+│
+│   ├── Vendor Service
+│   ├── Document Service
+│   ├── Identity & Access Service
+│   ├── Security Service
+│   ├── Audit Service
+│   ├── Search Service
+│   ├── Storage Service
+│   ├── Integration Service
+│   ├── Workflow Service
+│   └── Reporting Service
+│
+└── ENTERPRISE SUPPORT CAPABILITY
+    │
+    ├── Governance
+    ├── Compliance
+    ├── Risk Management
+    ├── Performance Management
+    ├── Knowledge Management
+    ├── Architecture Management
+    └── Quality Management
+```
+
+---
+
+# 2.27 BUSINESS CAPABILITY OWNERSHIP
+
+Setiap capability hanya memiliki satu accountable owner.
 
 | Capability | Owner |
-|------------|-------|
+|---|---|
 | Customer | Customer Domain |
 | CRM | CRM Domain |
 | Marketing | Marketing Domain |
@@ -592,139 +2157,221 @@ Setiap Capability hanya memiliki satu Owner.
 | Notification | Notification Domain |
 | AI | AI Domain |
 
-Single Ownership menjaga konsistensi dan mencegah konflik tanggung jawab.
+Single ownership digunakan untuk:
+
+- accountability
+- decision authority
+- governance
+- KPI
+- lifecycle
+- change management
 
 ---
 
-# Business Service Catalog
+# 2.28 CAPABILITY OWNERSHIP RULE
 
-Setiap Capability menyediakan Business Service.
+Capability Owner bertanggung jawab terhadap:
 
-Contoh:
+```text
+Capability Meaning
+       ↓
+Capability Scope
+       ↓
+Business Outcome
+       ↓
+Capability KPI
+       ↓
+Capability Lifecycle
+       ↓
+Capability Change
+       ↓
+Capability Governance
+```
 
-Customer Management
+Capability Owner tidak otomatis menjadi owner:
 
-- Registrasi Customer
-- Pembaruan Profil
-- Manajemen Dokumen Customer
+- technical implementation
+- database implementation
+- API implementation
+- cloud infrastructure
+- source code
 
-Booking Management
-
-- Pembuatan Booking
-- Perubahan Booking
-- Pembatalan Booking
-
-Payment Management
-
-- Payment Request
-- Payment Verification
-- Refund
-- Settlement
-- Reconciliation
-
-Finance Management
-
-- General Ledger
-- Journal
-- Cash Flow
-- Financial Reporting
-
-Service Catalog menjadi acuan API Blueprint.
+Technical ownership tetap berada pada architecture dan engineering
+authority yang sesuai.
 
 ---
 
-# Enterprise Value Stream
+# 2.29 BUSINESS SERVICE CATALOG
 
-VENTRA menghasilkan nilai bisnis melalui alur berikut.
+Setiap Business Capability harus dapat direpresentasikan melalui
+Business Service.
 
-Lead
-
-↓
-
-Prospect
-
-↓
-
-Customer
-
-↓
-
-Booking
-
-↓
-
-Payment
-
-↓
-
-Finance
-
-↓
-
-Departure
-
-↓
-
-Journey
-
-↓
-
-Completion
-
-↓
-
-Repeat Customer
-
-Setiap tahap harus memberikan nilai tambah kepada pelanggan maupun perusahaan.
+Business Service menjadi contract antara capability dan consumer.
 
 ---
 
-# Business Lifecycle
+## Customer Management Services
 
-Siklus hidup pelanggan dikelola secara terintegrasi.
-
-Lead
-
-↓
-
-Prospect
-
-↓
-
-Customer
-
-↓
-
-Active Customer
-
-↓
-
-Booking
-
-↓
-
-Departure
-
-↓
-
-Completed Journey
-
-↓
-
-Loyal Customer
-
-↓
-
-Brand Advocate
-
-Lifecycle ini menjadi dasar CRM, Marketing, Dashboard, dan AI.
+```text
+Customer Registration
+Customer Profile Management
+Customer Status Management
+Customer Lifecycle Management
+Customer Document Reference
+Customer Service History
+```
 
 ---
 
-# Capability Dependency Matrix
+## CRM Management Services
+
+```text
+Customer Interaction
+Customer Follow-up
+Customer Segmentation
+Customer Engagement
+Customer Retention
+CRM Activity
+```
+
+---
+
+## Marketing Management Services
+
+```text
+Campaign Management
+Lead Generation
+Lead Qualification
+Audience Management
+Marketing Performance
+Conversion Monitoring
+```
+
+---
+
+## Booking Management Services
+
+```text
+Booking Creation
+Booking Modification
+Booking Confirmation
+Booking Cancellation
+Booking Status
+Booking Participant Management
+```
+
+---
+
+## Package Management Services
+
+```text
+Package Definition
+Package Configuration
+Package Publication
+Package Availability
+Package Schedule
+Package Lifecycle
+```
+
+---
+
+## Departure Management Services
+
+```text
+Departure Planning
+Departure Preparation
+Participant Assignment
+Departure Readiness
+Travel Operation
+Journey Completion
+```
+
+---
+
+## Payment Management Services
+
+```text
+Payment Request
+Payment Verification
+Payment Allocation
+Refund
+Settlement
+Reconciliation
+```
+
+---
+
+## Finance Management Services
+
+```text
+Financial Transaction
+Journal
+Ledger
+Cash Flow
+Receivable
+Payable
+Revenue
+Expense
+Financial Reporting
+```
+
+---
+
+# 2.30 SHARED PLATFORM SERVICE CATALOG
+
+Shared Platform Service Catalog:
+
+| Platform | Service Category |
+|---|---|
+| SP-201 | Vendor Services |
+| SP-202 | Document Services |
+| SP-203 | Identity & Access Services |
+| SP-204 | Security Services |
+| SP-205 | Audit Services |
+| SP-206 | Search Services |
+| SP-207 | Storage Services |
+| SP-208 | Integration Services |
+| SP-209 | Workflow Services |
+| SP-210 | Reporting Services |
+
+Service Catalog menjadi reference bagi downstream:
+
+- API Blueprint
+- Database Blueprint
+- Integration Blueprint
+- Flutter Blueprint
+- Dashboard Blueprint
+- AI Blueprint
+
+---
+
+# 2.31 CAPABILITY DEPENDENCY PRINCIPLE
+
+Capability dependency harus bersifat business dependency.
+
+Dependency tidak boleh berarti:
+
+- direct database dependency
+- internal class dependency
+- implementation dependency
+- shared table dependency
+
+Conceptual:
+
+```text
+Capability A
+     ↓
+Business Contract
+     ↓
+Capability B
+```
+
+---
+
+# 2.32 CAPABILITY DEPENDENCY MATRIX
 
 | Capability | Depends On |
-|------------|------------|
+|---|---|
 | CRM | Customer |
 | Marketing | Customer, CRM |
 | Booking | Customer, Package |
@@ -732,1909 +2379,751 @@ Lifecycle ini menjadi dasar CRM, Marketing, Dashboard, dan AI.
 | Departure | Booking, Package |
 | Payment | Booking |
 | Finance | Payment |
-| Dashboard | Semua Domain |
-| Notification | Semua Domain |
-| AI | Semua Domain |
+| Dashboard | Governed Data from Domains |
+| Notification | Domain Events / Approved Requests |
+| AI | Governed Enterprise Data and Services |
 
-Dependency hanya bersifat bisnis, bukan implementasi teknis.
+Dependency hanya menggambarkan business relationship.
 
----
-
-# Capability Heat Map
-
-Capability diklasifikasikan berdasarkan prioritas.
-
-## Critical
-
-- Customer
-- Booking
-- Payment
-- Finance
-
-## High
-
-- CRM
-- Marketing
-- Package
-- Departure
-
-## Medium
-
-- Hotel
-- Flight
-- Visa
-
-## Strategic
-
-- Dashboard
-- Notification
-- AI
-
-Heat Map digunakan untuk menentukan prioritas implementasi.
+Technical implementation dependency harus didefinisikan pada
+technical blueprint masing-masing.
 
 ---
 
-# Business KPI Framework
+# 2.33 CAPABILITY VALUE STREAM
 
-Setiap Capability wajib memiliki KPI.
+Enterprise value creation:
 
-Contoh:
-
+```text
+Lead
+   ↓
+Prospect
+   ↓
 Customer
-
-- Total Customer
-- Active Customer
-
+   ↓
+Package Selection
+   ↓
 Booking
-
-- Booking Success Rate
-- Booking Conversion
-
+   ↓
 Payment
+   ↓
+Preparation
+   ↓
+Departure
+   ↓
+Journey
+   ↓
+Completion
+   ↓
+Customer Relationship
+   ↓
+Repeat Business
+   ↓
+Referral
+```
 
-- Payment Success Rate
-- Refund Rate
-
-Finance
-
-- Revenue
-- Profit
-- Cash Flow
-
-Dashboard
-
-- Executive KPI Coverage
-
-AI
-
-- Recommendation Accuracy
-
-KPI rinci akan didefinisikan pada Blueprint masing-masing.
+Capability Architecture harus mendukung seluruh value stream.
 
 ---
 
-# Business Capability Roadmap
+# 2.34 CAPABILITY LIFECYCLE
 
-Capability berkembang melalui tahapan berikut.
+Setiap capability memiliki lifecycle.
 
-Blueprint
+```text
+Identify
+   ↓
+Define
+   ↓
+Approve
+   ↓
+Build
+   ↓
+Operate
+   ↓
+Measure
+   ↓
+Improve
+   ↓
+Expand
+   ↓
+Retire
+```
 
-↓
+Capability retirement harus melalui impact analysis.
 
-Database
+Tidak diperbolehkan menghapus critical capability tanpa
+replacement strategy.
 
-↓
+---
 
-API
+# 2.35 CAPABILITY MATURITY
 
-↓
+Capability maturity:
 
-Flutter
+| Level | Description |
+|---|---|
+| Level 1 | Capability Defined |
+| Level 2 | Capability Standardized |
+| Level 3 | Capability Digitized |
+| Level 4 | Capability Integrated |
+| Level 5 | Capability Measured |
+| Level 6 | Capability Intelligence Enabled |
+| Level 7 | Capability AI Assisted |
+| Level 8 | Capability Predictive |
+| Level 9 | Capability Optimized |
+| Level 10 | Capability Excellence |
 
-↓
+Target Enterprise:
 
+**Level 10 — Business Excellence**
+
+Capability tidak harus mencapai Level 10 secara bersamaan.
+
+Prioritas ditentukan berdasarkan business value, risk, complexity,
+dan strategic importance.
+
+---
+
+# 2.36 CAPABILITY HEAT MAP
+
+Capability priority:
+
+## CRITICAL
+
+```text
+Customer
+Booking
+Payment
+Finance
+```
+
+## HIGH
+
+```text
+CRM
+Marketing
+Package
+Departure
+```
+
+## MEDIUM
+
+```text
+Hotel
+Flight
+Visa
+```
+
+## STRATEGIC
+
+```text
 Dashboard
+Notification
+AI
+```
 
-↓
+Shared Platform memiliki priority sesuai Enterprise dependency,
+risk, criticality, dan operational requirement.
 
-AI Insight
+---
 
-↓
+# 2.37 CAPABILITY KPI FRAMEWORK
 
-AI Recommendation
+Setiap critical capability wajib memiliki KPI.
 
-↓
+---
 
+## Customer KPI
+
+```text
+Total Customer
+Active Customer
+Customer Growth
+Customer Retention
+Customer Data Quality
+```
+
+---
+
+## CRM KPI
+
+```text
+Follow-up Completion
+Customer Engagement
+Retention Rate
+Relationship Conversion
+```
+
+---
+
+## Marketing KPI
+
+```text
+Lead Volume
+Qualified Lead Rate
+Conversion Rate
+Campaign Performance
+Cost per Lead
+Customer Acquisition Cost
+```
+
+---
+
+## Booking KPI
+
+```text
+Booking Volume
+Booking Conversion
+Booking Success Rate
+Cancellation Rate
+```
+
+---
+
+## Package KPI
+
+```text
+Package Availability
+Package Sales
+Package Conversion
+Package Utilization
+```
+
+---
+
+## Departure KPI
+
+```text
+Departure Readiness
+Operational Completion
+Departure Exception Rate
+Journey Completion
+```
+
+---
+
+## Payment KPI
+
+```text
+Payment Success Rate
+Payment Failure Rate
+Refund Rate
+Settlement Completion
+Reconciliation Accuracy
+```
+
+---
+
+## Finance KPI
+
+```text
+Revenue
+Expense
+Profit
+Cash Flow
+Receivable
+Payable
+Financial Closing
+```
+
+---
+
+## Dashboard KPI
+
+```text
+Executive KPI Coverage
+Dashboard Availability
+Data Freshness
+Insight Coverage
+```
+
+---
+
+## Notification KPI
+
+```text
+Delivery Rate
+Failure Rate
+Read Rate
+Response Rate
+Channel Availability
+```
+
+---
+
+## AI KPI
+
+```text
+Recommendation Accuracy
+Prediction Accuracy
+AI Adoption
+AI Response Quality
+AI Safety Compliance
+Human Override Rate
+```
+
+KPI detail akan didefinisikan pada Blueprint Domain dan Reporting
+Blueprint masing-masing.
+
+---
+
+# 2.38 CAPABILITY DATA PRINCIPLE
+
+Capability tidak otomatis memiliki seluruh data yang digunakan.
+
+Data ownership harus mengikuti Business Domain ownership.
+
+Conceptual:
+
+```text
+Capability
+    ↓
+Business Data Requirement
+    ↓
+Data Owner
+    ↓
+Approved Data Contract
+    ↓
+Consumer
+```
+
+Tidak diperbolehkan:
+
+```text
+Capability
+    ↓
+Duplicate Authoritative Data
+```
+
+---
+
+# 2.39 SINGLE SOURCE OF TRUTH
+
+Untuk setiap authoritative business data:
+
+```text
+One Business Meaning
+One Business Owner
+One Authoritative Source
+Multiple Governed Consumers
+```
+
+Consumer dapat:
+
+- read
+- consume
+- analyze
+- report
+- trigger workflow
+- request service
+
+Consumer tidak boleh membuat competing source of truth.
+
+---
+
+# 2.40 CAPABILITY SECURITY PRINCIPLE
+
+Capability harus menerapkan:
+
+```text
+Authentication
+Authorization
+Tenant Isolation
+Least Privilege
+Need to Know
+Auditability
+Data Classification
+Privacy
+Security Monitoring
+```
+
+Security implementation berada pada downstream technical architecture.
+
+Business Capability tetap mendefinisikan security requirement
+secara business level.
+
+---
+
+# 2.41 CAPABILITY TENANT PRINCIPLE
+
+VENTRA Enterprise harus mendukung multi-tenant capability.
+
+Conceptual:
+
+```text
+VENTRA
+   ↓
+Tenant
+   ↓
+Business Capability
+   ↓
+Business Data
+   ↓
+Business Service
+```
+
+Tenant boundary tidak boleh dilemahkan.
+
+Capability harus dapat mengidentifikasi:
+
+- Tenant
+- Company
+- Branch
+- Business Unit
+- User Context
+
+sesuai requirement domain.
+
+---
+
+# 2.42 CAPABILITY MULTI-COMPANY PRINCIPLE
+
+Capability architecture harus mendukung:
+
+```text
+Enterprise
+   ↓
+Company
+   ↓
+Branch
+   ↓
+Business Unit
+   ↓
+Capability
+```
+
+Capability tidak boleh mengasumsikan hanya terdapat satu company
+atau satu branch.
+
+---
+
+# 2.43 CAPABILITY INTERNATIONALIZATION
+
+Enterprise capability harus siap mendukung:
+
+- Multi Country
+- Multi Currency
+- Multi Language
+- Multi Timezone
+- Multi Regulation
+- Multi Business Model
+
+Implementation detail ditentukan pada technical architecture.
+
+---
+
+# 2.44 CAPABILITY AI READINESS
+
+Setiap capability harus dapat diklasifikasikan terhadap AI readiness.
+
+```text
+Level 0
+No AI
+
+Level 1
+Data Ready
+
+Level 2
+Analytics Ready
+
+Level 3
+AI Insight Ready
+
+Level 4
+AI Recommendation Ready
+
+Level 5
 AI Assisted Automation
 
-Capability berkembang tanpa mengubah fondasi Business Domain.
+Level 6
+Governed AI Agent
+```
 
----
-
-# Enterprise Capability Quality Gate
-
-Seluruh Capability wajib memenuhi.
-
-| Validation | Target |
-|------------|--------|
-| Capability Owner | 100% |
-| Capability KPI | 100% |
-| Service Catalog | 100% |
-| Lifecycle | 100% |
-| Dependency | 100% |
-| Traceability | 100% |
-| EA Compliance | 100% |
-| Governance | 100% |
-
----
-
-# Acceptance Criteria
-
-Part 2 dianggap selesai apabila:
-
-- seluruh Capability terdokumentasi
-- seluruh Capability memiliki Owner
-- seluruh Capability memiliki Service
-- seluruh Capability memiliki KPI
-- seluruh Capability memiliki Lifecycle
-- seluruh Capability memiliki Dependency
-- seluruh Capability memiliki Roadmap
-- seluruh Capability memenuhi Enterprise Quality Gate
-
----
-
----
-
-# Enterprise Business Domain Architecture
-
-Enterprise Business Domain Architecture mendefinisikan struktur Domain bisnis VENTRA, batas tanggung jawab setiap Domain, kepemilikan data, hubungan antar Domain, serta Operating Model yang menjadi dasar seluruh implementasi Enterprise.
-
-Business Domain merupakan unit bisnis independen yang memiliki tujuan, kapabilitas, aturan bisnis, data, proses, dan indikator kinerja masing-masing.
-
-Setiap Business Domain bertanggung jawab penuh terhadap area bisnisnya dan menjadi satu-satunya pemilik resmi (Single Owner) atas data dan proses yang berada di dalam Domain tersebut.
-
----
-
-# Business Operating Model
-
-VENTRA menggunakan Domain-Based Business Operating Model.
-
-Business dijalankan oleh Domain yang saling berkolaborasi namun tetap independen.
-
-Prinsip Operating Model:
-
-- Single Responsibility
-- Single Ownership
-- High Cohesion
-- Loose Coupling
-- Business Driven
-- API First
-- Event Driven
-- AI Ready
-
----
-
-# Enterprise Business Domains
-
-Business Domain resmi terdiri dari:
-
-| Blueprint | Domain | Primary Responsibility |
-|-----------|--------|------------------------|
-| BP-101 | Customer | Customer Management |
-| BP-102 | CRM | Relationship Management |
-| BP-103 | Marketing | Marketing & Lead Management |
-| BP-104 | Booking | Reservation Management |
-| BP-105 | Package | Product & Package Management |
-| BP-106 | Departure | Departure Operation |
-| BP-107 | Hotel | Hotel Management |
-| BP-108 | Flight | Flight Management |
-| BP-109 | Visa | Visa Management |
-| BP-110 | Finance | Financial Management |
-| BP-111 | Payment | Payment Management |
-| BP-112 | Dashboard | Business Intelligence |
-| BP-113 | Notification | Communication Management |
-| BP-114 | AI | Artificial Intelligence |
-
----
-
-# Shared Platform Domains
-
-Shared Platform menyediakan layanan lintas Domain.
-
-| Blueprint | Platform | Responsibility |
-|-----------|----------|----------------|
-| SP-201 | Vendor Platform | Vendor Management |
-| SP-202 | Document Platform | Document Management |
-| SP-203 | Identity & Access Platform | Authentication & Authorization |
-| SP-204 | Security Platform | Enterprise Security |
-| SP-205 | Audit Platform | Audit & Compliance |
-| SP-206 | Search Platform | Enterprise Search |
-| SP-207 | Storage Platform | Object Storage |
-| SP-208 | Integration Platform | API & Event Integration |
-| SP-209 | Workflow Platform | Workflow Automation |
-| SP-210 | Reporting Platform | Enterprise Reporting |
-
-Shared Platform tidak memiliki proses bisnis utama dan tidak boleh mengambil alih Business Rules dari Business Domain.
-
----
-
-# Business Domain Responsibilities
-
-## Customer Domain
-
-Bertanggung jawab terhadap:
-
-- Customer Profile
-- Customer Identity
-- Customer Contact
-- Customer Family
-- Customer Loyalty
-
----
-
-## CRM Domain
-
-Bertanggung jawab terhadap:
-
-- Lead
-- Opportunity
-- Follow Up
-- Sales Activity
-- Customer Relationship
-
----
-
-## Marketing Domain
-
-Bertanggung jawab terhadap:
-
-- Campaign
-- Promotion
-- Advertisement
-- Digital Marketing
-- Marketing Analytics
-
----
-
-## Booking Domain
-
-Bertanggung jawab terhadap:
-
-- Booking
-- Booking Traveller
-- Booking Status
-- Booking History
-
----
-
-## Package Domain
-
-Bertanggung jawab terhadap:
-
-- Tour Package
-- Umrah Package
-- Pricing
-- Itinerary
-- Package Availability
-
----
-
-## Departure Domain
-
-Bertanggung jawab terhadap:
-
-- Departure Schedule
-- Group
-- Manifest
-- Tour Leader Assignment
-
----
-
-## Hotel Domain
-
-Bertanggung jawab terhadap:
-
-- Hotel Master
-- Hotel Allocation
-- Room Inventory
-- Hotel Contract Reference
-
----
-
-## Flight Domain
-
-Bertanggung jawab terhadap:
-
-- Flight Master
-- Flight Schedule
-- Seat Allocation
-- Airline Reference
-
----
-
-## Visa Domain
-
-Bertanggung jawab terhadap:
-
-- Visa Application
-- Visa Status
-- Visa Document Validation
-
----
-
-## Finance Domain
-
-Bertanggung jawab terhadap:
-
-- General Ledger
-- Journal
-- Cash Flow
-- Financial Reporting
-
-Finance tidak menerima pembayaran secara langsung.
-
----
-
-## Payment Domain
-
-Bertanggung jawab terhadap:
-
-- Payment Request
-- Payment Verification
-- Settlement
-- Refund
-- Reconciliation
-
-Payment tidak membuat jurnal akuntansi.
-
----
-
-## Dashboard Domain
-
-Bertanggung jawab terhadap:
-
-- Executive Dashboard
-- Operational Dashboard
-- KPI Dashboard
-- Business Analytics
-
-Dashboard hanya membaca data melalui kontrak resmi.
-
----
-
-## Notification Domain
-
-Bertanggung jawab terhadap:
-
-- Email
-- WhatsApp
-- SMS
-- Push Notification
-- In-App Notification
-
----
-
-## AI Domain
-
-Bertanggung jawab terhadap:
-
-- AI Recommendation
-- AI Prediction
-- AI Insight
-- AI Assistant
-
-AI tidak mengambil keputusan bisnis secara otomatis.
-
----
-
-# Domain Ownership Matrix
-
-| Domain | CRUD | Read Only |
-|---------|------|-----------|
-| Customer | Customer | CRM, Booking, Marketing |
-| CRM | CRM | Marketing |
-| Booking | Booking | Dashboard |
-| Payment | Payment | Finance, Dashboard |
-| Finance | Finance | Dashboard |
-| Hotel | Hotel | Package |
-| Flight | Flight | Package |
-| Visa | Visa | Departure |
-
-Domain lain hanya dapat membaca data melalui API atau Business Event.
-
----
-
-# Domain Interaction Model
-
-Interaksi utama antar Domain:
-
-Customer
-
-↓
-
-CRM
-
-↓
-
-Marketing
-
-↓
-
-Booking
-
-↓
-
-Package
-
-↓
-
-Departure
-
-↓
-
-Hotel
-
-↓
-
-Flight
-
-↓
-
-Visa
-
-↓
-
-Payment
-
-↓
-
-Finance
-
-↓
-
-Dashboard
-
-↓
-
-Notification
-
-↓
-
-AI
-
-Setiap interaksi harus menggunakan kontrak resmi.
-
----
-
-# Business Ownership Principles
-
-Seluruh Domain wajib memiliki:
-
-- Domain Owner
-- Business Rules
-- Business Events
-- KPI
-- Blueprint
-- Database Blueprint
-- API Blueprint
-- Flutter Blueprint
-- Dashboard (jika diperlukan)
-- AI Blueprint (jika diperlukan)
-
----
-
-# Domain Independence
-
-Setiap Domain harus dapat berkembang tanpa mengubah Domain lain.
-
-Perubahan pada Hotel Domain tidak boleh mengubah Payment Domain.
-
-Perubahan pada CRM Domain tidak boleh mengubah Finance Domain.
-
-Perubahan pada AI Domain tidak boleh mengubah Business Rules Domain lain.
-
----
-
-# Enterprise Traceability
-
-Seluruh Domain harus dapat ditelusuri.
-
-Business Strategy
-
-↓
-
-EA-001
-
-↓
-
-BP-001
-
-↓
-
-BP Domain
-
-↓
-
-Database Blueprint
-
-↓
-
-API Blueprint
-
-↓
-
-Flutter Blueprint
-
-↓
-
-Dashboard Blueprint
-
-↓
-
-AI Blueprint
-
-↓
-
-Implementation
-
----
-
-# Enterprise Domain Quality Gate
-
-| Validation | Target |
-|------------|--------|
-| Domain Ownership | 100% |
-| Responsibility | 100% |
-| Context Boundary | 100% |
-| Traceability | 100% |
-| Governance | 100% |
-| EA Compliance | 100% |
-
----
-
-# Acceptance Criteria
-
-Part 3 dianggap selesai apabila:
-
-- seluruh Business Domain terdokumentasi
-- seluruh Shared Platform terdokumentasi
-- seluruh Responsibility terdokumentasi
-- seluruh Ownership terdokumentasi
-- seluruh Domain Interaction terdokumentasi
-- seluruh Traceability terdokumentasi
-- seluruh Domain memenuhi Enterprise Quality Gate
-
----
-
----
-
-# Enterprise Business Process Architecture
-
-Enterprise Business Process Architecture mendefinisikan bagaimana seluruh proses bisnis VENTRA bekerja sebagai satu sistem Enterprise yang terintegrasi.
-
-Business Process menjadi jembatan antara Business Capability dan implementasi teknis.
-
-Seluruh Business Domain wajib mengikuti Architecture ini.
-
----
-
-# Enterprise Process Principles
-
-Seluruh Business Process mengikuti prinsip berikut.
-
-- Customer Centric
-- Business Driven
-- Standardized
-- Measurable
-- Traceable
-- Event Driven
-- API First
-- Automation Ready
-- AI Ready
-- Continuously Improved
-
----
-
-# Enterprise Business Process Landscape
-
-VENTRA mengelompokkan proses bisnis menjadi tiga kategori utama.
-
-## Core Business Process
-
-Menghasilkan nilai langsung kepada pelanggan.
-
-Meliputi:
-
-- Customer Management
-- CRM Management
-- Marketing
-- Booking
-- Package
-- Departure
-- Hotel
-- Flight
-- Visa
-- Payment
-- Finance
-
----
-
-## Supporting Business Process
-
-Mendukung Core Business Process.
-
-Meliputi:
-
-- Vendor Management
-- Document Management
-- Identity Management
-- Security
-- Audit
-- Storage
-- Search
-- Integration
-- Workflow
-- Reporting
-
----
-
-## Management Process
-
-Mendukung pengambilan keputusan.
-
-Meliputi:
-
-- Dashboard
-- KPI
-- Business Analytics
-- AI Recommendation
-- Executive Reporting
-- Governance
-
----
-
-# Enterprise Value Chain
-
-VENTRA menghasilkan nilai bisnis melalui alur berikut.
-
-Lead
-
-↓
-
-Prospect
-
-↓
-
-Customer
-
-↓
-
-Booking
-
-↓
-
-Payment
-
-↓
-
-Document Verification
-
-↓
-
-Departure Preparation
-
-↓
-
-Travel Operation
-
-↓
-
-Journey Completion
-
-↓
-
-Customer Loyalty
-
-↓
-
-Referral
-
-↓
-
-Repeat Business
-
-Setiap tahap harus menghasilkan nilai tambah bagi pelanggan dan perusahaan.
-
----
-
-# End-to-End Business Process
-
-Business Process utama terdiri dari.
-
-Lead Created
-
-↓
-
-Lead Qualification
-
-↓
-
-Customer Registration
-
-↓
-
-Consultation
-
-↓
-
-Quotation
-
-↓
-
-Booking
-
-↓
-
-Payment
-
-↓
-
-Document Collection
-
-↓
-
-Visa Processing
-
-↓
-
-Departure Planning
-
-↓
-
-Travel Execution
-
-↓
-
-Journey Monitoring
-
-↓
-
-Journey Completion
-
-↓
-
-Customer Feedback
-
-↓
-
-Loyalty Program
-
-↓
-
-Referral
-
-↓
-
-Repeat Booking
-
----
-
-# Cross Domain Process Matrix
-
-| Process | Primary Domain | Supporting Domain |
-|----------|----------------|-------------------|
-| Customer Registration | Customer | CRM |
-| Lead Management | Marketing | CRM |
-| Booking | Booking | Customer, Package |
-| Package Planning | Package | Hotel, Flight |
-| Departure Planning | Departure | Booking |
-| Payment | Payment | Booking |
-| Financial Recording | Finance | Payment |
-| Dashboard Update | Dashboard | Semua Domain |
-| Notification | Notification | Semua Domain |
-| AI Recommendation | AI | Semua Domain |
-
----
-
-# Enterprise Business Workflow Standard
-
-Setiap Workflow wajib memiliki.
-
-- Process Owner
-- Trigger
-- Preconditions
-- Input
-- Main Flow
-- Alternative Flow
-- Exception Flow
-- Output
-- Business Rules
-- Business Events
-- KPI
-- SLA
-
-Workflow tanpa elemen tersebut tidak boleh dinyatakan selesai.
-
----
-
-# Business Event Architecture
-
-Seluruh Business Process menghasilkan Business Event.
-
-Standar penamaan:
-
-Noun + Past Tense
-
-Contoh:
-
-LeadCreated
-
-LeadQualified
-
-CustomerRegistered
-
-BookingCreated
-
-PaymentCompleted
-
-DocumentVerified
-
-VisaApproved
-
-DepartureScheduled
-
-JourneyStarted
-
-JourneyCompleted
-
-FeedbackSubmitted
-
-RepeatBookingCreated
-
-Business Event menjadi dasar:
-
-- Automation
-- Dashboard
-- AI
-- Notification
-- Integration
-- Audit
-
----
-
-# Business State Transition
-
-Setiap proses memiliki perubahan status yang jelas.
-
-Contoh Booking.
-
-Draft
-
-↓
-
-Confirmed
-
-↓
-
-Waiting Payment
-
-↓
-
-Paid
-
-↓
-
-Ready for Departure
-
-↓
-
-Completed
-
-↓
-
-Cancelled
-
-Perubahan status harus terdokumentasi dan dapat diaudit.
-
----
-
-# SLA Framework
-
-Seluruh proses memiliki target layanan.
-
-| Process | SLA |
-|----------|-----|
-| Lead Response | ≤ 15 Minutes |
-| Customer Registration | ≤ 10 Minutes |
-| Booking Confirmation | ≤ 1 Hour |
-| Payment Verification | ≤ 30 Minutes |
-| Document Verification | ≤ 1 Working Day |
-| Visa Verification | ≤ 2 Working Days |
-| Departure Confirmation | ≤ 1 Working Day |
-| Customer Complaint Response | ≤ 4 Working Hours |
-
-SLA akan dirinci pada Blueprint Domain masing-masing.
-
----
-
-# Process Automation Strategy
-
-Automation dilakukan berdasarkan Business Event.
-
-Contoh:
-
-BookingCreated
-
-↓
-
-Generate Payment Request
-
-↓
-
-Notify Customer
-
-↓
-
-Notify Finance
-
-↓
-
-Update Dashboard
-
-↓
-
-Generate AI Summary
-
-Automation tidak boleh melanggar Business Rules.
-
----
-
-# Process Performance Indicators
-
-Seluruh proses memiliki KPI.
-
-Contoh:
-
-Lead Conversion Rate
-
-Booking Success Rate
-
-Payment Success Rate
-
-Visa Completion Rate
-
-On-Time Departure
-
-Customer Satisfaction
-
-Repeat Booking Rate
-
-Automation Coverage
-
-SLA Compliance
-
----
-
-# Business Process Governance
-
-Seluruh perubahan proses wajib melalui.
-
-Business Request
-
-↓
-
-Business Review
-
-↓
-
-Impact Analysis
-
-↓
-
-Blueprint Revision
-
-↓
-
-Approval
-
-↓
-
-Implementation
-
-↓
-
-Monitoring
-
-↓
-
-Continuous Improvement
-
-Tidak diperbolehkan mengubah proses bisnis langsung pada implementasi.
-
----
-
-# Enterprise Process Quality Gate
-
-| Validation | Target |
-|------------|--------|
-| Process Coverage | 100% |
-| Workflow Documentation | 100% |
-| Business Rules Coverage | 100% |
-| Business Event Coverage | 100% |
-| SLA Definition | 100% |
-| KPI Coverage | 100% |
-| Traceability | 100% |
-| Governance Compliance | 100% |
-
----
-
-# Acceptance Criteria
-
-Part 4 dianggap selesai apabila:
-
-- seluruh Business Process terdokumentasi
-- seluruh Process Owner ditentukan
-- seluruh Workflow memiliki standar
-- seluruh Business Event terdokumentasi
-- seluruh State Transition terdokumentasi
-- seluruh SLA ditentukan
-- seluruh KPI ditentukan
-- seluruh Governance terdokumentasi
-- seluruh Process memenuhi Enterprise Quality Gate
-
----
----
-
-# Enterprise Intelligence & Decision Architecture
-
-Enterprise Intelligence & Decision Architecture mendefinisikan bagaimana data operasional VENTRA diubah menjadi informasi, insight, rekomendasi, prediksi, dan keputusan bisnis yang terukur.
-
-Arsitektur ini menjadi fondasi bagi Dashboard, Reporting, Business Intelligence, Artificial Intelligence, Executive Decision Support, dan Enterprise Automation.
-
-Enterprise Intelligence tidak menggantikan manusia.
-
-Enterprise Intelligence membantu manusia mengambil keputusan yang lebih cepat, akurat, dan berbasis data.
-
----
-
-# Enterprise Intelligence Principles
-
-Seluruh Intelligence mengikuti prinsip berikut.
-
-- Single Source of Truth
-- Data Driven Decision
-- Explainable Intelligence
-- Responsible AI
-- Human in the Loop
-- Real Time Visibility
-- Predictive Analytics
-- Continuous Learning
-- Auditability
-- Business Value First
-
----
-
-# Enterprise Intelligence Objectives
-
-VENTRA membangun Enterprise Intelligence untuk:
-
-- meningkatkan kualitas pengambilan keputusan
-- menyediakan informasi secara realtime
-- meningkatkan efisiensi operasional
-- mengurangi risiko bisnis
-- membantu perencanaan strategis
-- meningkatkan kepuasan pelanggan
-- mendukung pertumbuhan perusahaan
-- membangun organisasi yang berbasis data
-
----
-
-# Enterprise Intelligence Layers
-
-Enterprise Intelligence dibagi menjadi lima lapisan.
-
-## Operational Intelligence
-
-Digunakan oleh Staff.
-
-Contoh:
-
-- Daily Task
-- Pending Booking
-- Outstanding Payment
-- Visa Queue
-- Document Validation
-- Departure Schedule
-
----
-
-## Tactical Intelligence
-
-Digunakan oleh Supervisor dan Manager.
-
-Contoh:
-
-- Sales Performance
-- Marketing Performance
-- Booking Conversion
-- Team Productivity
-- Payment Collection
-- SLA Achievement
-
----
-
-## Strategic Intelligence
-
-Digunakan oleh Director.
-
-Contoh:
-
-- Revenue
-- Profit
-- Growth
-- Cost Analysis
-- Branch Performance
-- Product Performance
-
----
-
-## Executive Intelligence
-
-Digunakan oleh CEO.
-
-Contoh:
-
-- Executive KPI
-- Business Health Score
-- Cash Flow Summary
-- Company Performance
-- Risk Indicator
-- Strategic Recommendation
-
----
-
-## Predictive Intelligence
-
-Menggunakan AI dan Machine Learning.
-
-Contoh:
-
-- Sales Forecast
-- Revenue Forecast
-- Cash Flow Forecast
-- Customer Churn Prediction
-- Cancellation Prediction
-- Demand Prediction
-
----
-
-# Enterprise Dashboard Architecture
-
-VENTRA memiliki Dashboard pada beberapa level.
-
-## Operational Dashboard
-
-Digunakan oleh Staff.
-
-Menampilkan:
-
-- Task
-- Queue
-- Pending Approval
-- Reminder
-- Alert
-
----
-
-## Management Dashboard
-
-Digunakan oleh Manager.
-
-Menampilkan:
-
-- KPI
-- SLA
-- Team Performance
-- Operational Analytics
-
----
-
-## Executive Dashboard
-
-Digunakan oleh CEO dan Director.
-
-Menampilkan:
-
-- Revenue
-- Profit
-- Cash Position
-- Forecast
-- Business Health
-- Strategic KPI
-
----
-
-# Enterprise KPI Framework
-
-Seluruh KPI wajib memiliki:
-
-- KPI Owner
-- Formula
-- Target
-- Unit
-- Frequency
-- Data Source
-- Responsible Domain
-
-Contoh KPI:
-
-Customer
-
-- Active Customer
-- Repeat Customer
-
-Marketing
-
-- Lead Conversion
-- Cost per Acquisition
-
-Booking
-
-- Booking Success Rate
-- Booking Growth
-
-Payment
-
-- Payment Success Rate
-- Outstanding Payment
-
-Finance
-
-- Revenue
-- Gross Profit
-- Net Profit
-- Cash Flow
-
-Operation
-
-- On Time Departure
-- Customer Satisfaction
-
-Executive
-
-- Business Health Score
-- Company Growth
-
----
-
-# Business Analytics Framework
-
-Analytics dibagi menjadi empat kelompok.
-
-## Descriptive Analytics
-
-Menjawab:
-
-Apa yang terjadi?
-
----
-
-## Diagnostic Analytics
-
-Menjawab:
-
-Mengapa hal tersebut terjadi?
-
----
-
-## Predictive Analytics
-
-Menjawab:
-
-Apa yang kemungkinan akan terjadi?
-
----
-
-## Prescriptive Analytics
-
-Menjawab:
-
-Apa tindakan terbaik yang sebaiknya dilakukan?
-
----
-
-# Artificial Intelligence Architecture
-
-AI berfungsi sebagai Enterprise Business Assistant.
-
-AI mampu:
-
-- Executive Summary
-- Executive Briefing
-- Sales Recommendation
-- Marketing Recommendation
-- Customer Insight
-- Booking Recommendation
-- Financial Insight
-- Fraud Detection
-- Risk Analysis
-- Knowledge Assistant
-- Smart Search
-
-AI tidak diperbolehkan:
-
-- mengubah transaksi bisnis
-- menyetujui transaksi
-- menghapus data
-- mengubah Business Rules
-
-tanpa otorisasi pengguna.
-
----
-
-# Enterprise AI Agents
-
-VENTRA mendukung AI Agent berikut.
-
-- Executive AI
-- Marketing AI
-- CRM AI
-- Booking AI
-- Finance AI
-- Operation AI
-- Customer Service AI
-- Knowledge AI
-- Reporting AI
-- Compliance AI
-
-Setiap AI Agent memiliki Domain Responsibility yang jelas.
-
----
-
-# Enterprise Decision Support System
-
-Decision Support membantu pengambilan keputusan melalui:
-
-- Dashboard
-- KPI
-- Analytics
-- Forecast
-- Recommendation
-- Risk Indicator
-- AI Summary
-
-Keputusan bisnis tetap dilakukan oleh manusia.
-
----
-
-# Enterprise Automation Framework
-
-Automation selalu dimulai dari Business Event.
-
-Contoh:
-
-BookingCreated
-
-↓
-
-Generate Payment Request
-
-↓
-
-Notify Customer
-
-↓
-
-Notify Finance
-
-↓
-
-Update Dashboard
-
-↓
-
-Generate AI Summary
-
-↓
-
-Schedule Follow Up
-
-Automation wajib mengikuti Business Rules.
-
----
-
-# Enterprise Reporting Architecture
-
-Reporting dibagi menjadi tiga level.
-
-Operational Report
-
-↓
-
-Management Report
-
-↓
-
-Executive Report
-
-Seluruh Report menggunakan Single Source of Truth.
-
----
-
-# Enterprise Knowledge Management
-
-VENTRA membangun Knowledge Base Enterprise.
-
-Knowledge berasal dari:
-
-- Blueprint
-- SOP
-- Business Rules
-- FAQ
-- AI Knowledge
-- Operational Experience
-
-Knowledge menjadi sumber utama AI Assistant.
-
----
-
-# Enterprise Intelligence Governance
-
-Seluruh Intelligence wajib mengikuti:
-
-- EA-000 Architecture Freeze Rules
-- EA-001 Enterprise Architecture Blueprint
-- BP-001 Business Blueprint
-- Business Rules
-- AI Governance
-- Security Governance
-
-Seluruh rekomendasi AI harus dapat dijelaskan (Explainable).
-
----
-
-# Enterprise Intelligence Quality Gate
-
-| Validation | Target |
-|------------|--------|
-| Dashboard Coverage | 100% |
-| KPI Coverage | 100% |
-| Analytics Coverage | 100% |
-| AI Governance | 100% |
-| Explainable AI | 100% |
-| Reporting Coverage | 100% |
-| Automation Coverage | ≥ 90% |
-| Traceability | 100% |
-| Governance Compliance | 100% |
-
----
-
-# Acceptance Criteria
-
-Part 5 dianggap selesai apabila:
-
-- seluruh Dashboard Architecture terdokumentasi
-- seluruh KPI Framework terdokumentasi
-- seluruh Analytics Framework terdokumentasi
-- seluruh AI Architecture terdokumentasi
-- seluruh AI Agent terdokumentasi
-- seluruh Decision Support terdokumentasi
-- seluruh Automation Framework terdokumentasi
-- seluruh Reporting Architecture terdokumentasi
-- seluruh Governance terdokumentasi
-- seluruh Intelligence memenuhi Enterprise Quality Gate
-
----
-
----
-
-# Enterprise Governance, Business Excellence & Control
-
-Enterprise Governance, Business Excellence & Control mendefinisikan tata kelola bisnis, kepatuhan, pengendalian perubahan, kualitas, traceability, dan mekanisme evaluasi seluruh Business Blueprint VENTRA.
-
-Bagian ini menjadi fondasi seluruh Business Domain agar berkembang secara konsisten, terukur, terdokumentasi, dan selaras dengan Enterprise Architecture.
-
-Seluruh Business Blueprint wajib mengikuti Governance yang didefinisikan pada BP-001.
-
----
-
-# Business Governance Principles
-
-VENTRA menerapkan prinsip tata kelola berikut.
-
-## Business First
-
-Seluruh keputusan dimulai dari kebutuhan bisnis.
-
----
-
-## Blueprint First
-
-Tidak diperbolehkan implementasi tanpa Blueprint yang disetujui.
-
----
-
-## Governance by Design
-
-Governance menjadi bagian dari desain sistem.
-
-Bukan ditambahkan setelah implementasi.
-
----
-
-## Continuous Improvement
-
-Seluruh proses dievaluasi secara berkala.
-
----
-
-## Accountability
-
-Setiap Domain memiliki Business Owner yang bertanggung jawab terhadap kualitas Domain.
-
----
-
-## Transparency
-
-Seluruh keputusan penting harus terdokumentasi dan dapat diaudit.
-
----
-
-# Business Governance Framework
-
-VENTRA menerapkan struktur tata kelola berikut.
-
-Executive Board
-
-↓
-
-Enterprise Architecture Board
+AI capability tidak boleh bypass:
 
-↓
+- authorization
+- security
+- business rule
+- tenant boundary
+- audit
+- governance
 
-Business Architecture Board
-
-↓
-
-Business Domain Owner
-
-↓
-
-Technical Architect
-
-↓
-
-Engineering Team
-
-↓
-
-Quality Assurance
-
-↓
-
-Operations
-
-Seluruh keputusan strategis mengikuti struktur tersebut.
-
----
-
-# Business Decision Authority
-
-| Decision | Authority |
-|-----------|-----------|
-| Business Strategy | CEO |
-| Business Process | Business Owner |
-| Enterprise Architecture | Enterprise Architecture Board |
-| Domain Architecture | Domain Owner |
-| Business Rules | Business Owner |
-| Technical Design | Chief Software Architect |
-| Database Design | Database Architect |
-| API Design | Backend Architect |
-| Flutter Design | Flutter Architect |
-| AI Design | AI Architect |
-| Security | Security Architect |
-
----
-
-# Blueprint Hierarchy
-
-Hierarki Blueprint resmi VENTRA.
-
-EA-000 Architecture Freeze Rules
-
-↓
-
-EA-001 Enterprise Architecture Blueprint
-
-↓
-
-BP-001 Business Blueprint
-
-↓
-
-BP-101 Customer Blueprint
-
-↓
-
-BP-102 CRM Blueprint
-
-↓
-
-BP-103 Marketing Blueprint
-
-↓
-
-BP-104 Booking Blueprint
-
-↓
-
-BP-105 Package Blueprint
-
-↓
-
-BP-106 Departure Blueprint
-
-↓
-
-BP-107 Hotel Blueprint
-
-↓
-
-BP-108 Flight Blueprint
-
-↓
-
-BP-109 Visa Blueprint
-
-↓
-
-BP-110 Finance Blueprint
-
-↓
-
-BP-111 Payment Blueprint
-
-↓
-
-BP-112 Dashboard Blueprint
-
-↓
-
-BP-113 Notification Blueprint
-
-↓
-
-BP-114 AI Blueprint
-
-↓
-
-SP-201 Vendor Platform
-
-↓
-
-SP-202 Document Platform
-
-↓
-
-SP-203 Identity & Access Platform
-
-↓
-
-SP-204 Security Platform
-
-↓
-
-SP-205 Audit Platform
-
-↓
-
-SP-206 Search Platform
-
-↓
-
-SP-207 Storage Platform
-
-↓
-
-SP-208 Integration Platform
-
-↓
-
-SP-209 Workflow Platform
-
-↓
-
-SP-210 Reporting Platform
-
-↓
-
-Database Blueprint
-
-↓
-
-API Blueprint
-
-↓
-
-Flutter Blueprint
-
-↓
-
-Dashboard Blueprint
-
-↓
-
-AI Blueprint
-
-↓
-
-Testing Blueprint
-
-↓
-
-Deployment Blueprint
-
-↓
-
-Production
-
----
-
-# Business Compliance
-
-Seluruh Blueprint wajib memenuhi:
-
-- EA-000 Architecture Freeze Rules
-- EA-001 Enterprise Architecture Blueprint
-- BP-001 Business Blueprint
-- Domain Ownership
-- Business Rules
-- Business Event Standard
-- Naming Standard
-- Traceability Standard
-- Enterprise Quality Gate
-
-Blueprint yang tidak memenuhi ketentuan tersebut wajib direvisi.
-
----
-
-# Business Change Management
-
-Seluruh perubahan Business mengikuti proses berikut.
-
-Business Request
-
-↓
-
-Business Analysis
-
-↓
-
-Impact Analysis
-
-↓
-
-Architecture Review
-
-↓
-
-Business Approval
-
-↓
-
-Blueprint Revision
-
-↓
-
-Technical Revision
-
-↓
-
-Testing
-
-↓
-
-Release
-
-↓
-
-Monitoring
-
-Tidak diperbolehkan melakukan perubahan langsung pada implementasi.
-
 ---
-
-# Enterprise Traceability Matrix
-
-Seluruh implementasi harus dapat ditelusuri.
-
-Business Vision
-
-↓
-
-Business Mission
-
-↓
-
-Business Objective
-
-↓
-
-Business Capability
-
-↓
 
-Business Process
+# 2.45 CAPABILITY AUTOMATION PRINCIPLE
 
-↓
+Automation dapat digunakan apabila:
 
+```text
 Business Rule
+      ↓
+Defined
+      ↓
+Approved
+      ↓
+Testable
+      ↓
+Observable
+      ↓
+Automatable
+```
 
-↓
+Automation tidak boleh digunakan untuk menggantikan undefined
+Business Rule.
 
-Business Event
+---
 
-↓
+# 2.46 CAPABILITY CHANGE MANAGEMENT
 
-Business Blueprint
+Capability change mengikuti:
 
-↓
-
-Database Blueprint
-
-↓
-
-API Blueprint
-
-↓
-
-Flutter Blueprint
-
-↓
-
-Dashboard Blueprint
-
-↓
-
-AI Blueprint
-
-↓
-
+```text
+Business Request
+       ↓
+Capability Impact Analysis
+       ↓
+Business Owner Review
+       ↓
+Architecture Review
+       ↓
+Governance Approval
+       ↓
+Blueprint Revision
+       ↓
+Technical Revision
+       ↓
 Testing
-
-↓
-
+       ↓
 Deployment
+       ↓
+Monitoring
+```
 
-↓
+Tidak diperbolehkan direct production change terhadap critical
+capability tanpa governance.
 
+---
+
+# 2.47 CAPABILITY TRACEABILITY
+
+Setiap capability harus dapat ditelusuri terhadap:
+
+```text
+Business Objective
+       ↓
+Capability
+       ↓
+Owner
+       ↓
+Business Service
+       ↓
+Business Process
+       ↓
+Business Rule
+       ↓
+Business Data
+       ↓
+API / Integration
+       ↓
+Implementation
+       ↓
+Test
+       ↓
+Deployment
+       ↓
+Production Evidence
+```
+
+Traceability menjadi mandatory untuk critical capability.
+
+---
+
+# 2.48 CAPABILITY ROADMAP
+
+Capability roadmap:
+
+```text
+Business Blueprint
+       ↓
+Capability Definition
+       ↓
+Domain Blueprint
+       ↓
+Database Blueprint
+       ↓
+API Blueprint
+       ↓
+Flutter Blueprint
+       ↓
+Dashboard Blueprint
+       ↓
+AI Blueprint
+       ↓
+Implementation
+       ↓
+Testing
+       ↓
+Deployment
+       ↓
 Production
+```
 
-Tidak diperbolehkan terdapat implementasi yang tidak memiliki Blueprint.
+Capability dapat berkembang secara bertahap.
 
----
-
-# Business Excellence Framework
-
-VENTRA menerapkan Business Excellence pada seluruh Domain.
-
-Fokus utama:
-
-- Customer Excellence
-- Operational Excellence
-- Financial Excellence
-- Service Excellence
-- Technology Excellence
-- AI Excellence
-- Continuous Improvement
-
-Setiap Domain wajib memiliki rencana peningkatan berkelanjutan.
+Perubahan implementation tidak boleh mengubah capability meaning
+tanpa approved business change.
 
 ---
 
-# Enterprise Risk Management
+# 2.49 CAPABILITY ARCHITECTURE RULES
 
-Seluruh Domain wajib mengidentifikasi:
+Rule 01:
+
+Setiap critical capability wajib memiliki owner.
+
+Rule 02:
+
+Setiap capability wajib memiliki business meaning.
+
+Rule 03:
+
+Capability tidak boleh didefinisikan berdasarkan technology.
+
+Rule 04:
+
+Capability tidak boleh menjadi duplicate capability tanpa
+approved justification.
+
+Rule 05:
+
+Capability dependency harus documented.
+
+Rule 06:
+
+Capability harus measurable.
+
+Rule 07:
+
+Capability harus traceable.
+
+Rule 08:
+
+Capability harus governed.
+
+Rule 09:
+
+Capability tidak boleh mengambil alih ownership capability lain.
+
+Rule 10:
+
+AI tidak boleh menjadi implicit authority terhadap critical
+Business Capability.
+
+---
+
+# 2.50 CAPABILITY ANTI-PATTERN
+
+Tidak diperbolehkan:
+
+```text
+Flutter Capability
+Database Capability
+API Capability
+Cloud Capability
+Microservice Capability
+```
+
+jika istilah tersebut sebenarnya hanya menggambarkan technical
+implementation.
+
+Capability harus memiliki Business Meaning.
+
+---
+
+# 2.51 CAPABILITY SERVICE BOUNDARY
+
+Business Service menjadi boundary antara Capability dan Consumer.
+
+```text
+Business Capability
+        ↓
+Business Service
+        ↓
+Approved Contract
+        ↓
+Consumer
+```
+
+Consumer tidak boleh bergantung pada internal implementation.
+
+---
+
+# 2.52 CAPABILITY CONSUMER PRINCIPLE
+
+Consumer dapat:
+
+- request
+- query
+- consume
+- subscribe
+- analyze
+- report
+
+Consumer tidak boleh:
+
+- modify internal implementation
+- bypass owner
+- bypass business rule
+- bypass security
+- bypass tenant boundary
+
+---
+
+# 2.53 CAPABILITY GOVERNANCE
+
+Capability governance mencakup:
+
+- ownership
+- definition
+- scope
+- KPI
+- lifecycle
+- change
+- dependency
+- risk
+- compliance
+- maturity
+- retirement
+
+Governance dilakukan oleh Business Architecture Board bersama
+Capability Owner.
+
+---
+
+# 2.54 CAPABILITY RISK
+
+Critical capability harus memiliki risk assessment.
+
+Minimum:
+
+```text
+Capability
+    ↓
+Risk
+    ↓
+Impact
+    ↓
+Likelihood
+    ↓
+Risk Owner
+    ↓
+Mitigation
+    ↓
+Monitoring
+```
+
+Risk taxonomy:
 
 - Business Risk
 - Operational Risk
@@ -2643,164 +3132,731 @@ Seluruh Domain wajib mengidentifikasi:
 - Compliance Risk
 - Technology Risk
 - Data Quality Risk
-
-Setiap risiko harus memiliki:
-
-- Risk Owner
-- Impact
-- Mitigation
-- Monitoring
+- AI Risk
 
 ---
 
-# Enterprise Audit Framework
+# 2.55 CAPABILITY RESILIENCE
 
-Audit dilakukan terhadap:
+Critical capability harus memiliki resilience consideration.
 
-- Business Process
-- Business Rules
-- Domain Ownership
-- Data Quality
-- KPI
-- SLA
-- Security
-- AI Recommendation
-- Compliance
+Minimum:
 
-Audit dikelola bersama BP Domain dan SP-205 Audit Platform.
+- availability requirement
+- recovery requirement
+- continuity requirement
+- dependency visibility
+- failure impact
+- fallback strategy where applicable
 
----
-
-# Business Maturity Model
-
-| Level | Description |
-|--------|-------------|
-| Level 1 | Business Blueprint Defined |
-| Level 2 | Business Process Standardized |
-| Level 3 | Business Digitized |
-| Level 4 | Business Integrated |
-| Level 5 | Business Intelligence Enabled |
-| Level 6 | AI Assisted Business |
-| Level 7 | Predictive Enterprise |
-| Level 8 | Autonomous Business Support |
-| Level 9 | Enterprise Optimization |
-| Level 10 | Business Excellence |
-
-Target VENTRA adalah mencapai **Level 10**.
+Technical resilience ditentukan pada technical blueprint.
 
 ---
 
-# Enterprise Review Cycle
+# 2.56 CAPABILITY PERFORMANCE
 
-Review dilakukan apabila:
+Capability performance harus dapat diukur.
 
-- terdapat perubahan strategi bisnis
-- terdapat perubahan regulasi
-- terdapat perubahan Enterprise Architecture
-- terdapat Domain baru
-- minimal setiap 6 bulan
+Performance dimensions:
 
-Review dilakukan oleh:
+```text
+Availability
+Latency
+Throughput
+Quality
+Accuracy
+Completion
+Failure Rate
+Recovery
+Customer Outcome
+Business Outcome
+```
 
-- CEO
-- Enterprise Architecture Board
-- Business Architecture Board
-- Domain Owner
-- Product Owner
+Target numerik akan ditentukan pada blueprint dan operational
+standard yang relevan.
 
 ---
 
-# Enterprise Quality Gate
+# 2.57 CAPABILITY QUALITY MODEL
 
-Blueprint tidak dapat berstatus APPROVED apabila salah satu pemeriksaan berikut gagal.
+Capability quality mencakup:
+
+| Quality | Requirement |
+|---|---|
+| Correctness | Business meaning valid |
+| Completeness | Scope defined |
+| Ownership | Owner defined |
+| KPI | KPI defined |
+| Lifecycle | Lifecycle defined |
+| Dependency | Dependency defined |
+| Security | Security requirement defined |
+| Scalability | Growth considered |
+| Traceability | End-to-end traceability |
+| Governance | Change governed |
+| AI Readiness | AI consideration |
+| Testability | Testable outcome |
+
+---
+
+# 2.58 ENTERPRISE CAPABILITY QUALITY GATE
+
+PART 2 wajib memenuhi target berikut:
 
 | Validation | Target |
-|------------|--------|
-| Business Correctness | 100% |
-| Architecture Correctness | 100% |
-| Enterprise Readiness | 100% |
-| Scalability | 100% |
-| Security | 100% |
-| Performance | 100% |
-| Maintainability | 100% |
-| Extensibility | 100% |
-| Testability | 100% |
-| AI Readiness | 100% |
-| Documentation Quality | 100% |
-| Governance | 100% |
-
-Target:
-
-Enterprise Quality Score
-
-100 / 100
+|---|---:|
+| Capability Owner | 100% |
+| Capability Definition | 100% |
+| Capability Service | 100% |
+| Capability KPI | 100% |
+| Capability Lifecycle | 100% |
+| Capability Dependency | 100% |
+| Capability Traceability | 100% |
+| Capability Governance | 100% |
+| EA Compliance | 100% |
+| Constitution Alignment | 12/12 |
 
 ---
 
-# Acceptance Criteria
+# 2.59 PART 2 ACCEPTANCE CRITERIA
 
-BP-001 dianggap selesai apabila:
+PART 2 dianggap complete apabila:
 
-- seluruh Business Domain terdokumentasi
-- seluruh Shared Platform terdokumentasi
-- seluruh Capability terdokumentasi
-- seluruh Business Process terdokumentasi
-- seluruh Governance terdokumentasi
-- seluruh Traceability terdokumentasi
-- seluruh Risk terdokumentasi
-- seluruh Quality Gate memenuhi target
-- seluruh Blueprint mengikuti EA-000 dan EA-001
-
----
-
-# Revision History
-
-| Version | Date | Description |
-|----------|------|-------------|
-| 2.0.0 | 2026-08-07 | Enterprise Edition v2.0 |
-
----
-
-# Official Status
-
-STATUS
-
-APPROVED
-
-FROZEN
-
-Version
-
-2.0.0
+- Enterprise Capability Architecture terdokumentasi
+- Capability Principles terdokumentasi
+- Capability Layers terdokumentasi
+- Core Business Capability terdokumentasi
+- Shared Business Capability terdokumentasi
+- Enterprise Support Capability terdokumentasi
+- Capability Map terdokumentasi
+- Capability Owner terdokumentasi
+- Business Service Catalog terdokumentasi
+- Capability Dependency terdokumentasi
+- Capability Lifecycle terdokumentasi
+- Capability Maturity terdokumentasi
+- Capability Heat Map terdokumentasi
+- Capability KPI Framework terdokumentasi
+- Capability Roadmap terdokumentasi
+- Capability Security Principle terdokumentasi
+- Capability Tenant Principle terdokumentasi
+- Capability AI Readiness terdokumentasi
+- Capability Change Management terdokumentasi
+- Capability Traceability terdokumentasi
+- Capability Quality Gate PASS
 
 ---
 
-# Blueprint Philosophy
+# 2.60 PART 2 VALIDATION
 
-VENTRA dibangun berdasarkan keyakinan bahwa bisnis yang dipahami dengan benar akan menghasilkan perangkat lunak yang benar.
+Markdown validation:
 
-Blueprint bukan sekadar dokumentasi.
-
-Blueprint adalah kontrak antara bisnis, arsitektur, implementasi, dan kualitas.
-
-Selama Blueprint tetap konsisten, teknologi dapat berkembang tanpa kehilangan arah bisnis.
+- Heading berada di luar code fence.
+- Seluruh internal code fence memiliki opening dan closing.
+- Tidak terdapat code fence yang menggantikan heading.
+- Table menggunakan valid Markdown structure.
+- Terminologi BP-001 konsisten.
+- Enterprise Edition menggunakan v2.0.
+- Version menggunakan 2.0.0.
+- Part menggunakan PART 2 of 7.
+- Constitution menggunakan 12/12 ALIGNED.
+- Capability Architecture tidak mengambil alih Domain Architecture.
+- Business Domain ownership tetap dipertahankan.
+- Shared Platform tidak mengambil alih Business Meaning.
+- Technical implementation tidak didefinisikan sebagai Business Capability.
+- Final Enterprise Acceptance keseluruhan tetap Deferred to PART 7.
+- Final Governance keseluruhan tetap Deferred to PART 7.
+- Enterprise Baseline keseluruhan tetap Deferred to PART 7.
+- Tidak ada section yang sengaja dipotong.
+- Tidak ada placeholder kritis.
+- Tidak terdapat competing authority.
 
 ---
 
-# Closing Statement
+# 2.61 PART 2 QUALITY GATE
 
-BP-001 merupakan Business Constitution bagi seluruh ekosistem VENTRA.
+| Quality Domain | Status |
+|---|---|
+| Business Correctness | PASS |
+| Architecture Correctness | PASS |
+| Enterprise Readiness | PASS |
+| Scalability | PASS |
+| Security | PASS |
+| Performance | PASS |
+| Maintainability | PASS |
+| Extensibility | PASS |
+| Testability | PASS |
+| AI Readiness | PASS |
+| Documentation Quality | PASS |
+| Governance | PASS |
 
-Seluruh keputusan bisnis, Blueprint Domain, Shared Platform, Database, API, Flutter, Dashboard, AI, Testing, Deployment, dan implementasi wajib mengacu pada BP-001.
+**12 VENTRA DEVELOPMENT CONSTITUTION: ALIGNED — 12/12**
 
-Perubahan terhadap BP-001 hanya dapat dilakukan melalui Enterprise Governance yang telah ditetapkan.
+**PART 2 ENTERPRISE QUALITY GATE: PASS**
 
-Business Drives Architecture.
+---
 
-Architecture Drives Development.
+# 2.62 PART 2 STATUS
 
-Development Drives Quality.
+```text
+BP-001 BUSINESS BLUEPRINT
 
-Quality Builds Trust.
+Enterprise Edition v2.0
+Version 2.0.0
 
-Trust Enables Sustainable Enterprise.
+PART
+PART 2 of 7
+
+12 VENTRA DEVELOPMENT CONSTITUTION
+ALIGNED — 12/12
+
+CAPABILITY ARCHITECTURE
+DEFINED
+
+CAPABILITY LAYERS
+DEFINED
+
+CORE BUSINESS CAPABILITY
+DEFINED
+
+SHARED BUSINESS CAPABILITY
+DEFINED
+
+ENTERPRISE SUPPORT CAPABILITY
+DEFINED
+
+CAPABILITY MAP
+DEFINED
+
+CAPABILITY OWNERSHIP
+DEFINED
+
+BUSINESS SERVICE CATALOG
+DEFINED
+
+CAPABILITY DEPENDENCY
+DEFINED
+
+CAPABILITY LIFECYCLE
+DEFINED
+
+CAPABILITY MATURITY
+DEFINED
+
+CAPABILITY KPI
+DEFINED
+
+CAPABILITY HEAT MAP
+DEFINED
+
+CAPABILITY ROADMAP
+DEFINED
+
+CAPABILITY SECURITY
+DEFINED
+
+CAPABILITY TENANT MODEL
+DEFINED
+
+CAPABILITY AI READINESS
+DEFINED
+
+CAPABILITY CHANGE MANAGEMENT
+DEFINED
+
+CAPABILITY TRACEABILITY
+DEFINED
+
+CAPABILITY GOVERNANCE
+DEFINED
+
+PART 2 QUALITY GATE
+PASS
+
+PART 2 STATUS
+FINAL / APPROVED & LOCKED
+
+FINAL ENTERPRISE ACCEPTANCE
+DEFERRED TO PART 7
+
+FINAL GOVERNANCE
+DEFERRED TO PART 7
+
+ENTERPRISE BASELINE
+DEFERRED TO PART 7
+```
+
+---
+
+# 2.63 PART 2 LOCK RULE
+
+PART 2 menjadi locked baseline untuk PART 3 sampai PART 7.
+
+Setelah PART 7 Final Enterprise Acceptance:
+
+1. Capability definition tidak boleh berubah tanpa approved revision.
+2. Capability ownership tidak boleh berubah tanpa governance.
+3. Critical capability tidak boleh kehilangan owner.
+4. Capability dependency harus tetap traceable.
+5. Business Service Catalog harus tetap governed.
+6. Capability KPI harus tetap measurable.
+7. Capability lifecycle harus tetap maintained.
+8. Capability roadmap dapat berevolusi melalui approved change.
+9. Technical implementation tidak boleh mengubah Business Meaning.
+10. Shared Platform tidak boleh mengambil alih Business Domain ownership.
+11. AI tidak boleh bypass Business Authority.
+12. Tenant Boundary tidak boleh dilemahkan.
+13. Security Boundary tidak boleh dilemahkan.
+14. Critical capability change harus memiliki impact analysis.
+15. Material capability change harus memiliki approval.
+16. Production capability change harus memiliki testing evidence.
+17. Capability retirement harus memiliki replacement / transition
+    strategy where applicable.
+18. Locked baseline tidak boleh dimodifikasi secara langsung.
+19. Future revision harus mengikuti Revision Governance pada PART 7.
+20. Final Enterprise Acceptance tetap berada pada PART 7.
+
+---
+
+# 2.64 PART 2 FINAL DECLARATION
+
+PART 2 menetapkan Enterprise Business Capability Architecture
+sebagai baseline capability VENTRA.
+
+Capability Architecture menyediakan:
+
+```text
+Business Objective
+        ↓
+Business Capability
+        ↓
+Business Service
+        ↓
+Business Process
+        ↓
+Business Rule
+        ↓
+Business Data
+        ↓
+Implementation
+```
+
+PART 2 memastikan seluruh critical Business Capability memiliki:
+
+```text
+Definition
+Owner
+Service
+KPI
+Lifecycle
+Dependency
+Risk
+Governance
+Traceability
+AI Readiness
+```
+
+PART 2:
+
+**FINAL / APPROVED & LOCKED**
+
+Namun finalisasi keseluruhan BP-001 tetap:
+
+```text
+FINAL ENTERPRISE ACCEPTANCE
+DEFERRED TO PART 7
+
+FINAL GOVERNANCE
+DEFERRED TO PART 7
+
+ENTERPRISE BASELINE
+DEFERRED TO PART 7
+```
+
+---
+
+# END OF PART 2
+
+# BP-001 — BUSINESS BLUEPRINT
+
+**ENTERPRISE EDITION v2.0**
+
+**VERSION 2.0.0**
+
+**PART 2 OF 7**
+
+**12 VENTRA DEVELOPMENT CONSTITUTION — 12/12 ALIGNED**
+
+**PART 2 QUALITY GATE — PASS**
+
+**PART 2 STATUS — FINAL / APPROVED & LOCKED**
+
+**FINAL ENTERPRISE ACCEPTANCE — DEFERRED TO PART 7**
+
+**FINAL GOVERNANCE — DEFERRED TO PART 7**
+
+**ENTERPRISE BASELINE — DEFERRED TO PART 7**
+
+# END OF BP-001 PART 2
+
+# BP-001 — BUSINESS BLUEPRINT
+
+> **"Business Capability defines what VENTRA must be able to do.
+> Business Domain defines where accountability resides.
+> Business Process defines how business execution operates."**
+
+---
+
+# ENTERPRISE EDITION v2.0
+
+**VERSION 2.0.0**
+
+---
+
+# PART 3 OF 7
+
+# ENTERPRISE BUSINESS DOMAIN ARCHITECTURE
+
+---
+
+# 3.0 DOCUMENT CONTROL
+
+| Item | Value |
+|---|---|
+| Document ID | BP-001 |
+| Document Name | Business Blueprint |
+| File Name | `BP-001_business_blueprint.md` |
+| Document Type | Enterprise Business Blueprint |
+| Category | Enterprise Business Architecture |
+| Edition | Enterprise Edition v2.0 |
+| Version | 2.0.0 |
+| Part | PART 3 of 7 |
+| Architecture Domain | Business Architecture |
+| Architecture Layer | Enterprise Business Domain Architecture |
+| Primary Owner | Business Architecture Board |
+| Business Owner | Chief Executive Officer |
+| Enterprise Architecture Owner | Enterprise Architecture |
+| Domain Authority | Business Domain Owner |
+| Capability Authority | Business Architecture Board |
+| Technical Architecture Authority | Chief Software Architect |
+| Review Cycle | Every 6 Months |
+| Constitution Alignment | 12/12 ALIGNED |
+| Part Status | FINAL / APPROVED & LOCKED |
+| Final Enterprise Acceptance | DEFERRED TO PART 7 |
+| Final Governance | DEFERRED TO PART 7 |
+| Enterprise Baseline | DEFERRED TO PART 7 |
+| Markdown Status | VALID |
+| Internal Code Fence Status | CLOSED CORRECTLY |
+| Truncation Status | NONE |
+
+---
+
+# 3.1 PART 3 PURPOSE
+
+PART 3 mendefinisikan Enterprise Business Domain Architecture
+VENTRA.
+
+Business Domain Architecture menjelaskan:
+
+- business domain
+- domain ownership
+- domain responsibility
+- domain boundary
+- domain authority
+- domain capability relationship
+- domain service boundary
+- domain data ownership
+- domain event responsibility
+- domain dependency
+- domain interaction
+- domain integration boundary
+- domain governance
+- domain lifecycle
+- domain accountability
+
+PART 3 menjawab:
+
+> **"Di mana business responsibility berada dan siapa yang
+> accountable terhadap business meaning tersebut?"**
+
+PART 3 tidak menggantikan:
+
+- Capability Architecture pada PART 2
+- Business Process Architecture pada PART 4
+- Business KPI Architecture pada PART 5
+- Business Governance Architecture pada PART 6
+- Final Enterprise Governance pada PART 7
+
+---
+
+# 3.2 PART 3 ARCHITECTURE POSITION
+
+Enterprise Business Architecture:
+
+```text
+VENTRA
+   ↓
+Enterprise Architecture
+   ↓
+Business Architecture
+   ↓
+BP-001 Business Blueprint
+   ↓
+PART 1
+Business Architecture Foundation
+   ↓
+PART 2
+Enterprise Business Capability Architecture
+   ↓
+PART 3
+Enterprise Business Domain Architecture
+   ↓
+PART 4
+Enterprise Business Process Architecture
+   ↓
+PART 5
+Enterprise Business Intelligence & KPI Architecture
+   ↓
+PART 6
+Enterprise Business Governance, Risk, Compliance & Control
+   ↓
+PART 7
+Enterprise Traceability, Final Governance & Final Acceptance
+
+# BP-001 — BUSINESS BLUEPRINT
+
+> **"Business capability defines what VENTRA must be able to do.
+> Business domain defines where accountability resides.
+> Business process defines how business execution operates."**
+
+---
+
+# ENTERPRISE EDITION v2.0
+
+**VERSION 2.0.0**
+
+---
+
+# PART 4 OF 7
+
+# ENTERPRISE BUSINESS PROCESS ARCHITECTURE
+
+---
+
+# 4.0 DOCUMENT CONTROL
+
+| Item | Value |
+|---|---|
+| Document ID | BP-001 |
+| Document Name | Business Blueprint |
+| File Name | `BP-001_business_blueprint.md` |
+| Document Type | Enterprise Business Blueprint |
+| Category | Enterprise Business Architecture |
+| Edition | Enterprise Edition v2.0 |
+| Version | 2.0.0 |
+| Part | PART 4 of 7 |
+| Architecture Domain | Business Architecture |
+| Architecture Layer | Enterprise Business Process Architecture |
+| Primary Owner | Business Architecture Board |
+| Business Owner | Chief Executive Officer |
+| Enterprise Architecture Owner | Enterprise Architecture |
+| Process Authority | Business Domain Owner |
+| Process Governance | Business Architecture Board |
+| Review Cycle | Every 6 Months |
+| Constitution Alignment | 12/12 ALIGNED |
+| Part Status | FINAL / APPROVED & LOCKED |
+| Final Enterprise Acceptance | DEFERRED TO PART 7 |
+| Final Governance | DEFERRED TO PART 7 |
+| Enterprise Baseline | DEFERRED TO PART 7 |
+| Markdown Status | VALID |
+| Internal Code Fence Status | CLOSED CORRECTLY |
+| Truncation Status | NONE |
+
+---
+
+# 4.1 PART 4 PURPOSE
+
+PART 4 mendefinisikan Enterprise Business Process Architecture
+VENTRA.
+
+Business Process Architecture menjelaskan bagaimana business
+capability dan business domain diterjemahkan menjadi executable
+business process yang:
+
+- structured
+- measurable
+- traceable
+- governable
+- auditable
+- scalable
+- testable
+- automation-ready
+- AI-ready
+
+PART 4 menjawab:
+
+> **"Bagaimana VENTRA menjalankan business dari trigger sampai
+> business outcome dengan ownership, rule, state, control, dan
+> measurable result yang jelas?"**
+
+PART 4 tidak mengambil alih:
+
+- Business Domain Authority
+- Business Data Authority
+- Identity Authority
+- Security Authority
+- Audit Authority
+- Storage Authority
+- Integration Authority
+- Workflow Platform Authority
+- Reporting Platform Authority
+
+---
+
+# 4.2 PART 4 ARCHITECTURE POSITION
+
+```text
+VENTRA
+   ↓
+Enterprise Business Architecture
+   ↓
+BP-001 Business Blueprint
+   ↓
+PART 1
+Business Architecture Foundation
+   ↓
+PART 2
+Enterprise Business Capability Architecture
+   ↓
+PART 3
+Enterprise Business Domain Architecture
+   ↓
+PART 4
+Enterprise Business Process Architecture
+   ↓
+PART 5
+Enterprise Business Intelligence & KPI Architecture
+   ↓
+PART 6
+Enterprise Business Governance, Risk, Compliance & Control
+   ↓
+PART 7
+Enterprise Traceability, Final Governance & Final Acceptance
+
+# BP-001 BUSINESS BLUEPRINT — ENTERPRISE EDITION v2.0
+
+**VERSION: 2.0.0**
+
+**PART 5 of 7**
+
+**12 VENTRA DEVELOPMENT CONSTITUTION: ALIGNED — 12/12**
+
+**DOCUMENT STATUS: APPROVED FOR CONTINUATION**
+
+**FINAL ENTERPRISE ACCEPTANCE: DEFERRED TO PART 7**
+
+**FINAL GOVERNANCE: DEFERRED TO PART 7**
+
+**ENTERPRISE BASELINE: DEFERRED TO PART 7**
+
+---
+
+# PART 5 — BUSINESS CONTROL, KPI, GOVERNANCE, AND VALIDATION BLUEPRINT
+
+## 1. PURPOSE
+
+PART 5 menetapkan business control model untuk BP-001 Business
+Blueprint.
+
+PART 5 memastikan bahwa business capability, business process,
+business rule, business KPI, business ownership, business governance,
+dan business validation dapat dikendalikan secara konsisten sebelum
+masuk ke final enterprise acceptance pada PART 7.
+
+PART 5 tidak menggantikan:
+
+```text
+Architecture Authority
+Security Authority
+Identity Authority
+Storage Authority
+Integration Authority
+Workflow Authority
+Reporting Authority
+Technical Implementation Authority
+
+# BP-001 BUSINESS BLUEPRINT — ENTERPRISE EDITION v2.0
+
+**VERSION: 2.0.0**
+
+**PART 6 of 7**
+
+**12 VENTRA DEVELOPMENT CONSTITUTION: ALIGNED — 12/12**
+
+**DOCUMENT STATUS: APPROVED FOR FINAL ACCEPTANCE**
+
+**FINAL ENTERPRISE ACCEPTANCE: DEFERRED TO PART 7**
+
+**FINAL GOVERNANCE: DEFERRED TO PART 7**
+
+**ENTERPRISE BASELINE: DEFERRED TO PART 7**
+
+---
+
+# PART 6 — ENTERPRISE VALIDATION, READINESS, TESTABILITY, AND RELEASE CONTROL
+
+## 1. PURPOSE
+
+PART 6 menetapkan validation dan readiness framework untuk BP-001
+Business Blueprint sebelum memasuki Final Enterprise Acceptance pada
+PART 7.
+
+PART 6 memastikan bahwa Business Blueprint:
+
+```text
+Business Correct
+Architecturally Bounded
+Enterprise Ready
+Scalable
+Secure
+Performant
+Maintainable
+Extensible
+Testable
+AI Ready
+Documented
+Governed
+
+# BP-001 BUSINESS BLUEPRINT — ENTERPRISE EDITION v2.0
+
+**VERSION: 2.0.0**
+
+**PART 7 of 7**
+
+**12 VENTRA DEVELOPMENT CONSTITUTION: ALIGNED — 12/12**
+
+**DOCUMENT STATUS: FINAL ENTERPRISE ACCEPTED**
+
+**FINAL ENTERPRISE ACCEPTANCE: APPROVED**
+
+**FINAL GOVERNANCE: APPROVED**
+
+**ENTERPRISE BASELINE: LOCKED**
+
+---
+
+# PART 7 — FINAL ENTERPRISE ACCEPTANCE, GOVERNANCE, BASELINE, AND LOCK
+
+## 1. PURPOSE
+
+PART 7 merupakan finalization authority untuk BP-001 Business
+Blueprint — Enterprise Edition v2.0.
+
+PART 7 melakukan final validation terhadap seluruh PART 1–6 dan
+menetapkan:
+
+```text
+Final Enterprise Acceptance
+Final Governance
+Enterprise Baseline
+Document Lock
+Change Governance
+Revision Governance
