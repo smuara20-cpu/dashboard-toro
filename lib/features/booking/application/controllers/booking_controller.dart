@@ -1,4 +1,4 @@
-import '../../../../core/controllers/base_controller.dart';
+import '../../../../core/common/base/base_controller.dart';
 
 class BookingController extends BaseController {
   @override
