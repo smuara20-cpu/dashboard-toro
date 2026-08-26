@@ -8,11 +8,11 @@ import 'register_usecase.dart';
 Future<void> initializeDependency() async {
   registerService();
 
-  registerMapper();
+  registerMappers();
 
   registerDatasource();
 
-  registerRepository();
+  registerRepositories();
 
   registerUsecase();
 

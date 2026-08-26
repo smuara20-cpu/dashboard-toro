@@ -1,59 +1,56 @@
 class CustomerEntity {
-  /// Primary Key
   final String id;
 
-  /// Nomor Customer
   final String customerCode;
 
-  /// Nama Lengkap
+  /// Nama lengkap customer.
   final String fullName;
 
-  /// Nama Panggilan
+  /// Nama panggilan customer.
   final String? nickName;
 
-  /// Jenis Kelamin
+  /// Jenis kelamin.
   final String gender;
 
-  /// Tempat Lahir
+  /// Tempat lahir.
   final String? birthPlace;
 
-  /// Tanggal Lahir
+  /// Tanggal lahir.
   final DateTime? birthDate;
 
-  /// Nomor HP
+  /// Nomor HP.
   final String phoneNumber;
 
-  /// Email
+  /// Email.
   final String? email;
 
-  /// Alamat
+  /// Alamat lengkap.
   final String? address;
 
-  /// Kota
+  /// Kota.
   final String? city;
 
-  /// Provinsi
+  /// Provinsi.
   final String? province;
 
-  /// Negara
+  /// Negara.
   final String country;
 
-  /// Pekerjaan
+  /// Pekerjaan.
   final String? occupation;
 
-  /// Status Pernikahan
+  /// Status pernikahan.
   final String? maritalStatus;
 
-  /// Lead Source
+  /// Sumber lead/customer.
   final String? leadSource;
 
-  /// Catatan
+  /// Catatan customer.
   final String? notes;
 
-  /// Aktif / Tidak
+  /// Status aktif customer.
   final bool isActive;
 
-  /// Audit
   final DateTime createdAt;
 
   final DateTime updatedAt;

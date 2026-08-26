@@ -1,15 +1,23 @@
-import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GoogleMapsHelper {
   const GoogleMapsHelper._();
 
-  static Uri buildDirectionUri({
-    required double latitude,
-    required double longitude,
-  }) {
-    return Uri.parse(
-      'https://www.google.com/maps/dir/?api=1'
-          '&destination=$latitude,$longitude',
+  /// Membuka halaman review Google Maps.
+  static Future<void> openReview(String url) async {
+    final uri = Uri.tryParse(url);
+
+    if (uri == null) {
+      throw ArgumentError('Invalid Google Maps URL: $url');
+    }
+
+    final launched = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
     );
+
+    if (!launched) {
+      throw Exception('Could not open Google Maps review URL.');
+    }
   }
 }

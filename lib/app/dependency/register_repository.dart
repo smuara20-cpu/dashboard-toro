@@ -1,16 +1,16 @@
 import 'package:get_it/get_it.dart';
 
-import '../../features/booking/data/datasource/customer_local_datasource.dart';
-import '../../features/booking/data/mapper/customer_mapper.dart';
-import '../../features/booking/data/repository/customer_repository_impl.dart';
-import '../../features/booking/domain/repository/customer_repository.dart';
+import '../../features/customer/domain/repository/customer_repository.dart';
+import '../../features/customer/data/repository/customer_repository_impl.dart';
+import '../../features/customer/data/datasource/customer_datasource.dart';
+import '../../features/customer/data/mapper/customer_mapper.dart';
 
 final getIt = GetIt.instance;
 
-void registerRepository() {
+void registerRepositories() {
   getIt.registerLazySingleton<CustomerRepository>(
         () => CustomerRepositoryImpl(
-      dataSource: getIt<CustomerLocalDataSource>(),
+      dataSource: getIt<CustomerDataSource>(),
       mapper: getIt<CustomerMapper>(),
     ),
   );

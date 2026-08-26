@@ -11,6 +11,7 @@
 /// Final Acceptance      → DEFERRED TO PART 7
 /// Final Governance      → DEFERRED TO PART 7
 /// Enterprise Baseline   → DEFERRED TO PART 7
+library;
 
 abstract class BaseEntity {
   final String id;
