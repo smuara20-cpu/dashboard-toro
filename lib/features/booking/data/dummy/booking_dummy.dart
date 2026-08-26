@@ -1,22 +1,21 @@
 import '../models/booking_model.dart';
+import '../../domain/enums/booking_status.dart';
 
-final bookingDummy = <BookingModel>[
+final List<BookingModel> bookingDummy = [
   BookingModel(
     id: '1',
     bookingCode: 'BK-20260001',
-    customerName: 'Ahmad Fauzi',
-    packageName: 'Umrah Plus Turki',
-    departureDate: DateTime(2026, 9, 15),
-    totalPrice: 35000000,
-    paidAmount: 10000000,
-    status: BookingStatus.dp,
+    customerCode: 'CUS-0001',
+    status: BookingStatus.confirmed,
+    createdAt: DateTime(2026, 8, 1),
+    updatedAt: DateTime(2026, 8, 1),
   ),
-  {
-    "id": "2",
-    "bookingCode": "BK-20260002",
-    "customerName": "Siti Aminah",
-    "packageName": "Umrah Ramah Lansia",
-    "departureDate": "2026-09-20",
-    "status": "visaApproved",
-  },
+  BookingModel(
+    id: '2',
+    bookingCode: 'BK-20260002',
+    customerCode: 'CUS-0002',
+    status: BookingStatus.pending,
+    createdAt: DateTime(2026, 8, 2),
+    updatedAt: DateTime(2026, 8, 2),
+  ),
 ];
