@@ -5,46 +5,52 @@ import 'customer_entity.dart';
 import 'package_entity.dart';
 import 'payment_entity.dart';
 
+/// VENTRA Development Constitution
+/// Enterprise Edition v2.0
+/// Version: 2.0.0
+///
+/// Domain Entity: Booking
+///
+/// 12/12 VENTRA Development Constitution ALIGNED
+/// Kesepakatan No. 1–11
+///
+/// Final Acceptance   → DEFERRED TO PART 7
+/// Final Governance   → DEFERRED TO PART 7
+/// Enterprise Baseline → DEFERRED TO PART 7
+///
+/// BookingEntity represents the business-level booking aggregate data.
+/// Infrastructure, persistence, API, and UI concerns MUST NOT exist here.
+
 class BookingEntity {
-  /// Primary Key
+  /// Primary key.
   final String id;
 
-  /// Nomor Booking
+  /// Human-readable booking reference.
   final String bookingCode;
 
-  /// Customer
+  /// Customer associated with this booking.
   final CustomerEntity customer;
 
-  /// Paket yang dipilih
+  /// Package selected for this booking.
   final PackageEntity package;
 
-  /// Informasi pembayaran
+  /// Payment information associated with this booking.
   final PaymentEntity payment;
 
-  /// Tanggal booking
+  /// Date when the booking was created.
   final DateTime bookingDate;
 
-  /// Tanggal keberangkatan
+  /// Planned departure date.
   final DateTime departureDate;
 
-  /// Status booking
+  /// Current booking lifecycle status.
   final BookingStatus status;
 
-  /// Sumber lead
+  /// Source from which the lead/customer entered the booking funnel.
   final LeadSource leadSource;
 
-  /// Catatan
+  /// Optional operational notes.
   final String? notes;
-
-  /// Status aktif
-  final bool isActive;
-
-  /// Audit
-  final DateTime createdAt;
-  final DateTime updatedAt;
-
-  final String createdBy;
-  final String? updatedBy;
 
   const BookingEntity({
     required this.id,
@@ -57,10 +63,5 @@ class BookingEntity {
     required this.status,
     required this.leadSource,
     this.notes,
-    required this.isActive,
-    required this.createdAt,
-    required this.updatedAt,
-    required this.createdBy,
-    this.updatedBy,
   });
 }
