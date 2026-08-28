@@ -1,5 +1,6 @@
 import '../../domain/entities/customer_entity.dart';
 import '../models/customer_model.dart';
+import '../../../crm/domain/enums/lead_source.dart';
 
 class CustomerMapper {
   const CustomerMapper();
@@ -21,7 +22,10 @@ class CustomerMapper {
       country: model.country,
       occupation: model.occupation,
       maritalStatus: model.maritalStatus,
-      leadSource: model.leadSource,
+
+      // String? → LeadSource?
+      leadSource: _toLeadSource(model.leadSource),
+
       notes: model.notes,
       isActive: model.isActive,
       createdAt: model.createdAt,
@@ -48,7 +52,10 @@ class CustomerMapper {
       country: entity.country,
       occupation: entity.occupation,
       maritalStatus: entity.maritalStatus,
-      leadSource: entity.leadSource,
+
+      // LeadSource? → String?
+      leadSource: _toLeadSourceString(entity.leadSource),
+
       notes: entity.notes,
       isActive: entity.isActive,
       createdAt: entity.createdAt,
@@ -56,5 +63,23 @@ class CustomerMapper {
       createdBy: entity.createdBy,
       updatedBy: entity.updatedBy,
     );
+  }
+
+  LeadSource? _toLeadSource(String? value) {
+    if (value == null || value.isEmpty) {
+      return null;
+    }
+
+    for (final source in LeadSource.values) {
+      if (source.name == value) {
+        return source;
+      }
+    }
+
+    return null;
+  }
+
+  String? _toLeadSourceString(LeadSource? value) {
+    return value?.name;
   }
 }
