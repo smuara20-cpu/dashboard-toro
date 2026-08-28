@@ -1,3 +1,5 @@
+import '../../../crm/domain/enums/lead_source.dart';
+
 class CustomerEntity {
   final String id;
 
@@ -43,7 +45,7 @@ class CustomerEntity {
   final String? maritalStatus;
 
   /// Sumber lead/customer.
-  final String? leadSource;
+  final LeadSource? leadSource;
 
   /// Catatan customer.
   final String? notes;
