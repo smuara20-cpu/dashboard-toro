@@ -1,13 +1,14 @@
 import 'package:go_router/go_router.dart';
 
+import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
+import 'package:dashboard_kpi/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:dashboard_kpi/features/finance/presentation/pages/finance_page.dart';
+import 'package:dashboard_kpi/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:dashboard_kpi/features/splash/presentation/pages/splash_page.dart';
+import 'package:dashboard_kpi/features/testimoni/presentation/pages/testimonial_page.dart';
+
 import 'route_names.dart';
 import 'route_paths.dart';
-
-import '../../features/auth/presentation/pages/login_page.dart';
-import '../../features/dashboard/presentation/pages/dashboard_page.dart';
-import '../../features/onboarding/presentation/pages/onboarding_page.dart';
-import '../../features/splash/presentation/pages/splash_page.dart';
-import '../../features/testimoni/presentation/pages/testimonial_page.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: RoutePaths.splash,
@@ -34,6 +35,12 @@ final GoRouter appRouter = GoRouter(
       name: RouteNames.dashboard,
       path: RoutePaths.dashboard,
       builder: (context, state) => const DashboardPage(),
+    ),
+
+    GoRoute(
+      name: RouteNames.finance,
+      path: RoutePaths.finance,
+      builder: (context, state) => const FinancePage(),
     ),
 
     GoRoute(
