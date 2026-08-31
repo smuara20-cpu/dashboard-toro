@@ -1,3 +1,5 @@
+import 'package:dashboard_kpi/core/common/base/base_controller.dart';
+
 import '../../application/usecases/delete_transaction_usecase.dart';
 import '../../application/usecases/get_transaction_by_id_usecase.dart';
 import '../../application/usecases/get_transactions_usecase.dart';
@@ -6,7 +8,7 @@ import '../../application/usecases/update_transaction_usecase.dart';
 import '../../domain/entities/transaction_entity.dart';
 import '../state/finance_state.dart';
 
-class FinanceController {
+class FinanceController extends BaseController {
   final GetTransactionsUseCase getTransactionsUseCase;
   final GetTransactionByIdUseCase getTransactionByIdUseCase;
   final SaveTransactionUseCase saveTransactionUseCase;
@@ -24,6 +26,16 @@ class FinanceController {
     required this.updateTransactionUseCase,
     required this.deleteTransactionUseCase,
   });
+
+  @override
+  Future<void> initialize() {
+    return loadTransactions();
+  }
+
+  @override
+  Future<void> refresh() {
+    return loadTransactions();
+  }
 
   Future<void> loadTransactions() async {
     _state = _state.copyWith(
