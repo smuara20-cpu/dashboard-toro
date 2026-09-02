@@ -6,7 +6,6 @@ final List<BookingModel> bookingDummy = [
     bookingCode: 'BK-2026-0001',
     bookingDate: DateTime(2026, 8, 20),
     departureDate: DateTime(2026, 9, 15),
-
     customer: {
       'id': 'customer-001',
       'customerCode': 'CUS-0001',
@@ -24,18 +23,20 @@ final List<BookingModel> bookingDummy = [
       'occupation': 'Pengusaha',
       'maritalStatus': 'married',
       'leadSource': 'whatsapp',
+      'notes': null,
+      'isActive': true,
+      'createdAt': '2026-08-20T00:00:00.000',
+      'updatedAt': '2026-08-20T00:00:00.000',
+      'createdBy': 'system',
+      'updatedBy': null,
     },
-
     package: {
       'id': 'package-001',
       'packageCode': 'UMR-001',
       'packageName': 'Umroh Reguler September',
       'packageType': 'umroh',
       'destinationCountry': 'Saudi Arabia',
-      'destinations': [
-        'Makkah',
-        'Madinah',
-      ],
+      'destinations': ['Makkah', 'Madinah'],
       'duration': 9,
       'departureDate': '2026-09-15T00:00:00.000',
       'returnDate': '2026-09-24T00:00:00.000',
@@ -50,7 +51,6 @@ final List<BookingModel> bookingDummy = [
       'createdBy': 'system',
       'updatedBy': null,
     },
-
     payment: {
       'id': 'payment-001',
       'paymentCode': 'PAY-0001',
@@ -68,10 +68,8 @@ final List<BookingModel> bookingDummy = [
       'createdBy': 'system',
       'updatedBy': null,
     },
-
     leadSource: 'whatsapp',
     status: 'pending',
-
     createdAt: DateTime(2026, 8, 20),
     updatedAt: DateTime(2026, 8, 20),
   ),

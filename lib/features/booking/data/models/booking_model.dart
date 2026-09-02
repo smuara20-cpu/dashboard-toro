@@ -44,29 +44,15 @@ class BookingModel {
     return BookingModel(
       id: json['id'] as String,
       bookingCode: json['bookingCode'] as String,
-      bookingDate: DateTime.parse(
-        json['bookingDate'] as String,
-      ),
-      departureDate: DateTime.parse(
-        json['departureDate'] as String,
-      ),
-      customer: Map<String, dynamic>.from(
-        json['customer'] as Map,
-      ),
-      package: Map<String, dynamic>.from(
-        json['package'] as Map,
-      ),
-      payment: Map<String, dynamic>.from(
-        json['payment'] as Map,
-      ),
+      bookingDate: DateTime.parse(json['bookingDate'] as String),
+      departureDate: DateTime.parse(json['departureDate'] as String),
+      customer: Map<String, dynamic>.from(json['customer'] as Map),
+      package: Map<String, dynamic>.from(json['package'] as Map),
+      payment: Map<String, dynamic>.from(json['payment'] as Map),
       leadSource: json['leadSource'] as String,
       status: json['status'] as String,
-      createdAt: DateTime.parse(
-        json['createdAt'] as String,
-      ),
-      updatedAt: DateTime.parse(
-        json['updatedAt'] as String,
-      ),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
   }
 
