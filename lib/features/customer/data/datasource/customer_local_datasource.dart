@@ -1,8 +1,11 @@
+import '../dummy/customer_dummy.dart';
 import '../models/customer_model.dart';
 import 'customer_datasource.dart';
 
 class CustomerLocalDataSource implements CustomerDataSource {
-  final List<CustomerModel> _customers = [];
+  final List<CustomerModel> _customers = List<CustomerModel>.from(
+    customerDummy,
+  );
 
   @override
   Future<List<CustomerModel>> getCustomers() async {
@@ -12,9 +15,7 @@ class CustomerLocalDataSource implements CustomerDataSource {
   @override
   Future<CustomerModel?> getCustomerById(String id) async {
     try {
-      return _customers.firstWhere(
-            (customer) => customer.id == id,
-      );
+      return _customers.firstWhere((customer) => customer.id == id);
     } catch (_) {
       return null;
     }
@@ -27,9 +28,7 @@ class CustomerLocalDataSource implements CustomerDataSource {
 
   @override
   Future<void> updateCustomer(CustomerModel customer) async {
-    final index = _customers.indexWhere(
-          (item) => item.id == customer.id,
-    );
+    final index = _customers.indexWhere((item) => item.id == customer.id);
 
     if (index == -1) {
       return;
@@ -40,8 +39,6 @@ class CustomerLocalDataSource implements CustomerDataSource {
 
   @override
   Future<void> deleteCustomer(String id) async {
-    _customers.removeWhere(
-          (customer) => customer.id == id,
-    );
+    _customers.removeWhere((customer) => customer.id == id);
   }
 }
