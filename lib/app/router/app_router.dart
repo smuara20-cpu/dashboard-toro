@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
+import 'package:dashboard_kpi/features/booking/presentation/pages/booking_page.dart';
 import 'package:dashboard_kpi/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:dashboard_kpi/features/finance/presentation/pages/finance_page.dart';
 import 'package:dashboard_kpi/features/onboarding/presentation/pages/onboarding_page.dart';
@@ -35,6 +36,12 @@ final GoRouter appRouter = GoRouter(
       name: RouteNames.dashboard,
       path: RoutePaths.dashboard,
       builder: (context, state) => const DashboardPage(),
+    ),
+
+    GoRoute(
+      name: RouteNames.booking,
+      path: RoutePaths.booking,
+      builder: (context, state) => const BookingPage(),
     ),
 
     GoRoute(
