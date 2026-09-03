@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:dashboard_kpi/core/theme/app_spacing.dart';
 import 'package:dashboard_kpi/core/theme/colors/app_colors.dart';
@@ -54,6 +55,10 @@ class _BookingPageState extends ConsumerState<BookingPage> {
     setState(() {});
   }
 
+  void _openBookingDetail(String bookingId) {
+    context.push('/booking/$bookingId');
+  }
+
   @override
   Widget build(BuildContext context) {
     final controller = ref.read(bookingControllerProvider);
@@ -71,7 +76,11 @@ class _BookingPageState extends ConsumerState<BookingPage> {
         ],
       ),
       body: SafeArea(
-        child: _BookingBody(state: state, onRefresh: _refresh),
+        child: _BookingBody(
+          state: state,
+          onRefresh: _refresh,
+          onBookingTap: _openBookingDetail,
+        ),
       ),
     );
   }
@@ -80,8 +89,13 @@ class _BookingPageState extends ConsumerState<BookingPage> {
 class _BookingBody extends StatelessWidget {
   final BookingState state;
   final Future<void> Function() onRefresh;
+  final void Function(String bookingId) onBookingTap;
 
-  const _BookingBody({required this.state, required this.onRefresh});
+  const _BookingBody({
+    required this.state,
+    required this.onRefresh,
+    required this.onBookingTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +138,13 @@ class _BookingBody extends StatelessWidget {
               return const SizedBox(height: AppSpacing.md);
             },
             itemBuilder: (context, index) {
-              return BookingListItem(booking: state.bookings[index]);
+              final booking = state.bookings[index];
+
+              return InkWell(
+                borderRadius: BorderRadius.circular(12),
+                onTap: () => onBookingTap(booking.id),
+                child: BookingListItem(booking: booking),
+              );
             },
           ),
         );
