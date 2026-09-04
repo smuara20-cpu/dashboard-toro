@@ -59,6 +59,10 @@ class _BookingPageState extends ConsumerState<BookingPage> {
     context.push('/booking/$bookingId');
   }
 
+  void _openCreateBooking() {
+    context.push('/booking/create');
+  }
+
   @override
   Widget build(BuildContext context) {
     final controller = ref.read(bookingControllerProvider);
@@ -68,6 +72,12 @@ class _BookingPageState extends ConsumerState<BookingPage> {
       appBar: AppBar(
         title: const Text('Booking'),
         actions: [
+          FilledButton.icon(
+            onPressed: _openCreateBooking,
+            icon: const Icon(Icons.add),
+            label: const Text('Booking Baru'),
+          ),
+          const SizedBox(width: AppSpacing.sm),
           IconButton(
             tooltip: 'Refresh booking',
             onPressed: state.status == BookingStatus.loading ? null : _refresh,

@@ -6,6 +6,7 @@ class RoutePaths {
   static const login = '/login';
   static const dashboard = '/dashboard';
   static const booking = '/booking';
+  static const bookingCreate = '/booking/create';
   static const bookingDetail = '/booking/:id';
   static const finance = '/finance';
   static const marketing = '/marketing';

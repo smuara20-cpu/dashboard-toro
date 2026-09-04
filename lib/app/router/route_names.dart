@@ -6,6 +6,7 @@ class RouteNames {
   static const login = 'login';
   static const dashboard = 'dashboard';
   static const booking = 'booking';
+  static const bookingCreate = 'bookingCreate';
   static const bookingDetail = 'bookingDetail';
   static const finance = 'finance';
   static const marketing = 'marketing';

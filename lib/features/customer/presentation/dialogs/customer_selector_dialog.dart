@@ -56,7 +56,7 @@ class _CustomerSelectorDialogState
             return ListView.separated(
               shrinkWrap: true,
               itemCount: customers.length,
-              separatorBuilder: (_, __) => const Divider(),
+              separatorBuilder: (_, _) => const Divider(),
               itemBuilder: (context, index) {
                 final customer = customers[index];
 
@@ -67,7 +67,7 @@ class _CustomerSelectorDialogState
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                   subtitle: Text(
-                    '${customer.customerCode} • ${customer.phoneNumber}',
+                    '${customer.customerCode} Ã¢â‚¬Â¢ ${customer.phoneNumber}',
                   ),
                   onTap: () {
                     Navigator.of(context).pop(customer);
