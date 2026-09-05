@@ -15,25 +15,24 @@ void main() {
         );
 
         final scrollable = find.byType(Scrollable).first;
-        final continueButton = find.byType(FilledButton);
+        final createButton = find.byType(FilledButton);
 
         await tester.scrollUntilVisible(
-          continueButton,
+          createButton,
           100,
           scrollable: scrollable,
         );
 
         await tester.pumpAndSettle();
 
-        expect(continueButton, findsOneWidget);
+        expect(createButton, findsOneWidget);
 
-        final buttonCenter = tester.getCenter(continueButton);
+        final buttonCenter = tester.getCenter(createButton);
 
         expect(buttonCenter.dy, greaterThan(0));
-
         expect(buttonCenter.dy, lessThan(600));
 
-        await tester.tap(continueButton);
+        await tester.tap(createButton);
         await tester.pump();
 
         expect(find.text('Customer wajib dipilih.'), findsOneWidget);
@@ -47,12 +46,21 @@ void main() {
         const ProviderScope(child: MaterialApp(home: CreateBookingPage())),
       );
 
+      final scrollable = find.byType(Scrollable).first;
       final packageButton = find.text('Pilih Package').first;
 
-      await tester.tap(packageButton);
+      await tester.scrollUntilVisible(
+        packageButton,
+        100,
+        scrollable: scrollable,
+      );
 
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
+      await tester.pumpAndSettle();
+
+      expect(packageButton, findsOneWidget);
+
+      await tester.tap(packageButton);
+      await tester.pumpAndSettle();
 
       expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -84,8 +92,19 @@ void main() {
           const ProviderScope(child: MaterialApp(home: CreateBookingPage())),
         );
 
-        await tester.tap(find.text('Pilih Customer'));
+        final scrollable = find.byType(Scrollable).first;
 
+        final customerButton = find.text('Pilih Customer');
+
+        await tester.scrollUntilVisible(
+          customerButton,
+          100,
+          scrollable: scrollable,
+        );
+
+        await tester.pumpAndSettle();
+
+        await tester.tap(customerButton);
         await tester.pumpAndSettle();
 
         expect(find.byType(AlertDialog), findsOneWidget);
@@ -100,8 +119,17 @@ void main() {
 
         expect(find.textContaining('CUS-0001'), findsOneWidget);
 
-        await tester.tap(find.text('Pilih Package'));
+        final packageButton = find.text('Pilih Package').first;
 
+        await tester.scrollUntilVisible(
+          packageButton,
+          100,
+          scrollable: scrollable,
+        );
+
+        await tester.pumpAndSettle();
+
+        await tester.tap(packageButton);
         await tester.pumpAndSettle();
 
         expect(find.byType(AlertDialog), findsOneWidget);
@@ -112,43 +140,43 @@ void main() {
 
         await tester.pumpAndSettle();
 
-        final scrollable = find.byType(Scrollable).first;
+        expect(find.text('Umroh Reguler Desember 2026'), findsOneWidget);
 
-        await tester.drag(scrollable, const Offset(0, -500));
-
-        await tester.pumpAndSettle();
-
-        expect(find.text('Booking Information'), findsOneWidget);
-
-        expect(find.text('Tanggal Booking'), findsOneWidget);
-
-        expect(find.text('Sumber Lead'), findsOneWidget);
-
-        expect(find.text('Departure Date'), findsOneWidget);
-
-        expect(find.text('10/12/2026'), findsOneWidget);
-
-        expect(
-          find.text('Otomatis mengikuti tanggal keberangkatan package.'),
-          findsOneWidget,
-        );
-
-        final continueButton = find.byType(FilledButton);
+        final bookingInformation = find.text('Booking Information');
 
         await tester.scrollUntilVisible(
-          continueButton,
+          bookingInformation,
           100,
           scrollable: scrollable,
         );
 
         await tester.pumpAndSettle();
 
-        expect(tester.getCenter(continueButton).dy, lessThan(600));
+        expect(bookingInformation, findsOneWidget);
 
-        await tester.tap(continueButton);
+        expect(find.text('Tanggal Booking'), findsOneWidget);
+
+        expect(find.text('Lead Source'), findsOneWidget);
+
+        expect(find.text('Departure Date'), findsOneWidget);
+
+        expect(find.text('10/12/2026'), findsOneWidget);
+        final createButton = find.byType(FilledButton);
+
+        await tester.scrollUntilVisible(
+          createButton,
+          100,
+          scrollable: scrollable,
+        );
+
+        await tester.pumpAndSettle();
+
+        expect(tester.getCenter(createButton).dy, lessThan(600));
+
+        await tester.tap(createButton);
         await tester.pump();
 
-        expect(find.text('Sumber lead wajib dipilih.'), findsOneWidget);
+        expect(find.text('Lead Source wajib dipilih.'), findsOneWidget);
       },
     );
 
@@ -159,36 +187,59 @@ void main() {
         const ProviderScope(child: MaterialApp(home: CreateBookingPage())),
       );
 
-      await tester.tap(find.text('Pilih Customer'));
+      final scrollable = find.byType(Scrollable).first;
 
+      final customerButton = find.text('Pilih Customer');
+
+      await tester.scrollUntilVisible(
+        customerButton,
+        100,
+        scrollable: scrollable,
+      );
+
+      await tester.pumpAndSettle();
+
+      await tester.tap(customerButton);
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Ahmad Fauzan'));
 
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Pilih Package'));
+      final packageButton = find.text('Pilih Package').first;
 
+      await tester.scrollUntilVisible(
+        packageButton,
+        100,
+        scrollable: scrollable,
+      );
+
+      await tester.pumpAndSettle();
+
+      await tester.tap(packageButton);
       await tester.pumpAndSettle();
 
       await tester.tap(find.text('Umroh Reguler Desember 2026'));
 
       await tester.pumpAndSettle();
 
-      final scrollable = find.byType(Scrollable).first;
+      final bookingInformation = find.text('Booking Information');
 
-      await tester.drag(scrollable, const Offset(0, -500));
+      await tester.scrollUntilVisible(
+        bookingInformation,
+        100,
+        scrollable: scrollable,
+      );
 
       await tester.pumpAndSettle();
 
-      expect(find.text('Booking Information'), findsOneWidget);
+      expect(bookingInformation, findsOneWidget);
 
       final leadSourceField = find.byType(DropdownButtonFormField<LeadSource>);
 
       expect(leadSourceField, findsOneWidget);
 
       await tester.tap(leadSourceField);
-
       await tester.pumpAndSettle();
 
       expect(find.text('WhatsApp'), findsOneWidget);
@@ -201,7 +252,7 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      expect(find.text('Sumber lead wajib dipilih.'), findsNothing);
+      expect(find.text('Lead Source wajib dipilih.'), findsNothing);
     });
   });
 }

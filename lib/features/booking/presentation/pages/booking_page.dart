@@ -59,8 +59,14 @@ class _BookingPageState extends ConsumerState<BookingPage> {
     context.push('/booking/$bookingId');
   }
 
-  void _openCreateBooking() {
-    context.push('/booking/create');
+  Future<void> _openCreateBooking() async {
+    final created = await context.push<bool>('/booking/create');
+
+    if (!mounted || created != true) {
+      return;
+    }
+
+    await _refresh();
   }
 
   @override

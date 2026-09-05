@@ -5,6 +5,7 @@ import '../../data/mapper/booking_mapper.dart';
 import '../../data/repository/booking_repository_impl.dart';
 import '../../domain/repository/booking_repository.dart';
 import '../controllers/booking_controller.dart';
+import '../services/booking_creation_factory.dart';
 import '../usecases/create_booking_usecase.dart';
 import '../usecases/delete_booking_usecase.dart';
 import '../usecases/get_booking_by_id_usecase.dart';
@@ -44,6 +45,10 @@ final updateBookingUseCaseProvider = Provider<UpdateBookingUseCase>((ref) {
 
 final deleteBookingUseCaseProvider = Provider<DeleteBookingUseCase>((ref) {
   return DeleteBookingUseCase(repository: ref.read(bookingRepositoryProvider));
+});
+
+final bookingCreationFactoryProvider = Provider<BookingCreationFactory>((ref) {
+  return const BookingCreationFactory();
 });
 
 final bookingControllerProvider = Provider<BookingController>((ref) {
