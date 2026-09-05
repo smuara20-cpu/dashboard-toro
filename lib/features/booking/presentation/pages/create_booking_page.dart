@@ -7,6 +7,7 @@ import 'package:dashboard_kpi/features/booking/domain/entities/package_entity.da
 import 'package:dashboard_kpi/features/booking/presentation/dialogs/package_selector_dialog.dart';
 import 'package:dashboard_kpi/features/customer/domain/entities/customer_entity.dart';
 import 'package:dashboard_kpi/features/customer/presentation/dialogs/customer_selector_dialog.dart';
+import 'package:dashboard_kpi/features/crm/domain/enums/lead_source.dart';
 
 class CreateBookingPage extends StatefulWidget {
   const CreateBookingPage({super.key});
@@ -19,8 +20,12 @@ class _CreateBookingPageState extends State<CreateBookingPage> {
   CustomerEntity? _selectedCustomer;
   PackageEntity? _selectedPackage;
 
+  DateTime _bookingDate = DateTime.now();
+  LeadSource? _selectedLeadSource;
+
   bool _customerError = false;
   bool _packageError = false;
+  bool _leadSourceError = false;
 
   Future<void> _selectCustomer() async {
     final customer = await showDialog<CustomerEntity>(
@@ -54,26 +59,57 @@ class _CreateBookingPageState extends State<CreateBookingPage> {
     });
   }
 
+  Future<void> _selectBookingDate() async {
+    final selectedDate = await showDatePicker(
+      context: context,
+      initialDate: _bookingDate,
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2100),
+      helpText: 'Pilih Tanggal Booking',
+      cancelText: 'Batal',
+      confirmText: 'Pilih',
+    );
+
+    if (!mounted || selectedDate == null) {
+      return;
+    }
+
+    setState(() {
+      _bookingDate = selectedDate;
+    });
+  }
+
+  void _selectLeadSource(LeadSource? source) {
+    setState(() {
+      _selectedLeadSource = source;
+      _leadSourceError = false;
+    });
+  }
+
   void _continue() {
     final customerMissing = _selectedCustomer == null;
     final packageMissing = _selectedPackage == null;
+    final leadSourceMissing = _selectedLeadSource == null;
 
-    if (customerMissing || packageMissing) {
+    if (customerMissing || packageMissing || leadSourceMissing) {
       setState(() {
         _customerError = customerMissing;
         _packageError = packageMissing;
+        _leadSourceError = leadSourceMissing;
       });
       return;
     }
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Customer dan package berhasil dipilih.')),
+      const SnackBar(content: Text('Booking information berhasil dilengkapi.')),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final showBookingInformation =
+        _selectedCustomer != null && _selectedPackage != null;
 
     return Scaffold(
       appBar: AppBar(
@@ -130,6 +166,17 @@ class _CreateBookingPageState extends State<CreateBookingPage> {
                       onChange: _selectPackage,
                     ),
             ),
+            if (showBookingInformation) ...[
+              const SizedBox(height: AppSpacing.lg),
+              _BookingInformationSection(
+                bookingDate: _bookingDate,
+                selectedLeadSource: _selectedLeadSource,
+                leadSourceError: _leadSourceError,
+                departureDate: _selectedPackage!.departureDate,
+                onSelectBookingDate: _selectBookingDate,
+                onSelectLeadSource: _selectLeadSource,
+              ),
+            ],
             const SizedBox(height: AppSpacing.xl),
             Align(
               alignment: Alignment.centerRight,
@@ -403,5 +450,165 @@ class _SelectedPackageCard extends StatelessWidget {
     );
 
     return '$currency $formatted';
+  }
+}
+
+class _BookingInformationSection extends StatelessWidget {
+  final DateTime bookingDate;
+  final LeadSource? selectedLeadSource;
+  final bool leadSourceError;
+  final DateTime departureDate;
+  final VoidCallback onSelectBookingDate;
+  final ValueChanged<LeadSource?> onSelectLeadSource;
+
+  const _BookingInformationSection({
+    required this.bookingDate,
+    required this.selectedLeadSource,
+    required this.leadSourceError,
+    required this.departureDate,
+    required this.onSelectBookingDate,
+    required this.onSelectLeadSource,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return _SectionCard(
+      title: 'Booking Information',
+      required: true,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Tanggal Booking',
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
+              fontWeight: FontWeight.w600,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xs),
+          OutlinedButton.icon(
+            onPressed: onSelectBookingDate,
+            icon: const Icon(Icons.calendar_today_outlined),
+            label: Text(_formatDate(bookingDate)),
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          DropdownButtonFormField<LeadSource>(
+            initialValue: selectedLeadSource,
+            decoration: InputDecoration(
+              labelText: 'Sumber Lead',
+              border: const OutlineInputBorder(),
+              errorText: leadSourceError ? 'Sumber lead wajib dipilih.' : null,
+            ),
+            items: LeadSource.values
+                .map(
+                  (source) => DropdownMenuItem<LeadSource>(
+                    value: source,
+                    child: Text(_leadSourceLabel(source)),
+                  ),
+                )
+                .toList(),
+            onChanged: onSelectLeadSource,
+          ),
+          const SizedBox(height: AppSpacing.lg),
+          _DerivedInformationCard(
+            label: 'Departure Date',
+            value: _formatDate(departureDate),
+            icon: Icons.flight_takeoff_outlined,
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _formatDate(DateTime date) {
+    return '${date.day.toString().padLeft(2, '0')}/'
+        '${date.month.toString().padLeft(2, '0')}/'
+        '${date.year}';
+  }
+
+  String _leadSourceLabel(LeadSource source) {
+    switch (source) {
+      case LeadSource.whatsapp:
+        return 'WhatsApp';
+      case LeadSource.instagram:
+        return 'Instagram';
+      case LeadSource.facebook:
+        return 'Facebook';
+      case LeadSource.google:
+        return 'Google';
+      case LeadSource.tiktok:
+        return 'TikTok';
+      case LeadSource.website:
+        return 'Website';
+      case LeadSource.referral:
+        return 'Referral';
+      case LeadSource.walkIn:
+        return 'Walk-in';
+      case LeadSource.other:
+        return 'Lainnya';
+    }
+  }
+}
+
+class _DerivedInformationCard extends StatelessWidget {
+  final String label;
+  final String value;
+  final IconData icon;
+
+  const _DerivedInformationCard({
+    required this.label,
+    required this.value,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(AppSpacing.md),
+      decoration: BoxDecoration(
+        color: AppColors.textSecondary.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: AppColors.textSecondary.withValues(alpha: 0.15),
+        ),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: AppColors.textSecondary),
+          const SizedBox(width: AppSpacing.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  label,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  value,
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.textPrimary,
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  'Otomatis mengikuti tanggal keberangkatan package.',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
