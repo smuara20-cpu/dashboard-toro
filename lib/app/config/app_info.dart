@@ -1,11 +1,9 @@
-class AppInfo {
+﻿class AppInfo {
   const AppInfo._();
 
-  static const appName = "Travel ERP";
-
-  static const companyName = "Adinda Azzahra Tour";
-
-  static const version = "1.0.0";
-
-  static const buildNumber = "1";
+  static const appName = 'VENTRA';
+  static const productDescriptor = 'The AI-Powered Travel Operating System';
+  static const companyName = 'Adinda Azzahra Tour';
+  static const version = '1.0.0';
+  static const buildNumber = '1';
 }

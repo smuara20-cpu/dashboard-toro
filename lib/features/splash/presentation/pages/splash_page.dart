@@ -2,33 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../app/router/route_paths.dart';
+import '../ventra_animated_logo.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
-  @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) {
-        context.go(RoutePaths.onboarding);
-      }
-    });
+  void _openOnboarding(BuildContext context) {
+    if (context.mounted) {
+      context.go(RoutePaths.onboarding);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          "Splash",
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+    return Scaffold(
+      backgroundColor: const Color(0xFFF8FAFD),
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 28),
+            child: VentraAnimatedLogo(
+              onCompleted: () => _openOnboarding(context),
+            ),
+          ),
         ),
       ),
     );

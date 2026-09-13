@@ -161,6 +161,7 @@ flutter:
   assets:
 
     - assets/images/
+    - assets/images/branding/
     - assets/icons/
     - assets/lottie/
     - assets/logo/
