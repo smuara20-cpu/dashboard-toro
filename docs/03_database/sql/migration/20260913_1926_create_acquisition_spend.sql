@@ -11,9 +11,9 @@ CREATE TABLE acquisition_spend (
     currency VARCHAR NOT NULL,
     source VARCHAR NOT NULL,
     external_reference VARCHAR NULL,
-    created_at TIMESTAMP NOT NULL,
-    updated_at TIMESTAMP NOT NULL,
-    deleted_at TIMESTAMP NULL
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL,
+    deleted_at TIMESTAMP WITH TIME ZONE NULL
 );
 
 CREATE INDEX idx_acquisition_spend_tenant
