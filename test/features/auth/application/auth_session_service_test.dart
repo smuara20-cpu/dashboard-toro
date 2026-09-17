@@ -12,12 +12,19 @@ import 'package:dashboard_kpi/features/auth/domain/usecases/login_usecase.dart';
 class _FakeAuthRepository implements AuthRepository {
   UserEntity? user;
   bool logoutCalled = false;
+  Object? loginError;
 
   @override
   Future<UserEntity?> login({
     required String email,
     required String password,
   }) async {
+    final error = loginError;
+
+    if (error != null) {
+      throw error;
+    }
+
     return user;
   }
 
@@ -29,9 +36,16 @@ class _FakeAuthRepository implements AuthRepository {
 
 class _FakeTenantContextSource implements TenantContextSource {
   TenantContext? context;
+  Object? resolveError;
 
   @override
   Future<TenantContext?> resolve({required UserEntity user}) async {
+    final error = resolveError;
+
+    if (error != null) {
+      throw error;
+    }
+
     return context;
   }
 }
@@ -45,6 +59,24 @@ UserEntity _buildUser() {
   );
 }
 
+TenantContext _buildValidTenantContext() {
+  return const TenantContext(tenantId: 'tenant-001', companyId: 'company-001');
+}
+
+AuthSessionService _buildService({
+  required _FakeAuthRepository authRepository,
+  required _FakeTenantContextSource tenantSource,
+  required SessionController controller,
+}) {
+  return AuthSessionService(
+    loginUseCase: LoginUseCase(authRepository),
+    sessionEstablishmentService: SessionEstablishmentService(
+      tenantContextSource: tenantSource,
+    ),
+    sessionController: controller,
+  );
+}
+
 void main() {
   test(
     'login establishes authenticated session when tenant context is valid',
@@ -52,19 +84,14 @@ void main() {
       final authRepository = _FakeAuthRepository()..user = _buildUser();
 
       final tenantSource = _FakeTenantContextSource()
-        ..context = const TenantContext(
-          tenantId: 'tenant-001',
-          companyId: 'company-001',
-        );
+        ..context = _buildValidTenantContext();
 
       final controller = SessionController();
 
-      final service = AuthSessionService(
-        loginUseCase: LoginUseCase(authRepository),
-        sessionEstablishmentService: SessionEstablishmentService(
-          tenantContextSource: tenantSource,
-        ),
-        sessionController: controller,
+      final service = _buildService(
+        authRepository: authRepository,
+        tenantSource: tenantSource,
+        controller: controller,
       );
 
       final result = await service.login(
@@ -89,12 +116,10 @@ void main() {
 
       final controller = SessionController();
 
-      final service = AuthSessionService(
-        loginUseCase: LoginUseCase(authRepository),
-        sessionEstablishmentService: SessionEstablishmentService(
-          tenantContextSource: tenantSource,
-        ),
-        sessionController: controller,
+      final service = _buildService(
+        authRepository: authRepository,
+        tenantSource: tenantSource,
+        controller: controller,
       );
 
       final result = await service.login(
@@ -114,19 +139,14 @@ void main() {
       final authRepository = _FakeAuthRepository();
 
       final tenantSource = _FakeTenantContextSource()
-        ..context = const TenantContext(
-          tenantId: 'tenant-001',
-          companyId: 'company-001',
-        );
+        ..context = _buildValidTenantContext();
 
       final controller = SessionController();
 
-      final service = AuthSessionService(
-        loginUseCase: LoginUseCase(authRepository),
-        sessionEstablishmentService: SessionEstablishmentService(
-          tenantContextSource: tenantSource,
-        ),
-        sessionController: controller,
+      final service = _buildService(
+        authRepository: authRepository,
+        tenantSource: tenantSource,
+        controller: controller,
       );
 
       final result = await service.login(
@@ -139,4 +159,121 @@ void main() {
       expect(controller.state.sessionContext, isNull);
     },
   );
+
+  test('login fails and clears session when authentication throws', () async {
+    final authRepository = _FakeAuthRepository()
+      ..loginError = Exception('authentication failure');
+
+    final tenantSource = _FakeTenantContextSource()
+      ..context = _buildValidTenantContext();
+
+    final controller = SessionController();
+
+    final service = _buildService(
+      authRepository: authRepository,
+      tenantSource: tenantSource,
+      controller: controller,
+    );
+
+    final result = await service.login(
+      email: 'toro@example.com',
+      password: 'password',
+    );
+
+    expect(result, isFalse);
+    expect(controller.state.isAuthenticated, isFalse);
+    expect(controller.state.sessionContext, isNull);
+  });
+
+  test(
+    'login fails and clears session when tenant resolution throws',
+    () async {
+      final authRepository = _FakeAuthRepository()..user = _buildUser();
+
+      final tenantSource = _FakeTenantContextSource()
+        ..resolveError = Exception('tenant resolution failure');
+
+      final controller = SessionController();
+
+      final service = _buildService(
+        authRepository: authRepository,
+        tenantSource: tenantSource,
+        controller: controller,
+      );
+
+      final result = await service.login(
+        email: 'toro@example.com',
+        password: 'password',
+      );
+
+      expect(result, isFalse);
+      expect(controller.state.isAuthenticated, isFalse);
+      expect(controller.state.sessionContext, isNull);
+    },
+  );
+
+  test(
+    'login clears an existing session before a new authentication attempt',
+    () async {
+      final authRepository = _FakeAuthRepository()..user = _buildUser();
+
+      final tenantSource = _FakeTenantContextSource()
+        ..context = _buildValidTenantContext();
+
+      final controller = SessionController();
+
+      final service = _buildService(
+        authRepository: authRepository,
+        tenantSource: tenantSource,
+        controller: controller,
+      );
+
+      final firstResult = await service.login(
+        email: 'toro@example.com',
+        password: 'password',
+      );
+
+      expect(firstResult, isTrue);
+      expect(controller.state.isAuthenticated, isTrue);
+
+      authRepository.user = null;
+
+      final secondResult = await service.login(
+        email: 'toro@example.com',
+        password: 'wrong-password',
+      );
+
+      expect(secondResult, isFalse);
+      expect(controller.state.isAuthenticated, isFalse);
+      expect(controller.state.sessionContext, isNull);
+    },
+  );
+
+  test('logout clears the authenticated session', () async {
+    final authRepository = _FakeAuthRepository()..user = _buildUser();
+
+    final tenantSource = _FakeTenantContextSource()
+      ..context = _buildValidTenantContext();
+
+    final controller = SessionController();
+
+    final service = _buildService(
+      authRepository: authRepository,
+      tenantSource: tenantSource,
+      controller: controller,
+    );
+
+    final loginResult = await service.login(
+      email: 'toro@example.com',
+      password: 'password',
+    );
+
+    expect(loginResult, isTrue);
+    expect(controller.state.isAuthenticated, isTrue);
+
+    service.logout();
+
+    expect(controller.state.isAuthenticated, isFalse);
+    expect(controller.state.sessionContext, isNull);
+  });
 }
