@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:dashboard_kpi/app/router/route_paths.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -16,19 +18,19 @@ class _OnboardingPageState extends State<OnboardingPage> {
     _OnboardingData(
       title: 'Welcome to VENTRA',
       description:
-      'The AI-Powered Travel Operating System untuk mengelola bisnis perjalanan secara lebih cerdas, terintegrasi, dan profesional.',
+          'The AI-Powered Travel Operating System untuk mengelola bisnis perjalanan secara lebih cerdas, terintegrasi, dan profesional.',
       icon: Icons.flight_takeoff_rounded,
     ),
     _OnboardingData(
       title: 'Manage Your Travel Business',
       description:
-      'Kelola booking, jamaah, finance, operasional, dan aktivitas travel dalam satu platform yang terintegrasi.',
+          'Kelola booking, jamaah, finance, operasional, dan aktivitas travel dalam satu platform yang terintegrasi.',
       icon: Icons.dashboard_customize_rounded,
     ),
     _OnboardingData(
       title: 'AI-Powered Travel Intelligence',
       description:
-      'Manfaatkan AI Agent, WhatsApp Intelligence, dan operational intelligence untuk membantu tim bekerja lebih cepat dan efektif.',
+          'Manfaatkan AI Agent, WhatsApp Intelligence, dan operational intelligence untuk membantu tim bekerja lebih cepat dan efektif.',
       icon: Icons.auto_awesome_rounded,
     ),
   ];
@@ -48,8 +50,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       return;
     }
 
-    // Authentication flow belum ditetapkan.
-    // CTA Get Started sementara tidak melakukan navigasi.
+    context.go(RoutePaths.login);
   }
 
   void _skip() {
@@ -92,11 +93,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             fit: BoxFit.contain,
                             alignment: Alignment.centerLeft,
                             filterQuality: FilterQuality.high,
-                            errorBuilder: (
-                                context,
-                                error,
-                                stackTrace,
-                                ) {
+                            errorBuilder: (context, error, stackTrace) {
                               return const Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
@@ -174,23 +171,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             gradient: const RadialGradient(
-                              colors: [
-                                Color(0xFFEAF7FF),
-                                Color(0xFFF8FAFD),
-                              ],
+                              colors: [Color(0xFFEAF7FF), Color(0xFFF8FAFD)],
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFF008CFF).withValues(
-                                  alpha: 0.10,
-                                ),
+                                color: const Color(
+                                  0xFF008CFF,
+                                ).withValues(alpha: 0.10),
                                 blurRadius: 40,
                                 spreadRadius: 4,
                               ),
                               BoxShadow(
-                                color: const Color(0xFFD4AF37).withValues(
-                                  alpha: 0.06,
-                                ),
+                                color: const Color(
+                                  0xFFD4AF37,
+                                ).withValues(alpha: 0.06),
                                 blurRadius: 55,
                                 spreadRadius: 2,
                               ),
@@ -225,9 +219,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         // Description
                         // ------------------------------------------------
                         ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            maxWidth: 520,
-                          ),
+                          constraints: const BoxConstraints(maxWidth: 520),
                           child: Text(
                             page.description,
                             textAlign: TextAlign.center,
@@ -255,26 +247,23 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   // Page indicator
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      _pages.length,
-                          (index) {
-                        final isActive = _currentPage == index;
+                    children: List.generate(_pages.length, (index) {
+                      final isActive = _currentPage == index;
 
-                        return AnimatedContainer(
-                          duration: const Duration(milliseconds: 250),
-                          curve: Curves.easeOut,
-                          margin: const EdgeInsets.symmetric(horizontal: 4),
-                          width: isActive ? 28 : 8,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: isActive
-                                ? const Color(0xFFD4AF37)
-                                : const Color(0xFFD9E2EC),
-                            borderRadius: BorderRadius.circular(99),
-                          ),
-                        );
-                      },
-                    ),
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        curve: Curves.easeOut,
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        width: isActive ? 28 : 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: isActive
+                              ? const Color(0xFFD4AF37)
+                              : const Color(0xFFD9E2EC),
+                          borderRadius: BorderRadius.circular(99),
+                        ),
+                      );
+                    }),
                   ),
 
                   const SizedBox(height: 24),
