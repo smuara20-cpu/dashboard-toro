@@ -14,40 +14,70 @@ class AuthSessionService {
     required this.sessionController,
   });
 
-  Future<bool> login({required String email, required String password}) async {
-    // Always start from a clean session boundary.
-    // This prevents a previous authenticated session from
-    // surviving a new authentication attempt.
+  Future<bool> login({
+    required String email,
+    required String password,
+  }) async {
     sessionController.clearSession();
 
-    try {
-      final user = await loginUseCase(email: email, password: password);
+    var remoteSessionEstablished = false;
 
-      // Authentication did not produce an authoritative user.
+    try {
+      final user = await loginUseCase(
+        email: email,
+        password: password,
+      );
+
       if (user == null) {
         return false;
       }
 
-      final SessionContext? sessionContext = await sessionEstablishmentService
-          .establish(user: user);
+      remoteSessionEstablished = true;
 
-      // Never establish an authenticated session without
-      // a valid authoritative tenant context.
+      final SessionContext? sessionContext =
+      await sessionEstablishmentService.establish(
+        user: user,
+      );
+
       if (sessionContext == null || !sessionContext.isValid) {
+        await _clearRemoteSession();
         return false;
       }
 
-      return sessionController.establishSession(sessionContext: sessionContext);
+      final sessionEstablished = sessionController.establishSession(
+        sessionContext: sessionContext,
+      );
+
+      if (!sessionEstablished) {
+        await _clearRemoteSession();
+        return false;
+      }
+
+      remoteSessionEstablished = false;
+      return true;
     } catch (_) {
-      // Fail closed.
-      // Any authentication or tenant/session establishment
-      // failure must leave the application unauthenticated.
       sessionController.clearSession();
+
+      if (remoteSessionEstablished) {
+        await _clearRemoteSession();
+      }
+
       return false;
+    }
+  }
+
+  Future<void> _clearRemoteSession() async {
+    try {
+      await loginUseCase.logout();
+    } catch (_) {
+      // Local authentication state remains cleared even if
+      // remote logout fails.
     }
   }
 
   void logout() {
     sessionController.clearSession();
+
+    _clearRemoteSession();
   }
 }

@@ -12,11 +12,14 @@ class AuthRepositoryImpl implements AuthRepository {
     required String email,
     required String password,
   }) async {
-    return await remoteDataSource.login(email: email, password: password);
+    return remoteDataSource.login(
+      email: email,
+      password: password,
+    );
   }
 
   @override
   Future<void> logout() async {
-    // Akan diisi nanti
+    await remoteDataSource.logout();
   }
 }

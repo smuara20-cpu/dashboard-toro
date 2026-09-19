@@ -14,11 +14,15 @@ final authRemoteDataSourceProvider = Provider<AuthRemoteDataSource>((ref) {
 });
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
-  return AuthRepositoryImpl(ref.watch(authRemoteDataSourceProvider));
+  return AuthRepositoryImpl(
+    ref.watch(authRemoteDataSourceProvider),
+  );
 });
 
 final loginUseCaseProvider = Provider<LoginUseCase>((ref) {
-  return LoginUseCase(ref.watch(authRepositoryProvider));
+  return LoginUseCase(
+    ref.watch(authRepositoryProvider),
+  );
 });
 
 final tenantContextSourceProvider = Provider<TenantContextSource>((ref) {
@@ -30,10 +34,10 @@ final tenantContextSourceProvider = Provider<TenantContextSource>((ref) {
 
 final sessionEstablishmentServiceProvider =
     Provider<SessionEstablishmentService>((ref) {
-      return SessionEstablishmentService(
-        tenantContextSource: ref.watch(tenantContextSourceProvider),
-      );
-    });
+  return SessionEstablishmentService(
+    tenantContextSource: ref.watch(tenantContextSourceProvider),
+  );
+});
 
 final sessionControllerProvider = Provider<SessionController>((ref) {
   return SessionController();
@@ -42,7 +46,8 @@ final sessionControllerProvider = Provider<SessionController>((ref) {
 final authSessionServiceProvider = Provider<AuthSessionService>((ref) {
   return AuthSessionService(
     loginUseCase: ref.watch(loginUseCaseProvider),
-    sessionEstablishmentService: ref.watch(sessionEstablishmentServiceProvider),
+    sessionEstablishmentService:
+        ref.watch(sessionEstablishmentServiceProvider),
     sessionController: ref.watch(sessionControllerProvider),
   );
 });
