@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/theme/app_breakpoints.dart';
 import '../../../../core/theme/app_spacing.dart';
 
 import '../widgets/app_header.dart';
@@ -47,15 +48,9 @@ class DashboardContent extends StatelessWidget {
           const SizedBox(height: AppSpacing.lg),
 
           /// CHARTS
-          const Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: RevenueChartCard()),
-
-              SizedBox(width: AppSpacing.md),
-
-              Expanded(child: BookingChartCard()),
-            ],
+          const _ResponsivePair(
+            first: RevenueChartCard(),
+            second: BookingChartCard(),
           ),
 
           const SizedBox(height: AppSpacing.lg),
@@ -66,29 +61,14 @@ class DashboardContent extends StatelessWidget {
           const SizedBox(height: AppSpacing.lg),
 
           /// MARKETING & CASHFLOW
-          const Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: MarketingCard()),
-
-              SizedBox(width: AppSpacing.md),
-
-              Expanded(child: CashflowCard()),
-            ],
-          ),
+          const _ResponsivePair(first: MarketingCard(), second: CashflowCard()),
 
           const SizedBox(height: AppSpacing.lg),
 
           /// SCHEDULE & PRAYER
-          const Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: ScheduleCard()),
-
-              SizedBox(width: AppSpacing.md),
-
-              Expanded(child: PrayerTimeCard()),
-            ],
+          const _ResponsivePair(
+            first: ScheduleCard(),
+            second: PrayerTimeCard(),
           ),
 
           const SizedBox(height: AppSpacing.lg),
@@ -109,6 +89,40 @@ class DashboardContent extends StatelessWidget {
           const SizedBox(height: AppSpacing.xxl),
         ],
       ),
+    );
+  }
+}
+
+class _ResponsivePair extends StatelessWidget {
+  final Widget first;
+  final Widget second;
+
+  const _ResponsivePair({required this.first, required this.second});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (AppBreakpoints.isCompact(constraints.maxWidth)) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              first,
+              const SizedBox(height: AppSpacing.md),
+              second,
+            ],
+          );
+        }
+
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(child: first),
+            const SizedBox(width: AppSpacing.md),
+            Expanded(child: second),
+          ],
+        );
+      },
     );
   }
 }

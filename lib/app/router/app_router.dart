@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
@@ -6,6 +7,8 @@ import 'package:dashboard_kpi/features/booking/presentation/pages/booking_page.d
 import 'package:dashboard_kpi/features/booking/presentation/pages/create_booking_page.dart';
 import 'package:dashboard_kpi/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:dashboard_kpi/features/finance/presentation/pages/finance_page.dart';
+import 'package:dashboard_kpi/features/jamaah/domain/value_objects/jamaah_tenant_context.dart';
+import 'package:dashboard_kpi/features/jamaah/presentation/pages/jamaah_detail_page.dart';
 import 'package:dashboard_kpi/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:dashboard_kpi/features/splash/presentation/pages/splash_page.dart';
 import 'package:dashboard_kpi/features/testimoni/presentation/pages/testimonial_page.dart';
@@ -56,6 +59,23 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
+      name: RouteNames.jamaahDetail,
+      path: RoutePaths.jamaahDetail,
+      builder: (context, state) {
+        final jamaahId = state.pathParameters['id'];
+        final tenantContext = state.extra;
+
+        if (jamaahId == null || tenantContext is! JamaahTenantContext) {
+          return const _JamaahRouteContextErrorPage();
+        }
+
+        return JamaahDetailPage(
+          jamaahId: jamaahId,
+          tenantContext: tenantContext,
+        );
+      },
+    ),
+    GoRoute(
       name: RouteNames.finance,
       path: RoutePaths.finance,
       builder: (context, state) => const FinancePage(),
@@ -67,3 +87,36 @@ final GoRouter appRouter = GoRouter(
     ),
   ],
 );
+
+class _JamaahRouteContextErrorPage extends StatelessWidget {
+  const _JamaahRouteContextErrorPage();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Jamaah')),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.lock_outline, size: 48),
+              const SizedBox(height: 16),
+              Text(
+                'Konteks tenant tidak tersedia.',
+                style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Detail Jamaah hanya dapat dibuka melalui konteks sesi yang valid.',
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

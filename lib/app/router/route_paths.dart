@@ -11,6 +11,7 @@ class RoutePaths {
   static const finance = '/finance';
   static const marketing = '/marketing';
   static const jamaah = '/jamaah';
+  static const jamaahDetail = '/jamaah/:id';
   static const settings = '/settings';
   static const testimonial = '/testimonial';
 }

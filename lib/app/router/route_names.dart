@@ -11,6 +11,7 @@ class RouteNames {
   static const finance = 'finance';
   static const marketing = 'marketing';
   static const jamaah = 'jamaah';
+  static const jamaahDetail = 'jamaahDetail';
   static const settings = 'settings';
   static const testimonial = 'testimonial';
 }
