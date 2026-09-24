@@ -1,0 +1,532 @@
+﻿VENTRA / SP-203 RUNTIME PROVIDER AUDIT
+Generated: 2026-09-24 13:37:31
+Repository: C:\FlutterProject\dashboard_kpi
+Mode: READ-ONLY
+
+
+========================================================================
+1. PRODUCTION TENANT CONTEXT PROVIDER
+========================================================================
+STATUS: NOT FOUND
+
+========================================================================
+2. TEST TENANT CONTEXT IMPLEMENTATIONS
+========================================================================
+STATUS: FOUND (TEST ONLY)
+C:\FlutterProject\dashboard_kpi\test\features\auth\application\auth_session_service_test.dart:37 | class _FakeTenantContextSource implements TenantContextSource {
+C:\FlutterProject\dashboard_kpi\test\features\auth\application\session_establishment_service_test.dart:8 | class _FakeTenantContextSource implements TenantContextSource {
+
+========================================================================
+3. EFFECTIVE TENANT ACCESS IDENTIFIERS
+========================================================================
+
+--- tenant/company identifier references ---
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1257 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         75 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        334     "url": "https://${TENANT_ID}.api.exa...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1263 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         97 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        334     "url": "https://${TENANT_ID}.api.exa...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:70 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        135       "X-Tenant-ID": "${TENANT_ID}"
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:75 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        334     "url": "https://${TENANT_ID}.api.example.com/mcp"
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:76 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        345 export TENANT_ID="my-company"
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:92 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        135       "X-Tenant-ID": "${TENANT_ID}"
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:97 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        334     "url": "https://${TENANT_ID}.api.example.com/mcp"
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:98 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        345 export TENANT_ID="my-company"
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:108 | C:\Users\Adinda-Azzahra\Downloads\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md                                         118 - `tenant_id`
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:109 | C:\Users\Adinda-Azzahra\Downloads\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md                                         138 | `tenant_id` | Tenant architecture requires tenant boundary, Booking-specific physical mapping not estab...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:110 | C:\Users\Adinda-Azzahra\Downloads\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md                                         217 companies.company_id UUID
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:111 | C:\Users\Adinda-Azzahra\Downloads\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md                                         222 `company_id` must not be silently substituted for `tenant_id`.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:112 | C:\Users\Adinda-Azzahra\Downloads\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md                                         230 branches.company_id → companies.company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:116 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         278 tenant_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:117 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         279 company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:118 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         479 auth.uid() → tenant_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:119 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         480 auth.uid() → company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:120 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         482 client tenant_id → authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:121 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         483 client company_id → authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:125 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         701 auth.uid() = tenant_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:126 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         702 auth.uid() = company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:127 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         704 client-selected tenant_id = authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:128 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         705 client-selected company_id = authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:135 | C:\FlutterProject\dashboard_kpi\docs\03_database\JAMAAH_POSTGRESQL_MAPPING_RESOLUTION_DECISION_001.md             41 tenant_id NOT NULL secara logical; enforcement/index physical belum dapat dikunci tanpa physical Identity/Te...
+C:\FlutterProject\dashboard_kpi\SP203_RUNTIME_AUDIT.ps1:99 | -Pattern 'tenantId|tenant_id|companyId|company_id' `
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:911 | Client-side tenant_id
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:2350 | tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\base_entity.md:19 | company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_DB_PHYSICAL_DECISION_001.md:52 | | tenant_id | UUID | YES | Tenant boundary |
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_DB_PHYSICAL_DECISION_001.md:87 | `tenant_id` is required.
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_EXACT_PHYSICAL_CONTRACT_READINESS_DECISION_001.md:80 | | `tenant_id` | Tenant architecture exists; Booking physical mapping absent | HOLD |
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md:118 | - `tenant_id`
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md:138 | | `tenant_id` | Tenant architecture requires tenant boundary, Booking-specific physical mapping not established | HOLD |
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md:217 | companies.company_id UUID
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md:222 | `company_id` must not be silently substituted for `tenant_id`.
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md:230 | branches.company_id → companies.company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_GAP_RESOLUTION_DECISION_001.md:224 | | `tenant_id` | Tenant architecture exists; Booking-specific mapping absent | HOLD |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_ACQUISITION_SPEND_PHYSICAL_DECISION_001.md:31 | | tenant_id | UUID | NO | Tenant isolation |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_ACQUISITION_SPEND_PHYSICAL_DECISION_001.md:50 | tenant_id wajib.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_ACQUISITION_SPEND_PHYSICAL_DECISION_001.md:134 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_ACQUISITION_SPEND_PHYSICAL_DECISION_001.md:137 | - tenant_id + spend_date
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_ACQUISITION_SPEND_PHYSICAL_DECISION_001.md:138 | - tenant_id + campaign_id + spend_date
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_ACQUISITION_SPEND_PHYSICAL_DECISION_001.md:168 | 1. tenant_id wajib
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_PHYSICAL_DATA_DECISION_001.md:32 | - tenant_id UUID NOT NULL
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_PHYSICAL_DATA_DECISION_001.md:107 | tenant_id wajib tersedia pada physical acquisition records.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_PHYSICAL_DATA_DECISION_001.md:149 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_PHYSICAL_DATA_DECISION_001.md:152 | - tenant_id + spend_date
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_PHYSICAL_DATA_DECISION_001.md:153 | - tenant_id + campaign_id + spend_date
+C:\FlutterProject\dashboard_kpi\docs\03_database\CAC_PHYSICAL_DATA_DECISION_001.md:157 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:30 | Security menggunakan company_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:38 | Primary Key: company_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:50 | Branch menggunakan company_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:52 | Foreign key mengarah ke companies.company_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:54 | Unique constraint Branch adalah (company_id, branch_code).
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:62 | company_id bukan pengganti tenant_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:92 | Primary Key: company_id UUID
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:100 | company_id UUID NOT NULL PRIMARY KEY
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:202 | company_id remains the Company identifier.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:204 | tenant_id remains the enterprise tenancy boundary.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:206 | company_id must not be renamed to tenant_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:208 | tenant_id must not be invented as a replacement Company column.
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:225 | PK: company_id UUID
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:232 | companies.company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:242 | Potential dependent relationships may use company_id only when their
+C:\FlutterProject\dashboard_kpi\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:300 | companies.company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_MARKETING_PHYSICAL_CONTRACT_DECISION_003_LEAD_ATTRIBUTION.md:83 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_MARKETING_PHYSICAL_CONTRACT_DECISION_004_CAMPAIGN.md:107 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_MARKETING_PHYSICAL_CONTRACT_DECISION_005_CAMPAIGN_ACTIVITY.md:100 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_MARKETING_PHYSICAL_CONTRACT_DECISION_005_CAMPAIGN_ACTIVITY.md:162 | - tenant_id column
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_MARKETING_PHYSICAL_CONTRACT_DECISION_005_CAMPAIGN_ACTIVITY.md:163 | - company_id column
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:22 | | tenant_id | UUID | NOT NULL | APPROVED |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:23 | | company_id | UUID | NOT NULL | APPROVED |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:33 | ### tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:36 | Tenant context is a security boundary and is not interchangeable with company_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:38 | ### company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:41 | company_id remains distinct from tenant_id.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_001_LEAD.md:156 | lead(id, tenant_id, company_id, owner_id, lead_source, status, created_at, updated_at, deleted_at)
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_002_OPPORTUNITY.md:60 | - tenant_id required
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_002_OPPORTUNITY.md:75 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_002_OPPORTUNITY.md:85 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CRM_PHYSICAL_CONTRACT_DECISION_002_OPPORTUNITY.md:86 | - company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:32 | - Security menggunakan `company_id`.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:37 | `companies.company_id`.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:44 | `branches.company_id`.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:61 | PK: company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:66 | FK: company_id → companies.company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:84 | - Customer `company_id` column exact contract
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:104 | company_id → companies.company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:131 | `company_id` must not be replaced by `tenant_id`.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md:180 | companies.company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_DECISION_001.md:42 | - Generic conventions include `company_id`, `branch_id`, and `status`.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_DECISION_001.md:73 | | `tenant_id` | No Customer-specific physical contract found | HOLD |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_DECISION_001.md:74 | | `company_id` | Customer ERD + generic standard | LOGICAL; physical nullability/FK HOLD |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:89 | - tenant_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:90 | - company_id
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:125 | | tenant_id requirement | AUTHORIZED |
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:216 | - tenant_id physical reference
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:225 | `companies.company_id`
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:288 | - tenant_id physical strategy
+C:\FlutterProject\dashboard_kpi\docs\03_database\JAMAAH_DB_PHYSICAL_DECISION_001.md:62 | | tenant_id | UUID | YES | Tenant isolation |
+
+========================================================================
+4. SP-203 / IDENTITY / ACCESS REFERENCES
+========================================================================
+
+--- SP-203 references ---
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1268 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        124 C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         642 OpenAPI                                 ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1717 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        397 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md              23 HTTP method, URL path, API gateway binding ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1718 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        398 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md              24 Client tidak boleh mengasumsikan endpoint y...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1719 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        410 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md             139 2. Endpoint/service resmi dipublikasikan.  ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1720 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        416 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md              31 Consumer menggunakan logical operation `Res...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1721 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        428 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md              73 Adapter hanya boleh diimplementasikan setel...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1722 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        447 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md         44 | Endpoint / URL Path | TBD |              ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1723 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        450 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md         60 Adapter implementation MUST NOT begin until...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1724 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        451 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md         64 - Menebak endpoint atau HTTP method.       ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1725 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        730 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md             52 - tidak mendefinisikan endpoint;           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1726 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        731 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md             88 Endpoint Implementation                    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1727 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        732 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md             91 Tidak ada endpoint fiktif yang dibuat atau ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1728 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        733 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            107 Endpoint                                   ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1729 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        738 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            205 Official Endpoint                          ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1730 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        739 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            225 [ ] Authentication service / endpoint      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1731 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        740 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            257 [ ] Official service / endpoint            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1732 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        741 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            301 [ ] Official service / endpoint            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1733 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        743 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            344 [ ] Official service / endpoint            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1734 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        745 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            377 [ ] Official service / endpoint            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1735 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        751 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            642 OpenAPI                                    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1736 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        752 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            661 [ ] Official endpoint / service binding con...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1737 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        753 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            709 Supabase Edge Function = SP-203 endpoint   ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1738 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        754 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            710 REST endpoint = SP-203 endpoint            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1739 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        755 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            806 Endpoint:                                  ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1740 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        756 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            859 Official Endpoint          HOLD            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1798 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints...         31 Consumer menggunakan logical operation `Resolve Effective Tenant Access`. Concrete HTTP method, endpoint/path dan gateway binding belum ditetapkan oleh source b...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1799 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints...         73 Adapter hanya boleh diimplementasikan setelah authoritative runtime endpoint/service contract tersedia dan terbukti menyediakan effective tenant access, tenant ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1815 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints...        709 Supabase Edge Function = SP-203 endpoint
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1816 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints...        710 REST endpoint = SP-203 endpoint
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:113 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         143 Tenant Access Context
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:114 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         246 # 5. REQUEST B — EFFECTIVE TENANT ACCESS
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:115 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         251 Resolve Effective Tenant Access
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:116 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         278 tenant_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:117 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         279 company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:118 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         479 auth.uid() → tenant_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:119 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         480 auth.uid() → company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:120 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         482 client tenant_id → authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:121 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         483 client company_id → authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:122 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         500 Tenant Access Denied
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:123 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         626 2. Tenant Access Contract
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:124 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         642 OpenAPI
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:125 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         701 auth.uid() = tenant_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:126 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         702 auth.uid() = company_id
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:127 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         704 client-selected tenant_id = authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:128 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         705 client-selected company_id = authority
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:5 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-000_architecture_freeze_rules.md                               74 SP-203 selalu Identity & Access Platform.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:7 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md                      211 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:8 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md                      309 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:9 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md                      634 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:10 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md                      837 SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:17 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md                     1301 SP-203 Identity & Access Platform.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:19 | C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md                     1711 SP-203 Identity & Access Platform.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:185 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\BP-001_business_blueprint.md                                   38 | Identity Authority | SP-203 Identity & Access Platform |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:187 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\BP-001_business_blueprint.md                                  815 | Identity & Access | SP-203 |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:188 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\BP-001_business_blueprint.md                                  836 | SP-203 | Identity & Access Platform | Identity & Access |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:191 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\BP-001_business_blueprint.md                                 1998 SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:192 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\BP-001_business_blueprint.md                                 2019 | Identity & Access Service | SP-203 | Identity and access |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:194 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\BP-001_business_blueprint.md                                 2328 | SP-203 | Identity & Access Services |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:226 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-101_customer_blueprint.md                         325 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:238 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-101_customer_blueprint.md                         987 | SP-203 Identity & Access Platform | Autentikasi dan otorisasi |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:246 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-102_crm_blueprint.md                              333 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:247 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-102_crm_blueprint.md                             1140 | SP-203 Identity & Access | Authentication |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:248 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-103_marketing_blueprint.md                        325 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:249 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-103_marketing_blueprint.md                       1093 | SP-203 Identity & Access | Authentication |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:250 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-104_booking_blueprint.md                          336 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:251 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-104_booking_blueprint.md                          803 - SP-203 Identity & Access
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:253 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-104_booking_blueprint.md                         1276 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:255 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-105_package_blueprint.md                          336 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:256 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-105_package_blueprint.md                          775 - SP-203 Identity & Access
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:257 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-105_package_blueprint.md                         1256 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:258 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-106_departure_blueprint.md                        369 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:259 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-106_departure_blueprint.md                        828 - SP-203 Identity & Access
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:260 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-106_departure_blueprint.md                       1306 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:261 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-107_hotel_blueprint.md                            358 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:262 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-107_hotel_blueprint.md                            829 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:264 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-107_hotel_blueprint.md                           1330 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:266 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-108_flight_blueprint.md                           367 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:267 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-108_flight_blueprint.md                           899 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:268 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-108_flight_blueprint.md                          1473 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:269 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-109_visa_blueprint.md                             360 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:270 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-109_visa_blueprint.md                             886 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:271 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-109_visa_blueprint.md                            1415 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:274 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-110_finance_blueprint.md                          359 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:275 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-110_finance_blueprint.md                          906 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:277 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-110_finance_blueprint.md                         1511 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:283 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-111_payment_blueprint.md                          363 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:287 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-111_payment_blueprint.md                          848 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:300 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-111_payment_blueprint.md                         1406 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:331 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-112_dashboard_blueprint.md                        342 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:332 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-112_dashboard_blueprint.md                        792 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:333 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-112_dashboard_blueprint.md                       1299 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:334 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-113_notification_blueprint.md                     332 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:335 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-113_notification_blueprint.md                     809 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:338 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-113_notification_blueprint.md                    1364 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:341 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-114_ai_blueprint.md                               333 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:349 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-114_ai_blueprint.md                               787 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:350 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\business\BP-114_ai_blueprint.md                              1350 - SP-203 Identity & Access Platform
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:379 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\database\DB-201_customer_database_blueprint.md                147 | Identity & Access Authority | SP-203 Identity & Access Platform |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:390 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md               1 # AUTH IDENTITY ACCESS API CONTRACT 001
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:391 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md               3 **Contract ID:** AUTH-IDENTITY-ACCESS-API-CONTRACT-001
+
+========================================================================
+5. HTTP / API TRANSPORT
+========================================================================
+
+--- HTTP/API references ---
+C:\FlutterProject\dashboard_kpi\buildlog.txt:3824 | [        ] 9            android:name="org.apache.http.legacy"
+C:\FlutterProject\dashboard_kpi\buildlog.txt:4920 | [        ] 92            android:name="org.apache.http.legacy"
+C:\FlutterProject\dashboard_kpi\buildlog.txt:9010 | A: android:name(0x01010003)="org.apache.http.legacy" (Raw: "org.apache.http.legacy")
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:387 | C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE...         61 C:\FlutterProject\dashboard_kpi\buildlog.txt                7431 [        ] Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/apache/http...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1258 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         77 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        474       "API_URL": "https://secure.example...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1259 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         79 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        492     "url": "${API_URL}",                ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1260 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         80 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        501 - Dev: `API_URL=http://localhost:8080/mc...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1261 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         81 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\mc...        502 - Prod: `API_URL=https://api.production....
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1264 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         99 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        474       "API_URL": "https://secure.example...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1265 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        101 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        492     "url": "${API_URL}",                ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1266 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        102 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        501 - Dev: `API_URL=http://localhost:8080/mc...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1267 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        103 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        502 - Prod: `API_URL=https://api.production....
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1270 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        132 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\bin\resources\devtools\flutter_bo...        157       canvasKitBaseUrl: 'canvaskit/',   ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1271 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        133 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\bin\resources\devtools\main.dart.js       55781 s=s==null?null:s.canvasKitBaseUrl       ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1272 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        134 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\bin\resources\devtools\main.dart.js       57180 s=s==null?null:s.fontFallbackBaseUrl    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1273 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        135 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js             207                 baseUrl: './',          ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1274 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        136 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            1283                 //Make sure the baseUrl ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1275 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        137 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            1284                 if (cfg.baseUrl) {      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1276 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        138 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            1285                     if (cfg.baseUrl.char...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1277 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        139 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            1286                         cfg.baseUrl += '...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1281 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        143 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            2008         //Figure out baseUrl. Get it fro...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1282 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        144 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            2018             //baseUrl, if it is not alre...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1283 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        145 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            2024                 //Set final baseUrl if t...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1284 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        146 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            2027                 if (!cfg.baseUrl && main...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1285 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        147 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            2029                     //baseUrl.          ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1286 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        148 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\dev_compiler\amd\require.js            2034                     cfg.baseUrl = subPat...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1287 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        165 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\_internal\js_runtime\lib\js_h...       3413 final String _thisScriptBaseUrl = _compu...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1288 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        166 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\_internal\js_runtime\lib\js_h...       3415 String _computeBaseUrl() {              ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1289 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        167 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\dart-sdk\lib\_internal\js_runtime\lib\js_h...       3462   final base = _thisScriptBaseUrl;      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1291 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        170 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\canvaskit_l...         19     let baseUrl = canvasKitBaseUrl;     ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1292 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        171 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\canvaskit_l...         21       baseUrl = resolveUrlWithSegments(b...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1293 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        172 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\canvaskit_l...         23       baseUrl = resolveUrlWithSegments(b...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1296 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        175 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\entrypoint_...         66     let { entrypointBaseUrl } = config; ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1297 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        176 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\entrypoint_...         67     const { entryPointBaseUrl } = config...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1298 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        177 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\entrypoint_...         68     if (!entrypointBaseUrl && entryPoint...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1299 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        178 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\entrypoint_...         70         '[deprecated] `entryPointBaseUrl...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1300 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        179 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\entrypoint_...         72       entrypointBaseUrl = entryPointBase...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1303 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        182 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\entrypoint_...        149    * @param {string} entrypointBaseUrl  ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1309 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        188 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\loader.js              11 import { getCanvaskitBaseUrl } from './u...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1310 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        189 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\loader.js             117     const canvasKitBaseUrl = getCanvaski...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1317 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        196 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\types.d.ts             58   canvasKitBaseUrl?: string;            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1318 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        197 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\types.d.ts             63   fontFallbackBaseUrl?: string;         ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1319 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        198 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\types.d.ts             64   /** @deprecated use `entrypointBaseUrl...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1320 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        199 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\types.d.ts             65   entryPointBaseUrl?: string;           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1321 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        200 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\types.d.ts             66   entrypointBaseUrl?: string;           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1322 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        201 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\utils.js               47 export function getCanvaskitBaseUrl(conf...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1323 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        202 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\utils.js               48   if (config.canvasKitBaseUrl) {        ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1324 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        203 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\flutter_js\src\utils.js               49     return config.canvasKitBaseUrl;     ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1325 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        209 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     170355   var _baseUrl = dart.privateName(ui_web...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1326 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        210 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     170368     get [_baseUrl]() {                  ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1327 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        211 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     170376       let fallbackBaseUrl = (t$36653 = m...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1328 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        212 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     170377       if (fallbackBaseUrl != null) {    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1329 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        213 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     170380       return fallbackBaseUrl;           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1331 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        215 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     170449     [_baseUrl]: _ti => T$.String(),     ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1332 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        216 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     183706     get canvasKitBaseUrl() {            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1333 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        218 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     183759     get fontFallbackBaseUrl() {         ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1334 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        220 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     183805     canvasKitBaseUrl: _ti => T$.String()...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1335 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        221 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     183815     fontFallbackBaseUrl: _ti => T$.Strin...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1338 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        225 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\amd-canvaskit\dart_...     231801     get _canvasKitBaseUrl() {           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1341 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        248 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     182032   var _baseUrl = dart.privateName("dart:...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1342 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        249 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     182050     get [_baseUrl]() {                  ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1343 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        250 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     182058       let fallbackBaseUrl = (t$360 = met...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1344 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        251 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     182059       if (fallbackBaseUrl != null) {    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1345 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        252 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     182062       return fallbackBaseUrl;           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1347 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        254 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     182131     [_baseUrl]: _ti => T.String(),      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1348 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        255 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     199852   var _defaultCanvasKitBaseUrl = dart.pr...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1349 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        256 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     199865     static [_defaultCanvasKitBaseUrl] = ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1352 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        259 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     199905     get canvasKitBaseUrl() {            ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1353 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        261 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     199958     get fontFallbackBaseUrl() {         ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1354 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        263 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     200004     canvasKitBaseUrl: _ti => T$.String()...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1355 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        264 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     200014     fontFallbackBaseUrl: _ti => T$.Strin...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1357 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        267 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\kernel\ddclibrarybundle-ca...     249823     get _canvasKitBaseUrl() {           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1359 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        273 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui\ui_web\src\ui_web\a...         37   String get _baseUrl => _assetBase ??= ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1360 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        274 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui\ui_web\src\ui_web\a...         45     final String? fallbackBaseUrl = meta...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1361 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        275 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui\ui_web\src\ui_web\a...         47     if (fallbackBaseUrl != null) {      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1362 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        276 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui\ui_web\src\ui_web\a...         55     return fallbackBaseUrl;             ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1363 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        277 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui\ui_web\src\ui_web\a...         79     return Uri.encodeFull('$_baseUrl$ass...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1364 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        278 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui_web\ui_web\asset_ma...         35   String get _baseUrl => _assetBase ??= ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1365 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        279 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui_web\ui_web\asset_ma...         43     final String? fallbackBaseUrl = meta...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1366 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        280 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui_web\ui_web\asset_ma...         45     if (fallbackBaseUrl != null) {      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1367 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        281 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui_web\ui_web\asset_ma...         53     return fallbackBaseUrl;             ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1368 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        282 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\ui_web\ui_web\asset_ma...         77     return Uri.encodeFull('$_baseUrl$ass...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1369 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        283 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...         26 ///           canvasKitBaseUrl: "https:/...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1370 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        284 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...         36 ///         canvasKitBaseUrl: "https://e...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1371 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        285 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...         42 /// `canvasKitBaseUrl` config entry and ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1374 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        288 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...        257   String get canvasKitBaseUrl => _config...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1376 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        290 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...        358   String get fontFallbackBaseUrl =>     ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1378 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        292 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...        371     String? canvasKitBaseUrl,           ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1379 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        293 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...        381     String? fontFallbackBaseUrl,        ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1380 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        294 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\configu...        386   external String? get canvasKitBaseUrl;...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1383 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        297 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\canvask...       2404 String get _canvasKitBaseUrl => configur...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1385 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        299 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_engine\engine\canvask...         14     '${configuration.fontFallbackBaseUrl...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1386 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        300 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\flutter_web_sdk\lib\_skwasm_impl\skwasm_im...         14     '${configuration.fontFallbackBaseUrl...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1387 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        307 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\pkg\sky_engine\lib\ui_web\ui_web\asset_man...         35   String get _baseUrl => _assetBase ??= ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1388 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        308 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\pkg\sky_engine\lib\ui_web\ui_web\asset_man...         43     final String? fallbackBaseUrl = meta...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1389 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        309 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\pkg\sky_engine\lib\ui_web\ui_web\asset_man...         45     if (fallbackBaseUrl != null) {      ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1390 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        310 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\pkg\sky_engine\lib\ui_web\ui_web\asset_man...         53     return fallbackBaseUrl;             ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1391 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        311 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\bin\cache\pkg\sky_engine\lib\ui_web\ui_web\asset_man...         77     return Uri.encodeFull('$_baseUrl$ass...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1392 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        316 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\dev\a11y_assessments\web\flutter_bootstrap.js                   10     canvasKitBaseUrl: "/canvaskit/",    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1393 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        317 C:\Users\Adinda-Azzahra\Downloads\Compressed\flutter\dev\benchmarks\macrobenchmarks\web\flutter_bootstrap.js         10     canvasKitBaseUrl: "/canvaskit/",    ...
+
+========================================================================
+6. SUPABASE RUNTIME
+========================================================================
+
+--- Supabase references ---
+C:\FlutterProject\dashboard_kpi\pubspec.lock:1616 | supabase_flutter:
+C:\FlutterProject\dashboard_kpi\pubspec.lock:1619 | name: supabase_flutter
+C:\FlutterProject\dashboard_kpi\pubspec.yaml:131 | supabase_flutter: ^2.17.2
+C:\FlutterProject\dashboard_kpi\SP203_RUNTIME_AUDIT.ps1:117 | -Pattern 'SupabaseClient|Supabase\.instance|signInWithPassword|supabase_flutter|supabase\.functions|\.rpc\(' `
+C:\FlutterProject\dashboard_kpi\.idea\libraries\Dart_Packages.xml:1426 | <entry key="supabase_flutter">
+C:\FlutterProject\dashboard_kpi\.idea\libraries\Dart_Packages.xml:1429 | <option value="$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.17.2/lib" />
+C:\FlutterProject\dashboard_kpi\.idea\libraries\Dart_Packages.xml:1845 | <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dev/supabase_flutter-2.17.2/lib" />
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1258 | SupabaseClient
+C:\FlutterProject\dashboard_kpi\lib\app\initializers\supabase_initializer.dart:1 | import 'package:supabase_flutter/supabase_flutter.dart';
+C:\FlutterProject\dashboard_kpi\lib\features\auth\data\datasource\auth_remote_datasource.dart:1 | import 'package:supabase_flutter/supabase_flutter.dart';
+C:\FlutterProject\dashboard_kpi\lib\features\auth\data\datasource\auth_remote_datasource.dart:6 | final SupabaseClient client;
+C:\FlutterProject\dashboard_kpi\lib\features\auth\data\datasource\auth_remote_datasource.dart:8 | AuthRemoteDataSource({SupabaseClient? client})
+C:\FlutterProject\dashboard_kpi\lib\features\auth\data\datasource\auth_remote_datasource.dart:9 | : client = client ?? Supabase.instance.client;
+C:\FlutterProject\dashboard_kpi\lib\features\auth\data\datasource\auth_remote_datasource.dart:15 | final response = await client.auth.signInWithPassword(
+
+========================================================================
+7. EDGE FUNCTION / RPC
+========================================================================
+
+--- Supabase Edge Function / RPC references ---
+NOT FOUND
+
+========================================================================
+8. OPENAPI / SWAGGER
+========================================================================
+
+--- API specification references ---
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1244 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         49 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...         63 | Docs patterns | OpenAPI, JSDoc, docstr...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1245 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         50 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        106 | API routes | **api-doc** (with OpenAPI...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1247 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         52 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        107 ### API Documentation with OpenAPI Templ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1248 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         53 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        114 └── openapi-template.yaml               ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1249 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         54 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        121 description: Generate OpenAPI documentat...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1250 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         55 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        124 Generate OpenAPI documentation for the e...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1251 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         56 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        126 Use the template in [openapi-template.ya...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1252 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         57 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        134 **openapi-template.yaml:**              ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1253 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         58 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...         64 | OpenAPI exists | `openapi.yaml`, `swag...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1254 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         59 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...         67 **Value**: Generates OpenAPI specs, endp...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1256 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         65 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\co...        266 - **OpenAPI compliance** - Follow OpenAP...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1262 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...         87 C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        266 - **OpenAPI compliance** - Follow OpenAP...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1268 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FIL...        124 C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         642 OpenAPI                                 ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1711 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        184 C:\FlutterProject\dashboard_kpi\docs\14_standards\03_architecture\architecture_standard.md                       273 - OpenAPI                                  ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1735 | C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SEC...        751 C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            642 OpenAPI                                    ...
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1789 | C:\FlutterProject\dashboard_kpi\docs\14_standards\...        273 - OpenAPI
+C:\FlutterProject\dashboard_kpi\SP203_API_EVIDENCE_HUNT.txt:1813 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints...        642 OpenAPI
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:26 | C:\Users\Adinda-Azzahra\.claude\cache\changelog.md                                                                 2563 - MCP tool descriptions and server instructions are now capped at 2KB to prevent OpenAPI-generated server...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:49 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...         63 | Docs patterns | OpenAPI, JSDoc, docstrings | Documentation skills |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:50 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        106 | API routes | **api-doc** (with OpenAPI template) | Both |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:51 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        137 | API project | **api-documenter** - OpenAPI generation |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:52 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        107 ### API Documentation with OpenAPI Template
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:53 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        114 └── openapi-template.yaml
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:54 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        121 description: Generate OpenAPI documentation for an endpoint. Use when documenting API routes.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:55 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        124 Generate OpenAPI documentation for the endpoint at $ARGUMENTS.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:56 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        126 Use the template in [openapi-template.yaml](openapi-template.yaml) as the structure.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:57 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...        134 **openapi-template.yaml:**
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:58 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...         64 | OpenAPI exists | `openapi.yaml`, `swagger.json` |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:59 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\claude-code-setup\sk...         67 **Value**: Generates OpenAPI specs, endpoint documentation
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:61 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\code-modernization\c...         48 - **Interface Contracts** (each external interface as an OpenAPI fragment or
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:65 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official\plugins\plugin-dev\skills\co...        266 - **OpenAPI compliance** - Follow OpenAPI 3.0 specification
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:87 | C:\Users\Adinda-Azzahra\.claude\plugins\marketplaces\claude-plugins-official.backup\plugins\plugin-dev\sk...        266 - **OpenAPI compliance** - Follow OpenAPI 3.0 specification
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:124 | C:\Users\Adinda-Azzahra\Downloads\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md                                         642 OpenAPI
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:184 | C:\FlutterProject\dashboard_kpi\docs\14_standards\03_architecture\architecture_standard.md                       273 - OpenAPI
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:751 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md            642 OpenAPI
+C:\FlutterProject\dashboard_kpi\SP203_RUNTIME_AUDIT.ps1:126 | Section "8. OPENAPI / SWAGGER"
+C:\FlutterProject\dashboard_kpi\SP203_RUNTIME_AUDIT.ps1:129 | -Pattern 'OpenAPI|openapi|Swagger|swagger\.json|openapi\.json|openapi\.yaml|swagger\.yaml' `
+C:\FlutterProject\dashboard_kpi\docs\14_standards\03_architecture\architecture_standard.md:273 | - OpenAPI
+C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md:642 | OpenAPI
+
+========================================================================
+9. AUTHENTICATION TRANSPORT
+========================================================================
+
+--- authentication transport references ---
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:12 | C:\Users\Adinda-Azzahra\.claude\cache\changelog.md                                                                  719 - Fixed `claude agents` workers failing with `401 Invalid bearer token` when the daemon was started from ...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_FILE_HUNT.txt:25 | C:\Users\Adinda-Azzahra\.claude\cache\changelog.md                                                                 2321 - Fixed Bedrock SigV4 authentication failing when `AWS_BEARER_TOKEN_BEDROCK` or `ANTHROPIC_BEDROCK_BASE_U...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:76 | C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md              4765 | Role | Identity | Identity | Authorization |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:77 | C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md              4766 | Permission | Identity | Identity | Authorization |
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:93 | C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md              6898 3. Identity and authorization.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:396 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md              15 SP-203 Identity & Access Platform adalah authority untuk Identity, Authentication, Authorization dan Access ...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:401 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md              34 - Authorization dilakukan oleh authoritative Identity & Access runtime.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:426 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md              58 Backend / Identity & Access Platform wajib menegakkan authentication, authorization, effective tenant access...
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:489 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-201_vendor_platform.md                           1168 Identity dan authorization berada di bawah:
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:491 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-201_vendor_platform.md                           1174 SP-201 hanya mengonsumsi identity dan authorization context
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:522 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-202_document_platform.md                          911 Authorization authority tetap mengikuti enterprise Identity & Access Architecture.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:615 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_identity_access_platform.md                   655       Identity        Authentication   Authorization
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:667 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_identity_access_platform.md                  1438 untuk identity dan authorization context.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:669 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_identity_access_platform.md                  1467 SP-203 sebagai identity and authorization authority.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:671 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_identity_access_platform.md                  1499 SP-203 untuk identity and authorization context.
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:686 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-203_identity_access_platform.md                  1868 Identity / Authorization
+C:\FlutterProject\dashboard_kpi\SP203_PROVIDER_SECOND_HUNT.txt:844 | C:\FlutterProject\dashboard_kpi\docs\20_blueprints\platform\SP-206_search_platform.md                           1938 Authorization tetap mengikuti authoritative Identity and Security
+C:\FlutterProject\dashboard_kpi\SP203_RUNTIME_AUDIT.ps1:135 | -Pattern 'Authorization|Bearer|access_token|accessToken|JWT|jwt' `
+C:\FlutterProject\dashboard_kpi\assets\images\branding\ventra_logo.png:2343 | <�`.�W$�Q�4<٬���������8�4=b����I�_y�裫Y|��sFz�~݋��&��$D_KOJ���/%s^3G�U]u_\����U�ۨ�T�M�x���~��w���\��+c�﵄��V)w7{̌�V]G��!� ��6�r,��ܰq͸?�q z��n.�Cp���s�W����+_C�@z�7����;���=�,oR9͘Ϝ�X+>�W�#P�7^�;����J�'4�1�r0�H��,��B�U���Г�NR���)fǔ���K$y�����`����$�5��C��r#PR@��N��+�@�G��n��f��0m�ύ7����@%U+�JRLΑ�77�E��+�nyB�$J�WRZ��4���|ޤ5���/�����cJ��= M�i|�T�Z�.��F�����z���3�ߊj����md6����ܥ�SIj#�K=/���յ�UV�T����t,}�j���)��R'������'5����H��Q�b�����ù�d���� ��A3���+��"��JH�\x?����^7�ˎ4����3��iz�Rr*N����y�ܜl�Iv2��ʠm��)�4qWu@�JwT$<�PtGMobR��6�R&ZS����O!��o�pu� ���	�⥯�j�S�i�~����*_#���|@���h�s%�jLH�8�A��3���`���!W��!��q_�P)�����P�Hj���)�~���V�)�(�z+�D�<�����g�5Ui�<Vק�u傞��k��{
+C:\FlutterProject\dashboard_kpi\assets\images\branding\ventra_logo.png:3563 | H��FS�]��ٲ���+�FG��&�+G�>��tܪ ��}�o��Jwt����]���b��7o�[S��ǥs��,ǒ���F.W�<���z�+�"�����TJ�!F�6AI��~�����5�O��F{��O��|�ɐ����(^Fq� �����h��^<E��u"@c�EW�I)��xVP�2x��i��W�������'�oN�pH������
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:845 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:1191 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:1286 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:1306 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:1724 | # Authorization Standard
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:1726 | Authorization menggunakan:
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-001_enterprise_architecture_blueprint.md:1777 | - JWT Secret
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-002_enterprise_technical_architecture.md:271 | | Authorization | RBAC + Policy |
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-002_enterprise_technical_architecture.md:462 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\EA-002_enterprise_technical_architecture.md:492 | - Authorization Enforcement
+C:\FlutterProject\dashboard_kpi\docs\00_project\project_rules.md:158 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\roadmap.md:75 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\ventra_product_philosophy.md:468 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\standards_registry.md:85 | | UAS-001 | User Authorization Standard | APPROVED |
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\api\api_documentation_standard.md:43 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\api\api_documentation_standard.md:97 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\api\api_review_standard.md:34 | - Authorization benar.
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\security\security_documentation_standard.md:42 | 4. Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\security\security_documentation_standard.md:58 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\security\security_documentation_standard.md:80 | # Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\security\security_documentation_standard.md:82 | Review Authorization meliputi:
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\security\security_numbering_standard.md:45 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\00_project\standards\security\security_review_standard.md:36 | - Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:209 | 7. Support RBAC and data-level authorization.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:408 | - or incorrect authorization.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:725 | AI remains subject to authorization and enterprise data governance.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:946 | The final authorization rules are defined in the subsequent Permission Architecture.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1295 | 2. Authorization.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1334 | → AuthorizationFailure
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1483 | Authorization Check
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1529 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1591 | Authorization Test
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:1988 | - authorization architecture,
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:2458 | Role represents an authorization grouping.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:2473 | Role determines an authorization profile.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:2481 | Permission represents an atomic authorization capability.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:3279 | - authorization implications.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:3919 | AI context must respect the same authorization boundary as the requesting actor.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:3983 | - authorization,
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4234 | Critical Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4609 | # 120.0 DATA ACCESS AUTHORIZATION
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4644 | The exact hierarchy is determined by authorization architecture.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4697 | Authorization remains capability-specific.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4765 | | Role | Identity | Identity | Authorization |
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4766 | | Permission | Identity | Identity | Authorization |
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:4906 | | Authorization | YES |
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:5463 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:5485 | A dashboard aggregation does not bypass authorization.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:5503 | Export operations must respect the same authorization boundaries as interactive views.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:5520 | - authorization,
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:5839 | AUTHORIZATION
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:6438 | │  Layer 2 — Authorization                                    │
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:6559 | - implementation authorization,
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:6580 | IMPLEMENTATION AUTHORIZATION
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:6742 | 2. Authorization tidak boleh dilewati.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:6898 | 3. Identity and authorization.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7295 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7347 | - authorization,
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7354 | # 7.40 Authorization Final Gate
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7356 | Authorization harus berlaku pada:
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7370 | UI hiding bukan authorization.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7492 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:7790 | - melewati authorization,
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:8015 | - [x] Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:8342 | # 7.89 Implementation Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:8415 | | Authorization | AD-018 | Required | Required | Required |
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:8659 | Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:8729 | Production authorization bukan automatic consequence dari document lock.
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:9287 | UI-Based Authorization
+C:\FlutterProject\dashboard_kpi\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md:9374 | Authentication, authorization, tenant isolation, data protection dan audit
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_DB_PHYSICAL_DECISION_001.md:174 | ## 14. Implementation Authorization
+C:\FlutterProject\dashboard_kpi\docs\03_database\BOOKING_PHYSICAL_CONTRACT_DECISION_001.md:17 | Dokumen ini bukan migration authorization.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:6 | **SQL Authorization:** NOT AUTHORIZED
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:7 | **Migration Authorization:** NOT AUTHORIZED
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:80 | These authorizations DO NOT constitute PostgreSQL DDL authorization.
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:173 | ## 7. SQL AUTHORIZATION
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:175 | SQL authorization remains:
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:197 | ## 8. MIGRATION AUTHORIZATION
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:218 | - authorization boundary
+C:\FlutterProject\dashboard_kpi\docs\03_database\CUSTOMER_PHYSICAL_CONTRACT_FINALIZATION_DECISION_001.md:293 | - authorization boundary
+
+========================================================================
+10. FINAL GOVERNANCE STATUS
+========================================================================
+Architecture Boundary       : GREEN
+Logical Tenant Contract     : GREEN
+Production Provider         : 
+API/Transport Evidence      : 
+Effective Tenant Access     : REQUIRES AUTHORITATIVE PROVIDER
+Runtime Adapter              : HOLD
+
+RUNTIME PROVIDER GATE        : BLOCKED
+Reason: No concrete production TenantContextSource provider found.
+
+IMPORTANT:
+This audit does not treat test fakes, dummy tenant IDs, Supabase Auth,
+generic API URLs, or governance documents as proof of SP-203 runtime authority.
+
+END OF AUDIT
