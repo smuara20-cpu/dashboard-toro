@@ -1,0 +1,873 @@
+﻿SP-203 CONCRETE RUNTIME PROVIDER HUNT
+Repository: dashboard-toro
+Generated: 09/22/2026 21:40:09
+
+READ ONLY - NO FILE CHANGES
+
+
+============================================
+ROOT: .\lib
+============================================
+
+--- PATTERN: https:// ---
+.\lib\app\config\app_urls.dart : line 4 : static const development = "https://dev-api.travel.com";
+.\lib\app\config\app_urls.dart : line 6 : static const staging = "https://staging-api.travel.com";
+.\lib\app\config\app_urls.dart : line 8 : static const production = "https://api.travel.com";
+.\lib\features\testimoni\presentation\pages\testimonial_page.dart : line 22 : 'https://www.google.com/maps';
+
+--- PATTERN: http:// ---
+NO MATCH
+
+--- PATTERN: baseUrl ---
+.\lib\app\config\app_config.dart : line 14 : static String get baseUrl {
+.\lib\app\config\env_config.dart : line 2 : static const String supabaseUrl = String.fromEnvironment('SUPABASE_URL');
+.\lib\app\config\env_config.dart : line 9 : supabaseUrl.isNotEmpty && supabasePublishableKey.isNotEmpty;
+.\lib\app\config\env_config.dart : line 12 : if (supabaseUrl.isEmpty) {
+.\lib\app\initializers\supabase_initializer.dart : line 9 : url: EnvConfig.supabaseUrl,
+
+--- PATTERN: base_url ---
+.\lib\app\config\env_config.dart : line 2 : static const String supabaseUrl = String.fromEnvironment('SUPABASE_URL');
+.\lib\app\config\env_config.dart : line 13 : throw StateError('SUPABASE_URL is not configured.');
+
+--- PATTERN: Uri( ---
+NO MATCH
+
+--- PATTERN: supabase.functions ---
+NO MATCH
+
+--- PATTERN: rpc( ---
+NO MATCH
+
+--- PATTERN: Edge Function ---
+NO MATCH
+
+--- PATTERN: /api/ ---
+NO MATCH
+
+--- PATTERN: /auth/ ---
+.\lib\app\router\app_router.dart : line 4 : import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
+.\lib\features\auth\presentation\pages\login_page.dart : line 6 : import 'package:dashboard_kpi/features/auth/application/providers/session_provider.dart';
+
+--- PATTERN: /tenant/ ---
+NO MATCH
+
+--- PATTERN: /access/ ---
+NO MATCH
+
+--- PATTERN: TenantContextSource ---
+.\lib\features\auth\application\providers\session_provider.dart : line 28 : final tenantContextSourceProvider = Provider<TenantContextSource>((ref) {
+.\lib\features\auth\application\providers\session_provider.dart : line 30 : 'TenantContextSource must be provided by the authoritative '
+.\lib\features\auth\application\providers\session_provider.dart : line 38 : tenantContextSource: ref.watch(tenantContextSourceProvider),
+.\lib\features\auth\application\services\session_establishment_service.dart : line 6 : final TenantContextSource tenantContextSource;
+.\lib\features\auth\application\services\session_establishment_service.dart : line 8 : const SessionEstablishmentService({required this.tenantContextSource});
+.\lib\features\auth\application\services\session_establishment_service.dart : line 11 : final tenantContext = await tenantContextSource.resolve(user: user);
+.\lib\features\auth\domain\repository\tenant_context_source.dart : line 4 : abstract interface class TenantContextSource {
+
+--- PATTERN: ConcreteTenantContextSource ---
+NO MATCH
+
+--- PATTERN: SupabaseTenantContextSource ---
+NO MATCH
+
+--- PATTERN: RuntimeTenantContextSource ---
+NO MATCH
+
+--- PATTERN: SP-203 ---
+NO MATCH
+
+--- PATTERN: IdentityAccess ---
+NO MATCH
+
+--- PATTERN: Identity & Access ---
+.\lib\features\auth\application\providers\session_provider.dart : line 31 : 'Identity & Access implementation.',
+
+--- PATTERN: Resolve Effective Tenant Access ---
+NO MATCH
+
+============================================
+ROOT: .\docs
+============================================
+
+--- PATTERN: https:// ---
+.\docs\03_database\master_data\branch\sample_data.md : line 61 : | Website | https://www.torotravel.com |
+.\docs\03_database\master_data\company\sample_data.md : line 54 : | Website | https://www.torotravel.com |
+
+--- PATTERN: http:// ---
+NO MATCH
+
+--- PATTERN: baseUrl ---
+NO MATCH
+
+--- PATTERN: base_url ---
+.\docs\14_standards\02_naming\naming_standard.md : line 181 : API_BASE_URL
+.\docs\14_standards\02_naming\naming_standard.md : line 183 : SUPABASE_URL
+.\docs\14_standards\02_naming\naming_standard.md : line 520 : API_BASE_URL
+
+--- PATTERN: Uri( ---
+NO MATCH
+
+--- PATTERN: supabase.functions ---
+NO MATCH
+
+--- PATTERN: rpc( ---
+NO MATCH
+
+--- PATTERN: Edge Function ---
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1121 : | Edge Function | Supabase Edge Functions |
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1188 : - Edge Functions
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 709 : Supabase Edge Function = SP-203 endpoint
+
+--- PATTERN: /api/ ---
+.\docs\20_blueprints\database\DB-102_crm_database_blueprint.md : line 3126 : /api/v1/crm
+.\docs\20_blueprints\database\DB-102_crm_database_blueprint.md : line 3127 : /api/v2/crm
+
+--- PATTERN: /auth/ ---
+NO MATCH
+
+--- PATTERN: /tenant/ ---
+NO MATCH
+
+--- PATTERN: /access/ ---
+NO MATCH
+
+--- PATTERN: TenantContextSource ---
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 12 : Menetapkan governed API contract untuk memperoleh effective tenant access dari authoritative Identity & Access Platform setelah authentication berhasil. Contract ini menjadi dasar implementasi TenantContextSource dan tidak mengizinkan tenant derivation di client.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 69 : Successful authoritative response diterjemahkan oleh TenantContextSource menjadi:
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 137 : Adapter `TenantContextSource` baru boleh dibuat setelah:
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 21 : TenantContextSource
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 59 : - fake TenantContextSource
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 22 : TenantContextSource
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 37 : abstract interface class TenantContextSource {
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 44 : TenantContextSource hanya menerjemahkan hasil authoritative source. TenantContextSource tidak boleh menebak atau menghitung tenant.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 68 : TenantContext, SessionContext, TenantContextSource, SessionEstablishmentService, AuthSessionService, dan SessionController sudah tersedia.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 17 : TenantContextSource
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 33 : Ditolak: UserEntity.id, email, role, hardcoded tenant, application configuration, UI state, Jamaah, Booking, Finance, direct database access dari Flutter, dan fake TenantContextSource.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 56 : Concrete transport binding belum dipublikasikan oleh authoritative Identity & Access Provider. Karena itu TenantContextSource belum memiliki dasar yang cukup untuk runtime integration production-safe.
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 20 : TenantContextSource
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 37 : abstract interface class TenantContextSource {
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 82 : `TenantContextSource` wajib memperoleh effective tenant/company access
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 106 : TenantContextSource.resolve()
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 166 : TenantContextSource Adapter
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 168 : TenantContextSource Contract
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 186 : TenantContextSource
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 217 : - TenantContextSource tetap menjadi application boundary.
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 18 : TenantContextSource
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 61 : - Fake TenantContextSource
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 68 : abstract interface class TenantContextSource {
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 125 : TenantContextSource adapter
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 133 : FakeTenantContextSource
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 134 : HardcodedTenantContextSource
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 143 : TenantContextSource
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 180 : TenantContextSource abstraction
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 723 : TenantContextSource
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 731 : ConcreteTenantContextSource
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 732 : FakeTenantContextSource
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 733 : HardcodedTenantContextSource
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 734 : SupabaseTenantContextSource
+
+--- PATTERN: ConcreteTenantContextSource ---
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 731 : ConcreteTenantContextSource
+
+--- PATTERN: SupabaseTenantContextSource ---
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 734 : SupabaseTenantContextSource
+
+--- PATTERN: RuntimeTenantContextSource ---
+NO MATCH
+
+--- PATTERN: SP-203 ---
+.\docs\00_project\EA-000_architecture_freeze_rules.md : line 74 : SP-203 selalu Identity & Access Platform.
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 211 : - SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 309 : - SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 634 : - SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 837 : SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1301 : SP-203 Identity & Access Platform.
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1711 : SP-203 Identity & Access Platform.
+.\docs\20_blueprints\business\BP-101_customer_blueprint.md : line 325 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-101_customer_blueprint.md : line 987 : | SP-203 Identity & Access Platform | Autentikasi dan otorisasi |
+.\docs\20_blueprints\business\BP-102_crm_blueprint.md : line 333 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-102_crm_blueprint.md : line 1140 : | SP-203 Identity & Access | Authentication |
+.\docs\20_blueprints\business\BP-103_marketing_blueprint.md : line 325 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-103_marketing_blueprint.md : line 1093 : | SP-203 Identity & Access | Authentication |
+.\docs\20_blueprints\business\BP-104_booking_blueprint.md : line 336 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-104_booking_blueprint.md : line 803 : - SP-203 Identity & Access
+.\docs\20_blueprints\business\BP-104_booking_blueprint.md : line 1276 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-105_package_blueprint.md : line 336 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-105_package_blueprint.md : line 775 : - SP-203 Identity & Access
+.\docs\20_blueprints\business\BP-105_package_blueprint.md : line 1256 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-106_departure_blueprint.md : line 369 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-106_departure_blueprint.md : line 828 : - SP-203 Identity & Access
+.\docs\20_blueprints\business\BP-106_departure_blueprint.md : line 1306 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-107_hotel_blueprint.md : line 358 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-107_hotel_blueprint.md : line 829 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-107_hotel_blueprint.md : line 1330 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-108_flight_blueprint.md : line 367 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-108_flight_blueprint.md : line 899 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-108_flight_blueprint.md : line 1473 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-109_visa_blueprint.md : line 360 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-109_visa_blueprint.md : line 886 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-109_visa_blueprint.md : line 1415 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-110_finance_blueprint.md : line 359 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-110_finance_blueprint.md : line 906 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-110_finance_blueprint.md : line 1511 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-111_payment_blueprint.md : line 363 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-111_payment_blueprint.md : line 848 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-111_payment_blueprint.md : line 1406 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-112_dashboard_blueprint.md : line 342 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-112_dashboard_blueprint.md : line 792 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-112_dashboard_blueprint.md : line 1299 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-113_notification_blueprint.md : line 332 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-113_notification_blueprint.md : line 809 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-113_notification_blueprint.md : line 1364 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-114_ai_blueprint.md : line 333 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-114_ai_blueprint.md : line 787 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-114_ai_blueprint.md : line 1350 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\database\DB-102_crm_database_blueprint.md : line 4551 : SP-203
+.\docs\20_blueprints\database\DB-201_customer_database_blueprint.md : line 147 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 9 : **Provider:** SP-203 Identity & Access Runtime
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 15 : SP-203 Identity & Access Platform adalah authority untuk Identity, Authentication, Authorization dan Access Context. Consumer tidak boleh mengakses internal implementation SP-203 secara langsung. Integration wajib menggunakan governed API, Event, Message atau Contract.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 33 : - SP-203 menentukan apakah authenticated identity memiliki effective tenant access.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 61 : - `tenant_id` = effective tenant boundary yang diberikan SP-203.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 150 : - TenantContext berasal dari authoritative SP-203 runtime.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 15 : SP-203 Identity & Access
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 39 : `tenant_id` dan `company_id` harus berasal dari effective access context SP-203, bukan dari client input.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 45 : SP-203 adalah authority yang menentukan effective tenant access. Client hanya mengonsumsi hasil keputusan tersebut.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 29 : SP-203 adalah authority untuk identity, authentication, session, tenant access, organization context, role/permission context, dan identity lifecycle.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 15 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 115 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 48 : SP-203 Identity & Access Platform adalah authority untuk:
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 617 : SP-203 tetap menjadi authoritative Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 734 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 828 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1150 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1171 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1216 : | Authentication | SP-203 |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1217 : | Authorization | SP-203 |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 2418 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 2436 : | Identity | SP-203 | Consume |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 2614 : SP-203
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 3042 : ├── SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 152 : │      ├── SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 570 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 581 : SP-203 menjadi identity and access authority.
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 759 : | Identity | SP-203 |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1066 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1 : # SP-203 IDENTITY & ACCESS PLATFORM
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 25 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 27 : | File Name | `SP-203_identity_access_platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 64 : > Final Enterprise Acceptance keseluruhan SP-203,
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 65 : > Final Governance keseluruhan SP-203, dan Enterprise Baseline keseluruhan
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 66 : > SP-203 tetap **DEFERRED TO PART 7**.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 73 : SP-203 Identity & Access Platform sebagai Shared Platform capability
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 76 : SP-203 menyediakan Identity & Access capability secara:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 134 : # SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 156 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 158 : | File Name | `SP-203_identity_access_platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 165 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 215 : SP-203 harus menjadi satu authoritative access control plane
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 233 : # SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 258 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 260 : | File Name | `SP-203_identity_access_platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 267 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 294 : control model untuk SP-203 Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 317 : SP-203 harus memastikan bahwa seluruh identity dan access capability
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 352 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 354 : | File Name | `SP-203 Identity & Access Platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 454 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 456 : | File Name | `SP-203 Identity & Access Platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 507 : # SP-203 — VENTRA IDENTITY & ACCESS PLATFORM
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 529 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 531 : | File Name | `SP-203 Identity & Access Platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 539 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 547 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 571 : SP-203 — VENTRA Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 607 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 624 : SP-203 merupakan authoritative enterprise platform untuk:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 641 : SP-203 menjadi shared enterprise authority.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 649 : SP-203 Identity &
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 676 : SP-203 harus tetap menjadi shared platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 678 : SP-203 tidak boleh berubah menjadi:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 696 : SP-203 menyediakan identity and access capability
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 703 : SP-203 harus mendukung seluruh Business Domain VENTRA
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 716 : SP-203 menyediakan centralized identity and access capability.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 730 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 741 : SP-203 tidak mengambil alih business meaning.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 743 : SP-203 hanya menyediakan authoritative identity and
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 750 : Architecture boundary SP-203 dinyatakan:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 753 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 779 : tersebut telah disediakan SP-203.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 865 : SP-203 harus mendukung:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1011 : SP-203 wajib menerapkan:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1038 : SP-203 harus mendukung Separation of Duties.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1066 : SP-203 menyediakan capability.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1075 : SP-203 harus mendukung enterprise multi-tenant architecture.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1124 : SP-203 tidak hanya mengelola human identity.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1126 : SP-203 harus mendukung governed identity untuk:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1234 : SP-203 harus mengikuti enterprise security baseline.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1240 : | Identity | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1241 : | Authentication | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1242 : | Authorization | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1251 : SP-203 bukan pengganti SP-204.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1253 : SP-203 menyediakan identity and access authority.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1300 : SP-203 tidak menjadi Audit Platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1308 : SP-203 menyediakan audit event/reference
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1337 : SP-203 identity reference.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1359 : SP-203 tidak boleh mengumpulkan identity data
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1369 : SP-203 harus berintegrasi dengan shared platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1377 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1389 : Consumer tidak boleh mengakses internal SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1432 : SP-203 dapat digunakan oleh:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1451 : SP-203 hanya menyediakan:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1460 : SP-203 tidak menjadi Workflow Engine.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1467 : SP-203 sebagai identity and authorization authority.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1491 : SP-203 tidak mengambil alih Document lifecycle,
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1499 : SP-203 untuk identity and authorization context.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1506 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1523 : SP-203 tidak menjadi Vendor Platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1631 : SP-203 harus dapat dioperasikan secara:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1673 : SP-203 merupakan critical shared platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1689 : insecure bypass apabila SP-203 mengalami failure.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1703 : SP-203 harus menyediakan observability untuk:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1783 : Perubahan terhadap SP-203 harus mengikuti
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1818 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1842 : SP-203 memiliki dependency dan relationship
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1848 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1866 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1916 : - Consistent with SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1925 : SP-203 harus testable.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2000 : SP-203 harus memenuhi:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2016 : SP-203 tidak boleh menurunkan enterprise security
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2047 : Exception terhadap SP-203 baseline harus:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2076 : Setiap major architecture decision SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2114 : SP-203 harus memenuhi seluruh:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2184 : SP-203 governance authority dinyatakan:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2189 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2240 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2273 : SP-203 v2.0.0
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2337 : SP-203 berpindah dari:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2378 : SP-203 v2.0.0
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2413 : Lifecycle SP-203:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2443 : Dokumen SP-203 harus mempertahankan:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2469 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2498 : | Document ID | SP-203 |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2536 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2551 : SP-203 menjadi:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2571 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2575 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2579 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2617 : Seluruh consumer SP-203 harus menggunakan
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2623 : Bypass SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2644 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2659 : SP-203 menjadi baseline enterprise untuk
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2670 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2721 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2764 : ║                    VENTRA SP-203                         ║
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2796 : SP-203 v2.0.0
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2836 : SP-203
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2847 : SP-203 — VENTRA IDENTITY & ACCESS PLATFORM
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2878 : END OF SP-203
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 1 : # SP-203 RUNTIME INTEGRATION REQUEST
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 11 : | Document ID | SP-203-RUNTIME-INTEGRATION-REQUEST-001 |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 12 : | Document Name | SP-203 Runtime Integration Request |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 13 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 15 : | Provider | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 21 : | Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 43 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 59 : - tidak mengasumsikan implementation internal SP-203.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 94 : kepada authoritative provider SP-203.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 113 : REMAINS SP-203
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 119 : docs/20_blueprints/platform/SP-203_RUNTIME_INTEGRATION_REQUEST_001.md
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 126 : AWAITING SP-203 PROVIDER CONTRACT
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 133 : SP-203 merupakan authoritative enterprise platform untuk:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 149 : Consumer wajib menggunakan governed SP-203 contract.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 164 : SP-203 tetap menjadi source of truth untuk Identity & Access
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 185 : Namun concrete SP-203 runtime provider belum tersedia.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 190 : SP-203 Authority
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 193 : SP-203 Architecture
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 196 : SP-203 Governance
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 219 : Mohon SP-203 menyediakan authoritative runtime contract untuk
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 254 : SP-203 diminta menyediakan:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 284 : eksplisit ditetapkan oleh SP-203 contract.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 286 : SP-203 tetap menjadi authority untuk menentukan effective access.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 292 : Mohon SP-203 menyediakan authoritative runtime contract untuk:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 329 : oleh SP-203.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 335 : Mohon SP-203 menyediakan authoritative runtime contract untuk:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 367 : Apabila SP-203 menyediakan centralized authorization decision,
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 402 : kecuali SP-203 secara authoritative menetapkan policy berbeda.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 408 : Mohon SP-203 mendefinisikan lifecycle contract:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 446 : Mohon SP-203 bersama authority terkait memberikan
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 452 : SP-203 Access Context
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 492 : Mohon SP-203 menyediakan standardized error semantics
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 529 : Mohon SP-203 memberikan:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 552 : Mohon SP-203 menyediakan requirement untuk:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 572 : Mohon SP-203 menyediakan:
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 597 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 603 : TBD by SP-203
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 606 : TBD by SP-203 / SP-204
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 609 : TBD by SP-208 / SP-203
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 612 : TBD by SP-203
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 621 : SP-203 diminta memberikan minimal satu
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 650 : sesuai architecture SP-203.
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 700 : Supabase Auth = SP-203 Authority
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 708 : Supabase RPC = SP-203 transport
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 709 : Supabase Edge Function = SP-203 endpoint
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 710 : REST endpoint = SP-203 endpoint
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 711 : JWT claim = SP-203 tenant binding
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 831 : Submit SP-203 Runtime Integration Request
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 833 : SP-203 Provider Response
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 850 : SP-203 RUNTIME INTEGRATION REQUEST
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 866 : AWAITING SP-203 PROVIDER CONTRACT
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 41 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 648 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 734 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 949 : SP-204 harus terintegrasi dengan SP-203 untuk:
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 963 : SP-203
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 1736 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 1755 : | Identity & Access | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 385 : │         SP-203          SP-204         SP-205
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 803 : | Identity | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 1164 : SP-205 harus berintegrasi dengan SP-203 dan SP-204.
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 1173 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 1484 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2272 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2303 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2340 : | Identity | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2341 : | Authentication | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2342 : | Authorization | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2718 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 3200 : | Identity | Reference | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 3280 : | SP-203 | Identity / Access | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 3329 : → SP-203
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 3555 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4130 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4403 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4455 : SP-203 tetap menjadi authoritative Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4551 : SP-202        SP-203        SP-204        SP-208        SP-209
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4604 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4714 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 27 : | Identity Authority | Identity & Access Architecture / SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 207 : | Identity Authority | Identity & Access Architecture / SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 1151 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 1175 : SP-203 tetap menjadi authoritative Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 2055 : SP-203
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 2260 : | SP-203 | Identity & Access | Critical | SP-203 |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 2618 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 211 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 999 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1030 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1067 : | Identity | SP-203 |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1068 : | Authentication | SP-203 |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1069 : | Authorization | SP-203 |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1445 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1927 : | Identity | Reference | SP-203 |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 2007 : | SP-203 | Identity / Access | SP-203 |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 2056 : → SP-203
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 2282 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 2946 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3094 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3282 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3358 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3411 : SP-203 Identity & Access
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3454 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 31 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 1244 : Identity Authority tetap berada pada SP-203.
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 1254 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 2248 : Identity & Access Authority tetap pada SP-203.
+.\docs\20_blueprints\platform\SP-210_reporting_platform.md : line 163 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-210_reporting_platform.md : line 746 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\ui\GATE_016_3_DESIGN_SYSTEM_AUDIT_001.md : line 36 : - Tenant / SP-203 authority: HOLD
+.\docs\20_blueprints\ui\GATE_016_3_DESIGN_SYSTEM_AUDIT_001.md : line 40 : No database migration, RLS implementation, physical schema change, SP-203 implementation, or assumption-based backend integration is authorized by this decision.
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 38 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 815 : | Identity & Access | SP-203 |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 836 : | SP-203 | Identity & Access Platform | Identity & Access |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 1998 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 2019 : | Identity & Access Service | SP-203 | Identity and access |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 2328 : | SP-203 | Identity & Access Services |
+
+--- PATTERN: IdentityAccess ---
+NO MATCH
+
+--- PATTERN: Identity & Access ---
+.\docs\00_project\EA-000_architecture_freeze_rules.md : line 74 : SP-203 selalu Identity & Access Platform.
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 211 : - SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 309 : - SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 634 : - SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 837 : SP-203 Identity & Access Platform
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1297 : # Identity & Access Architecture
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1301 : SP-203 Identity & Access Platform.
+.\docs\00_project\EA-001_enterprise_architecture_blueprint.md : line 1711 : SP-203 Identity & Access Platform.
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 443 : Identity & Access        Tenant & Organization
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 488 : ## 9.1 Identity & Access
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 783 : | User | Identity & Access |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 784 : | Role | Identity & Access |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2118 : Identity & Access
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2190 : | ENT-005 | User | Identity & Access | Master |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2191 : | ENT-006 | Role | Identity & Access | Reference |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2192 : | ENT-007 | Permission | Identity & Access | Reference |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2244 : | User | Identity & Access |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2245 : | Role | Identity & Access |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 2246 : | Permission | Identity & Access |
+.\docs\01_architecture\AD-018_ventra_enterprise_data_architecture.md : line 6175 : | Identity Authority | Identity & Access Platform |
+.\docs\01_architecture\AD-019_Workflow_Architecture.md : line 377 : | Identity Authority | Identity & Access Architecture |
+.\docs\01_architecture\AD-019_Workflow_Architecture.md : line 560 : | Identity Authority | Identity & Access Architecture |
+.\docs\01_architecture\AD-019_Workflow_Architecture.md : line 626 : | Identity Authority | Identity & Access Architecture |
+.\docs\03_database\master_data\user\notes.md : line 19 : Master Data User merupakan pusat Identity & Access Management (IAM) pada TIOS.
+.\docs\03_database\master_data\user\security_review.md : line 23 : Dokumen ini mendefinisikan standar keamanan Master Data User sebagai fondasi Identity & Access Management (IAM) pada TIOS.
+.\docs\03_database\COMPANY_PHYSICAL_AUTHORITY_RECONCILIATION_001.md : line 212 : Tenant/session resolution remains owned by the Identity & Access
+.\docs\03_database\CUSTOMER_PHYSICAL_AUTHORITY_RECONCILIATION_001.md : line 134 : Identity & Access / Tenant Context authority before physical migration.
+.\docs\20_blueprints\booking\BOOKING-JAMAAH-RELATIONSHIP-CONTRACT-001.md : line 116 : - Identity & Access transport
+.\docs\20_blueprints\booking\BOOKING-JAMAAH-RELATIONSHIP-CONTRACT-001.md : line 146 : 11. Identity & Access transport blocker remains unchanged.
+.\docs\20_blueprints\booking\BOOKING-JAMAAH-RELATIONSHIP-DECISION-001.md : line 117 : - Identity & Access transport
+.\docs\20_blueprints\booking\BOOKING-JAMAAH-RELATIONSHIP-DECISION-002.md : line 32 : - This decision does NOT change Payment, Invoice, Document, Ticket, Visa, Hotel, Notification, Location, AI, WhatsApp, Identity & Access, Router, or UI.
+.\docs\20_blueprints\business\BP-101_customer_blueprint.md : line 325 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-101_customer_blueprint.md : line 987 : | SP-203 Identity & Access Platform | Autentikasi dan otorisasi |
+.\docs\20_blueprints\business\BP-102_crm_blueprint.md : line 333 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-102_crm_blueprint.md : line 1140 : | SP-203 Identity & Access | Authentication |
+.\docs\20_blueprints\business\BP-103_marketing_blueprint.md : line 325 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-103_marketing_blueprint.md : line 1093 : | SP-203 Identity & Access | Authentication |
+.\docs\20_blueprints\business\BP-104_booking_blueprint.md : line 336 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-104_booking_blueprint.md : line 803 : - SP-203 Identity & Access
+.\docs\20_blueprints\business\BP-104_booking_blueprint.md : line 1276 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-105_package_blueprint.md : line 336 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-105_package_blueprint.md : line 775 : - SP-203 Identity & Access
+.\docs\20_blueprints\business\BP-105_package_blueprint.md : line 1256 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-106_departure_blueprint.md : line 369 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-106_departure_blueprint.md : line 828 : - SP-203 Identity & Access
+.\docs\20_blueprints\business\BP-106_departure_blueprint.md : line 1306 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-107_hotel_blueprint.md : line 358 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-107_hotel_blueprint.md : line 829 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-107_hotel_blueprint.md : line 1330 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-108_flight_blueprint.md : line 367 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-108_flight_blueprint.md : line 899 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-108_flight_blueprint.md : line 1473 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-109_visa_blueprint.md : line 360 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-109_visa_blueprint.md : line 886 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-109_visa_blueprint.md : line 1415 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-110_finance_blueprint.md : line 359 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-110_finance_blueprint.md : line 906 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-110_finance_blueprint.md : line 1511 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-111_payment_blueprint.md : line 363 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-111_payment_blueprint.md : line 848 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-111_payment_blueprint.md : line 1406 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-112_dashboard_blueprint.md : line 342 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-112_dashboard_blueprint.md : line 792 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-112_dashboard_blueprint.md : line 1299 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-113_notification_blueprint.md : line 332 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-113_notification_blueprint.md : line 809 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-113_notification_blueprint.md : line 1364 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-114_ai_blueprint.md : line 333 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-114_ai_blueprint.md : line 787 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\business\BP-114_ai_blueprint.md : line 1350 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\database\DB-102_crm_database_blueprint.md : line 3678 : Identity Authority tetap berada pada Identity & Access Platform.
+.\docs\20_blueprints\database\DB-102_crm_database_blueprint.md : line 4549 : IDENTITY & ACCESS
+.\docs\20_blueprints\database\DB-201_customer_database_blueprint.md : line 147 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 7 : **Owner:** Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 9 : **Provider:** SP-203 Identity & Access Runtime
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 12 : Menetapkan governed API contract untuk memperoleh effective tenant access dari authoritative Identity & Access Platform setelah authentication berhasil. Contract ini menjadi dasar implementasi TenantContextSource dan tidak mengizinkan tenant derivation di client.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 15 : SP-203 Identity & Access Platform adalah authority untuk Identity, Authentication, Authorization dan Access Context. Consumer tidak boleh mengakses internal implementation SP-203 secara langsung. Integration wajib menggunakan governed API, Event, Message atau Contract.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 28 : - Authentication credential/token dikelola oleh Identity & Access architecture.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 34 : - Authorization dilakukan oleh authoritative Identity & Access runtime.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 121 : - Tenant isolation enforced oleh backend/Identity & Access Platform.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 134 : Contract hanya mengatur boundary Authentication → Identity & Access → Effective Tenant Access → TenantContext. Business domains tidak menjadi source tenant resolution.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 9 : TenantContext untuk application session harus diperoleh melalui governed Identity & Access API contract yang authoritative. Flutter tidak boleh menentukan atau memperoleh tenant melalui business domain, UI state atau direct database access.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 15 : SP-203 Identity & Access
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 42 : Authentication credential/token tetap menjadi responsibility Identity & Access architecture. Contract ini tidak menciptakan authentication mechanism baru dan tidak boleh menebak token format.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 63 : Backend / Identity & Access Platform tetap menjadi security enforcement boundary. TenantContext pada Flutter hanya application context.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 72 : Decision ini hanya mencakup Authentication, Identity & Access API, Effective Tenant Access, TenantContext dan SessionContext.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 1 : # AUTH IDENTITY & ACCESS RUNTIME CONTRACT
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 9 : Menetapkan runtime boundary antara Flutter application dan authoritative Identity & Access Platform untuk memperoleh TenantContext tanpa bypass, derivation, hardcode, atau fake tenant source.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 16 : Identity & Access Runtime Boundary
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 18 : Authoritative Identity & Access Service
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 58 : Backend / Identity & Access Platform wajib menegakkan authentication, authorization, effective tenant access, dan tenant isolation.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_CONTRACT.md : line 64 : Runtime source hanya bergantung pada authoritative Identity & Access runtime boundary.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 1 : # AUTH IDENTITY & ACCESS RUNTIME DECISION 001
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 9 : Runtime TenantContext wajib diperoleh melalui authoritative Identity & Access runtime boundary.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 19 : Authoritative Identity & Access Runtime
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 42 : Backend / Identity & Access Platform adalah security boundary.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_RUNTIME_DECISION_001.md : line 46 : Decision ini hanya mencakup Authentication → Identity & Access Runtime → TenantContext → Session.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 7 : **Scope:** Authentication → Identity & Access → Tenant Context → Session Context
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 15 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 39 : | Identity & Access Authority | AVAILABLE |
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 56 : Concrete transport binding belum dipublikasikan oleh authoritative Identity & Access Provider. Karena itu TenantContextSource belum memiliki dasar yang cukup untuk runtime integration production-safe.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 74 : Backend / Identity & Access Platform tetap menjadi security boundary. Client-side TenantContext bukan security boundary dan tidak boleh digunakan untuk bypass authorization atau tenant isolation.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 84 : Dokumen ini hanya mencakup Authentication, Identity & Access, Tenant Context, Session Context, dan Transport Binding.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 99 : Blocker selesai apabila authoritative Identity & Access Provider menyediakan concrete transport contract yang memenuhi seluruh requirement transport.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 109 : Keputusan: Jangan implementasikan adapter sebelum concrete Identity & Access transport binding tersedia secara authoritative.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 115 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 18 : Authoritative Identity & Access Source
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 48 : SP-203 Identity & Access Platform adalah authority untuk:
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 83 : dari authoritative Identity & Access source.
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 164 : Identity & Access Authority
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_CONTRACT.md : line 218 : - Tenant berasal dari authoritative Identity & Access source.
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 6 : **Authority:** SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\AUTH_TENANT_CONTEXT_SOURCE_DECISION_001.md : line 11 : session harus berasal dari authoritative Identity & Access source.
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 567 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 617 : SP-203 tetap menjadi authoritative Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 734 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 828 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 874 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1150 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1166 : # 7.8 IDENTITY & ACCESS GOVERNANCE
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 1171 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 2418 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 2458 : | Identity | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-201_vendor_platform.md : line 3042 : ├── SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 41 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 152 : │      ├── SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 570 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 911 : Authorization authority tetap mengikuti enterprise Identity & Access Architecture.
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1066 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1345 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1437 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1531 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1620 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1748 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-202_document_platform.md : line 1878 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1 : # SP-203 IDENTITY & ACCESS PLATFORM
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 15 : # IDENTITY & ACCESS PLATFORM FOUNDATION,
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 26 : | Document Name | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 35 : | Platform Domain | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 37 : | Platform Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 38 : | Business Owner | Identity & Access Manager |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 73 : SP-203 Identity & Access Platform sebagai Shared Platform capability
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 76 : SP-203 menyediakan Identity & Access capability secara:
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 92 : - Identity & Access Platform purpose
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 134 : # SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 157 : | Document Name | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 165 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 167 : | Platform Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 168 : | Business Owner | Identity & Access Owner |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 191 : PART 2 mendefinisikan arsitektur Identity & Access untuk VENTRA
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 233 : # SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 259 : | Document Name | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 267 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 269 : | Platform Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 270 : | Business Owner | Identity & Access Management |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 294 : control model untuk SP-203 Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 341 : # IDENTITY & ACCESS OPERATIONS,
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 353 : | Document Name | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 354 : | File Name | `SP-203 Identity & Access Platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 360 : | Architecture Domain | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 362 : | Platform Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 385 : untuk Identity & Access Platform VENTRA.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 411 : PART 5 memastikan Identity & Access Platform tidak hanya mampu
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 443 : # IDENTITY & ACCESS SECURITY,
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 455 : | Document Name | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 456 : | File Name | `SP-203 Identity & Access Platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 462 : | Architecture Domain | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 464 : | Platform Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 466 : | Identity Authority | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 490 : framework untuk Identity & Access Platform VENTRA.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 492 : PART 6 memastikan seluruh capability Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 507 : # SP-203 — VENTRA IDENTITY & ACCESS PLATFORM
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 530 : | Document Name | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 531 : | File Name | `SP-203 Identity & Access Platform.md` |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 537 : | Architecture Domain | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 539 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 541 : | Platform Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 547 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 571 : SP-203 — VENTRA Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 753 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1343 : Identity & Access Platform dapat memproses
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1527 : # 7.25 AI IDENTITY & ACCESS GOVERNANCE
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 1848 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2023 : Identity & Access risk harus dikategorikan.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2240 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2276 : sebagai source of truth untuk Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2469 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2499 : | Document | VENTRA Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2536 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2670 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2724 : VENTRA Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2766 : ║             IDENTITY & ACCESS PLATFORM                   ║
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2805 : untuk Identity & Access Architecture VENTRA
+.\docs\20_blueprints\platform\SP-203_identity_access_platform.md : line 2847 : SP-203 — VENTRA IDENTITY & ACCESS PLATFORM
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 3 : > **Runtime Dependency Request for VENTRA Identity & Access Platform**
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 13 : | Platform | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 15 : | Provider | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 16 : | Domain | Identity & Access |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 21 : | Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 23 : | Provider Owner | Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 43 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 47 : agar application dapat mengonsumsi Identity & Access capability
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 164 : SP-203 tetap menjadi source of truth untuk Identity & Access
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 597 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 600 : Identity & Access Platform
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 41 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 144 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 304 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 461 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 648 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 670 : Compliance Control, Auditability, Data Governance, Identity & Access
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 734 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 947 : # 7.7 IDENTITY & ACCESS TRACEABILITY
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 964 : Identity & Access
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 1736 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-204_security_platform.md : line 1755 : | Identity & Access | SP-203 |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 43 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 1173 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 1484 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2272 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2303 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 2718 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 3555 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4130 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4238 : | Identity Authority | Identity & Access Architecture |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4403 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4455 : SP-203 tetap menjadi authoritative Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4604 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-205_audit_platform.md : line 4714 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 27 : | Identity Authority | Identity & Access Architecture / SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 207 : | Identity Authority | Identity & Access Architecture / SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 1151 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 1175 : SP-203 tetap menjadi authoritative Identity & Access Platform.
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 2260 : | SP-203 | Identity & Access | Critical | SP-203 |
+.\docs\20_blueprints\platform\SP-206_search_platform.md : line 2618 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 211 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 999 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1030 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 1445 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 2282 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 2946 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3094 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3282 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3358 : - SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3411 : SP-203 Identity & Access
+.\docs\20_blueprints\platform\SP-207_storage_platform.md : line 3454 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 31 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 1254 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\platform\SP-208_integration_platform.md : line 2248 : Identity & Access Authority tetap pada SP-203.
+.\docs\20_blueprints\platform\SP-210_reporting_platform.md : line 163 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\platform\SP-210_reporting_platform.md : line 746 : | Identity & Access Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 38 : | Identity Authority | SP-203 Identity & Access Platform |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 815 : | Identity & Access | SP-203 |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 836 : | SP-203 | Identity & Access Platform | Identity & Access |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 1983 : Identity & Access Service
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 1998 : SP-203 Identity & Access Platform
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 2019 : | Identity & Access Service | SP-203 | Identity and access |
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 2117 : │   ├── Identity & Access Service
+.\docs\20_blueprints\BP-001_business_blueprint.md : line 2328 : | SP-203 | Identity & Access Services |
+
+--- PATTERN: Resolve Effective Tenant Access ---
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_CONTRACT_001.md : line 18 : Logical operation: `Resolve Effective Tenant Access`
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 17 : Resolve Effective Tenant Access
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_API_DECISION_001.md : line 31 : Consumer menggunakan logical operation `Resolve Effective Tenant Access`. Concrete HTTP method, endpoint/path dan gateway binding belum ditetapkan oleh source blueprint sehingga statusnya tetap TBD sampai Provider / Integration Architecture mempublikasikan transport contract.
+.\docs\20_blueprints\platform\AUTH_IDENTITY_ACCESS_TRANSPORT_BLOCKER_001.md : line 23 : Logical operation: **Resolve Effective Tenant Access**
+.\docs\20_blueprints\platform\SP-203_RUNTIME_INTEGRATION_REQUEST_001.md : line 251 : Resolve Effective Tenant Access
+
+============================================
+ROOT: .\test
+============================================
+
+--- PATTERN: https:// ---
+NO MATCH
+
+--- PATTERN: http:// ---
+NO MATCH
+
+--- PATTERN: baseUrl ---
+NO MATCH
+
+--- PATTERN: base_url ---
+NO MATCH
+
+--- PATTERN: Uri( ---
+NO MATCH
+
+--- PATTERN: supabase.functions ---
+NO MATCH
+
+--- PATTERN: rpc( ---
+NO MATCH
+
+--- PATTERN: Edge Function ---
+NO MATCH
+
+--- PATTERN: /api/ ---
+NO MATCH
+
+--- PATTERN: /auth/ ---
+.\test\app\router\app_router_test.dart : line 10 : import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 3 : import 'package:dashboard_kpi/features/auth/application/controllers/session_controller.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 4 : import 'package:dashboard_kpi/features/auth/application/services/auth_session_service.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 5 : import 'package:dashboard_kpi/features/auth/application/services/session_establishment_service.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 6 : import 'package:dashboard_kpi/features/auth/domain/entities/tenant_context.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 7 : import 'package:dashboard_kpi/features/auth/domain/entities/user_entity.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 8 : import 'package:dashboard_kpi/features/auth/domain/repository/auth_repository.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 9 : import 'package:dashboard_kpi/features/auth/domain/repository/tenant_context_source.dart';
+.\test\features\auth\application\auth_session_service_test.dart : line 10 : import 'package:dashboard_kpi/features/auth/domain/usecases/login_usecase.dart';
+.\test\features\auth\application\session_context_test.dart : line 3 : import 'package:dashboard_kpi/features/auth/application/controllers/session_controller.dart';
+.\test\features\auth\application\session_context_test.dart : line 4 : import 'package:dashboard_kpi/features/auth/application/state/session_state.dart';
+.\test\features\auth\application\session_context_test.dart : line 5 : import 'package:dashboard_kpi/features/auth/domain/entities/session_context.dart';
+.\test\features\auth\application\session_context_test.dart : line 6 : import 'package:dashboard_kpi/features/auth/domain/entities/tenant_context.dart';
+.\test\features\auth\application\session_context_test.dart : line 7 : import 'package:dashboard_kpi/features/auth/domain/entities/user_entity.dart';
+.\test\features\auth\application\session_controller_test.dart : line 3 : import 'package:dashboard_kpi/features/auth/application/controllers/session_controller.dart';
+.\test\features\auth\application\session_controller_test.dart : line 4 : import 'package:dashboard_kpi/features/auth/domain/entities/session_context.dart';
+.\test\features\auth\application\session_controller_test.dart : line 5 : import 'package:dashboard_kpi/features/auth/domain/entities/tenant_context.dart';
+.\test\features\auth\application\session_controller_test.dart : line 6 : import 'package:dashboard_kpi/features/auth/domain/entities/user_entity.dart';
+.\test\features\auth\application\session_establishment_service_test.dart : line 3 : import 'package:dashboard_kpi/features/auth/application/services/session_establishment_service.dart';
+.\test\features\auth\application\session_establishment_service_test.dart : line 4 : import 'package:dashboard_kpi/features/auth/domain/entities/tenant_context.dart';
+.\test\features\auth\application\session_establishment_service_test.dart : line 5 : import 'package:dashboard_kpi/features/auth/domain/entities/user_entity.dart';
+.\test\features\auth\application\session_establishment_service_test.dart : line 6 : import 'package:dashboard_kpi/features/auth/domain/repository/tenant_context_source.dart';
+
+--- PATTERN: /tenant/ ---
+NO MATCH
+
+--- PATTERN: /access/ ---
+NO MATCH
+
+--- PATTERN: TenantContextSource ---
+.\test\features\auth\application\auth_session_service_test.dart : line 37 : class _FakeTenantContextSource implements TenantContextSource {
+.\test\features\auth\application\auth_session_service_test.dart : line 68 : required _FakeTenantContextSource tenantSource,
+.\test\features\auth\application\auth_session_service_test.dart : line 74 : tenantContextSource: tenantSource,
+.\test\features\auth\application\auth_session_service_test.dart : line 86 : final tenantSource = _FakeTenantContextSource()
+.\test\features\auth\application\auth_session_service_test.dart : line 115 : final tenantSource = _FakeTenantContextSource();
+.\test\features\auth\application\auth_session_service_test.dart : line 141 : final tenantSource = _FakeTenantContextSource()
+.\test\features\auth\application\auth_session_service_test.dart : line 167 : final tenantSource = _FakeTenantContextSource()
+.\test\features\auth\application\auth_session_service_test.dart : line 193 : final tenantSource = _FakeTenantContextSource()
+.\test\features\auth\application\auth_session_service_test.dart : line 220 : final tenantSource = _FakeTenantContextSource()
+.\test\features\auth\application\auth_session_service_test.dart : line 255 : final tenantSource = _FakeTenantContextSource()
+.\test\features\auth\application\session_establishment_service_test.dart : line 8 : class _FakeTenantContextSource implements TenantContextSource {
+.\test\features\auth\application\session_establishment_service_test.dart : line 11 : const _FakeTenantContextSource(this.context);
+.\test\features\auth\application\session_establishment_service_test.dart : line 35 : tenantContextSource: const _FakeTenantContextSource(tenantContext),
+.\test\features\auth\application\session_establishment_service_test.dart : line 48 : tenantContextSource: const _FakeTenantContextSource(null),
+.\test\features\auth\application\session_establishment_service_test.dart : line 63 : tenantContextSource: const _FakeTenantContextSource(invalidContext),
+
+--- PATTERN: ConcreteTenantContextSource ---
+NO MATCH
+
+--- PATTERN: SupabaseTenantContextSource ---
+NO MATCH
+
+--- PATTERN: RuntimeTenantContextSource ---
+NO MATCH
+
+--- PATTERN: SP-203 ---
+NO MATCH
+
+--- PATTERN: IdentityAccess ---
+NO MATCH
+
+--- PATTERN: Identity & Access ---
+NO MATCH
+
+--- PATTERN: Resolve Effective Tenant Access ---
+NO MATCH
+ROOT NOT FOUND: .\supabase
+
+============================================
+AUDIT COMPLETE
+READ ONLY
+============================================
