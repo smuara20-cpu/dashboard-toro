@@ -474,3 +474,180 @@ Exact foreign-key treatment for audit-user references shall be validated during 
 Timestamp type changes, audit foreign keys, automatic audit triggers, purge policies, and historical-data repair require separate implementation validation and approval.
 
 ---
+
+---
+
+## 12. DELETE / UPDATE BEHAVIOR CONTRACT
+
+### 12.1 Delete Boundary
+
+Location master records SHALL follow the approved soft-delete model where `deleted_at` and `deleted_by` are defined.
+
+Physical deletion of Location master records SHALL NOT be performed by the Location migration.
+
+Hard-delete and purge behavior are outside the scope of this Physical Contract.
+
+### 12.2 Parent-Child Delete Behavior
+
+Country, Province, City, District, and Village hierarchy SHALL NOT use destructive cascade behavior.
+
+Existing Country and Province parent-child behavior SHALL remain unchanged.
+
+Any physical DELETE/UPDATE referential action SHALL be validated against the approved Location Data Dictionary, ERD, and existing physical constraints before implementation.
+
+### 12.3 Update Boundary
+
+Primary-key geographic identity SHALL remain immutable after record creation.
+
+Renaming, replacing, or aliasing primary keys is prohibited by this Contract.
+
+Updates to parent references SHALL preserve the approved Country → Province → City → District → Village hierarchy.
+
+### 12.4 Controlled Denormalized References
+
+District `country_id` and `province_id` SHALL remain aligned with its City hierarchy.
+
+Village `country_id`, `province_id`, and `city_id` SHALL remain aligned with its District hierarchy.
+
+Changing these denormalized references SHALL require hierarchical-integrity validation.
+
+### 12.5 Referential Action Boundary
+
+No `ON DELETE CASCADE`, `ON DELETE SET NULL`, or equivalent destructive referential behavior is authorized by this Contract.
+
+No automatic hierarchy-repair behavior is authorized by this Contract.
+
+Any trigger, composite constraint, function, or other enforcement mechanism requires a separate approved implementation decision.
+
+### 12.6 Implementation Gate
+
+Delete/update behavior SHALL be validated against PostgreSQL/Supabase before migration implementation.
+
+Validation SHALL include existing data, foreign-key behavior, soft-delete behavior, parent updates, rollback behavior, and hierarchical integrity.
+
+---
+
+## 13. DEPENDENCY & IMPLEMENTATION ORDER
+
+### 13.1 Physical Dependency Order
+
+Implementasi physical Location SHALL mengikuti urutan dependency berikut:
+
+1. Country — public.countries
+2. Province — public.provinces
+3. City — public.cities
+4. District — public.districts
+5. Village — public.villages
+6. Company Location Foreign Keys — companies
+
+Setiap tahap SHALL hanya dilakukan setelah physical parent authority, primary key, foreign key target, constraint, index, existing-data condition, dan migration safety telah divalidasi.
+
+### 13.2 Existing Physical Tables
+
+public.countries dan public.provinces merupakan existing physical objects.
+
+Migration SHALL NOT rename, replace, duplicate, atau silently alter existing Country/Province structures.
+
+Province structure reconciliation SHALL be completed before any approved physical alteration to public.provinces.
+
+### 13.3 New Physical Tables
+
+public.cities, public.districts, dan public.villages SHALL only be created after their respective physical contracts and implementation gates are approved.
+
+Table creation SHALL follow the parent-child dependency order defined in Section 13.1.
+
+### 13.4 Company Dependency
+
+Company Location foreign keys SHALL only be implemented after public.cities, public.districts, dan public.villages have authoritative physical primary keys and validated foreign-key targets.
+
+Company physical authority remains companies.company_id.
+
+### 13.5 Migration Boundary
+
+No Location migration SHALL be executed solely from documented naming assumptions.
+
+Migration SHALL include forward execution, validation, rollback strategy, existing-data validation, constraint validation, and PostgreSQL/Supabase compatibility validation.
+
+### 13.6 Implementation Approval
+
+Section 13 defines dependency order only.
+
+It does not itself authorize CREATE TABLE, ALTER TABLE, DROP, RENAME, ADD CONSTRAINT, CREATE INDEX, CREATE FUNCTION, CREATE TRIGGER, data migration, or Company foreign-key implementation.
+
+## 14. VALIDATION GATE / MIGRATION READINESS
+
+### 14.1 Physical Authority Validation
+
+Before migration, each Location physical table SHALL have authoritative evidence for table name, namespace, primary key, column structure, and existing physical state.
+
+### 14.2 Primary Key & Foreign Key Validation
+
+Before migration, each primary key and parent-child foreign key SHALL be validated against the approved physical contract and authoritative PostgreSQL/Supabase metadata.
+
+### 14.3 Column & Constraint Validation
+
+Before migration, column types, nullability, defaults, unique constraints, indexes, soft-delete fields, and referential actions SHALL be validated against the approved physical contract and existing PostgreSQL/Supabase metadata.
+
+### 14.4 Existing Data Validation
+
+Before migration or physical alteration, existing Location data SHALL be validated for primary-key integrity, foreign-key integrity, duplicate identities, nullability violations, soft-delete consistency, and hierarchy consistency.
+
+### 14.5 Migration Safety & Rollback Validation
+
+Before implementation, the migration SHALL have a validated forward path, rollback strategy, transaction boundary, failure handling, and PostgreSQL/Supabase compatibility.
+
+### 14.6 Implementation Approval Gate
+
+Location migration SHALL remain on HOLD until all validation gates in this section are satisfied and a separate implementation approval explicitly authorizes the database change.
+
+
+## 15. DECISION BOUNDARY / PROHIBITIONS
+
+### 15.1 Naming & Identity Prohibitions
+
+No table, namespace, primary key, or geographic identity SHALL be renamed, aliased, replaced, duplicated, or silently reconciled outside this approved physical contract.
+
+### 15.2 Migration & Database Change Prohibitions
+
+No CREATE, ALTER, DROP, RENAME, constraint, index, function, trigger, or data migration SHALL be executed solely from this decision without separate implementation approval.
+
+### 15.3 Data & Hierarchy Prohibitions
+
+No silent data repair, duplicate Location master, automatic hierarchy repair, or Company foreign-key implementation SHALL be performed before the relevant validation and implementation gates are approved.
+
+### 15.4 Authority & Scope Boundary
+
+This decision governs the physical Location contract only. It does not replace the approved Location Data Dictionaries, ERDs, Company physical authority, or Identity & Access authority, and it does not authorize changes to tenant or SP-203 boundaries.
+
+### 15.5 Security & Tenant Boundary
+
+Location master data remains Global Master Data. This decision does not introduce tenant_id, company ownership, tenant RLS, tenant provisioning, or any change to the approved SP-203 identity and access boundary.
+
+### 15.6 Implementation Status Boundary
+
+The physical Location contract is APPROVED / LOCKED as a governance baseline, while database implementation remains HOLD until all required implementation approvals and validation gates are completed.
+## 16. FINAL GOVERNANCE & APPROVAL BOUNDARY
+
+### 16.1 Governance Status
+
+This Location Physical Contract is APPROVED / LOCKED as the authoritative physical contract baseline for the Global Location hierarchy within the scope defined by this decision.
+
+### 16.2 Implementation Status
+
+Database implementation remains HOLD. Approval of this physical contract does not by itself authorize CREATE, ALTER, DROP, RENAME, constraint, index, function, trigger, or data migration operations.
+
+### 16.3 Required Implementation Gates
+
+Before database implementation, the required implementation gates SHALL validate physical table definitions, primary keys, parent-child foreign keys, controlled denormalized references, unique constraints, indexes, referential actions, existing data, hierarchical integrity, migration safety, rollback behavior, PostgreSQL/Supabase compatibility, and Company Location foreign-key targets.
+
+### 16.4 Separate Implementation Approval
+
+A separate implementation approval SHALL be required before any physical Location database change is executed. This decision does not constitute that implementation approval.
+
+### 16.5 Authority Boundary
+
+This decision remains subordinate to the approved Location Data Dictionaries, ERDs, Company physical authority, and Identity & Access authority within their respective scopes. No downstream module may infer additional physical authority from this decision beyond the explicitly contracted boundaries.
+
+### 16.6 Final Decision Statement
+
+The physical Location naming, namespace, primary-key mapping, hierarchy baseline, controlled denormalization boundary, Company Location FK mapping, and implementation HOLD boundary are established by this decision. Physical implementation SHALL proceed only through the subsequent validation and separate implementation-approval process.
