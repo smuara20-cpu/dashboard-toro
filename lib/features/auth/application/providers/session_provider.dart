@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/datasource/auth_remote_datasource.dart';
+import '../../data/datasource/tenant_context_remote_datasource.dart';
 import '../../data/repository/auth_repository_impl.dart';
 import '../../domain/repository/auth_repository.dart';
 import '../../domain/repository/tenant_context_source.dart';
@@ -26,10 +27,7 @@ final loginUseCaseProvider = Provider<LoginUseCase>((ref) {
 });
 
 final tenantContextSourceProvider = Provider<TenantContextSource>((ref) {
-  throw UnimplementedError(
-    'TenantContextSource must be provided by the authoritative '
-    'Identity & Access implementation.',
-  );
+  return SupabaseTenantContextSource();
 });
 
 final sessionEstablishmentServiceProvider =
