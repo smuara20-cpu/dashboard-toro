@@ -1,19 +1,17 @@
 class RoutePaths {
+  RoutePaths._();
+
   static const splash = '/';
   static const onboarding = '/onboarding';
   static const login = '/login';
-
-  static const forgotPassword = '/forgot-password';
-  static const resetPassword = '/reset-password';
-
   static const dashboard = '/dashboard';
-
   static const booking = '/booking';
   static const bookingCreate = '/booking/create';
   static const bookingDetail = '/booking/:id';
-
-  static const jamaahDetail = '/jamaah/:id';
-
   static const finance = '/finance';
+  static const marketing = '/marketing';
+  static const jamaah = '/jamaah';
+  static const jamaahDetail = '/jamaah/:id';
+  static const settings = '/settings';
   static const testimonial = '/testimonial';
 }

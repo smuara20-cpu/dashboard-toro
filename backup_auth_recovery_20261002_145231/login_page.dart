@@ -211,18 +211,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             },
                           ),
 
-                          Align(
-                            alignment: Alignment.centerRight,
-
-                            child: TextButton(
-                              onPressed: _isLoading
-                                  ? null
-                                  : () => context.go(RoutePaths.forgotPassword),
-
-                              child: const Text('Lupa Password?'),
-                            ),
-                          ),
-
                           if (_errorMessage != null) ...[
                             const SizedBox(height: 20),
                             _buildErrorMessage(context, _errorMessage!),
