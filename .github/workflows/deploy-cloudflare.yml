@@ -1,37 +1,22 @@
-name: Deploy VENTRA Dashboard to Cloudflare Pages
+      - name: Diagnose Cloudflare Pages access
+        shell: bash
+        run: |
+          echo "Checking Cloudflare Pages access..."
+          echo "Account ID: ${CLOUDFLARE_ACCOUNT_ID}"
 
-on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+          HTTP_CODE=$(curl -sS \
+            -o /tmp/pages-projects.json \
+            -w "%{http_code}" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects")
 
-permissions:
-  contents: read
+          echo "Cloudflare API HTTP status: ${HTTP_CODE}"
+          cat /tmp/pages-projects.json
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.44.8'
-          channel: stable
-          cache: true
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Build Flutter Web
-        run: flutter build web --release --no-wasm-dry-run
-
-      - name: Install Wrangler
-        run: npm install -g wrangler
+          if [ "${HTTP_CODE}" != "200" ]; then
+            echo "Cloudflare Pages API access FAILED."
+            exit 1
+          fi
 
       - name: Deploy to Cloudflare Pages
         run: wrangler pages deploy build/web --project-name=dashboard-toro
