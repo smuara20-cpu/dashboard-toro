@@ -33,8 +33,50 @@ jobs:
       - name: Install Wrangler
         run: npm install -g wrangler
 
-      - name: Deploy to Cloudflare Pages
-        run: wrangler pages deploy build/web --project-name=dashboard-toro
+      - name: Check Cloudflare Account
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "Checking Cloudflare account..."
+          echo "Account ID length: ${#CLOUDFLARE_ACCOUNT_ID}"
+
+          HTTP_STATUS=$(curl -s -o /tmp/cf-account.json -w "%{http_code}" \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json")
+
+          echo "Account API HTTP status: $HTTP_STATUS"
+          cat /tmp/cf-account.json
+
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Cloudflare Account API FAILED."
+            exit 1
+          fi
+
+      - name: Check Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          echo "Checking Cloudflare Pages access..."
+
+          HTTP_STATUS=$(curl -s -o /tmp/cf-pages.json -w "%{http_code}" \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json")
+
+          echo "Pages API HTTP status: $HTTP_STATUS"
+          cat /tmp/cf-pages.json
+
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Cloudflare Pages API access FAILED."
+            exit 1
+          fi
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          wrangler pages deploy build/web --project-name=dashboard-toro
