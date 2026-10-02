@@ -33,29 +33,6 @@ jobs:
       - name: Install Wrangler
         run: npm install -g wrangler
 
-      - name: Diagnose Cloudflare Pages access
-        shell: bash
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          echo "Checking Cloudflare Pages access..."
-          echo "Account ID: ${CLOUDFLARE_ACCOUNT_ID}"
-
-          HTTP_CODE=$(curl -sS \
-            -o /tmp/pages-projects.json \
-            -w "%{http_code}" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects")
-
-          echo "Cloudflare API HTTP status: ${HTTP_CODE}"
-          cat /tmp/pages-projects.json
-
-          if [ "${HTTP_CODE}" != "200" ]; then
-            echo "Cloudflare Pages API access FAILED."
-            exit 1
-          fi
-
       - name: Deploy to Cloudflare Pages
         run: wrangler pages deploy build/web --project-name=dashboard-toro
         env:
