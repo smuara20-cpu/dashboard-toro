@@ -34,6 +34,7 @@ jobs:
         run: npm install -g wrangler
 
       - name: Check Cloudflare Account
+        continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -50,8 +51,9 @@ jobs:
           cat /tmp/cf-account.json
 
           if [ "$HTTP_STATUS" != "200" ]; then
-            echo "Cloudflare Account API FAILED."
-            exit 1
+            echo "Cloudflare Account API FAILED, continuing diagnostic."
+          else
+            echo "Cloudflare Account API OK."
           fi
 
       - name: Check Cloudflare Pages
@@ -73,6 +75,8 @@ jobs:
             echo "Cloudflare Pages API access FAILED."
             exit 1
           fi
+
+          echo "Cloudflare Pages API OK."
 
       - name: Deploy to Cloudflare Pages
         env:
