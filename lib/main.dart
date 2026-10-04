@@ -7,6 +7,7 @@ import 'app/router/route_paths.dart';
 import 'app/router/app_router.dart';
 import 'app/dependency/injector.dart';
 import 'app/initializers/supabase_initializer.dart';
+import 'features/auth/presentation/widgets/session_bootstrap_gate.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,5 +21,11 @@ Future<void> main() async {
     }
   });
 
-  runApp(const ProviderScope(child: App()));
+  runApp(
+    const ProviderScope(
+      child: SessionBootstrapGate(
+        child: App(),
+      ),
+    ),
+  );
 }

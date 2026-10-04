@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:dashboard_kpi/features/auth/application/controllers/session_controller_instance.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/forgot_password_page.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/reset_password_page.dart';
@@ -25,6 +26,30 @@ import 'route_paths.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: RoutePaths.splash,
+
+  refreshListenable: sessionControllerInstance,
+
+  redirect: (context, state) {
+    final sessionState = sessionControllerInstance.state;
+    final location = state.matchedLocation;
+
+    const publicRoutes = {
+      RoutePaths.splash,
+      RoutePaths.onboarding,
+      RoutePaths.login,
+      RoutePaths.forgotPassword,
+      RoutePaths.resetPassword,
+    };
+
+    final isPublicRoute = publicRoutes.contains(location);
+
+    if (!sessionState.isAuthenticated && !isPublicRoute) {
+      return RoutePaths.login;
+    }
+
+    return null;
+  },
+
   routes: [
     GoRoute(
       name: RouteNames.splash,
@@ -80,7 +105,9 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) {
         final bookingId = state.pathParameters['id']!;
 
-        return BookingDetailPage(bookingId: bookingId);
+        return BookingDetailPage(
+          bookingId: bookingId,
+        );
       },
     ),
 
@@ -122,14 +149,19 @@ class _JamaahRouteContextErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Jamaah')),
+      appBar: AppBar(
+        title: const Text('Jamaah'),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.lock_outline, size: 48),
+              const Icon(
+                Icons.lock_outline,
+                size: 48,
+              ),
               const SizedBox(height: 16),
               Text(
                 'Konteks tenant tidak tersedia.',

@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../data/datasource/auth_remote_datasource.dart';
 import '../../data/datasource/tenant_context_remote_datasource.dart';
@@ -7,7 +8,9 @@ import '../../domain/repository/auth_repository.dart';
 import '../../domain/repository/tenant_context_source.dart';
 import '../../domain/usecases/login_usecase.dart';
 import '../controllers/session_controller.dart';
+import '../controllers/session_controller_instance.dart';
 import '../services/auth_session_service.dart';
+import '../services/session_bootstrap_service.dart';
 import '../services/session_establishment_service.dart';
 
 final authRemoteDataSourceProvider = Provider<AuthRemoteDataSource>((ref) {
@@ -30,6 +33,10 @@ final tenantContextSourceProvider = Provider<TenantContextSource>((ref) {
   return SupabaseTenantContextSource();
 });
 
+final sessionControllerProvider = Provider<SessionController>((ref) {
+  return sessionControllerInstance;
+});
+
 final sessionEstablishmentServiceProvider =
     Provider<SessionEstablishmentService>((ref) {
   return SessionEstablishmentService(
@@ -37,8 +44,14 @@ final sessionEstablishmentServiceProvider =
   );
 });
 
-final sessionControllerProvider = Provider<SessionController>((ref) {
-  return SessionController();
+final sessionBootstrapServiceProvider =
+    Provider<SessionBootstrapService>((ref) {
+  return SessionBootstrapService(
+    client: Supabase.instance.client,
+    sessionEstablishmentService:
+        ref.watch(sessionEstablishmentServiceProvider),
+    sessionController: ref.watch(sessionControllerProvider),
+  );
 });
 
 final authSessionServiceProvider = Provider<AuthSessionService>((ref) {
