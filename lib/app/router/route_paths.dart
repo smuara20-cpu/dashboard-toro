@@ -12,6 +12,7 @@ class RoutePaths {
   static const bookingCreate = '/booking/create';
   static const bookingDetail = '/booking/:id';
 
+  static const jamaah = '/jamaah';
   static const jamaahDetail = '/jamaah/:id';
 
   static const finance = '/finance';

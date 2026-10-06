@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:dashboard_kpi/features/auth/application/controllers/session_controller_instance.dart';
-import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/forgot_password_page.dart';
+import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/reset_password_page.dart';
 
 import 'package:dashboard_kpi/features/booking/presentation/pages/booking_detail_page.dart';
@@ -16,6 +16,7 @@ import 'package:dashboard_kpi/features/finance/presentation/pages/finance_page.d
 
 import 'package:dashboard_kpi/features/jamaah/domain/value_objects/jamaah_tenant_context.dart';
 import 'package:dashboard_kpi/features/jamaah/presentation/pages/jamaah_detail_page.dart';
+import 'package:dashboard_kpi/features/jamaah/presentation/pages/jamaah_page.dart';
 
 import 'package:dashboard_kpi/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:dashboard_kpi/features/splash/presentation/pages/splash_page.dart';
@@ -24,32 +25,31 @@ import 'package:dashboard_kpi/features/testimoni/presentation/pages/testimonial_
 import 'route_names.dart';
 import 'route_paths.dart';
 
+const Set<String> _publicRoutes = {
+  RoutePaths.splash,
+  RoutePaths.onboarding,
+  RoutePaths.login,
+  RoutePaths.forgotPassword,
+  RoutePaths.resetPassword,
+};
+
 final GoRouter appRouter = GoRouter(
   initialLocation: RoutePaths.splash,
-
   refreshListenable: sessionControllerInstance,
-
   redirect: (context, state) {
-    final sessionState = sessionControllerInstance.state;
-    final location = state.matchedLocation;
+    final isAuthenticated = sessionControllerInstance.state.isAuthenticated;
+    final isPublicRoute = _publicRoutes.contains(state.matchedLocation);
 
-    const publicRoutes = {
-      RoutePaths.splash,
-      RoutePaths.onboarding,
-      RoutePaths.login,
-      RoutePaths.forgotPassword,
-      RoutePaths.resetPassword,
-    };
-
-    final isPublicRoute = publicRoutes.contains(location);
-
-    if (!sessionState.isAuthenticated && !isPublicRoute) {
+    if (!isAuthenticated && !isPublicRoute) {
       return RoutePaths.login;
+    }
+
+    if (isAuthenticated && state.matchedLocation == RoutePaths.login) {
+      return RoutePaths.dashboard;
     }
 
     return null;
   },
-
   routes: [
     GoRoute(
       name: RouteNames.splash,
@@ -112,13 +112,38 @@ final GoRouter appRouter = GoRouter(
     ),
 
     GoRoute(
+      path: RoutePaths.jamaah,
+      builder: (context, state) {
+        final sessionContext =
+            sessionControllerInstance.state.sessionContext;
+
+        if (sessionContext == null || !sessionContext.isValid) {
+          return const _JamaahRouteContextErrorPage();
+        }
+
+        final tenantContext =
+            JamaahTenantContext(sessionContext.tenantId);
+
+        if (!tenantContext.isValid) {
+          return const _JamaahRouteContextErrorPage();
+        }
+
+        return JamaahPage(
+          tenantContext: tenantContext,
+        );
+      },
+    ),
+
+    GoRoute(
       name: RouteNames.jamaahDetail,
       path: RoutePaths.jamaahDetail,
       builder: (context, state) {
         final jamaahId = state.pathParameters['id'];
         final tenantContext = state.extra;
 
-        if (jamaahId == null || tenantContext is! JamaahTenantContext) {
+        if (jamaahId == null ||
+            tenantContext is! JamaahTenantContext ||
+            !tenantContext.isValid) {
           return const _JamaahRouteContextErrorPage();
         }
 
