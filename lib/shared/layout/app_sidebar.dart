@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../app/router/route_paths.dart';
 
 class AppSidebar extends StatelessWidget {
   const AppSidebar({super.key});
@@ -13,7 +16,7 @@ class AppSidebar extends StatelessWidget {
           const SizedBox(height: 32),
 
           const Text(
-            "Travel ERP",
+            'Travel ERP',
             style: TextStyle(
               color: Colors.white,
               fontSize: 24,
@@ -23,26 +26,99 @@ class AppSidebar extends StatelessWidget {
 
           const SizedBox(height: 40),
 
-          _menu(Icons.dashboard, "Dashboard"),
-          _menu(Icons.people, "CRM"),
-          _menu(Icons.book_online, "Booking"),
-          _menu(Icons.groups, "Jamaah"),
-          _menu(Icons.flight, "Paket"),
-          _menu(Icons.badge, "Visa"),
-          _menu(Icons.hotel, "Hotel"),
-          _menu(Icons.account_balance_wallet, "Finance"),
-          _menu(Icons.analytics, "CEO Dashboard"),
-          _menu(Icons.settings, "Setting"),
+          _menu(
+            context,
+            Icons.dashboard,
+            'Dashboard',
+            RoutePaths.dashboard,
+          ),
+
+          _menu(
+            context,
+            Icons.people,
+            'CRM',
+          ),
+
+          _menu(
+            context,
+            Icons.book_online,
+            'Booking',
+            RoutePaths.booking,
+          ),
+
+          _menu(
+            context,
+            Icons.groups,
+            'Jamaah',
+          ),
+
+          _menu(
+            context,
+            Icons.flight,
+            'Paket',
+          ),
+
+          _menu(
+            context,
+            Icons.badge,
+            'Visa',
+          ),
+
+          _menu(
+            context,
+            Icons.hotel,
+            'Hotel',
+          ),
+
+          _menu(
+            context,
+            Icons.account_balance_wallet,
+            'Finance',
+            RoutePaths.finance,
+          ),
+
+          _menu(
+            context,
+            Icons.analytics,
+            'CEO Dashboard',
+            RoutePaths.dashboard,
+          ),
+
+          _menu(
+            context,
+            Icons.settings,
+            'Setting',
+          ),
         ],
       ),
     );
   }
 
-  Widget _menu(IconData icon, String title) {
+  Widget _menu(
+      BuildContext context,
+      IconData icon,
+      String title, [
+        String? route,
+      ]) {
+    final enabled = route != null;
+
     return ListTile(
-      leading: Icon(icon, color: Colors.white),
-      title: Text(title, style: const TextStyle(color: Colors.white)),
-      onTap: () {},
+      leading: Icon(
+        icon,
+        color: enabled ? Colors.white : Colors.white54,
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: enabled ? Colors.white : Colors.white54,
+        ),
+      ),
+      enabled: enabled,
+      onTap: enabled
+          ? () {
+        context.go(route);
+      }
+          : null,
     );
   }
 }
