@@ -50,6 +50,7 @@ class AppSidebar extends StatelessWidget {
             context,
             Icons.groups,
             'Jamaah',
+          RoutePaths.jamaah,
           ),
 
           _menu(
