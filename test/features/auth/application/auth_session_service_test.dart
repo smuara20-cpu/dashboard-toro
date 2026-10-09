@@ -271,7 +271,7 @@ void main() {
     expect(loginResult, isTrue);
     expect(controller.state.isAuthenticated, isTrue);
 
-    service.logout();
+    await service.logout();
 
     expect(controller.state.isAuthenticated, isFalse);
     expect(controller.state.sessionContext, isNull);

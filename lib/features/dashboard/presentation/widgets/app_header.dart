@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/app_breakpoints.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../auth/application/providers/session_provider.dart';
+import '../../../../app/router/route_paths.dart';
 
-class AppHeader extends StatelessWidget {
+class AppHeader extends ConsumerWidget {
   const AppHeader({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final compact = AppBreakpoints.isCompact(constraints.maxWidth);
@@ -27,7 +31,7 @@ class AppHeader extends StatelessWidget {
                   ),
                   const Icon(Icons.notifications_none),
                   const SizedBox(width: AppSpacing.md),
-                  const CircleAvatar(child: Icon(Icons.person)),
+                  _ProfileMenu(),
                 ],
               ),
               const SizedBox(height: AppSpacing.md),
@@ -63,10 +67,39 @@ class AppHeader extends StatelessWidget {
             const SizedBox(width: AppSpacing.lg),
             const Icon(Icons.notifications_none),
             const SizedBox(width: AppSpacing.lg),
-            const CircleAvatar(child: Icon(Icons.person)),
+            _ProfileMenu(),
           ],
         );
       },
+    );
+  }
+}
+
+class _ProfileMenu extends ConsumerWidget {
+  const _ProfileMenu();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return PopupMenuButton<String>(
+      tooltip: 'Menu akun',
+      onSelected: (value) async {
+        if (value != 'logout') return;
+
+        await ref.read(authSessionServiceProvider).logout();
+
+        if (context.mounted) {
+          context.go(RoutePaths.login);
+        }
+      },
+      itemBuilder: (context) => const [
+        PopupMenuItem<String>(
+          value: 'logout',
+          child: Row(
+            children: [Icon(Icons.logout), SizedBox(width: 12), Text('Keluar')],
+          ),
+        ),
+      ],
+      child: const CircleAvatar(child: Icon(Icons.person)),
     );
   }
 }

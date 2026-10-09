@@ -14,19 +14,13 @@ class AuthSessionService {
     required this.sessionController,
   });
 
-  Future<bool> login({
-    required String email,
-    required String password,
-  }) async {
+  Future<bool> login({required String email, required String password}) async {
     sessionController.clearSession();
 
     var remoteSessionEstablished = false;
 
     try {
-      final user = await loginUseCase(
-        email: email,
-        password: password,
-      );
+      final user = await loginUseCase(email: email, password: password);
 
       if (user == null) {
         return false;
@@ -34,10 +28,8 @@ class AuthSessionService {
 
       remoteSessionEstablished = true;
 
-      final SessionContext? sessionContext =
-      await sessionEstablishmentService.establish(
-        user: user,
-      );
+      final SessionContext? sessionContext = await sessionEstablishmentService
+          .establish(user: user);
 
       if (sessionContext == null || !sessionContext.isValid) {
         await _clearRemoteSession();
@@ -75,9 +67,8 @@ class AuthSessionService {
     }
   }
 
-  void logout() {
+  Future<void> logout() async {
     sessionController.clearSession();
-
-    _clearRemoteSession();
+    await _clearRemoteSession();
   }
 }
