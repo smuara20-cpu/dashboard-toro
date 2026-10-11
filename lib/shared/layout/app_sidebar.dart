@@ -6,120 +6,321 @@ import '../../app/router/route_paths.dart';
 class AppSidebar extends StatelessWidget {
   const AppSidebar({super.key});
 
+  static const Color _navy = Color(0xFF0B1F3A);
+  static const Color _navyDark = Color(0xFF081629);
+  static const Color _teal = Color(0xFF087F8C);
+  static const Color _activeBackground = Color(0xFF123D49);
+
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final currentRoute = GoRouterState.of(context).matchedLocation;
+
     return Container(
       width: 250,
-      color: const Color(0xFF0B1F3A),
+      color: isDark ? _navyDark : _navy,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: 32),
+          _buildBrand(),
+          const Divider(color: Color(0x33FFFFFF), height: 1),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.fromLTRB(10, 18, 10, 24),
+              children: [
+                _sectionLabel('UTAMA'),
+                _item(
+                  context,
+                  icon: Icons.dashboard_outlined,
+                  label: 'Dashboard',
+                  route: RoutePaths.dashboard,
+                  currentRoute: currentRoute,
+                ),
+                const SizedBox(height: 20),
 
-          const Text(
-            'Travel ERP',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+                _sectionLabel('OPERASIONAL'),
+                _item(
+                  context,
+                  icon: Icons.calendar_month_outlined,
+                  label: 'Booking',
+                  route: RoutePaths.booking,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.groups_outlined,
+                  label: 'Jamaah',
+                  route: RoutePaths.jamaah,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.card_travel_outlined,
+                  label: 'Paket Wisata',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.flight_takeoff_outlined,
+                  label: 'Visa & Dokumen',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.hotel_outlined,
+                  label: 'Hotel & Akomodasi',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.handshake_outlined,
+                  label: 'Mitra & Vendor',
+                  currentRoute: currentRoute,
+                ),
+                const SizedBox(height: 20),
+
+                _sectionLabel('KEUANGAN'),
+                _item(
+                  context,
+                  icon: Icons.account_balance_wallet_outlined,
+                  label: 'Pembayaran',
+                  route: RoutePaths.finance,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.receipt_long_outlined,
+                  label: 'Invoice',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.payments_outlined,
+                  label: 'Pengeluaran',
+                  currentRoute: currentRoute,
+                ),
+                const SizedBox(height: 20),
+
+                _sectionLabel('MARKETING & CRM'),
+                _item(
+                  context,
+                  icon: Icons.people_alt_outlined,
+                  label: 'CRM & Lead Intelligence',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.campaign_outlined,
+                  label: 'Campaign & Ads',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.travel_explore_outlined,
+                  label: 'Modern SEO Intelligence',
+                  currentRoute: currentRoute,
+                ),
+                const SizedBox(height: 20),
+
+                _sectionLabel('AI & GOVERNANCE'),
+                _item(
+                  context,
+                  icon: Icons.psychology_outlined,
+                  label: 'VENTRA AI Agents',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.chat_outlined,
+                  label: 'WhatsApp Intelligence',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.fact_check_outlined,
+                  label: 'Audit & Akses',
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.settings_outlined,
+                  label: 'Pengaturan',
+                  currentRoute: currentRoute,
+                ),
+                const SizedBox(height: 20),
+
+                _sectionLabel('LAINNYA'),
+                _item(
+                  context,
+                  icon: Icons.star_outline,
+                  label: 'Testimonial',
+                  route: RoutePaths.testimonial,
+                  currentRoute: currentRoute,
+                ),
+              ],
             ),
           ),
-
-          const SizedBox(height: 40),
-
-          _menu(
-            context,
-            Icons.dashboard,
-            'Dashboard',
-            RoutePaths.dashboard,
-          ),
-
-          _menu(
-            context,
-            Icons.people,
-            'CRM',
-          ),
-
-          _menu(
-            context,
-            Icons.book_online,
-            'Booking',
-            RoutePaths.booking,
-          ),
-
-          _menu(
-            context,
-            Icons.groups,
-            'Jamaah',
-          RoutePaths.jamaah,
-          ),
-
-          _menu(
-            context,
-            Icons.flight,
-            'Paket',
-          ),
-
-          _menu(
-            context,
-            Icons.badge,
-            'Visa',
-          ),
-
-          _menu(
-            context,
-            Icons.hotel,
-            'Hotel',
-          ),
-
-          _menu(
-            context,
-            Icons.account_balance_wallet,
-            'Finance',
-            RoutePaths.finance,
-          ),
-
-          _menu(
-            context,
-            Icons.analytics,
-            'CEO Dashboard',
-            RoutePaths.dashboard,
-          ),
-
-          _menu(
-            context,
-            Icons.settings,
-            'Setting',
+          const Divider(color: Color(0x33FFFFFF), height: 1),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Container(
+                  width: 8,
+                  height: 8,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF63D6A3),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 9),
+                const Expanded(
+                  child: Text(
+                    'VENTRA Enterprise',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _menu(
-      BuildContext context,
-      IconData icon,
-      String title, [
-        String? route,
-      ]) {
-    final enabled = route != null;
-
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: enabled ? Colors.white : Colors.white54,
+  Widget _buildBrand() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 26, 16, 24),
+      child: Row(
+        children: [
+          Container(
+            width: 38,
+            height: 38,
+            decoration: BoxDecoration(
+              color: _teal,
+              borderRadius: BorderRadius.circular(11),
+            ),
+            alignment: Alignment.center,
+            child: const Icon(
+              Icons.layers_outlined,
+              color: Colors.white,
+              size: 23,
+            ),
+          ),
+          const SizedBox(width: 11),
+          const Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'VENTRA',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 19,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+                SizedBox(height: 3),
+                Text(
+                  'TRAVEL INTELLIGENCE',
+                  style: TextStyle(
+                    color: Colors.white60,
+                    fontSize: 8,
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
-      title: Text(
-        title,
-        style: TextStyle(
-          color: enabled ? Colors.white : Colors.white54,
+    );
+  }
+
+  Widget _sectionLabel(String label) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(12, 0, 8, 9),
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: Color(0xFF8EA3BB),
+          fontSize: 10,
+          fontWeight: FontWeight.w700,
+          letterSpacing: 1.15,
         ),
       ),
-      enabled: enabled,
-      onTap: enabled
-          ? () {
-        context.go(route);
-      }
-          : null,
+    );
+  }
+
+  Widget _item(
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    required String? currentRoute,
+    String? route,
+  }) {
+    final enabled = route != null;
+    final selected =
+        enabled &&
+        currentRoute != null &&
+        (currentRoute == route || currentRoute.startsWith('$route/'));
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 3),
+      child: Material(
+        color: selected ? _activeBackground : Colors.transparent,
+        borderRadius: BorderRadius.circular(8),
+        child: InkWell(
+          onTap: enabled ? () => context.go(route) : null,
+          borderRadius: BorderRadius.circular(8),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 11),
+            child: Row(
+              children: [
+                Icon(
+                  icon,
+                  size: 19,
+                  color: selected
+                      ? const Color(0xFF69D5C5)
+                      : enabled
+                      ? Colors.white70
+                      : Colors.white38,
+                ),
+                const SizedBox(width: 11),
+                Expanded(
+                  child: Text(
+                    label,
+                    style: TextStyle(
+                      color: selected
+                          ? Colors.white
+                          : enabled
+                          ? Colors.white70
+                          : Colors.white38,
+                      fontSize: 12,
+                      fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                    ),
+                  ),
+                ),
+                if (selected)
+                  Container(
+                    width: 3,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF69D5C5),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

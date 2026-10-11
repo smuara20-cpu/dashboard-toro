@@ -15,38 +15,98 @@ class VentraSemanticColors extends ThemeExtension<VentraSemanticColors> {
   final Color ai;
   final Color aiSurface;
 
-  const VentraSemanticColors({required this.success, required this.successSurface, required this.warning, required this.warningSurface, required this.error, required this.errorSurface, required this.info, required this.infoSurface, required this.ai, required this.aiSurface});
+  const VentraSemanticColors({
+    required this.success,
+    required this.successSurface,
+    required this.warning,
+    required this.warningSurface,
+    required this.error,
+    required this.errorSurface,
+    required this.info,
+    required this.infoSurface,
+    required this.ai,
+    required this.aiSurface,
+  });
 
   static const light = VentraSemanticColors(
-    success: VentraColors.success, successSurface: VentraColors.successSurface,
-    warning: VentraColors.warning, warningSurface: VentraColors.warningSurface,
-    error: VentraColors.error, errorSurface: VentraColors.errorSurface,
-    info: VentraColors.info, infoSurface: VentraColors.infoSurface,
-    ai: VentraColors.ai, aiSurface: VentraColors.aiSurface,
+    success: VentraColors.success,
+    successSurface: VentraColors.successSurface,
+    warning: VentraColors.warning,
+    warningSurface: VentraColors.warningSurface,
+    error: VentraColors.error,
+    errorSurface: VentraColors.errorSurface,
+    info: VentraColors.info,
+    infoSurface: VentraColors.infoSurface,
+    ai: VentraColors.ai,
+    aiSurface: VentraColors.aiSurface,
+  );
+
+  static const dark = VentraSemanticColors(
+    success: Color(0xFF63D6A3),
+    successSurface: Color(0xFF193A30),
+    warning: Color(0xFFF2C46D),
+    warningSurface: Color(0xFF3B3020),
+    error: Color(0xFFFF8585),
+    errorSurface: Color(0xFF402426),
+    info: Color(0xFF83BFFF),
+    infoSurface: Color(0xFF1D3348),
+    ai: Color(0xFFC1A2FF),
+    aiSurface: Color(0xFF302544),
   );
 
   @override
-  VentraSemanticColors copyWith({Color? success, Color? successSurface, Color? warning, Color? warningSurface, Color? error, Color? errorSurface, Color? info, Color? infoSurface, Color? ai, Color? aiSurface}) => VentraSemanticColors(
-    success: success ?? this.success, successSurface: successSurface ?? this.successSurface,
-    warning: warning ?? this.warning, warningSurface: warningSurface ?? this.warningSurface,
-    error: error ?? this.error, errorSurface: errorSurface ?? this.errorSurface,
-    info: info ?? this.info, infoSurface: infoSurface ?? this.infoSurface,
-    ai: ai ?? this.ai, aiSurface: aiSurface ?? this.aiSurface,
-  );
-
-  @override
-  VentraSemanticColors lerp(covariant ThemeExtension<VentraSemanticColors>? other, double t) {
-    if (other is! VentraSemanticColors) return this;
+  VentraSemanticColors copyWith({
+    Color? success,
+    Color? successSurface,
+    Color? warning,
+    Color? warningSurface,
+    Color? error,
+    Color? errorSurface,
+    Color? info,
+    Color? infoSurface,
+    Color? ai,
+    Color? aiSurface,
+  }) {
     return VentraSemanticColors(
-      success: Color.lerp(success, other.success, t)!, successSurface: Color.lerp(successSurface, other.successSurface, t)!,
-      warning: Color.lerp(warning, other.warning, t)!, warningSurface: Color.lerp(warningSurface, other.warningSurface, t)!,
-      error: Color.lerp(error, other.error, t)!, errorSurface: Color.lerp(errorSurface, other.errorSurface, t)!,
-      info: Color.lerp(info, other.info, t)!, infoSurface: Color.lerp(infoSurface, other.infoSurface, t)!,
-      ai: Color.lerp(ai, other.ai, t)!, aiSurface: Color.lerp(aiSurface, other.aiSurface, t)!,
+      success: success ?? this.success,
+      successSurface: successSurface ?? this.successSurface,
+      warning: warning ?? this.warning,
+      warningSurface: warningSurface ?? this.warningSurface,
+      error: error ?? this.error,
+      errorSurface: errorSurface ?? this.errorSurface,
+      info: info ?? this.info,
+      infoSurface: infoSurface ?? this.infoSurface,
+      ai: ai ?? this.ai,
+      aiSurface: aiSurface ?? this.aiSurface,
+    );
+  }
+
+  @override
+  VentraSemanticColors lerp(
+    covariant ThemeExtension<VentraSemanticColors>? other,
+    double t,
+  ) {
+    if (other is! VentraSemanticColors) return this;
+
+    return VentraSemanticColors(
+      success: Color.lerp(success, other.success, t)!,
+      successSurface: Color.lerp(successSurface, other.successSurface, t)!,
+      warning: Color.lerp(warning, other.warning, t)!,
+      warningSurface: Color.lerp(warningSurface, other.warningSurface, t)!,
+      error: Color.lerp(error, other.error, t)!,
+      errorSurface: Color.lerp(errorSurface, other.errorSurface, t)!,
+      info: Color.lerp(info, other.info, t)!,
+      infoSurface: Color.lerp(infoSurface, other.infoSurface, t)!,
+      ai: Color.lerp(ai, other.ai, t)!,
+      aiSurface: Color.lerp(aiSurface, other.aiSurface, t)!,
     );
   }
 }
 
 extension VentraThemeContext on BuildContext {
-  VentraSemanticColors get ventraColors => Theme.of(this).extension<VentraSemanticColors>() ?? VentraSemanticColors.light;
+  VentraSemanticColors get ventraColors =>
+      Theme.of(this).extension<VentraSemanticColors>() ??
+      (Theme.of(this).brightness == Brightness.dark
+          ? VentraSemanticColors.dark
+          : VentraSemanticColors.light);
 }
