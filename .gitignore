@@ -43,3 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+lib/app/router/app_router.dart.backup
+lib/features/dashboard/presentation/pages/dashboard_page.dart.backup
+pubspec.yaml.backup-font-*
+pubspec.yaml.before-font-update
+pubspec.yaml.damaged-*
