@@ -7,6 +7,7 @@ import '../../../../app/theme/theme_mode_controller.dart';
 import '../../../../core/theme/app_breakpoints.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../auth/application/providers/session_provider.dart';
+import '../../../../shared/layout/app_shell.dart';
 
 class AppHeader extends ConsumerWidget {
   const AppHeader({super.key});
@@ -23,6 +24,8 @@ class AppHeader extends ConsumerWidget {
             children: [
               Row(
                 children: [
+                  const AppShellMenuButton(),
+                  const SizedBox(width: AppSpacing.xs),
                   Expanded(
                     child: Text(
                       'CEO Dashboard',

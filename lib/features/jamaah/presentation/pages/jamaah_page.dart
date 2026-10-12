@@ -10,6 +10,7 @@ import 'package:dashboard_kpi/features/jamaah/presentation/widgets/jamaah_card.d
 import 'package:dashboard_kpi/features/jamaah/presentation/widgets/jamaah_empty_state.dart';
 import 'package:dashboard_kpi/features/jamaah/presentation/widgets/jamaah_error_state.dart';
 import 'package:dashboard_kpi/features/jamaah/presentation/widgets/jamaah_loading_state.dart';
+import 'package:dashboard_kpi/shared/layout/app_shell.dart';
 
 class JamaahPage extends ConsumerStatefulWidget {
   final JamaahTenantContext tenantContext;
@@ -70,6 +71,7 @@ class _JamaahPageState extends ConsumerState<JamaahPage> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: const AppShellMenuButton(),
         title: const Text('Jamaah'),
         actions: [
           IconButton(

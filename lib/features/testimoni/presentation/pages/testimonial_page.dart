@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:dashboard_kpi/core/common/utils/google_maps_helper.dart';
+import 'package:dashboard_kpi/shared/layout/app_shell.dart';
+
 import '../../data/repository/testimonial_repository_impl.dart';
 import '../../domain/usecases/get_testimonials.dart';
 import '../controllers/testimonial_controller.dart';
 import '../widgets/testimonial_card.dart';
-import 'package:dashboard_kpi/core/common/utils/google_maps_helper.dart';
 
 class TestimonialPage extends StatefulWidget {
   const TestimonialPage({super.key});
@@ -18,20 +20,23 @@ class _TestimonialPageState extends State<TestimonialPage> {
 
   // TODO:
   // Ganti URL ini dengan URL Google Maps Review bisnis/travel Anda.
-  static const String googleMapsReviewUrl =
-      'https://www.google.com/maps';
+  static const String googleMapsReviewUrl = 'https://www.google.com/maps';
 
   @override
   void initState() {
     super.initState();
 
     controller = TestimonialController(
-      GetTestimonials(
-        TestimonialRepositoryImpl(),
-      ),
+      GetTestimonials(TestimonialRepositoryImpl()),
     );
 
     controller.load();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -41,32 +46,24 @@ class _TestimonialPageState extends State<TestimonialPage> {
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
+            leading: const AppShellMenuButton(),
             title: const Text('Testimoni Jamaah'),
           ),
           body: ListView.builder(
             itemCount: controller.testimonials.length,
             itemBuilder: (_, index) {
-              return TestimonialCard(
-                item: controller.testimonials[index],
-              );
+              return TestimonialCard(item: controller.testimonials[index]);
             },
           ),
           floatingActionButton: FloatingActionButton.extended(
             onPressed: () async {
-              final scaffoldMessenger =
-              ScaffoldMessenger.of(context);
+              final scaffoldMessenger = ScaffoldMessenger.of(context);
 
               try {
-                await GoogleMapsHelper.openReview(
-                  googleMapsReviewUrl,
-                );
+                await GoogleMapsHelper.openReview(googleMapsReviewUrl);
               } catch (e) {
                 scaffoldMessenger.showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      'Gagal membuka Google Maps: $e',
-                    ),
-                  ),
+                  SnackBar(content: Text('Gagal membuka Google Maps: $e')),
                 );
               }
             },

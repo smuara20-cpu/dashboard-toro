@@ -11,7 +11,6 @@ import 'package:dashboard_kpi/features/booking/presentation/pages/booking_page.d
 import 'package:dashboard_kpi/features/booking/presentation/pages/create_booking_page.dart';
 
 import 'package:dashboard_kpi/features/dashboard/presentation/pages/dashboard_page.dart';
-
 import 'package:dashboard_kpi/features/finance/presentation/pages/finance_page.dart';
 
 import 'package:dashboard_kpi/features/jamaah/domain/value_objects/jamaah_tenant_context.dart';
@@ -21,6 +20,8 @@ import 'package:dashboard_kpi/features/jamaah/presentation/pages/jamaah_page.dar
 import 'package:dashboard_kpi/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:dashboard_kpi/features/splash/presentation/pages/splash_page.dart';
 import 'package:dashboard_kpi/features/testimoni/presentation/pages/testimonial_page.dart';
+
+import 'package:dashboard_kpi/shared/layout/app_shell.dart';
 
 import 'route_names.dart';
 import 'route_paths.dart';
@@ -56,114 +57,104 @@ final GoRouter appRouter = GoRouter(
       path: RoutePaths.splash,
       builder: (context, state) => const SplashPage(),
     ),
-
     GoRoute(
       name: RouteNames.onboarding,
       path: RoutePaths.onboarding,
       builder: (context, state) => const OnboardingPage(),
     ),
-
     GoRoute(
       name: RouteNames.login,
       path: RoutePaths.login,
       builder: (context, state) => const LoginPage(),
     ),
-
     GoRoute(
       name: RouteNames.forgotPassword,
       path: RoutePaths.forgotPassword,
       builder: (context, state) => const ForgotPasswordPage(),
     ),
-
     GoRoute(
       name: RouteNames.resetPassword,
       path: RoutePaths.resetPassword,
       builder: (context, state) => const ResetPasswordPage(),
     ),
 
-    GoRoute(
-      name: RouteNames.dashboard,
-      path: RoutePaths.dashboard,
-      builder: (context, state) => const DashboardPage(),
-    ),
-
-    GoRoute(
-      name: RouteNames.booking,
-      path: RoutePaths.booking,
-      builder: (context, state) => const BookingPage(),
-    ),
-
-    GoRoute(
-      name: RouteNames.bookingCreate,
-      path: RoutePaths.bookingCreate,
-      builder: (context, state) => const CreateBookingPage(),
-    ),
-
-    GoRoute(
-      name: RouteNames.bookingDetail,
-      path: RoutePaths.bookingDetail,
-      builder: (context, state) {
-        final bookingId = state.pathParameters['id']!;
-
-        return BookingDetailPage(
-          bookingId: bookingId,
-        );
+    ShellRoute(
+      builder: (context, state, child) {
+        return AppShell(child: child);
       },
-    ),
+      routes: [
+        GoRoute(
+          name: RouteNames.dashboard,
+          path: RoutePaths.dashboard,
+          builder: (context, state) => const DashboardPage(),
+        ),
+        GoRoute(
+          name: RouteNames.booking,
+          path: RoutePaths.booking,
+          builder: (context, state) => const BookingPage(),
+        ),
+        GoRoute(
+          name: RouteNames.bookingCreate,
+          path: RoutePaths.bookingCreate,
+          builder: (context, state) => const CreateBookingPage(),
+        ),
+        GoRoute(
+          name: RouteNames.bookingDetail,
+          path: RoutePaths.bookingDetail,
+          builder: (context, state) {
+            final bookingId = state.pathParameters['id']!;
+            return BookingDetailPage(bookingId: bookingId);
+          },
+        ),
+        GoRoute(
+          path: RoutePaths.jamaah,
+          builder: (context, state) {
+            final sessionContext =
+                sessionControllerInstance.state.sessionContext;
 
-    GoRoute(
-      path: RoutePaths.jamaah,
-      builder: (context, state) {
-        final sessionContext =
-            sessionControllerInstance.state.sessionContext;
+            if (sessionContext == null || !sessionContext.isValid) {
+              return const _JamaahRouteContextErrorPage();
+            }
 
-        if (sessionContext == null || !sessionContext.isValid) {
-          return const _JamaahRouteContextErrorPage();
-        }
+            final tenantContext = JamaahTenantContext(sessionContext.tenantId);
 
-        final tenantContext =
-            JamaahTenantContext(sessionContext.tenantId);
+            if (!tenantContext.isValid) {
+              return const _JamaahRouteContextErrorPage();
+            }
 
-        if (!tenantContext.isValid) {
-          return const _JamaahRouteContextErrorPage();
-        }
+            return JamaahPage(tenantContext: tenantContext);
+          },
+        ),
+        GoRoute(
+          name: RouteNames.jamaahDetail,
+          path: RoutePaths.jamaahDetail,
+          builder: (context, state) {
+            final jamaahId = state.pathParameters['id'];
+            final tenantContext = state.extra;
 
-        return JamaahPage(
-          tenantContext: tenantContext,
-        );
-      },
-    ),
+            if (jamaahId == null ||
+                tenantContext is! JamaahTenantContext ||
+                !tenantContext.isValid) {
+              return const _JamaahRouteContextErrorPage();
+            }
 
-    GoRoute(
-      name: RouteNames.jamaahDetail,
-      path: RoutePaths.jamaahDetail,
-      builder: (context, state) {
-        final jamaahId = state.pathParameters['id'];
-        final tenantContext = state.extra;
-
-        if (jamaahId == null ||
-            tenantContext is! JamaahTenantContext ||
-            !tenantContext.isValid) {
-          return const _JamaahRouteContextErrorPage();
-        }
-
-        return JamaahDetailPage(
-          jamaahId: jamaahId,
-          tenantContext: tenantContext,
-        );
-      },
-    ),
-
-    GoRoute(
-      name: RouteNames.finance,
-      path: RoutePaths.finance,
-      builder: (context, state) => const FinancePage(),
-    ),
-
-    GoRoute(
-      name: RouteNames.testimonial,
-      path: RoutePaths.testimonial,
-      builder: (context, state) => const TestimonialPage(),
+            return JamaahDetailPage(
+              jamaahId: jamaahId,
+              tenantContext: tenantContext,
+            );
+          },
+        ),
+        GoRoute(
+          name: RouteNames.finance,
+          path: RoutePaths.finance,
+          builder: (context, state) => const FinancePage(),
+        ),
+        GoRoute(
+          name: RouteNames.testimonial,
+          path: RoutePaths.testimonial,
+          builder: (context, state) => const TestimonialPage(),
+        ),
+      ],
     ),
   ],
 );
@@ -174,19 +165,14 @@ class _JamaahRouteContextErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Jamaah'),
-      ),
+      appBar: AppBar(title: const Text('Jamaah')),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(
-                Icons.lock_outline,
-                size: 48,
-              ),
+              const Icon(Icons.lock_outline, size: 48),
               const SizedBox(height: 16),
               Text(
                 'Konteks tenant tidak tersedia.',

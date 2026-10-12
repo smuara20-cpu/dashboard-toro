@@ -7,6 +7,7 @@ import 'package:dashboard_kpi/core/theme/colors/app_colors.dart';
 import 'package:dashboard_kpi/features/booking/application/providers/booking_provider.dart';
 import 'package:dashboard_kpi/features/booking/application/state/booking_state.dart';
 import 'package:dashboard_kpi/features/booking/presentation/widgets/booking_list_item.dart';
+import 'package:dashboard_kpi/shared/layout/app_shell.dart';
 
 class BookingPage extends ConsumerStatefulWidget {
   const BookingPage({super.key});
@@ -21,7 +22,6 @@ class _BookingPageState extends ConsumerState<BookingPage> {
   @override
   void initState() {
     super.initState();
-
     Future.microtask(_initialize);
   }
 
@@ -33,7 +33,6 @@ class _BookingPageState extends ConsumerState<BookingPage> {
     _isInitialized = true;
 
     final controller = ref.read(bookingControllerProvider);
-
     await controller.initialize();
 
     if (!mounted) {
@@ -45,7 +44,6 @@ class _BookingPageState extends ConsumerState<BookingPage> {
 
   Future<void> _refresh() async {
     final controller = ref.read(bookingControllerProvider);
-
     await controller.refresh();
 
     if (!mounted) {
@@ -76,6 +74,7 @@ class _BookingPageState extends ConsumerState<BookingPage> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: const AppShellMenuButton(),
         title: const Text('Booking'),
         actions: [
           FilledButton.icon(
