@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_breakpoints.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../../shared/animations/fade_slide_in.dart';
 
 import '../widgets/app_header.dart';
 import '../widgets/prayer_time_card.dart';
@@ -29,65 +30,59 @@ class DashboardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(AppSpacing.lg),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// HEADER
-          const AppHeader(),
+      child: FadeSlideIn(
+        duration: const Duration(milliseconds: 450),
+        offsetY: 12,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const AppHeader(),
+            const SizedBox(height: AppSpacing.lg),
 
-          const SizedBox(height: AppSpacing.lg),
+            // Ringkasan KPI
+            const DashboardKpiSection(),
+            const SizedBox(height: AppSpacing.lg),
 
-          /// KPI
-          const DashboardKpiSection(),
+            // Ringkasan aktivitas hari ini
+            const TodaySummaryCard(),
+            const SizedBox(height: AppSpacing.lg),
 
-          const SizedBox(height: AppSpacing.lg),
+            // Grafik revenue dan booking
+            const _ResponsivePair(
+              first: RevenueChartCard(),
+              second: BookingChartCard(),
+            ),
+            const SizedBox(height: AppSpacing.lg),
 
-          /// TODAY SUMMARY
-          const TodaySummaryCard(),
+            // Menu akses cepat
+            const QuickMenu(),
+            const SizedBox(height: AppSpacing.lg),
 
-          const SizedBox(height: AppSpacing.lg),
+            // Marketing dan arus kas
+            const _ResponsivePair(
+              first: MarketingCard(),
+              second: CashflowCard(),
+            ),
+            const SizedBox(height: AppSpacing.lg),
 
-          /// CHARTS
-          const _ResponsivePair(
-            first: RevenueChartCard(),
-            second: BookingChartCard(),
-          ),
+            // Jadwal dan waktu salat
+            const _ResponsivePair(
+              first: ScheduleCard(),
+              second: PrayerTimeCard(),
+            ),
+            const SizedBox(height: AppSpacing.lg),
 
-          const SizedBox(height: AppSpacing.lg),
+            // Tabel aktivitas
+            const RecentBookingTable(),
+            const SizedBox(height: AppSpacing.lg),
 
-          /// QUICK MENU
-          const QuickMenu(),
+            const RecentLeadsTable(),
+            const SizedBox(height: AppSpacing.lg),
 
-          const SizedBox(height: AppSpacing.lg),
-
-          /// MARKETING & CASHFLOW
-          const _ResponsivePair(first: MarketingCard(), second: CashflowCard()),
-
-          const SizedBox(height: AppSpacing.lg),
-
-          /// SCHEDULE & PRAYER
-          const _ResponsivePair(
-            first: ScheduleCard(),
-            second: PrayerTimeCard(),
-          ),
-
-          const SizedBox(height: AppSpacing.lg),
-
-          /// RECENT BOOKING
-          const RecentBookingTable(),
-
-          const SizedBox(height: AppSpacing.lg),
-
-          /// RECENT LEADS
-          const RecentLeadsTable(),
-
-          const SizedBox(height: AppSpacing.lg),
-
-          /// DEPARTURE
-          const DepartureTable(),
-
-          const SizedBox(height: AppSpacing.xxl),
-        ],
+            const DepartureTable(),
+            const SizedBox(height: AppSpacing.xxl),
+          ],
+        ),
       ),
     );
   }
