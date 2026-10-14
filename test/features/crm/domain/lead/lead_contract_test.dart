@@ -1,63 +1,31 @@
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:dashboard_kpi/features/crm/domain/enums/lead_source.dart';
+import 'package:dashboard_kpi/features/crm/domain/enums/lead_status.dart';
+
 void main() {
   group('Lead Contract', () {
-    const statuses = <String>[
-      'DRAFT',
-      'NEW',
-      'ASSIGNED',
-      'QUALIFIED',
-      'PROSPECT',
-      'OPPORTUNITY',
-      'WON',
-      'LOST',
-      'ARCHIVED',
-    ];
-
-    const sources = <String>[
-      'whatsapp',
-      'instagram',
-      'facebook',
-      'google',
-      'tiktok',
-      'website',
-      'referral',
-      'walkIn',
-      'other',
-    ];
-
-    const validTransitions = <String, List<String>>{
-      'DRAFT': ['NEW'],
-      'NEW': ['ASSIGNED', 'QUALIFIED'],
-      'ASSIGNED': ['QUALIFIED'],
-      'QUALIFIED': ['PROSPECT'],
-      'PROSPECT': ['OPPORTUNITY'],
-      'OPPORTUNITY': ['WON', 'LOST'],
-      'WON': ['ARCHIVED'],
-      'LOST': ['ARCHIVED'],
-      'ARCHIVED': [],
-    };
-
-    bool canTransition(String from, String to) {
-      return validTransitions[from]?.contains(to) ?? false;
-    }
-
     test('status vocabulary is complete', () {
-      expect(statuses, contains('DRAFT'));
-      expect(statuses, contains('NEW'));
-      expect(statuses, contains('ASSIGNED'));
-      expect(statuses, contains('QUALIFIED'));
-      expect(statuses, contains('PROSPECT'));
-      expect(statuses, contains('OPPORTUNITY'));
-      expect(statuses, contains('WON'));
-      expect(statuses, contains('LOST'));
-      expect(statuses, contains('ARCHIVED'));
+      expect(
+        LeadStatus.values.map((status) => status.value).toList(),
+        equals(<String>[
+          'DRAFT',
+          'NEW',
+          'ASSIGNED',
+          'QUALIFIED',
+          'PROSPECT',
+          'OPPORTUNITY',
+          'WON',
+          'LOST',
+          'ARCHIVED',
+        ]),
+      );
     });
 
-    test('LeadSource vocabulary matches existing CRM source contract', () {
+    test('LeadSource matches existing CRM source contract', () {
       expect(
-        sources,
-        containsAll(<String>[
+        LeadSource.values.map((source) => source.name).toList(),
+        equals(<String>[
           'whatsapp',
           'instagram',
           'facebook',
@@ -72,51 +40,71 @@ void main() {
     });
 
     test('DRAFT can transition to NEW', () {
-      expect(canTransition('DRAFT', 'NEW'), isTrue);
+      expect(LeadStatus.draft.canTransitionTo(LeadStatus.newLead), isTrue);
     });
 
     test('NEW can transition to ASSIGNED', () {
-      expect(canTransition('NEW', 'ASSIGNED'), isTrue);
+      expect(LeadStatus.newLead.canTransitionTo(LeadStatus.assigned), isTrue);
     });
 
     test('NEW can transition to QUALIFIED', () {
-      expect(canTransition('NEW', 'QUALIFIED'), isTrue);
+      expect(LeadStatus.newLead.canTransitionTo(LeadStatus.qualified), isTrue);
+    });
+
+    test('ASSIGNED can transition to QUALIFIED', () {
+      expect(LeadStatus.assigned.canTransitionTo(LeadStatus.qualified), isTrue);
     });
 
     test('QUALIFIED can transition to PROSPECT', () {
-      expect(canTransition('QUALIFIED', 'PROSPECT'), isTrue);
+      expect(LeadStatus.qualified.canTransitionTo(LeadStatus.prospect), isTrue);
     });
 
     test('PROSPECT can transition to OPPORTUNITY', () {
-      expect(canTransition('PROSPECT', 'OPPORTUNITY'), isTrue);
+      expect(
+        LeadStatus.prospect.canTransitionTo(LeadStatus.opportunity),
+        isTrue,
+      );
     });
 
     test('OPPORTUNITY can transition to WON', () {
-      expect(canTransition('OPPORTUNITY', 'WON'), isTrue);
+      expect(LeadStatus.opportunity.canTransitionTo(LeadStatus.won), isTrue);
     });
 
     test('OPPORTUNITY can transition to LOST', () {
-      expect(canTransition('OPPORTUNITY', 'LOST'), isTrue);
+      expect(LeadStatus.opportunity.canTransitionTo(LeadStatus.lost), isTrue);
     });
 
-    test('NEW cannot transition directly to WON', () {
-      expect(canTransition('NEW', 'WON'), isFalse);
+    test('WON and LOST can transition to ARCHIVED', () {
+      expect(LeadStatus.won.canTransitionTo(LeadStatus.archived), isTrue);
+      expect(LeadStatus.lost.canTransitionTo(LeadStatus.archived), isTrue);
     });
 
-    test('NEW cannot transition directly to OPPORTUNITY', () {
-      expect(canTransition('NEW', 'OPPORTUNITY'), isFalse);
-    });
-
-    test('QUALIFIED cannot transition directly to WON', () {
-      expect(canTransition('QUALIFIED', 'WON'), isFalse);
+    test('NEW cannot transition directly to OPPORTUNITY or WON', () {
+      expect(
+        LeadStatus.newLead.canTransitionTo(LeadStatus.opportunity),
+        isFalse,
+      );
+      expect(LeadStatus.newLead.canTransitionTo(LeadStatus.won), isFalse);
     });
 
     test('DRAFT cannot transition directly to WON', () {
-      expect(canTransition('DRAFT', 'WON'), isFalse);
+      expect(LeadStatus.draft.canTransitionTo(LeadStatus.won), isFalse);
+    });
+
+    test('QUALIFIED cannot transition directly to WON', () {
+      expect(LeadStatus.qualified.canTransitionTo(LeadStatus.won), isFalse);
+    });
+
+    test('status cannot transition to itself', () {
+      for (final status in LeadStatus.values) {
+        expect(status.canTransitionTo(status), isFalse);
+      }
     });
 
     test('ARCHIVED has no outgoing transition', () {
-      expect(validTransitions['ARCHIVED'], isEmpty);
+      for (final status in LeadStatus.values) {
+        expect(LeadStatus.archived.canTransitionTo(status), isFalse);
+      }
     });
   });
 }
