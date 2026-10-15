@@ -1,4 +1,4 @@
-﻿# AMO-005 â€” VENTRA AI OPERATIONS MODEL & INTELLIGENCE CONTRACT
+# AMO-005 — VENTRA AI OPERATIONS MODEL & INTELLIGENCE CONTRACT
 
 **Status:** APPROVED CONTRACT
 **Version:** 1.0
@@ -1627,39 +1627,39 @@ Auditability must allow investigation of:
 
 VENTRA AI Operations observability:
 
-### Layer 1 â€” Request
+### Layer 1 — Request
 
 What was requested?
 
-### Layer 2 â€” Agent
+### Layer 2 — Agent
 
 Which agent processed it?
 
-### Layer 3 â€” Router
+### Layer 3 — Router
 
 Why was a provider/model selected?
 
-### Layer 4 â€” Provider
+### Layer 4 — Provider
 
 What happened at provider level?
 
-### Layer 5 â€” Model
+### Layer 5 — Model
 
 What happened at model level?
 
-### Layer 6 â€” Response
+### Layer 6 — Response
 
 Was response valid?
 
-### Layer 7 â€” Governance
+### Layer 7 — Governance
 
 Was it allowed?
 
-### Layer 8 â€” Recommendation
+### Layer 8 — Recommendation
 
 What was recommended?
 
-### Layer 9 â€” Execution
+### Layer 9 — Execution
 
 Was anything executed?
 

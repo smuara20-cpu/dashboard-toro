@@ -67,7 +67,7 @@ class _CustomerSelectorDialogState
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                   subtitle: Text(
-                    '${customer.customerCode} Ã¢â‚¬Â¢ ${customer.phoneNumber}',
+                    '${customer.customerCode} • ${customer.phoneNumber}',
                   ),
                   onTap: () {
                     Navigator.of(context).pop(customer);

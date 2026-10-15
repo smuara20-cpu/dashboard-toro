@@ -2,12 +2,12 @@
 
 ## Project
 
-VENTRA â€” IMPLEMENTATION & PRODUCTIZATION  
+VENTRA — IMPLEMENTATION & PRODUCTIZATION  
 Codename: VENTRAL 10 DAYS
 
 ## Capability
 
-SP-203 â€” Identity & Access Platform Enterprise Edition v2.0
+SP-203 — Identity & Access Platform Enterprise Edition v2.0
 
 ## Document
 
@@ -77,9 +77,9 @@ database identity and validated physical relationships.
 The security boundary follows:
 
 `auth.uid()`
-â†’ `tenant_memberships`
-â†’ `tenants`
-â†’ `companies`
+→ `tenant_memberships`
+→ `tenants`
+→ `companies`
 
 The client must not determine or submit:
 
@@ -202,9 +202,9 @@ Privilege reduction is therefore part of the security hardening scope.
 
 Current resolver privilege:
 
-`authenticated` â†’ `EXECUTE`
+`authenticated` → `EXECUTE`
 
-`postgres` â†’ `EXECUTE`
+`postgres` → `EXECUTE`
 
 The resolver does not grant EXECUTE to `anon`.
 
@@ -220,9 +220,9 @@ authenticated identity.
 The canonical access relationship remains:
 
 `auth.uid()`
-â†’ `tenant_memberships`
-â†’ `tenants`
-â†’ `companies`
+→ `tenant_memberships`
+→ `tenants`
+→ `companies`
 
 An authenticated user must not be able to use the client runtime to
 read another user's membership or another tenant's protected business
@@ -278,7 +278,7 @@ client data access layer.
 
 The physical relationship remains:
 
-`tenants.company_id â†’ companies.company_id`
+`tenants.company_id → companies.company_id`
 
 No duplicate company authority is introduced.
 
@@ -359,9 +359,9 @@ The existing SP-203 runtime decision remains unchanged.
 
 If an authenticated user has:
 
-- zero valid memberships â†’ `TENANT_ACCESS_NOT_FOUND`
-- exactly one valid membership â†’ resolve successfully
-- more than one valid membership â†’ `INVALID_ACCESS_CONTEXT`
+- zero valid memberships → `TENANT_ACCESS_NOT_FOUND`
+- exactly one valid membership → resolve successfully
+- more than one valid membership → `INVALID_ACCESS_CONTEXT`
 
 The resolver must never select an arbitrary tenant.
 
@@ -460,9 +460,9 @@ After implementation, validation must prove at minimum:
 
 ### Resolver
 
-- Zero membership â†’ `TENANT_ACCESS_NOT_FOUND`
-- One membership â†’ success
-- Multiple memberships â†’ `INVALID_ACCESS_CONTEXT`
+- Zero membership → `TENANT_ACCESS_NOT_FOUND`
+- One membership → success
+- Multiple memberships → `INVALID_ACCESS_CONTEXT`
 
 ### Privileges
 
@@ -519,11 +519,11 @@ The next controlled stage is:
 Implementation must follow:
 
 Evidence
-â†’ Decision
-â†’ Implementation
-â†’ Validation
-â†’ Approval
-â†’ Commit / Push
+→ Decision
+→ Implementation
+→ Validation
+→ Approval
+→ Commit / Push
 
 No production authorization may be inferred before completion of the
 security validation gate.

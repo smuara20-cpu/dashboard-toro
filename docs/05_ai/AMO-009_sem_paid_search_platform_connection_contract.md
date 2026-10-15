@@ -1,4 +1,4 @@
-﻿# AMO-009 â€” VENTRA SEM / PAID SEARCH INTELLIGENCE & ADVERTISING PLATFORM CONNECTION CONTRACT
+# AMO-009 — VENTRA SEM / PAID SEARCH INTELLIGENCE & ADVERTISING PLATFORM CONNECTION CONTRACT
 
 **Document ID:** AMO-009
 **Version:** 1.0
@@ -92,11 +92,11 @@ Tidak ada implementasi yang boleh dilakukan hanya berdasarkan asumsi dari dokume
 Setiap implementasi wajib melalui:
 
 Evidence
-â†’ Decision
-â†’ Implementation
-â†’ Validation
-â†’ Approval
-â†’ Commit / Push
+→ Decision
+→ Implementation
+→ Validation
+→ Approval
+→ Commit / Push
 
 ---
 
@@ -383,11 +383,11 @@ Permission untuk membaca data tidak otomatis berarti permission untuk melakukan 
 Phase 1 VENTRA:
 
 READ
-â†’ ANALYZE
-â†’ COMPARE
-â†’ DETECT
-â†’ EXPLAIN
-â†’ RECOMMEND
+→ ANALYZE
+→ COMPARE
+→ DETECT
+→ EXPLAIN
+→ RECOMMEND
 
 Tidak otomatis:
 
@@ -489,12 +489,12 @@ Setiap advertising connection harus terikat kepada tenant context.
 Logical flow:
 
 Tenant
-â†’ Advertising Connection
-â†’ Advertising Account
-â†’ Campaign
-â†’ Ad Group
-â†’ Keyword / Search Term / Creative
-â†’ Performance Data
+→ Advertising Connection
+→ Advertising Account
+→ Campaign
+→ Ad Group
+→ Keyword / Search Term / Creative
+→ Performance Data
 
 Tenant context harus ditentukan berdasarkan mekanisme tenant runtime VENTRA.
 
@@ -1516,13 +1516,13 @@ NOT_COMPARABLE
 AMO-009 menjadi bagian dari VENTRA Marketing Intelligence:
 
 Paid Media
-â†’ SEM / Paid Search Intelligence
-â†’ Lead Intelligence
-â†’ AI Qualification
-â†’ CRM
-â†’ WhatsApp
-â†’ Booking
-â†’ Revenue
+→ SEM / Paid Search Intelligence
+→ Lead Intelligence
+→ AI Qualification
+→ CRM
+→ WhatsApp
+→ Booking
+→ Revenue
 
 Integrasi dengan downstream domain harus mengikuti contract masing-masing.
 
@@ -1870,10 +1870,10 @@ Future advertising platform dapat ditambahkan melalui adapter baru.
 Contoh:
 
 AdvertisingPlatformAdapter
-â†’ MetaAdsAdapter
-â†’ GoogleAdsAdapter
-â†’ TikTokAdsAdapter
-â†’ FuturePlatformAdapter
+→ MetaAdsAdapter
+→ GoogleAdsAdapter
+→ TikTokAdsAdapter
+→ FuturePlatformAdapter
 
 Business intelligence tetap menggunakan normalized contract.
 
@@ -2030,7 +2030,7 @@ IMPLEMENTED.
 
 Tidak ada API integration, OAuth implementation, database implementation, SDK implementation, campaign mutation, budget mutation, atau autonomous advertising action yang dianggap tersedia hanya berdasarkan dokumen ini.
 
-Semua implementation harus melalui Evidence â†’ Decision â†’ Implementation â†’ Validation â†’ Approval â†’ Commit / Push.
+Semua implementation harus melalui Evidence → Decision → Implementation → Validation → Approval → Commit / Push.
 
 ---
 
