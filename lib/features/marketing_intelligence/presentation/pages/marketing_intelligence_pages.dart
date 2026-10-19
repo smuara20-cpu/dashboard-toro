@@ -177,6 +177,9 @@ class MarketingPlatformPage extends StatelessWidget {
                 if (platform.supportsSocialConnection) ...[
                   _PlatformConnectionForm(platform: platform),
                   const SizedBox(height: 24),
+                ] else if (_supportsGoogleConfiguration(platform)) ...[
+                  _GoogleConnectionForm(platform: platform),
+                  const SizedBox(height: 24),
                 ],
                 const _ConnectionStatusCard(),
                 const SizedBox(height: 24),
@@ -332,7 +335,7 @@ class _PlatformConnectionFormState extends State<_PlatformConnectionForm> {
                   if (_validated)
                     const Chip(
                       avatar: Icon(Icons.check_circle_outline, size: 18),
-                      label: Text('Input valid — belum terhubung'),
+                      label: Text('Input valid â€” belum terhubung'),
                     ),
                 ],
               ),
@@ -340,6 +343,230 @@ class _PlatformConnectionFormState extends State<_PlatformConnectionForm> {
                 const SizedBox(height: 12),
                 const Text(
                   'URL lolos validasi lokal. Konfigurasi belum disimpan ke backend; koneksi resmi masih menunggu implementasi OAuth/API.',
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+bool _supportsGoogleConfiguration(MarketingPlatform platform) =>
+    platform == MarketingPlatform.googleAds ||
+    platform == MarketingPlatform.googleAnalytics ||
+    platform == MarketingPlatform.googleTagManager;
+
+class _GoogleConnectionForm extends StatefulWidget {
+  const _GoogleConnectionForm({required this.platform});
+
+  final MarketingPlatform platform;
+
+  @override
+  State<_GoogleConnectionForm> createState() => _GoogleConnectionFormState();
+}
+
+class _GoogleConnectionFormState extends State<_GoogleConnectionForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _primaryController = TextEditingController();
+  final _secondaryController = TextEditingController();
+  final _websiteController = TextEditingController();
+  bool _validated = false;
+
+  bool get _isGoogleAds => widget.platform == MarketingPlatform.googleAds;
+  bool get _isAnalytics => widget.platform == MarketingPlatform.googleAnalytics;
+  bool get _isTagManager =>
+      widget.platform == MarketingPlatform.googleTagManager;
+
+  String get _primaryLabel {
+    if (_isGoogleAds) return 'Google Ads Customer ID';
+    if (_isAnalytics) return 'Google Analytics Measurement ID';
+    return 'Google Tag Manager Container ID';
+  }
+
+  String get _primaryHint {
+    if (_isGoogleAds) return '123-456-7890';
+    if (_isAnalytics) return 'G-XXXXXXXXXX';
+    return 'GTM-XXXXXXX';
+  }
+
+  String get _secondaryLabel {
+    if (_isGoogleAds) return 'Login Customer ID (opsional)';
+    if (_isAnalytics) return 'Google Analytics Property ID (opsional)';
+    return 'Catatan konfigurasi (opsional)';
+  }
+
+  String get _websiteLabel => 'Website URL (opsional)';
+
+  String? _validatePrimary(String? value) {
+    final input = (value ?? '').trim();
+
+    if (input.isEmpty) {
+      return '$_primaryLabel wajib diisi.';
+    }
+
+    if (_isGoogleAds && !RegExp(r'^\d{3}-?\d{3}-?\d{4}$').hasMatch(input)) {
+      return 'Gunakan Customer ID 10 digit, contoh 123-456-7890.';
+    }
+
+    if (_isAnalytics &&
+        !RegExp(r'^G-[A-Z0-9]+$', caseSensitive: false).hasMatch(input)) {
+      return 'Measurement ID harus berformat G-XXXXXXXXXX.';
+    }
+
+    if (_isTagManager &&
+        !RegExp(r'^GTM-[A-Z0-9]+$', caseSensitive: false).hasMatch(input)) {
+      return 'Container ID harus berformat GTM-XXXXXXX.';
+    }
+
+    return null;
+  }
+
+  String? _validateWebsite(String? value) {
+    final input = (value ?? '').trim();
+    if (input.isEmpty) return null;
+
+    final uri = Uri.tryParse(input);
+    if (uri == null ||
+        (uri.scheme != 'https' && uri.scheme != 'http') ||
+        uri.host.isEmpty ||
+        uri.host.contains(' ')) {
+      return 'Masukkan URL lengkap, contoh https://example.com.';
+    }
+
+    return null;
+  }
+
+  void _validateConfiguration() {
+    FocusScope.of(context).unfocus();
+
+    if (!_formKey.currentState!.validate()) {
+      setState(() => _validated = false);
+      return;
+    }
+
+    setState(() => _validated = true);
+  }
+
+  @override
+  void dispose() {
+    _primaryController.dispose();
+    _secondaryController.dispose();
+    _websiteController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(22),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  const Icon(Icons.settings_input_component_outlined),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Konfigurasi ${widget.platform.title}',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Masukkan ID konfigurasi resmi. Validasi ini hanya memeriksa format input di browser dan tidak menghubungkan akun.',
+              ),
+              const SizedBox(height: 20),
+              TextFormField(
+                controller: _primaryController,
+                decoration: InputDecoration(
+                  labelText: _primaryLabel,
+                  hintText: _primaryHint,
+                  prefixIcon: const Icon(Icons.tag_outlined),
+                  border: const OutlineInputBorder(),
+                ),
+                validator: _validatePrimary,
+                onChanged: (_) {
+                  if (_validated) setState(() => _validated = false);
+                },
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _secondaryController,
+                decoration: InputDecoration(
+                  labelText: _secondaryLabel,
+                  hintText: 'Isi jika sudah tersedia',
+                  prefixIcon: const Icon(Icons.badge_outlined),
+                  border: const OutlineInputBorder(),
+                ),
+                onChanged: (_) {
+                  if (_validated) setState(() => _validated = false);
+                },
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _websiteController,
+                keyboardType: TextInputType.url,
+                decoration: InputDecoration(
+                  labelText: _websiteLabel,
+                  hintText: 'https://example.com',
+                  prefixIcon: const Icon(Icons.language_outlined),
+                  border: const OutlineInputBorder(),
+                ),
+                validator: _validateWebsite,
+                onChanged: (_) {
+                  if (_validated) setState(() => _validated = false);
+                },
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.shield_outlined),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Jangan masukkan password, access token, API secret, client secret, atau kredensial OAuth. Form ini belum menyimpan data dan belum melakukan koneksi ke Google.',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 18),
+              Wrap(
+                spacing: 12,
+                runSpacing: 8,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  FilledButton.icon(
+                    onPressed: _validateConfiguration,
+                    icon: const Icon(Icons.fact_check_outlined),
+                    label: const Text('Validasi Konfigurasi'),
+                  ),
+                  if (_validated)
+                    const Chip(
+                      avatar: Icon(Icons.check_circle_outline, size: 18),
+                      label: Text('Format valid — belum terhubung'),
+                    ),
+                ],
+              ),
+              if (_validated) ...[
+                const SizedBox(height: 12),
+                const Text(
+                  'Validasi lokal berhasil. Data belum disimpan ke backend. Koneksi resmi memerlukan integrasi API/OAuth dan validasi izin akses.',
                 ),
               ],
             ],

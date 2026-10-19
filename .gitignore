@@ -48,3 +48,9 @@ lib/features/dashboard/presentation/pages/dashboard_page.dart.backup
 pubspec.yaml.backup-font-*
 pubspec.yaml.before-font-update
 pubspec.yaml.damaged-*
+
+# Supabase local metadata
+/supabase/.temp/
+
+# Local configuration backups
+/lib/app/config/env_config.dart.bak-*
