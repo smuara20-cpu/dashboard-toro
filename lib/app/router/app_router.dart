@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:dashboard_kpi/features/marketing_intelligence/presentation/pages/marketing_intelligence_pages.dart';
+
 import 'package:dashboard_kpi/features/auth/application/controllers/session_controller_instance.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/forgot_password_page.dart';
 import 'package:dashboard_kpi/features/auth/presentation/pages/login_page.dart';
@@ -83,6 +85,62 @@ final GoRouter appRouter = GoRouter(
         return AppShell(child: child);
       },
       routes: [
+
+        GoRoute(
+          path: RoutePaths.socialIntelligence,
+          name: RouteNames.socialIntelligence,
+          builder: (context, state) =>
+          const SocialMediaIntelligencePage(),
+        ),
+        GoRoute(
+          path: RoutePaths.instagramIntelligence,
+          name: RouteNames.instagramIntelligence,
+          builder: (context, state) => const MarketingPlatformPage(
+            platform: MarketingPlatform.instagram,
+          ),
+        ),
+        GoRoute(
+          path: RoutePaths.metaAdsIntelligence,
+          name: RouteNames.metaAdsIntelligence,
+          builder: (context, state) => const MarketingPlatformPage(
+            platform: MarketingPlatform.metaAds,
+          ),
+        ),
+        GoRoute(
+          path: RoutePaths.tiktokIntelligence,
+          name: RouteNames.tiktokIntelligence,
+          builder: (context, state) => const MarketingPlatformPage(
+            platform: MarketingPlatform.tiktokAds,
+          ),
+        ),
+        GoRoute(
+          path: RoutePaths.googleIntelligence,
+          name: RouteNames.googleIntelligence,
+          builder: (context, state) =>
+          const GoogleIntelligencePage(),
+        ),
+        GoRoute(
+          path: RoutePaths.googleAdsIntelligence,
+          name: RouteNames.googleAdsIntelligence,
+          builder: (context, state) => const MarketingPlatformPage(
+            platform: MarketingPlatform.googleAds,
+          ),
+        ),
+        GoRoute(
+          path: RoutePaths.googleAnalyticsIntelligence,
+          name: RouteNames.googleAnalyticsIntelligence,
+          builder: (context, state) => const MarketingPlatformPage(
+            platform: MarketingPlatform.googleAnalytics,
+          ),
+        ),
+        GoRoute(
+          path: RoutePaths.googleTagManagerIntelligence,
+          name: RouteNames.googleTagManagerIntelligence,
+          builder: (context, state) => const MarketingPlatformPage(
+            platform: MarketingPlatform.googleTagManager,
+          ),
+        ),
+
         GoRoute(
           name: RouteNames.dashboard,
           path: RoutePaths.dashboard,

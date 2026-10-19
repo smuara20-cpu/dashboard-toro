@@ -28,6 +28,9 @@ class AppSidebar extends StatelessWidget {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(10, 18, 10, 24),
               children: [
+                // =========================================================
+                // UTAMA
+                // =========================================================
                 _sectionLabel('UTAMA'),
                 _item(
                   context,
@@ -38,6 +41,9 @@ class AppSidebar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
+                // =========================================================
+                // OPERASIONAL
+                // =========================================================
                 _sectionLabel('OPERASIONAL'),
                 _item(
                   context,
@@ -79,6 +85,9 @@ class AppSidebar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
+                // =========================================================
+                // KEUANGAN
+                // =========================================================
                 _sectionLabel('KEUANGAN'),
                 _item(
                   context,
@@ -101,6 +110,9 @@ class AppSidebar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
+                // =========================================================
+                // MARKETING & CRM
+                // =========================================================
                 _sectionLabel('MARKETING & CRM'),
                 _item(
                   context,
@@ -122,6 +134,9 @@ class AppSidebar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
+                // =========================================================
+                // AI & GOVERNANCE
+                // =========================================================
                 _sectionLabel('AI & GOVERNANCE'),
                 _item(
                   context,
@@ -129,6 +144,74 @@ class AppSidebar extends StatelessWidget {
                   label: 'VENTRA AI Agents',
                   currentRoute: currentRoute,
                 ),
+
+                // ---------------------------------------------------------
+                // SOCIAL MEDIA INTELLIGENCE
+                // ---------------------------------------------------------
+                _item(
+                  context,
+                  icon: Icons.share_outlined,
+                  label: 'Social Media Intelligence',
+                  route: RoutePaths.socialIntelligence,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.camera_alt_outlined,
+                  label: 'Instagram',
+                  route: RoutePaths.instagramIntelligence,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.campaign_outlined,
+                  label: 'Facebook Business / Meta Ads',
+                  route: RoutePaths.metaAdsIntelligence,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.video_library_outlined,
+                  label: 'TikTok Business',
+                  route: RoutePaths.tiktokIntelligence,
+                  currentRoute: currentRoute,
+                ),
+
+                // ---------------------------------------------------------
+                // GOOGLE INTELLIGENCE
+                // ---------------------------------------------------------
+                _item(
+                  context,
+                  icon: Icons.query_stats_outlined,
+                  label: 'Google Intelligence',
+                  route: RoutePaths.googleIntelligence,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.ads_click_outlined,
+                  label: 'Google Ads',
+                  route: RoutePaths.googleAdsIntelligence,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.analytics_outlined,
+                  label: 'Google Analytics',
+                  route: RoutePaths.googleAnalyticsIntelligence,
+                  currentRoute: currentRoute,
+                ),
+                _item(
+                  context,
+                  icon: Icons.sell_outlined,
+                  label: 'Google Tag Manager',
+                  route: RoutePaths.googleTagManagerIntelligence,
+                  currentRoute: currentRoute,
+                ),
+
+                // ---------------------------------------------------------
+                // MENU AI & GOVERNANCE LAINNYA
+                // ---------------------------------------------------------
                 _item(
                   context,
                   icon: Icons.chat_outlined,
@@ -149,6 +232,9 @@ class AppSidebar extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
+                // =========================================================
+                // LAINNYA
+                // =========================================================
                 _sectionLabel('LAINNYA'),
                 _item(
                   context,
@@ -277,7 +363,7 @@ class AppSidebar extends StatelessWidget {
         color: selected ? _activeBackground : Colors.transparent,
         borderRadius: BorderRadius.circular(8),
         child: InkWell(
-          onTap: enabled ? () => context.go(route) : null,
+          onTap: route == null ? null : () => context.go(route),
           borderRadius: BorderRadius.circular(8),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 11),
