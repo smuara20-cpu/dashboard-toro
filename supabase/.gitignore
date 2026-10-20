@@ -1,0 +1,13 @@
+# Supabase
+.branches
+.temp
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
+
+# Local Supabase CLI state and linked project metadata
+.temp/
+.tmp/
+*.bak-*
