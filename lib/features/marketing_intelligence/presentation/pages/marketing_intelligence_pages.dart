@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:dashboard_kpi/app/router/route_paths.dart';
+import 'package:dashboard_kpi/features/auth/application/providers/session_provider.dart';
+import 'package:dashboard_kpi/features/marketing_intelligence/application/providers/marketing_platform_config_provider.dart';
 
 enum MarketingPlatform {
   instagram,
@@ -202,21 +205,104 @@ class MarketingPlatformPage extends StatelessWidget {
   }
 }
 
-class _PlatformConnectionForm extends StatefulWidget {
+class _PlatformConnectionForm extends ConsumerStatefulWidget {
   const _PlatformConnectionForm({required this.platform});
 
   final MarketingPlatform platform;
 
   @override
-  State<_PlatformConnectionForm> createState() =>
+  ConsumerState<_PlatformConnectionForm> createState() =>
       _PlatformConnectionFormState();
 }
 
-class _PlatformConnectionFormState extends State<_PlatformConnectionForm> {
+class _PlatformConnectionFormState extends ConsumerState<_PlatformConnectionForm> {
   final _formKey = GlobalKey<FormState>();
   final _profileController = TextEditingController();
   final _accountIdController = TextEditingController();
   bool _validated = false;
+  bool _loadingConfig = true;
+  bool _savingConfig = false;
+  String? _loadError;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadConfiguration();
+  }
+
+  String get _platformKey => switch (widget.platform) {
+    MarketingPlatform.instagram => 'instagram',
+    MarketingPlatform.metaAds => 'meta_ads',
+    MarketingPlatform.tiktokAds => 'tiktok_ads',
+    _ => throw StateError('Platform ini bukan platform sosial.'),
+  };
+
+  Future<void> _loadConfiguration() async {
+    try {
+      final session = ref.read(sessionStateProvider);
+      final tenantId = session.sessionContext?.tenantId;
+      if (tenantId == null || tenantId.trim().isEmpty) {
+        throw StateError('Sesi tenant tidak tersedia. Silakan login ulang.');
+      }
+      final config = await ref.read(marketingPlatformConfigDataSourceProvider)
+          .fetchConfig(tenantId: tenantId, platform: _platformKey);
+      if (!mounted) return;
+      if (config != null) {
+        _profileController.text = (config['profile_url'] as String?) ?? '';
+        _accountIdController.text =
+            (config['external_account_id'] as String?) ?? '';
+      }
+      setState(() {
+        _loadingConfig = false;
+        _loadError = null;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _loadingConfig = false;
+        _loadError = 'Konfigurasi belum dapat dimuat. Periksa koneksi dan akses database.';
+      });
+    }
+  }
+
+  Future<void> _saveConfiguration() async {
+    FocusScope.of(context).unfocus();
+    if (!_formKey.currentState!.validate() || _savingConfig) return;
+    setState(() {
+      _savingConfig = true;
+      _validated = false;
+    });
+    try {
+      final session = ref.read(sessionStateProvider);
+      final tenantId = session.sessionContext?.tenantId;
+      if (tenantId == null || tenantId.trim().isEmpty) {
+        throw StateError('Sesi tenant tidak tersedia. Silakan login ulang.');
+      }
+      await ref.read(marketingPlatformConfigDataSourceProvider).saveConfig(
+        tenantId: tenantId,
+        platform: _platformKey,
+        profileUrl: _profileController.text.trim(),
+        externalAccountId: _accountIdController.text.trim(),
+      );
+      if (!mounted) return;
+      setState(() {
+        _validated = true;
+        _loadError = null;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Konfigurasi berhasil disimpan.')),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text(
+          'Gagal menyimpan. Periksa sesi login, tabel database, dan kebijakan akses tenant.',
+        )),
+      );
+    } finally {
+      if (mounted) setState(() => _savingConfig = false);
+    }
+  }
 
   @override
   void dispose() {
@@ -231,12 +317,6 @@ class _PlatformConnectionFormState extends State<_PlatformConnectionForm> {
         (uri.scheme == 'https' || uri.scheme == 'http') &&
         uri.host.isNotEmpty &&
         !uri.host.contains(' ');
-  }
-
-  void _validateConfiguration() {
-    FocusScope.of(context).unfocus();
-    if (!_formKey.currentState!.validate()) return;
-    setState(() => _validated = true);
   }
 
   @override
@@ -265,6 +345,15 @@ class _PlatformConnectionFormState extends State<_PlatformConnectionForm> {
               const Text(
                 'Isi URL profil atau halaman bisnis. ID akun bersifat opsional dan dapat diperlukan saat menyiapkan integrasi resmi.',
               ),
+              if (_loadingConfig) const LinearProgressIndicator(),
+              if (_loadError != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Text(
+                    _loadError!,
+                    style: TextStyle(color: Theme.of(context).colorScheme.error),
+                  ),
+                ),
               const SizedBox(height: 20),
               TextFormField(
                 controller: _profileController,
@@ -328,14 +417,14 @@ class _PlatformConnectionFormState extends State<_PlatformConnectionForm> {
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   FilledButton.icon(
-                    onPressed: _validateConfiguration,
+                    onPressed: (_loadingConfig || _savingConfig) ? null : _saveConfiguration,
                     icon: const Icon(Icons.fact_check_outlined),
-                    label: const Text('Validasi Konfigurasi'),
+                    label: Text(_savingConfig ? 'Menyimpan...' : 'Simpan Konfigurasi'),
                   ),
                   if (_validated)
                     const Chip(
                       avatar: Icon(Icons.check_circle_outline, size: 18),
-                      label: Text('Input valid â€” belum terhubung'),
+                      label: Text('Konfigurasi tersimpan'),
                     ),
                 ],
               ),

@@ -1,0 +1,105 @@
+﻿-- ============================================================
+-- SP-203 SECURITY HARDENING 001
+-- Status: DRAFT / REVIEW REQUIRED
+-- Authority: SP203_SECURITY_HARDENING_DECISION_001
+-- Environment: Supabase VENTRA-DEV
+-- NOT EXECUTED
+-- ============================================================
+
+BEGIN;
+
+-- Preflight: block if the expected runtime objects are missing.
+DO $$
+BEGIN
+    IF to_regclass('public.companies') IS NULL
+       OR to_regclass('public.tenants') IS NULL
+       OR to_regclass('public.tenant_memberships') IS NULL THEN
+        RAISE EXCEPTION
+            'SP-203 hardening blocked: required runtime table missing';
+    END IF;
+
+    IF to_regprocedure('public.resolve_effective_tenant_access()') IS NULL THEN
+        RAISE EXCEPTION
+            'SP-203 hardening blocked: resolver function missing';
+    END IF;
+END
+$$;
+
+-- Ensure RLS remains enabled. FORCE RLS is intentionally not enabled here.
+ALTER TABLE public.companies ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.tenants ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.tenant_memberships ENABLE ROW LEVEL SECURITY;
+
+-- Replace only the three approved SELECT policies.
+DROP POLICY IF EXISTS sp203_company_select_member
+    ON public.companies;
+CREATE POLICY sp203_company_select_member
+    ON public.companies
+    FOR SELECT
+    TO authenticated
+    USING (
+        EXISTS (
+            SELECT 1
+            FROM public.tenants t
+            JOIN public.tenant_memberships tm
+              ON tm.tenant_id = t.tenant_id
+            WHERE t.company_id = companies.company_id
+              AND tm.user_id = (SELECT auth.uid())
+        )
+    );
+
+DROP POLICY IF EXISTS sp203_tenant_select_member
+    ON public.tenants;
+CREATE POLICY sp203_tenant_select_member
+    ON public.tenants
+    FOR SELECT
+    TO authenticated
+    USING (
+        EXISTS (
+            SELECT 1
+            FROM public.tenant_memberships tm
+            WHERE tm.tenant_id = tenants.tenant_id
+              AND tm.user_id = (SELECT auth.uid())
+        )
+    );
+
+DROP POLICY IF EXISTS sp203_membership_select_own
+    ON public.tenant_memberships;
+CREATE POLICY sp203_membership_select_own
+    ON public.tenant_memberships
+    FOR SELECT
+    TO authenticated
+    USING (user_id = (SELECT auth.uid()));
+
+-- Remove client privileges from anon on protected runtime tables.
+REVOKE ALL PRIVILEGES ON TABLE
+    public.companies,
+    public.tenants,
+    public.tenant_memberships
+FROM anon;
+
+-- Keep authenticated read-only for this runtime scope.
+REVOKE INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, TRIGGER
+ON TABLE
+    public.companies,
+    public.tenants,
+    public.tenant_memberships
+FROM authenticated;
+
+GRANT SELECT ON TABLE
+    public.companies,
+    public.tenants,
+    public.tenant_memberships
+TO authenticated;
+
+-- Intentionally preserve resolver SECURITY INVOKER and EXECUTE grants.
+-- Do not alter auth.users, membership cardinality, or tenant selection rules.
+
+COMMIT;
+
+-- ============================================================
+-- ROLLBACK PLAN
+-- Review and execute only through a separately approved rollback.
+-- Restore the prior policy definitions and exact prior grants from
+-- captured database evidence. Do not restore broad baseline privileges.
+-- ============================================================
